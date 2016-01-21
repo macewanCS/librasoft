@@ -11,6 +11,7 @@
 
 ###Team/Department Lead
 *All the rights of a basic user, plus:*
+
 1. Able to create, modify, and delete tasks internal to my team/department.
 2. Able to assign tasks to individual team/department members.
 3. Able to track the progress of my team/deparement members.
@@ -20,6 +21,7 @@
 
 ###Business Plan Lead
 *All the rights of a team/department lead, plus:*
+
 1. Able to create, modify, and delete business plan objectives and actions.
 2. Able to create, modify, and delete team/department goals related to the business plan.
 3. Able to create and modify team/department goals not related to the business plan. **ASK VICKY**
@@ -30,6 +32,7 @@
 
 ###Administrator
 *All the rights of a basic user, plus:*
+
 1. Able to create, modify, and delete user accounts.
 2. Able to modify role-based permissions.
 
