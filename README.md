@@ -8,6 +8,4 @@ Librasoft is developed by:
  - Jake Jones
  - Evan Funnell
  - Kenneth Carmichael
-
--
  
