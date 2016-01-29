@@ -1,13 +1,46 @@
 #Summary of Requirements
 
+##Solution goals
+1. Enable users to create and update goals in a standardized way.
+2. Allow users to see the following elements for each task when applicable:
+  1. Action
+  2. Budget
+  3. Due date
+  4. Lead
+  5. Collaborator(s)
+  6. Owning department/team
+  7. Dated status updates
+  8. Success measure(s)
+  9. Notes
+3. Differentiation of access levels, with different actions available for each user type.
+4. Allow users to sort by:
+  1. Lead
+  2. Collaborator(s)
+  3. Due date
+  4. Goal type
+  5. Other relevant data groupings
+5. Structure the display of data following:
+  1. Business plan objectives
+  2. Actions beneath an objective
+  3. Team/department goals beneath a business plan objective
+  4. Team/department goals not associated with the business plan
+6. Allow users to see a changelog of updates for each goal or objective.
+7. Use a dashboard to collect information such as on time, completed, and overdue actions.
+8. Support a notification system to update users of coming-due tasks.
+
 ##Access Levels
 
+###Read-Only
+1. Able to view all business plan objectives, actions, team, and department tasks.
+2. Able to view all progress updates and notes on tasks.
+
 ###Basic User
-1. Able to view all business plan objectives, actions, team and department tasks.
-2. Able to update the status of tasks assigned to themselves.
-3. Able to modify notification settings for their tasks as well as department and library-wide goal progress.
-4. Able to track my personal progress.
-5. Able to comment on personal tasks when updating progress.
+*All the rights of a read-only user, plus:*
+
+1. Able to update the status of tasks assigned to themselves.
+2. Able to modify notification settings for their tasks as well as department and library-wide goal progress.
+3. Able to track my personal progress.
+4. Able to comment on personal tasks when updating progress.
 
 ###Team/Department Lead
 *All the rights of a basic user, plus:*
