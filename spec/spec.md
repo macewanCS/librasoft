@@ -57,7 +57,7 @@
 
 1. Able to create, modify, and delete business plan objectives and actions.
 2. Able to create, modify, and delete team/department goals related to the business plan.
-3. Able to create and modify team/department goals not related to the business plan. **ASK VICKY**
+3. Able to create and modify team/department goals not related to the business plan.
 4. Able to assign business plan objectives and actions to teams and departments.
 5. Able to collect data in an organized manner to create quarterly reports for the board.
 6. Able to modify business plan objectives and actions with a reason for running past the deadline.
