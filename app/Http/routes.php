@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// AuthController will be in charge of user registration and logging users in
+// PasswordController will handle resetting forgotten passwords
+Route::Controllers([
+    'auth' => '\App\Http\Controllers\Auth\AuthController',
+    'password' => '\App\Http\Controllers\Auth\PasswordController'
+
+]);
+
+
+// auth
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
+
+
