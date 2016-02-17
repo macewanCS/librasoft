@@ -14,3 +14,30 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// l
+Route::Controllers([
+    'auth' => '\App\Http\Controllers\Auth\AuthController',
+    'password' => '\App\Http\Controllers\Auth\PasswordController'
+
+]);
+
+
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});
+
+
+
+
+
+//Route::get('login');
+
+
+
+
+
