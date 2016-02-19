@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/plans', 'PlansController@plan');
+Route::get('/goals', 'GoalsController@goal');
+Route::get('/objs', 'ObjsController@obj');
+Route::get('/actions', 'ActionsController@action');
+Route::get('/tasks', 'TasksController@task');
 
 
 // AuthController will be in charge of user registration and logging users in
