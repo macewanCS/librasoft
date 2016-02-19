@@ -8,8 +8,12 @@
                     <div class="panel-heading">Business Plans</div>
 
                     <div class="panel-body">
-                        Your Business Plans
+                        Your Current Business Plans
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create New Business Plan</button>
                 </div>
             </div>
         </div>

@@ -11,6 +11,10 @@
                         Your Objective's Actions
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Add Action</button>
+                </div>
             </div>
         </div>
     </div>

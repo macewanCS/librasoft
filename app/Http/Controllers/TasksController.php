@@ -12,4 +12,8 @@ class TasksController extends Controller
     public function task() {
         return view('layouts.task');
     }
+
+    public function newTask() {
+        return null;
+    }
 }
