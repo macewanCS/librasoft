@@ -13,4 +13,8 @@ class PlansController extends Controller
     public function plan() {
         return view('layouts.plan');
     }
+
+    public function newPlan() {
+        return null;
+    }
 }

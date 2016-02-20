@@ -12,4 +12,8 @@ class ObjsController extends Controller
     public function obj() {
         return view('layouts.obj');
     }
+
+    public function newObjs() {
+        return null;
+    }
 }

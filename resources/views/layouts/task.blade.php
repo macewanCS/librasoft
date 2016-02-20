@@ -11,6 +11,10 @@
                         Your Action's Tasks
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </div>
             </div>
         </div>
     </div>

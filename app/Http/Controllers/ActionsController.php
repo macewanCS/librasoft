@@ -12,4 +12,8 @@ class ActionsController extends Controller
     public function action() {
         return view('layouts.action');
     }
+
+    public function newAction() {
+        return null;
+    }
 }

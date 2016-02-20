@@ -12,4 +12,8 @@ class GoalsController extends Controller
     public function goal() {
         return view('layouts.goal');
     }
+
+    public function newGoal() {
+        return null;
+    }
 }
