@@ -13,4 +13,5 @@ class ManageController extends Controller
     {
         return view('manage');
     }
+
 }
