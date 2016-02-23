@@ -9,5 +9,8 @@ use App\Http\Controllers\Controller;
 
 class ManageController extends Controller
 {
-    public function
+    public function manage()
+    {
+        return view('manage');
+    }
 }
