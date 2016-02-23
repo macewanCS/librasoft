@@ -18,6 +18,7 @@
     <style>
         body {
             font-family: 'Lato';
+            background: lightgray;
         }
 
         .fa-btn {
@@ -26,7 +27,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="height: 135px; background: white">
         <div class="container">
             <div class="navbar-header">
 
@@ -40,14 +41,16 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    <img src="{{asset("/img/DesktopLogo_190x105.jpg")}}" alt="EPL Logo" style="width:190px;height:105px;">
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li style="padding-top: 80px; font-size: 25px; " ><a href="{{ url('/') }}">Home</a></li>
+                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/plan') }}">Plan</a></li>
+                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/home') }}">Manage Plan</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -55,7 +58,7 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/register') }}">Admin</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
