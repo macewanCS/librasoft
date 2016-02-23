@@ -50,7 +50,7 @@
                 <ul class="nav navbar-nav">
                     <li style="padding-top: 80px; font-size: 25px; " ><a href="{{ url('/') }}">Home</a></li>
                     <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/plan') }}">Plan</a></li>
-                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/home') }}">Manage Plan</a></li>
+                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/manage') }}">Manage Plan</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
