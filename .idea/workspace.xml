@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
     <list default="true" id="9833e2a3-46fc-4497-95cc-17cf6f5a7419" name="Default" comment="">
 <<<<<<< 79eca712435be81a04177eef33bd0e98a3c509b2
 <<<<<<< e95c3b9ac10f1c614dae6051e65a303a7583edfa
@@ -44,6 +45,11 @@
 >>>>>>> Add department to register page and to user table
 =======
 >>>>>>> update .idea
+=======
+    <list default="true" id="0a813ad2-b19c-4e56-9959-7738220f4dcb" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/readme.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> Add Migrations for goat
     </list>
     <ignored path="librasoft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,15 +98,21 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
             <state vertical-scroll-proportion="-10.0">
               <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
 <<<<<<< HEAD
 >>>>>>> add plan page with accodrion menu
+=======
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< 79eca712435be81a04177eef33bd0e98a3c509b2
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
       <file leaf-file-name="PlansController.php" pinned="false" current-in-tab="false">
@@ -110,11 +122,19 @@
               <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+      <file leaf-file-name="2016_02_18_213724_create_goals_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_213724_create_goals_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+>>>>>>> Add Migrations for goat
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< d3296e2fbc69c76bd03593758e837aba7e7cd331
       <file leaf-file-name="GoalsController.php" pinned="false" current-in-tab="false">
@@ -142,11 +162,19 @@
               <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
 <<<<<<< HEAD
 >>>>>>> Add department to register page and to user table
+=======
+      <file leaf-file-name="2016_02_18_214138_create_business_plan_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214138_create_business_plan_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+>>>>>>> Add Migrations for goat
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< 79eca712435be81a04177eef33bd0e98a3c509b2
 <<<<<<< d3296e2fbc69c76bd03593758e837aba7e7cd331
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
@@ -176,10 +204,29 @@
 =======
               <folding />
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+      <file leaf-file-name="2016_02_18_214503_create_objectives_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214503_create_objectives_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="2016_02_18_214549_create_actions_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214549_create_actions_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding />
+>>>>>>> Add Migrations for goat
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
       <file leaf-file-name="ActionsController.php" pinned="false" current-in-tab="false">
@@ -204,6 +251,13 @@
               <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
 <<<<<<< HEAD
 >>>>>>> Add department to register page and to user table
+=======
+      <file leaf-file-name="2016_02_18_214641_create_tasks_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214641_create_tasks_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47268906">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+>>>>>>> Add Migrations for goat
               <folding />
             </state>
           </provider>
@@ -261,6 +315,7 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/goal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/obj.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlansController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GoalsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ObjsController.php" />
@@ -294,6 +349,14 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_18_213724_create_goals_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_18_214138_create_business_plan_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_18_214503_create_objectives_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_18_214549_create_actions_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_18_214641_create_tasks_table.php" />
+>>>>>>> Add Migrations for goat
       </list>
     </option>
   </component>
@@ -337,6 +400,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
       <pane id="Scratches" />
@@ -346,6 +410,9 @@
 =======
       <pane id="Scope" />
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+      <pane id="Scope" />
+>>>>>>> Add Migrations for goat
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -360,6 +427,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
               <option name="myItemId" value="Librasoft" />
@@ -385,6 +453,9 @@
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
               <option name="myItemId" value="librasoft" />
+=======
+              <option name="myItemId" value="Librasoft" />
+>>>>>>> Add Migrations for goat
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -438,6 +509,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
               <option name="myItemId" value="Librasoft" />
@@ -451,10 +523,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+=======
+              <option name="myItemId" value="Librasoft" />
+>>>>>>> Add Migrations for goat
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -468,6 +543,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
               <option name="myItemId" value="Librasoft" />
@@ -501,10 +577,17 @@
 >>>>>>> add plan page with accodrion menu
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+              <option name="myItemId" value="Librasoft" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="database" />
+>>>>>>> Add Migrations for goat
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,6 +597,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
               <option name="myItemId" value="Librasoft" />
@@ -643,11 +727,19 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Auth" />
+=======
+              <option name="myItemId" value="Librasoft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+>>>>>>> Add Migrations for goat
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
       <pane id="Scope" />
@@ -657,12 +749,17 @@
 =======
       <pane id="Scratches" />
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+      <pane id="Scratches" />
+>>>>>>> Add Migrations for goat
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -737,6 +834,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.79415673" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> add plan page with accodrion menu
@@ -748,6 +846,9 @@
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.79415673" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2988048" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Add Migrations for goat
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -775,6 +876,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 23a6f4cf91cd859d5792610adec45885df9d80a1
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -791,6 +893,20 @@
 <<<<<<< HEAD
 >>>>>>> add plan page with accodrion menu
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -810,6 +926,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 =======
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
@@ -823,12 +940,15 @@
             <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+=======
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/95d82787-be3a-46d8-8235-c0ad825620f5/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
           <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
 <<<<<<< HEAD
 >>>>>>> add plan page with accodrion menu
@@ -844,6 +964,9 @@
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
           <folding />
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -852,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,17 +995,25 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
           <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
 <<<<<<< HEAD
 >>>>>>> add plan page with accodrion menu
           <folding />
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -892,9 +1022,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
           <folding />
+=======
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -910,6 +1043,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
           <folding>
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -926,6 +1060,8 @@
 <<<<<<< HEAD
 >>>>>>> add plan page with accodrion menu
           <folding />
+=======
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -942,6 +1078,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
           <folding />
         </state>
       </provider>
@@ -961,6 +1098,8 @@
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
           <folding />
+=======
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -969,15 +1108,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="17.5">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/goal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
         <state vertical-scroll-proportion="-10.0">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.4251825">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -992,6 +1135,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
         </state>
       </provider>
     </entry>
@@ -1059,6 +1203,8 @@
         <state vertical-scroll-proportion="0.48806942">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+=======
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -1072,17 +1218,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlansController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
         <state vertical-scroll-proportion="-8.125">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding />
+=======
+        <state vertical-scroll-proportion="2.6551094">
+          <caret line="97" column="6" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GoalsController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
         <state vertical-scroll-proportion="-8.125">
           <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.7390511">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
@@ -1121,6 +1277,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214641_create_tasks_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.738189">
@@ -1132,11 +1289,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67913383">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> Add Migrations for goat
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
         <state vertical-scroll-proportion="0.11278196">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
@@ -1185,6 +1350,18 @@
 >>>>>>> add plan page with accodrion menu
 =======
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+        <state vertical-scroll-proportion="0.54">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.18907563">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
           <folding />
         </state>
       </provider>
@@ -1224,6 +1401,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
 <<<<<<< HEAD
 <<<<<<< 79eca712435be81a04177eef33bd0e98a3c509b2
         <state vertical-scroll-proportion="-8.125">
@@ -1237,22 +1415,64 @@
         <state vertical-scroll-proportion="-10.0">
           <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
 >>>>>>> ebb63fb593b64123d86e9140aa05c2ba1ab52dec
+=======
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+>>>>>>> Add Migrations for goat
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.791666">
           <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_213724_create_goals_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+>>>>>>> Add Migrations for goat
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 719956cd32de488af82bd123e7a671b583e73aea
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.067961">
           <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+=======
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214138_create_business_plan_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214503_create_objectives_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214549_create_actions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_18_214641_create_tasks_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47268906">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+>>>>>>> Add Migrations for goat
           <folding />
         </state>
       </provider>
