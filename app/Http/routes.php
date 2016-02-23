@@ -36,6 +36,10 @@ Route::get('/tasks', 'TasksController@task');
 Route::get('/tasks/new', 'TasksController@newTask');
 
 
+
+Route::get('plan', 'PlanController@plan');
+
+
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords
 Route::Controllers([
