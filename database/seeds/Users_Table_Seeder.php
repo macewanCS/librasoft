@@ -15,6 +15,8 @@ class Users_Table_Seeder extends Seeder
             'name'=> 'Vicky',
             'email'=> 'vvarga@epl.ca',
             'password'=> bcrypt('vicky'),
+            'department' => 'It Department',
+            'permission' => 'Business Plan Lead',
         ]);
     }
 }
