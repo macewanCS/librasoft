@@ -13,6 +13,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
 <<<<<<< 36cf695409f9117b7a9791394ccf37a5f9becbcc
 <<<<<<< c78d37b8c1f0f1e072515996f56e316be8e0c3c1
                 <div class="form-group" >
@@ -25,6 +26,10 @@
                 <div class="form-group" >
                     <button  type="submit" class="btn btn-primary">Create New Business Plan</button>
 >>>>>>> changing layout of manage blade
+=======
+                <div class="form-group" >
+                    <button  type="submit" class="btn btn-primary">Create New Business Plan</button>
+>>>>>>> ff4d151cf461be4d5cb81fbcc131306b37fafae0
                 </div>
             </div>
         </div>
