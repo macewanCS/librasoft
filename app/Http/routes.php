@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 
-// Route for displaying the page
+
+// Route for deisplaying the page
 
 Route::get('plan', 'PlanController@plan');
 Route::get('manage', 'ManageController@manage');

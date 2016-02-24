@@ -18,7 +18,6 @@ class Objective extends Model
         return $this->belongsTo(Goal::class);
     }
 
-
     public function actions()
     {
         return $this->hasMany(Action::class);
