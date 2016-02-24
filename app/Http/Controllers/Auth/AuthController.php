@@ -23,13 +23,6 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'department',
-    ];
-
 
     /**
      * Where to redirect users after login / registration.
