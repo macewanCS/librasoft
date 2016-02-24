@@ -23,6 +23,14 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'department',
+    ];
+
+
     /**
      * Where to redirect users after login / registration.
      *
@@ -63,6 +71,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        echo $data['department'];
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
