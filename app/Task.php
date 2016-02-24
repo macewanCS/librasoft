@@ -15,6 +15,9 @@ class Task extends Model
         'body', 'date', 'lead', 'collaborators', 'status', 'success'
     ];
 
-
+    public function action()
+    {
+        return $this->belongsTo(Action::class);
+    }
 
 }
