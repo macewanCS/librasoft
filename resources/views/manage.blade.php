@@ -13,8 +13,13 @@
                     </div>
                 </div>
 
+<<<<<<< c78d37b8c1f0f1e072515996f56e316be8e0c3c1
                 <div class="form-group" >
                     <button  type="submit" class="btn btn-primary">Create New Business Plan</button>
+=======
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create New Business Plan</button>
+>>>>>>> add manage view and controller
                 </div>
             </div>
         </div>
