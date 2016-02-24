@@ -15,27 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Temp Routes for plans
-Route::get('/plans', 'PlansController@plan');
-Route::get('/plans/new', 'PlansController@newPlan');
-
-//Temp Routes for Goals
-Route::get('/goals', 'GoalsController@goal');
-Route::get('/goals/new', 'GoalsController@newGoal');
-
-//Temp Routes for Objectives
-Route::get('/objs', 'ObjsController@obj');
-Route::get('/objs/new', 'ObjsController@newObjs');
-
-//Temp Routes for Actions
-Route::get('/actions', 'ActionsController@action');
-Route::get('/actions/new', 'ActionsController@newAction');
-
-//Temp Routes for Tasks
-Route::get('/tasks', 'TasksController@task');
-Route::get('/tasks/new', 'TasksController@newTask');
-
-
 
 Route::get('plan', 'PlanController@plan');
 
