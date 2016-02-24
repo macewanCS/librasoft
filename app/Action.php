@@ -15,6 +15,14 @@ class Action extends Model
         'body', 'date', 'lead', 'collaborators', 'status', 'success'
     ];
 
+    public function objective()
+    {
+        return $this->belongsTo(Objective::class);
+    }
 
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 
 }

@@ -13,5 +13,14 @@ class Goal extends Model
      */
     protected $fillable = ['body'];
 
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function objectives()
+    {
+        return $this->hasMany(Objective::class);
+    }
 
 }
