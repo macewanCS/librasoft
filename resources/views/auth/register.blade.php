@@ -42,11 +42,32 @@
                             <label class="col-md-4 control-label">Department</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="department" value="{{ old('department') }}">
+                                <select class="form-control" name="permission" value="{{ old('department') }}">
+                                    <option> kenneth</option>
+                                    <option> nathan</option>
+                                    <option> jake</option>
+                                    <option> evan</option>
+                                </select>
 
                                 @if ($errors->has('department'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('department') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('permission') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Permission</label>
+
+                            <div class="col-md-6">
+
+                                <select class="form-control" name="permission" value="{{ old('department') }}">
+                                    <option> hello</option>
+                                </select>
+                                @if ($errors->has('permission'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('permission') }}</strong>
                                     </span>
                                 @endif
                             </div>
