@@ -16,35 +16,32 @@
     </div>
 </div>
 
-<!-- Body for accordion-->
-<body>
 <!-- Goal Group -->
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
-    <div class="panel-group" id="accordion">
-
+    <div class="panel-group">
         @foreach($plan->goals as $goal)
 
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
+                    <a data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
                 </h4>
             </div>
 
             <!-- Objective Group-->
-            <div id="collapsegoal{{ $goal->id }}" class="panel-collapse collapse">
+            <div id="collapsegoal{{ $goal->id }}" class="panel-collapse collapse in">
                 <div class="panel-body">
 
                     <body>
                     <div class="bs-example2">
-                        <div class="panel-group" id="accordion2">
+                        <div class="panel-group">
                             <div class="panel panel-default">
 
                                 @foreach($goal->objectives as $objective)
 
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
+                                            <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
                                         </h4>
                                     </div>
                                     <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse">
@@ -53,14 +50,14 @@
 
                                             <!-- Action Group -->
                                             <div class="bs-example3">
-                                                <div class="panel-group" id="accordion3">
+                                                <div class="panel-group" class="active">
                                                     <div class="panel panel-default">
 
                                                         @foreach($objective->actions as $action)
 
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title">
-                                                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapseaction{{ $action->id }}">{{ $action->body }}</a>
+                                                                    <a data-toggle="collapse" href="#collapseaction{{ $action->id }}">{{ $action->body }}</a>
                                                                 </h4>
                                                             </div>
                                                             <div id="collapseaction{{ $action->id }}" class="panel-collapse collapse">
@@ -86,14 +83,14 @@
 
                                                                     <!-- Task Group -->
                                                                     <div class="bs-example4">
-                                                                        <div class="panel-group" id="accordion4">
+                                                                        <div class="panel-group" class="active">
                                                                             <div class="panel panel-default">
 
                                                                                 @foreach($action->tasks as $task)
 
                                                                                     <div class="panel-heading">
                                                                                         <h4 class="panel-title">
-                                                                                            <a data-toggle="collapse" data-parent="#accordion4" href="#collapsetask{{ $task->id }}">{{ $task->body }}</a>
+                                                                                            <a data-toggle="collapse" href="#collapsetask{{ $task->id }}">{{ $task->body }}</a>
                                                                                         </h4>
                                                                                     </div>
                                                                                     <div id="collapsetask{{ $task->id }}" class="panel-collapse collapse">
@@ -153,8 +150,6 @@
         </div>
 
         @endforeach
-
     </div>
 </div>
-</body>
 @endsection
