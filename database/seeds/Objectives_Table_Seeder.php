@@ -25,7 +25,7 @@ class Objectives_Table_Seeder extends Seeder
 
         //3
         DB::table('objectives')->insert([
-            'body'=>" ",
+            'body'=>"(No Name)",
             'goal_id' => 2
         ]);
 
