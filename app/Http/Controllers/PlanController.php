@@ -14,6 +14,7 @@ class PlanController extends Controller
     {
         return view('plan')->with('plan', Plan::first());
     }
+
     public function createPlan() {
         return view('createPlan');
     }
