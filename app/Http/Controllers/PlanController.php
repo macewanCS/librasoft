@@ -15,6 +15,7 @@ class PlanController extends Controller
         return view('plan')->with('plan', Plan::first());
     }
 
+<<<<<<< 2b4b2ac552994244a589aa564ecd4a7bd5c386bc
     public function createPlan() {
         return view('createPlan');
     }
@@ -33,5 +34,9 @@ class PlanController extends Controller
 
     public function createTask() {
         return view('createTask');
+=======
+    public function create() {
+        return view('create');
+>>>>>>> Add wizard route
     }
 }
