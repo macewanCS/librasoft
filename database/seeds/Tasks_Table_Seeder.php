@@ -106,11 +106,11 @@ class Tasks_Table_Seeder extends Seeder
             'lead'=> "Vicky",
             'collaborators'=> "Khalil, Robin, Any",
             'status'=> "",
-            'success'=> "",
-            'action_id'=>2
+            'success'=> "Equipment purchased, configured, and deployed",
+            'action_id'=>3
         ]);
 
-        //9
+        //10
         DB::table('tasks')->insert([
             'body'=> "Implement the approved recommendations from the Lending Machines report",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
@@ -118,7 +118,18 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "Rachael Collins",
             'status'=> "",
             'success'=> "",
-            'action_id'=>3
+            'action_id'=>4
+        ]);
+
+        //11
+        DB::table('tasks')->insert([
+            'body'=> "Provide planning support for eplGo North (MCN)",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'lead'=> "Vicky",
+            'collaborators'=> "FAC, CMA, LON",
+            'status'=> "",
+            'success'=> "",
+            'action_id'=>5
         ]);
 
         //10
@@ -129,10 +140,32 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "CMA",
             'status'=> "",
             'success'=> "SSO is implemented",
-            'action_id'=>4
+            'action_id'=>7
         ]);
 
         //11
+        DB::table('tasks')->insert([
+            'body'=> "Release more EPL open data to City of Edmonton open data portal",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'lead'=> "Alex Carruthers",
+            'collaborators'=> "Andrew Nisbet",
+            'status'=> "",
+            'success'=> "",
+            'action_id'=>8
+        ]);
+
+        //12
+        DB::table('tasks')->insert([
+            'body'=> "Purchase hardware for mini-makerspaces at CSD, WOO, IDY, STR",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'lead'=> "Vicky",
+            'collaborators'=> "",
+            'status'=> "",
+            'success'=> "",
+            'action_id'=>9
+        ]);
+
+        //13
         DB::table('tasks')->insert([
             'body'=> "Provision iPads for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
@@ -140,10 +173,10 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "Vicky",
             'status'=> "",
             'success'=> "",
-            'action_id'=>4
+            'action_id'=>9
         ]);
 
-        //12
+        //14
         DB::table('tasks')->insert([
             'body'=> "Provision laptops for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
@@ -151,10 +184,76 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "Jamie/John",
             'status'=> "",
             'success'=> "",
-            'action_id'=>4
+            'action_id'=>9
         ]);
 
-        //13
+        //15
+        DB::table('tasks')->insert([
+            'body'=> "Support the ILS team's implementation of Mobile circ, including purchasing peripherals and configuring branch iPads",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'lead'=> "Vicky/Khalil",
+            'collaborators'=> "",
+            'status'=> "",
+            'success'=> "Mobile Circ rolled out",
+            'action_id'=>10
+        ]);
+
+        //16
+        DB::table('tasks')->insert([
+            'body'=> "Purchase new iPad kits for each branch currently without one per budget request",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'lead'=> "Vicky",
+            'collaborators'=> "",
+            'status'=> "",
+            'success'=> "iPads configured and deployed",
+            'action_id'=>10
+        ]);
+
+        //17
+        DB::table('tasks')->insert([
+            'body'=> "Provision iPad kits",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
+            'lead'=> "Khalil",
+            'collaborators'=> "",
+            'status'=> "",
+            'success'=> "iPads configured and deployed",
+            'action_id'=>10
+        ]);
+
+        //18
+        DB::table('tasks')->insert([
+            'body'=> "In collaboration with DLI, select equipment to replace aging Makerspace equipment",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
+            'lead'=> "Vicky",
+            'collaborators'=> "DLI, MNA",
+            'status'=> "",
+            'success'=> "New equipment selected, purchased, and deployed",
+            'action_id'=>10
+        ]);
+
+        //19
+        DB::table('tasks')->insert([
+            'body'=> "Implement a regular \"What's up with that?\" style blog post by IT to enhance staff understanding of technology",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'lead'=> "Any",
+            'collaborators'=> "",
+            'status'=> "",
+            'success'=> "Blogs posted on a regular schedule",
+            'action_id'=>10
+        ]);
+
+        //20
+        DB::table('tasks')->insert([
+            'body'=> "Stabilize and standardize the display board environment",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
+            'lead'=> "Vicky",
+            'collaborators'=> "JD",
+            'status'=> "",
+            'success'=> "All display boards are functional",
+            'action_id'=>10
+        ]);
+
+        //21
         DB::table('tasks')->insert([
             'body'=> "Compare IT's current ticketing sytems against demos of inexpensive, focused ticketing systems to determine if a migration can and should occur.",
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
@@ -162,7 +261,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "PUR",
             'status'=> "",
             'success'=> "Demos are completed and a recommendation for which system best meets EPL's needs is forwarded",
-            'action_id'=>5
+            'action_id'=>11
         ]);
 
         //14
@@ -173,7 +272,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "",
             'success'=> "Report forwarded with recommendations",
-            'action_id'=>5
+            'action_id'=>11
         ]);
 
         //15
@@ -184,7 +283,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "",
             'success'=> "Document created",
-            'action_id'=>5
+            'action_id'=>11
         ]);
     }
 }
