@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('plan', 'PlanController@plan');
 Route::get('manage', 'ManageController@manage');
+Route::get('goal', 'GoalsController@index');
 
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords
