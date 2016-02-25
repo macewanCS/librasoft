@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 
-// Route for deisplaying the page
+// Route for displaying the page
 
 Route::get('plan', 'PlanController@plan');
 Route::get('manage', 'ManageController@manage');
@@ -42,6 +42,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('plan', 'PlanController@plan');
     Route::get('manage', 'ManageController@manage');
+    Route::get('plan/new', 'PlanController@create');
 });
 
 
