@@ -35,7 +35,12 @@ Route::Controllers([
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('plan', 'PlanController@plan');
+    Route::get('manage', 'ManageController@manage');
 });
 
 
