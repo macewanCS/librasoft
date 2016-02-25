@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Objective;
 use Illuminate\Http\Request;
 
 use App\Goal;
