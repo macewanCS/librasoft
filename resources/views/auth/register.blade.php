@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -42,11 +43,11 @@
                             <label class="col-md-4 control-label">Department</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="permission" value="{{ old('department') }}">
-                                    <option> kenneth</option>
-                                    <option> nathan</option>
-                                    <option> jake</option>
-                                    <option> evan</option>
+                                <select class="form-control" name="department" value="{{ old('department') }}">
+                                    {{$departments = \App\Department::all()}}
+                                    @foreach( $departments as $department)
+                                        <option> {{$department->name}} </option>
+                                    @endforeach
                                 </select>
 
                                 @if ($errors->has('department'))
