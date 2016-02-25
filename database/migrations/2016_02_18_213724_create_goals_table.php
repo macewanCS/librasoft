@@ -16,6 +16,7 @@ class CreateGoalsTable extends Migration
             $table->increments('id');
             $table->text('body');
             $table->timestamps();
+            $table->integer('plan_id')->unsigned();
         });
     }
 

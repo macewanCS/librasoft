@@ -17,7 +17,8 @@ class Actions_Table_Seeder extends Seeder
             'lead'=> "Vicky Varga",
             'collaborators'=> "IT, DLI",
             'status'=> "Projects in each of 2014, 2015, 2016",
-            'success'=> "Achieve a 90% completion rating; Increase computer usage by 20%"
+            'success'=> "Achieve a 90% completion rating; Increase computer usage by 20%",
+            'objective_id'=>1
         ]);
     }
 }

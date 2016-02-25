@@ -17,7 +17,8 @@ class Tasks_Table_Seeder extends Seeder
             'lead'=> "Vicky, John",
             'collaborators'=> "",
             'status'=> "",
-            'success'=> ""
+            'success'=> "",
+            'action_id'=>1
         ]);
     }
 }

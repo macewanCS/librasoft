@@ -16,6 +16,7 @@ class CreateObjectivesTable extends Migration
             $table->increments('id');
             $table->text('body');
             $table->timestamps();
+            $table->integer('goal_id')->unsigned();
         });
     }
 
