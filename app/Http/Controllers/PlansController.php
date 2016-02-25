@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class PlansController extends Controller
 {
     public function plan() {
-        return view('layouts.plan');
+        return view('plan');
     }
 
     public function newPlan() {

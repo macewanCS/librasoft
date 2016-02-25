@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class ObjsController extends Controller
 {
     public function obj() {
-        return view('layouts.obj');
+        return view('obj');
     }
 
     public function newObjs() {

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class ActionsController extends Controller
 {
     public function action() {
-        return view('layouts.action');
+        return view('action');
     }
 
     public function newAction() {

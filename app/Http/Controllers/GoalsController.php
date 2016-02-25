@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class GoalsController extends Controller
 {
     public function goal() {
-        return view('layouts.goal');
+        return view('goal');
     }
 
     public function newGoal() {
