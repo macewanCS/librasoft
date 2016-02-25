@@ -42,7 +42,11 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('plan', 'PlanController@plan');
     Route::get('manage', 'ManageController@manage');
-    Route::get('plan/new', 'PlanController@create');
+    Route::get('plan/new', 'PlanController@createPlan');
+    Route::get('plan/new/goal', 'PlanController@createGoal');
+    Route::get('plan/new/obj', 'PlanController@createObj');
+    Route::get('plan/new/action', 'PlanController@createAction');
+    Route::get('plan/new/task', 'PlanController@createTask');
 });
 
 
