@@ -22,7 +22,7 @@
                         <body>
                         <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
                             <div class="panel-group" id="accordion">
-                                @foreach ($objectives as $objective)
+                                @foreach ($goal->objectives as $objective)
                                     {{!!!$counter++}}
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
