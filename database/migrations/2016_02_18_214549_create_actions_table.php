@@ -21,6 +21,7 @@ class CreateActionsTable extends Migration
             $table->text('status');
             $table->text('success');
             $table->timestamps();
+            $table->integer('objective_id')->unsigned();
         });
     }
 

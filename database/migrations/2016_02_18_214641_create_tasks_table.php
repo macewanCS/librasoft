@@ -21,6 +21,7 @@ class CreateTasksTable extends Migration
             $table->text('status');
             $table->text('success');
             $table->timestamps();
+            $table->integer('action_id')->unsigned();
         });
     }
 

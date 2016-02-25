@@ -12,7 +12,8 @@ class Objectives_Table_Seeder extends Seeder
     public function run()
     {
         DB::table('objectives')->insert([
-            'body'=> "Objective 1c: We Identify and Meet Community Needs"
+            'body'=> "Objective 1c: We Identify and Meet Community Needs",
+            'goal_id' => 1
         ]);
     }
 }
