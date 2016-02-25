@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class TasksController extends Controller
 {
     public function task() {
-        return view('layouts.task');
+        return view('task');
     }
 
     public function newTask() {
