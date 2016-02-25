@@ -21,7 +21,6 @@ class GoalsController extends Controller
         $goals = Goal::all();
 
         return view('Goal.index', compact('goals'));
-
     }
 
 
