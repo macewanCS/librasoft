@@ -18,6 +18,7 @@
 
 <!-- Body for accordion-->
 <body>
+<!-- Goal Group -->
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
     <div class="panel-group" id="accordion">
 
@@ -29,9 +30,11 @@
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
                 </h4>
             </div>
-            <div id="collapsegoal{{ $goal->id }}" class="panel-collapse collapse in">
+
+            <!-- Objective Group-->
+            <div id="collapsegoal{{ $goal->id }}" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <!-- Body for accordion 2-->
+
                     <body>
                     <div class="bs-example2">
                         <div class="panel-group" id="accordion2">
@@ -44,10 +47,11 @@
                                             <a data-toggle="collapse" data-parent="#accordion2" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
                                         </h4>
                                     </div>
-                                    <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse in">
+                                    <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <!--<p>{{ $objective->body }}</p>-->
 
+                                            <!-- Action Group -->
                                             <div class="bs-example3">
                                                 <div class="panel-group" id="accordion3">
                                                     <div class="panel panel-default">
@@ -59,10 +63,28 @@
                                                                     <a data-toggle="collapse" data-parent="#accordion3" href="#collapseaction{{ $action->id }}">{{ $action->body }}</a>
                                                                 </h4>
                                                             </div>
-                                                            <div id="collapseaction{{ $action->id }}" class="panel-collapse collapse in">
+                                                            <div id="collapseaction{{ $action->id }}" class="panel-collapse collapse">
                                                                 <div class="panel-body">
-                                                                    <!--<p>{{ $action->body }}</p>-->
 
+                                                                    <!-- Action table -->
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Due</th>
+                                                                            <th>Lead</th>
+                                                                            <th>Collaborators</th>
+                                                                            <th>Status</th>
+                                                                            <th>Success Measures</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>{{ $action->date }}</td>
+                                                                            <td>{{ $action->lead }}</td>
+                                                                            <td>{{ $action->collaborators }}</td>
+                                                                            <td>{{ $action->status }}</td>
+                                                                            <td>{{ $action->success }}</td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                                    <!-- Task Group -->
                                                                     <div class="bs-example4">
                                                                         <div class="panel-group" id="accordion4">
                                                                             <div class="panel panel-default">
@@ -71,12 +93,33 @@
 
                                                                                     <div class="panel-heading">
                                                                                         <h4 class="panel-title">
-                                                                                            <a data-toggle="collapse" data-parent="#accordion4" href="#collapsetask{{ $task->id }}">Task {{ $task->id }}</a>
+                                                                                            <a data-toggle="collapse" data-parent="#accordion4" href="#collapsetask{{ $task->id }}">{{ $task->body }}</a>
                                                                                         </h4>
                                                                                     </div>
-                                                                                    <div id="collapsetask{{ $task->id }}" class="panel-collapse collapse in">
+                                                                                    <div id="collapsetask{{ $task->id }}" class="panel-collapse collapse">
                                                                                         <div class="panel-body">
-                                                                                            <p>{{ $task->body }}</p>
+
+                                                                                            <!-- Task table -->
+
+                                                                                            <table class="table">
+
+                                                                                                <tr>
+                                                                                                    <th>Due</th>
+                                                                                                    <th>Lead</th>
+                                                                                                    <th>Collaborators</th>
+                                                                                                    <th>Status</th>
+                                                                                                    <th>Success Measures</th>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td>{{ $task->date }}</td>
+                                                                                                    <td>{{ $task->lead }}</td>
+                                                                                                    <td>{{ $task->collaborators }}</td>
+                                                                                                    <td>{{ $task->status }}</td>
+                                                                                                    <td>{{ $task->success }}</td>
+                                                                                                </tr>
+
+                                                                                            </table>
+
                                                                                         </div>
                                                                                     </div>
 
