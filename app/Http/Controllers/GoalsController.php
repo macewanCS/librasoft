@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Objective;
 use Illuminate\Http\Request;
 
 use App\Goal;
@@ -20,7 +21,6 @@ class GoalsController extends Controller
         $goals = Goal::all();
 
         return view('Goal.index', compact('goals'));
-
     }
 
 
