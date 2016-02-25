@@ -152,4 +152,13 @@
         @endforeach
     </div>
 </div>
+
+</body>
+
+<form method="get" action="/plan/new">
+    <div class="form-group" style="padding-left: 40px; padding-right: 40px">
+        <button type="submit" class="btn btn-primary">Create New Business Plan</button>
+    </div>
+</form>
+
 @endsection
