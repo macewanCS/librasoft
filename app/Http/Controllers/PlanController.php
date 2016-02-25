@@ -14,4 +14,24 @@ class PlanController extends Controller
     {
         return view('plan')->with('plan', Plan::first());
     }
+
+    public function createPlan() {
+        return view('createPlan');
+    }
+
+    public function createGoal() {
+        return view('createGoal');
+    }
+
+    public function createObj() {
+        return view('createObj');
+    }
+
+    public function createAction() {
+        return view('createAction');
+    }
+
+    public function createTask() {
+        return view('createTask');
+    }
 }
