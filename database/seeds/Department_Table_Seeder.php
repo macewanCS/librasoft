@@ -15,5 +15,20 @@ class Department_Table_Seeder extends Seeder
         DB::table('departments')->insert([
             'name' => "IT"
         ]);
+
+        //2
+        DB::table('departments')->insert([
+            'name' => "Human Resources"
+        ]);
+
+        //3
+        DB::table('departments')->insert([
+            'name' => "Marketing"
+        ]);
+
+        //4
+        DB::table('departments')->insert([
+            'name' => "Finance"
+        ]);
     }
 }
