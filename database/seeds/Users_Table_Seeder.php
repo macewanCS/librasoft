@@ -18,5 +18,14 @@ class Users_Table_Seeder extends Seeder
             'department' => 'It Department',
             'permission' => 'Business Plan Lead',
         ]);
+
+        DB::table('users')->insert([
+            'name'=> 'Admin',
+            'email'=> 'admin@epl.ca',
+            'password'=> bcrypt('password'),
+            'department' => 'Admin',
+            'permission' => 'Admin',
+        ]);
+
     }
 }

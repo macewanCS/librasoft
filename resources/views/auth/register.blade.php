@@ -45,6 +45,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="department" value="{{ old('department') }}">
                                     {{$departments = \App\Department::all()}}
+                                    <option>  </option>
                                     @foreach( $departments as $department)
                                         <option> {{$department->name}} </option>
                                     @endforeach
@@ -60,11 +61,12 @@
 
                         <div class="form-group{{ $errors->has('permission') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Permission</label>
-
                             <div class="col-md-6">
-
-                                <select class="form-control" name="permission" value="{{ old('department') }}">
-                                    <option> hello</option>
+                                <select class="form-control" name="permission" value="{{ old('permission') }}">
+                                    <option> Admin </option>
+                                    <option> Business Plan Lead </option>
+                                    <option> Basic user </option>
+                                    <option> Read Only </option>
                                 </select>
                                 @if ($errors->has('permission'))
                                     <span class="help-block">
