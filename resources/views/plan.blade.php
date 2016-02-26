@@ -1,28 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-        <!-- div for filter options-->
-<div class="container">
-    <div>
-        <div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Filter</div>
-
-                <div class="panel-body">
-                    stuff and more stuff
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Goal Group -->
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
-    <div class="panel-group">
+    <div class="panel-group" >
         @foreach($plan->goals as $goal)
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
+        <div class="panel panel-default" >
+            <div class="panel-heading" style="background: #009FD7">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
                 </h4>
