@@ -8,6 +8,8 @@ use Kodeine\Acl\Traits\HasRole;
 
 class User extends Model implements AuthenticatableContract, CanResetPassword
 {
+    use \Illuminate\Auth\Authenticatable, \Illuminate\Auth\Passwords\CanResetPassword, HasRole;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,8 +22,6 @@ class User extends Model implements AuthenticatableContract, CanResetPassword
         'department',
         'permission',
     ];
-
-    use \Illuminate\Auth\Authenticatable, \Illuminate\Auth\Passwords\CanResetPassword, HasRole;
 
     /**
      * The attributes excluded from the model's JSON form.
