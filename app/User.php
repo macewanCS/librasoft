@@ -2,9 +2,11 @@
 
 namespace App;
 
+use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Kodeine\Acl\Traits\HasRole;
 
-class User extends Authenticatable
+class User extends Model implements AuthenticatableContract, CanResetPassword
 {
     /**
      * The attributes that are mass assignable.
@@ -18,6 +20,8 @@ class User extends Authenticatable
         'department',
         'permission',
     ];
+
+    use \Illuminate\Auth\Authenticatable, \Illuminate\Auth\Passwords\CanResetPassword, HasRole;
 
     /**
      * The attributes excluded from the model's JSON form.
