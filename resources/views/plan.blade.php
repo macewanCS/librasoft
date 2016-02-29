@@ -2,19 +2,13 @@
 
 @section('content')
         <!-- div for filter options-->
-<div class="container">
-    <div>
-        <div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Filter</div>
+<!--<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Filter</div>
 
-                <div class="panel-body">
-                    stuff and more stuff
-                </div>
-            </div>
-        </div>
+        <div class="panel-body"></div>
     </div>
-</div>
+</div>-->
 
 <!-- Goal Group -->
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
@@ -44,6 +38,7 @@
                                             <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
                                         </h4>
                                     </div>
+                                
                                     <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <!--<p>{{ $objective->body }}</p>-->
