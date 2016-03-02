@@ -33,7 +33,7 @@
 
                                 @foreach($goal->objectives as $objective)
 
-                                    <div class="panel-heading">
+                                    <div class="panel-heading" >
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
                                         </h4>
