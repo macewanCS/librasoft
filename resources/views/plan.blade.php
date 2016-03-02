@@ -38,7 +38,7 @@
                                             <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
                                         </h4>
                                     </div>
-                                
+
                                     <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <!--<p>{{ $objective->body }}</p>-->
@@ -50,40 +50,42 @@
 
                                                         @foreach($objective->actions as $action)
 
+                                                            <!-- Action header -->
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title">
                                                                     <a data-toggle="collapse" href="#collapseaction{{ $action->id }}">{{ $action->body }}</a>
                                                                 </h4>
+                                                                <br/>
+                                                                <table class="table table-condensed" style="width: 75%; margin: auto;">
+                                                                    <tr>
+                                                                        <th>Due</th>
+                                                                        <th>Lead</th>
+                                                                        <th>Collaborators</th>
+                                                                        <th>Status</th>
+                                                                        <th>Success Measures</th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>{{ $action->date }}</td>
+                                                                        <td>{{ $action->lead }}</td>
+                                                                        <td>{{ $action->collaborators }}</td>
+                                                                        <td>{{ $action->status }}</td>
+                                                                        <td>{{ $action->success }}</td>
+                                                                    </tr>
+                                                                </table>
                                                             </div>
+
+                                                            <!-- Action body -->
                                                             <div id="collapseaction{{ $action->id }}" class="panel-collapse collapse">
                                                                 <div class="panel-body">
-
-                                                                    <!-- Action table -->
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Due</th>
-                                                                            <th>Lead</th>
-                                                                            <th>Collaborators</th>
-                                                                            <th>Status</th>
-                                                                            <th>Success Measures</th>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>{{ $action->date }}</td>
-                                                                            <td>{{ $action->lead }}</td>
-                                                                            <td>{{ $action->collaborators }}</td>
-                                                                            <td>{{ $action->status }}</td>
-                                                                            <td>{{ $action->success }}</td>
-                                                                        </tr>
-                                                                    </table>
 
                                                                     <!-- Task Group -->
                                                                     <div class="bs-example4">
                                                                         <div class="panel-group" class="active">
                                                                             <div class="panel panel-default">
 
-                                                                                @foreach($action->tasks as $task)
 
-                                                                                    <div class="panel-heading">
+
+                                                                                    {{--<div class="panel-heading">
                                                                                         <h4 class="panel-title">
                                                                                             <a data-toggle="collapse" href="#collapsetask{{ $task->id }}">{{ $task->body }}</a>
                                                                                         </h4>
@@ -113,9 +115,37 @@
                                                                                             </table>
 
                                                                                         </div>
-                                                                                    </div>
+                                                                                    </div>--}}
 
-                                                                                @endforeach
+                                                                                    <table class="table table-striped table-bordered table-hover">
+
+                                                                                        <!-- Header -->
+                                                                                        <tr>
+                                                                                            <th>Number</th>
+                                                                                            <th>Task</th>
+                                                                                            <th>Due</th>
+                                                                                            <th>Lead</th>
+                                                                                            <th>Collaborators</th>
+                                                                                            <th>Status</th>
+                                                                                            <th>Success Measures</th>
+                                                                                        </tr>
+                                                                                        <!-- /Header -->
+                                                                                        @foreach($action->tasks as $task)
+                                                                                        <!-- Body -->
+                                                                                        <tr>
+                                                                                            <td>{{ $task->id }}</td>
+                                                                                            <td>{{ $task->body }}</td>
+                                                                                            <td>{{ $task->date }}</td>
+                                                                                            <td>{{ $task->lead }}</td>
+                                                                                            <td>{{ $task->collaborators }}</td>
+                                                                                            <td>{{ $task->status }}</td>
+                                                                                            <td>{{ $task->success }}</td>
+                                                                                        </tr>
+                                                                                        @endforeach
+                                                                                        <!-- /Body -->
+
+                                                                                    </table>
+
 
                                                                             </div>
                                                                         </div>

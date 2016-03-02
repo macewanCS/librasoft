@@ -13,7 +13,7 @@ class Actions_Table_Seeder extends Seeder
     {
         // 1
         DB::table('actions')->insert([
-            'body'=> "Action 1.13: Review public computing needs and develop strategies to meet hose needs",
+            'body'=> "Action 1.13: Review public computing needs and develop strategies to meet those needs",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky Varga",
             'collaborators'=> "IT, DLI",
