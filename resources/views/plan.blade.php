@@ -15,7 +15,7 @@
     <div class="panel-group" >
         @foreach($plan->goals as $goal)
 
-        <div class="panel panel-default" >
+        <div class="panel panel-primary" >
             <div class="panel-heading" style="background: #009FD7">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
@@ -134,7 +134,11 @@
                                                                                         <!-- Body -->
                                                                                         <tr>
                                                                                             <td>{{ $task->id }}</td>
-                                                                                            <td>{{ $task->body }}</td>
+                                                                                            <td>
+                                                                                                <a href="tasks/{{ $task->id }}">
+                                                                                                    {{ $task->body }}
+                                                                                                </a>
+                                                                                            </td>
                                                                                             <td>{{ $task->date }}</td>
                                                                                             <td>{{ $task->lead }}</td>
                                                                                             <td>{{ $task->collaborators }}</td>
