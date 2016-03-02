@@ -87,25 +87,34 @@
 
                                                                                         <!-- Header -->
                                                                                         <tr>
-                                                                                            <th>Owner</th>
                                                                                             <th>Task</th>
                                                                                             <th>Due</th>
+                                                                                            <th>Owner</th>
                                                                                             <th>Lead</th>
                                                                                             <th>Status</th>
                                                                                         </tr>
                                                                                         <!-- /Header -->
-                                                                                        @foreach($action->tasks as $task)
+
                                                                                         <!-- Body -->
+                                                                                        @foreach($action->tasks as $task)
                                                                                         <tr>
-                                                                                            <td>{{ $task->owner }}</td>
                                                                                             <td>
                                                                                                 <a href="tasks/{{ $task->id }}">
                                                                                                     {{ $task->body }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td>{{ $task->date }}</td>
+                                                                                            <td>{{ $task->owner }}</td>
                                                                                             <td>{{ $task->lead }}</td>
-                                                                                            <td>{{ $task->status }}</td>
+                                                                                            <td>
+                                                                                                <?php
+                                                                                                    if ($task->status == "done") {
+                                                                                                        echo "Done";
+                                                                                                    } else {
+                                                                                                        echo "In progress";
+                                                                                                    }
+                                                                                                ?>
+                                                                                            </td>
                                                                                         </tr>
                                                                                         @endforeach
                                                                                         <!-- /Body -->
