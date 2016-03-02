@@ -121,7 +121,7 @@
 
                                                                                         <!-- Header -->
                                                                                         <tr>
-                                                                                            <th>Number</th>
+                                                                                            <th>Owner</th>
                                                                                             <th>Task</th>
                                                                                             <th>Due</th>
                                                                                             <th>Lead</th>
@@ -131,7 +131,7 @@
                                                                                         @foreach($action->tasks as $task)
                                                                                         <!-- Body -->
                                                                                         <tr>
-                                                                                            <td>{{ $task->id }}</td>
+                                                                                            <td>{{ $task->owner }}</td>
                                                                                             <td>
                                                                                                 <a href="tasks/{{ $task->id }}">
                                                                                                     {{ $task->body }}
