@@ -13,7 +13,7 @@ class Tasks_Table_Seeder extends Seeder
     {
         //1
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Implement approved recommendations from the 2015 Public Computing Report",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky Varga",
@@ -25,7 +25,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //2
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Upgrade LibOnline to the latest version (4.9)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Michael/Luc",
@@ -37,7 +37,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //3
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Implement wireless printing",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky/John",
@@ -49,7 +49,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //4
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Investigate and prepare to replace LibOnline in 2017 with business case, budged request, and high level migration plan",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -61,7 +61,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //5
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Investigate options for new customer technology in collaboration with CMA/collections & Teams (eg Adult iPad installations; gaming floor projectors)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -73,7 +73,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //6
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Investigate and implement options to improve service options with WiFi",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Manager, IT Infrastructure/Luc Michael",
@@ -85,7 +85,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //7
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Improve user security and privacy on public computers by adding browser plugins such as Web of Trust",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Manager, IT Infrastructure/Luc Michael",
@@ -97,7 +97,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //8
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Provide planning assistance to the Customer Payments team to implement the necessary changes to support a Fine Free day",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -109,7 +109,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //9
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Aid in the selection, purchase, and configuration of equipment for the fourth literacy van",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -121,7 +121,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //10
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Implement the approved recommendations from the Lending Machines report",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -133,7 +133,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //11
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Provide planning support for eplGo North (MCN)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -145,7 +145,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //10
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Liase with Sirsi Dynix to support CMA's Single Sign On (SSO) project",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky/Andrew/Chris",
@@ -157,7 +157,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //11
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Release more EPL open data to City of Edmonton open data portal",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Alex Carruthers",
@@ -169,7 +169,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //12
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Purchase hardware for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -181,7 +181,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //13
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Provision iPads for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Khalil",
@@ -193,7 +193,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //14
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Provision laptops for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Robin",
@@ -205,7 +205,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //15
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Support the ILS team's implementation of Mobile circ, including purchasing peripherals and configuring branch iPads",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky/Khalil",
@@ -217,7 +217,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //16
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Purchase new iPad kits for each branch currently without one per budget request",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -229,7 +229,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //17
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Provision iPad kits",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Khalil",
@@ -241,7 +241,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //18
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "In collaboration with DLI, select equipment to replace aging Makerspace equipment",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -253,7 +253,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //19
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Implement a regular \"What's up with that?\" style blog post by IT to enhance staff understanding of technology",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Any",
@@ -265,7 +265,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //20
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Stabilize and standardize the display board environment",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -277,7 +277,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //21
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Compare IT's current ticketing sytems against demos of inexpensive, focused ticketing systems to determine if a migration can and should occur.",
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "Vicky",
@@ -289,7 +289,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //14
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Conduct a literature review of Help Desk best practices to determine how EPL's processes can be improved",
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "Vicky/Any",
@@ -301,7 +301,7 @@ class Tasks_Table_Seeder extends Seeder
 
         //15
         DB::table('tasks')->insert([
-            'department'=> "It ",
+            'owner'=> "It ",
             'body'=> "Create an Internal Service Level Agreement document outlining IT's processes and commitments to its customers",
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "Vicky/Any",
