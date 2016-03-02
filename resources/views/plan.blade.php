@@ -82,46 +82,11 @@
                                                                     <div class="bs-example4">
                                                                         <div class="panel-group" class="active">
                                                                             <div class="panel panel-default">
-
-
-
-                                                                                    {{--<div class="panel-heading">
-                                                                                        <h4 class="panel-title">
-                                                                                            <a data-toggle="collapse" href="#collapsetask{{ $task->id }}">{{ $task->body }}</a>
-                                                                                        </h4>
-                                                                                    </div>
-                                                                                    <div id="collapsetask{{ $task->id }}" class="panel-collapse collapse">
-                                                                                        <div class="panel-body">
-
-                                                                                            <!-- Task table -->
-
-                                                                                            <table class="table">
-
-                                                                                                <tr>
-                                                                                                    <th>Due</th>
-                                                                                                    <th>Lead</th>
-                                                                                                    <th>Collaborators</th>
-                                                                                                    <th>Status</th>
-                                                                                                    <th>Success Measures</th>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td>{{ $task->date }}</td>
-                                                                                                    <td>{{ $task->lead }}</td>
-                                                                                                    <td>{{ $task->collaborators }}</td>
-                                                                                                    <td>{{ $task->status }}</td>
-                                                                                                    <td>{{ $task->success }}</td>
-                                                                                                </tr>
-
-                                                                                            </table>
-
-                                                                                        </div>
-                                                                                    </div>--}}
-
                                                                                     <table class="table table-striped table-bordered table-hover">
 
                                                                                         <!-- Header -->
                                                                                         <tr>
-                                                                                            <th>Number</th>
+                                                                                            <th>Owner</th>
                                                                                             <th>Task</th>
                                                                                             <th>Due</th>
                                                                                             <th>Lead</th>
@@ -133,7 +98,7 @@
                                                                                         @foreach($action->tasks as $task)
                                                                                         <!-- Body -->
                                                                                         <tr>
-                                                                                            <td>{{ $task->id }}</td>
+                                                                                            <td>{{ $task->owner }}</td>
                                                                                             <td>{{ $task->body }}</td>
                                                                                             <td>{{ $task->date }}</td>
                                                                                             <td>{{ $task->lead }}</td>
