@@ -147,7 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Kodeine\Acl\AclServiceProvider::class,
+        //Kodeine\Acl\AclServiceProvider::class,
 
         /*
          * Application Service Providers...
