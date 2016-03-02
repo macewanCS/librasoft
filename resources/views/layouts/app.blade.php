@@ -64,9 +64,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li style="padding-top: 80px; font-size: 25px; " ><a href="{{ url('/') }}">Home</a></li>
+                    <li style="padding-top: 80px; font-size: 25px; " ><a href="{{ url('/') }}">My Work</a></li>
                     <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/plan') }}">Plan</a></li>
-                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/manage') }}">Manage Plan</a></li>
+                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/manage') }}">Archives</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
