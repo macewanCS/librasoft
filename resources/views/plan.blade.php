@@ -125,9 +125,7 @@
                                                                                             <th>Task</th>
                                                                                             <th>Due</th>
                                                                                             <th>Lead</th>
-                                                                                            <th>Collaborators</th>
                                                                                             <th>Status</th>
-                                                                                            <th>Success Measures</th>
                                                                                         </tr>
                                                                                         <!-- /Header -->
                                                                                         @foreach($action->tasks as $task)
@@ -141,9 +139,7 @@
                                                                                             </td>
                                                                                             <td>{{ $task->date }}</td>
                                                                                             <td>{{ $task->lead }}</td>
-                                                                                            <td>{{ $task->collaborators }}</td>
                                                                                             <td>{{ $task->status }}</td>
-                                                                                            <td>{{ $task->success }}</td>
                                                                                         </tr>
                                                                                         @endforeach
                                                                                         <!-- /Body -->
