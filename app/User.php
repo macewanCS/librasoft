@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Kodeine\Acl\Traits\HasRole;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Model implements AuthenticatableContract, CanResetPassword
+class User extends Model
 {
     use \Illuminate\Auth\Authenticatable, \Illuminate\Auth\Passwords\CanResetPassword, HasRole;
 
