@@ -17,11 +17,11 @@ class Users_Table_Seeder extends Seeder
         $vicky = $user->create([
             'name'          => 'Vicky',
             'email'         => 'vvarga@epl.ca',
-            'password'      => bcrypt('vicky'),
+            'password'      => bcrypt('vicky123'),
             'department'    => 'IT',
             'permission'    => 'BPLead'
         ]);
-        $vicky->assignRole('bpLead');
+        $vicky->assignRole('bplead');
 
         $admin = $user->create([
             'name'=> 'Admin',
