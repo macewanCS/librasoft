@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Kodeine\Acl\Models\Eloquent\Role;
 
 class Roles_Table_Seeder extends Seeder
 {
@@ -11,29 +12,34 @@ class Roles_Table_Seeder extends Seeder
      */
     public function run()
     {
+        $role = new Role();
 
-        DB::table('roles')->insert([
+        $roleAdmin = $role->create([
             'name'=> 'Admin',
-            'slug'=> 'administration',
+            'slug'=> 'admin',
             'description'=> 'Manage Administration privileges'
         ]);
+        $roleAdmin->assignPermission('goal', 'objective', 'action', 'task', 'user');
 
-        DB::table('roles')->insert([
+        $rolebpLead = $role->create([
+            'name'=> 'BPLead',
+            'slug'=> 'bpLead',
+            'description'=> 'Manage Business Plan privileges'
+        ]);
+        $rolebpLead->assignPermission('goal');
+
+        $roledepLead = $role->create([
             'name'=> 'DepLead',
             'slug'=> 'depLead',
             'description'=> 'Manage Department Lead privileges'
         ]);
+        $roledepLead->assignPermission('objective');
 
-        DB::table('roles')->insert([
+        $roleteamLead = $role->create([
             'name'=> 'TeamLead',
             'slug'=> 'teamLead',
             'description'=> 'Manage Team Lead privileges'
         ]);
-
-        DB::table('roles')->insert([
-            'name'=> 'User',
-            'slug'=> 'user',
-            'description'=> 'Manage User privileges'
-        ]);
+        $roleteamLead->assignPermission('action');
     }
 }

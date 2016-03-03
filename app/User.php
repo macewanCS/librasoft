@@ -2,14 +2,14 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\CanResetPassword;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Auth\Authenticatable;
 use Kodeine\Acl\Traits\HasRole;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    use \Illuminate\Auth\Authenticatable, \Illuminate\Auth\Passwords\CanResetPassword, HasRole;
+    use Authenticatable, CanResetPassword, HasRole;
 
     /**
      * The attributes that are mass assignable.
