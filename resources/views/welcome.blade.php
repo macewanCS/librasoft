@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" class="row" class="col-md-10 col-md-offset-1">
+<div class="bs-example" style="padding-left: 40px; padding-right: 40px;" >
     <div class="panel panel-primary">
         <div class="panel-heading" style="background: #009FD7">In-Progress</div>
 
-        <div class="panel-body">
+        <div class="panel-body" style="padding: 0px">
             <?php
-            $task = DB::table('tasks')->first()
+            $myTasks = DB::table('tasks')->take(2)->get()
             ?>
                 <table class="table table-striped table-bordered table-hover">
 
@@ -22,6 +22,7 @@
                     <!-- /Header -->
 
                     <!-- Body -->
+                    @foreach($myTasks as $task)
                     <tr>
                         <td>
                             <a href="tasks/{{ $task->id }}">
@@ -41,6 +42,7 @@
                             ?>
                         </td>
                     </tr>
+                    @endforeach
                     <!-- /Body -->
 
                 </table>
@@ -49,12 +51,12 @@
     </div>
 </div>
 
-<div class="container" class="row" class="col-md-10 col-md-offset-1">
+<div class="bs-example" style="padding-left: 40px; padding-right: 40px">
     <div class="panel panel-primary">
 
         <div class="panel-heading" style="background: #009FD7">Completed Tasks</div>
 
-        <div class="panel-body">
+        <div class="panel-body" style="padding: 0px">
             <?php
             $task = DB::table('tasks')->find(10);
             $task->status = "done";
@@ -74,7 +76,7 @@
                 <!-- Body -->
                 <tr>
                     <td>
-                        <a href="tasks/{{ $task->id }}">
+                        <a class="fancybox" href="tasks/{{ $task->id }}">
                             {{ $task->body }}
                         </a>
                     </td>

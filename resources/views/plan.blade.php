@@ -13,7 +13,7 @@
 <!-- Goal Group -->
 
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
-    <div class="panel-group" >
+    <div class="panel-group">
         @foreach($plan->goals as $goal)
 
         <div class="panel panel-primary" >
