@@ -9,7 +9,7 @@
         "laravel/framework": "5.2.*",
         "barryvdh/laravel-ide-helper": "v2.1.2",
         "doctrine/dbal": " ~2.3",
-        "kodeine/laravel-acl": "~1.0@dev"
+        "kodeine/laravel-acl": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

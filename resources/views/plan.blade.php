@@ -11,6 +11,7 @@
 </div>-->
 
 <!-- Goal Group -->
+
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
     <div class="panel-group" >
         @foreach($plan->goals as $goal)
@@ -25,7 +26,6 @@
             <!-- Objective Group-->
             <div id="collapsegoal{{ $goal->id }}" class="panel-collapse collapse in">
                 <div class="panel-body">
-
                     <body>
                     <div class="bs-example2">
                         <div class="panel-group">
