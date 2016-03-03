@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Kodeine\Acl\Models\Eloquent\Role;
+use Kodeine\Acl\Models\Eloquent\Permission;
 
 class Roles_Table_Seeder extends Seeder
 {
@@ -19,27 +20,34 @@ class Roles_Table_Seeder extends Seeder
             'slug'=> 'admin',
             'description'=> 'Manage Administration privileges'
         ]);
-        $roleAdmin->assignPermission('goal', 'objective', 'action', 'task', 'user');
+        $roleAdmin->assignPermission(Permission::all());
 
         $rolebpLead = $role->create([
             'name'=> 'BPLead',
-            'slug'=> 'bpLead',
+            'slug'=> 'bplead',
             'description'=> 'Manage Business Plan privileges'
         ]);
-        $rolebpLead->assignPermission('goal');
+        $rolebpLead->assignPermission('mywork');
+
 
         $roledepLead = $role->create([
             'name'=> 'DepLead',
-            'slug'=> 'depLead',
+            'slug'=> 'deplead',
             'description'=> 'Manage Department Lead privileges'
         ]);
         $roledepLead->assignPermission('objective');
 
         $roleteamLead = $role->create([
             'name'=> 'TeamLead',
-            'slug'=> 'teamLead',
+            'slug'=> 'teamlead',
             'description'=> 'Manage Team Lead privileges'
         ]);
         $roleteamLead->assignPermission('action');
+
+        $rolebasicUser = $role->create([
+            'name'=> 'BasicUser',
+            'slug'=> 'basicuser',
+            'description'=> 'Manage Basic User privileges'
+        ]);
     }
 }

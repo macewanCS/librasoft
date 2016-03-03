@@ -21,7 +21,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT',
             'permission'    => 'BPLead'
         ]);
-        $vicky->assignRole('bpLead');
+        $vicky->assignRole('bplead');
 
         $admin = $user->create([
             'name'=> 'Admin',

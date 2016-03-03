@@ -50,9 +50,20 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('plan/new/task', 'PlanController@createTask');
 });
 
+Route::get('plan/edit', 'PlanController@edit');
+
+
+
+
+
+
+
+
+//BLADE DIRECTIVES
+
 // role
 Blade::directive('role', function ($expression) {
-    return "<?php if (Auth::check() && Auth::user()->is{$expression}): ?>";
+    return "<?php if (Auth::check() && Auth::User()->is{$expression}): ?>";
 });
 
 Blade::directive('endrole', function () {
@@ -61,7 +72,7 @@ Blade::directive('endrole', function () {
 
 // permission
 Blade::directive('permission', function ($expression) {
-    return "<?php if (Auth::check() && Auth::user()->can{$expression}): ?>";
+    return "<?php if (Auth::check() && Auth::User()->can{$expression}): ?>";
 });
 
 Blade::directive('endpermission', function () {
