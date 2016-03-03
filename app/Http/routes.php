@@ -50,4 +50,22 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('plan/new/task', 'PlanController@createTask');
 });
 
+// role
+Blade::directive('role', function ($expression) {
+    return "<?php if (Auth::check() && Auth::user()->is{$expression}): ?>";
+});
+
+Blade::directive('endrole', function () {
+    return "<?php endif; ?>";
+});
+
+// permission
+Blade::directive('permission', function ($expression) {
+    return "<?php if (Auth::check() && Auth::user()->can{$expression}): ?>";
+});
+
+Blade::directive('endpermission', function () {
+    return "<?php endif; ?>";
+});
+
 

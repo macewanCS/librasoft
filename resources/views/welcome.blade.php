@@ -49,7 +49,6 @@
     </div>
 </div>
 
-
 <div class="container" class="row" class="col-md-10 col-md-offset-1">
     <div class="panel panel-primary">
 
@@ -99,4 +98,5 @@
 
     </div>
 </div>
+
 @endsection
