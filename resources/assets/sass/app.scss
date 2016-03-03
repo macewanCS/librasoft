@@ -1,2 +1,29 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+.task-table .action-table {
+  table-layout: fixed;
+}
+
+.task-table-task {
+  width: 75%;
+}
+
+.task-table-due {
+  width: 60px;
+}
+
+.task-table-owner {
+  width: 60px;
+}
+
+.task-table-lead {
+  width: 75px;
+}
+
+.task-table-status {
+  width: 60px;
+}
+
+.action-table-content {
+  width: 20%;
+}
