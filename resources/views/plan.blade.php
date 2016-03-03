@@ -13,10 +13,10 @@
 <!-- Goal Group -->
 
 <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
-    <div class="panel-group" >
+    <div class="panel-group">
         @foreach($plan->goals as $goal)
 
-        <div class="panel panel-primary" >
+        <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
