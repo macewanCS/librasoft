@@ -17,7 +17,7 @@ class Users_Table_Seeder extends Seeder
         $vicky = $user->create([
             'name'          => 'Vicky',
             'email'         => 'vvarga@epl.ca',
-            'password'      => bcrypt('vicky123'),
+            'password'      => bcrypt('vicky'),
             'department'    => 'IT',
             'permission'    => 'BPLead'
         ]);
