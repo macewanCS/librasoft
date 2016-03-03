@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "26e57ed1d968d3afddf6d0b59e66c2fe",
-    "content-hash": "07deb591392fdc0ed8246f9adc20d84f",
+    "hash": "1be783e5901369fcac91f4c794cf57c4",
+    "content-hash": "3812273637047b620a8ee80e063f8638",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -773,16 +773,16 @@
         },
         {
             "name": "kodeine/laravel-acl",
-            "version": "1.0.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kodeine/laravel-acl.git",
-                "reference": "8a1ca6b9c7146bb0f158cc3d19170bfb2e3e7a8e"
+                "reference": "76f0a3e2c8d7097eceeeb8cecb98de3fb3e23a7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kodeine/laravel-acl/zipball/8a1ca6b9c7146bb0f158cc3d19170bfb2e3e7a8e",
-                "reference": "8a1ca6b9c7146bb0f158cc3d19170bfb2e3e7a8e",
+                "url": "https://api.github.com/repos/kodeine/laravel-acl/zipball/76f0a3e2c8d7097eceeeb8cecb98de3fb3e23a7d",
+                "reference": "76f0a3e2c8d7097eceeeb8cecb98de3fb3e23a7d",
                 "shasum": ""
             },
             "require": {
@@ -816,7 +816,7 @@
                 "roles",
                 "security"
             ],
-            "time": "2016-02-06 01:50:02"
+            "time": "2016-02-06 01:36:43"
         },
         {
             "name": "laravel/framework",
