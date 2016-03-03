@@ -43,7 +43,7 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default" style="height: 135px; background: white">
+    <nav class="navbar navbar-default" style="height: 90px; background: white">
         <div class="container">
             <div class="navbar-header">
 
@@ -57,16 +57,16 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset("/img/DesktopLogo_190x105.jpg")}}" alt="EPL Logo" style="width:190px;height:105px;">
+                    <img src="{{asset("/img/DesktopLogo_190x70.png")}}" alt="EPL Logo" style="width:190px;height:70px;">
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li style="padding-top: 80px; font-size: 25px; " ><a href="{{ url('/') }}">My Work</a></li>
-                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/plan') }}">Plan</a></li>
-                    <li style="padding-top: 80px; font-size: 25px;"><a href="{{ url('/manage') }}">Archives</a></li>
+                <ul class="nav navbar-nav" style="padding-top: 33px; font-size: 25px;">
+                    <li><a href="{{ url('/') }}">My Work</a></li>
+                    <li><a href="{{ url('/plan') }}">Plan</a></li>
+                    <li><a href="{{ url('/manage') }}">Archives</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
