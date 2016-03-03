@@ -68,5 +68,16 @@ class Permissions_Table_Seeder extends Seeder
             ],
             'description'   => 'manage task permissions'
         ]);
+
+        $permission->create([
+            'name' => 'myWork',
+            'slug' => [
+                'create'    => true,
+                'view'      => true,
+                'update'    => true,
+                'delete'    => true
+            ],
+            'description'   => 'manage My Work permissions'
+        ]);
     }
 }

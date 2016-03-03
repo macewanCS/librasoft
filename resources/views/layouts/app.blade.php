@@ -75,7 +75,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav" style="padding-top: 33px; font-size: 25px;">
+                    @permission('myWork')
                     <li><a href="{{ url('/') }}">My Work</a></li>
+                    @endpermission
                     <li><a href="{{ url('/plan') }}">Plan</a></li>
                     <li><a href="{{ url('/manage') }}">Archives</a></li>
                 </ul>
@@ -93,6 +95,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/profile/{person}') }}"><i class="fa fa-btn"></i>My Profile</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
