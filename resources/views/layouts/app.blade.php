@@ -7,6 +7,10 @@
 
     <title>EPS Management System</title>
 
+    <!-- JQuery -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
     <!-- Twitter bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -93,9 +97,14 @@
 
     @yield('content')
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <!-- Footer -->
+    <div id="footer" class="well well-sm">
+        <ul id="footer-list" class="list-inline">
+            <li><a href="http://www.epl.ca/">Edmonton Public Library</a></li>
+            <li><a href="https://epl.bibliocommons.com/info/terms">Terms of Use</a></li>
+            <li><a href="https://epl.bibliocommons.com/info/privacy">Privacy Statement</a></li>
+            <li>&copy; 2016 Edmonton Public Library</li>
+        </ul>
+    </div>
 </body>
 </html>
