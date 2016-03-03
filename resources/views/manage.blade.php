@@ -9,7 +9,7 @@
                     <div class="panel-heading">Business Plans</div>
 
                     <div class="panel-body">
-                        Your Current Business Plans
+                        Your Past Business Plans
                     </div>
                 </div>
             </div>

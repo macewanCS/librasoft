@@ -7,7 +7,7 @@
 
         <div class="panel-body">
             <?php
-            $task = DB::table('tasks')->first()
+            $tasks = DB::table('tasks')->take(2)->get()
             ?>
                 <table class="table table-striped table-bordered table-hover">
 
@@ -22,6 +22,7 @@
                     <!-- /Header -->
 
                     <!-- Body -->
+                    @foreach($tasks as $task)
                     <tr>
                         <td>
                             <a href="tasks/{{ $task->id }}">
@@ -41,6 +42,7 @@
                             ?>
                         </td>
                     </tr>
+                    @endforeach
                     <!-- /Body -->
 
                 </table>
