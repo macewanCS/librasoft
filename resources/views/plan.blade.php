@@ -17,7 +17,7 @@
         @foreach($plan->goals as $goal)
 
         <div class="panel panel-primary" >
-            <div class="panel-heading" style="background: #009FD7">
+            <div class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
                 </h4>
@@ -33,7 +33,7 @@
 
                                 @foreach($goal->objectives as $objective)
 
-                                    <div class="panel-heading" >
+                                    <div class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
                                         </h4>
@@ -51,25 +51,25 @@
                                                         @foreach($objective->actions as $action)
 
                                                             <!-- Action header -->
-                                                            <div class="panel-heading">
+                                                            <div class="panel-heading" data-toggle="collapse" href="#collapseaction{{ $action->id }}" style="cursor: pointer;">
                                                                 <h4 class="panel-title">
                                                                     <a data-toggle="collapse" href="#collapseaction{{ $action->id }}">{{ $action->body }}</a>
                                                                 </h4>
                                                                 <br/>
-                                                                <table class="table table-condensed" style="width: 75%; margin: auto;">
+                                                                <table class="table table-condensed table-bordered action-table">
                                                                     <tr>
-                                                                        <th>Due</th>
-                                                                        <th>Lead</th>
-                                                                        <th>Collaborators</th>
-                                                                        <th>Status</th>
-                                                                        <th>Success Measures</th>
+                                                                        <th class="action-table-content">Due</th>
+                                                                        <th class="action-table-content">Lead</th>
+                                                                        <th class="action-table-content">Collaborators</th>
+                                                                        <th class="action-table-content">Status</th>
+                                                                        <th class="action-table-content">Success Measures</th>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>{{ $action->date }}</td>
-                                                                        <td>{{ $action->lead }}</td>
-                                                                        <td>{{ $action->collaborators }}</td>
-                                                                        <td>{{ $action->status }}</td>
-                                                                        <td>{{ $action->success }}</td>
+                                                                        <td class="action-table-content">{{ $action->date }}</td>
+                                                                        <td class="action-table-content">{{ $action->lead }}</td>
+                                                                        <td class="action-table-content">{{ $action->collaborators }}</td>
+                                                                        <td class="action-table-content">{{ $action->status }}</td>
+                                                                        <td class="action-table-content">{{ $action->success }}</td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -83,30 +83,29 @@
                                                                         <div class="panel-group" class="active">
                                                                             <div class="panel panel-default">
 
-                                                                                    <table class="table table-striped table-bordered table-hover">
-
+                                                                                    <table class="table table-striped table-bordered table-hover task-table">
                                                                                         <!-- Header -->
                                                                                         <tr>
-                                                                                            <th>Task</th>
-                                                                                            <th>Due</th>
-                                                                                            <th>Owner</th>
-                                                                                            <th>Lead</th>
-                                                                                            <th>Status</th>
+                                                                                            <th class="task-table-task">Task</th>
+                                                                                            <th class="task-table-due">Due</th>
+                                                                                            <th class="task-table-owner">Owner</th>
+                                                                                            <th class="task-table-lead">Lead</th>
+                                                                                            <th class="task-table-status">Status</th>
                                                                                         </tr>
                                                                                         <!-- /Header -->
 
                                                                                         <!-- Body -->
                                                                                         @foreach($action->tasks as $task)
                                                                                         <tr>
-                                                                                            <td>
+                                                                                            <td class="task-table-task">
                                                                                                 <a href="tasks/{{ $task->id }}">
                                                                                                     {{ $task->body }}
                                                                                                 </a>
                                                                                             </td>
-                                                                                            <td>{{ $task->date }}</td>
-                                                                                            <td>{{ $task->owner }}</td>
-                                                                                            <td>{{ $task->lead }}</td>
-                                                                                            <td>
+                                                                                            <td class="task-table-due">{{ $task->date }}</td>
+                                                                                            <td class="task-table-owner">{{ $task->owner }}</td>
+                                                                                            <td class="task-table-lead">{{ $task->lead }}</td>
+                                                                                            <td class="task-table-status">
                                                                                                 <?php
                                                                                                     if ($task->status == "done") {
                                                                                                         echo "Done";
