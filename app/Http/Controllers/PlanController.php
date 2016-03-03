@@ -34,4 +34,8 @@ class PlanController extends Controller
     public function createTask() {
         return view('createTask');
     }
+
+    public function edit() {
+        return view('plan.edit', compact(''));
+    }
 }
