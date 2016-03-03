@@ -7,9 +7,9 @@ use Illuminate\Auth\Authenticatable;
 use Kodeine\Acl\Traits\HasRole;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class User extends model
 {
-    use Authenticatable, CanResetPassword, HasRole;
+    use CanResetPassword, HasRole;
 
     /**
      * The attributes that are mass assignable.
