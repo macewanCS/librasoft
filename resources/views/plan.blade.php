@@ -17,9 +17,9 @@
         @foreach($plan->goals as $goal)
 
         <div class="panel panel-primary" >
-            <div  class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
+            <div  onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
                 <h4 class="panel-title" >
-                    <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" ><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
+                    <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" ><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
                 </h4>
             </div>
 
@@ -33,9 +33,9 @@
 
                                 @foreach($goal->objectives as $objective)
 
-                                    <div class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
+                                    <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                         <h4 class="panel-title">
-                                            <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-right"></i> {{ $objective->body }}</a>
+                                            <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-right"></i> {{ $objective->body }}</a>
                                         </h4>
                                     </div>
 
@@ -51,9 +51,9 @@
                                                         @foreach($objective->actions as $action)
 
                                                             <!-- Action header -->
-                                                            <div class="panel-heading" data-toggle="collapse" href="#collapseaction{{ $action->id }}" style="cursor: pointer;">
+                                                            <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseaction{{ $action->id }}" style="cursor: pointer;">
                                                                 <h4 class="panel-title">
-                                                                    <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapseaction{{ $action->id }}"><i class="glyphicon glyphicon-chevron-right"></i>{{ $action->body }}</a>
+                                                                    <a data-toggle="collapse" href="#collapseaction{{ $action->id }}"><i class="glyphicon glyphicon-chevron-right"></i>{{ $action->body }}</a>
                                                                 </h4>
                                                                 <br/>
                                                                 <table class="table table-condensed table-bordered action-table">
@@ -171,4 +171,4 @@
 <!-- Create pop up window-->
 
 
-@endsection
+@stop
