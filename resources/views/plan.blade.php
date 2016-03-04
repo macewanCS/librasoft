@@ -91,6 +91,7 @@
                                                                                             <th class="task-table-owner">Owner</th>
                                                                                             <th class="task-table-lead">Lead</th>
                                                                                             <th class="task-table-status">Status</th>
+                                                                                            <th class="task-table-edit">Edit</th>
                                                                                         </tr>
                                                                                         <!-- /Header -->
 
@@ -113,6 +114,10 @@
                                                                                                         echo "In progress";
                                                                                                     }
                                                                                                 ?>
+                                                                                            </td>
+                                                                                            <td class="task-table-edit">
+                                                                                                <!-- edit button-->
+                                                                                                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
                                                                                             </td>
                                                                                         </tr>
                                                                                         @endforeach
@@ -161,16 +166,9 @@
 </form>
 
 <!-- Javascript -->
-<script type="text/javascript">
-
-    function toggleChevron(el) {
-        if ($(el).find('i').hasClass('glyphicon-chevron-down'))
-            $(el).find('.glyphicon-chevron-down').removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
-        else
-            $(el).find('.glyphicon-chevron-right').removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
-    }
-
-</script>
+<!--Chnages Icons arrows in accordion -->
+<script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
+<!-- Create pop up window-->
 
 
 @endsection
