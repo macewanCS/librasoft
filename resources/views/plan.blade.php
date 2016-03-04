@@ -17,9 +17,9 @@
         @foreach($plan->goals as $goal)
 
         <div class="panel panel-primary" >
-            <div class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"> {{ $goal->body }} </a>
+            <div  class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
+                <h4 class="panel-title" >
+                    <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" ><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
                 </h4>
             </div>
 
@@ -35,7 +35,7 @@
 
                                     <div class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}">{{ $objective->body }}</a>
+                                            <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-right"></i> {{ $objective->body }}</a>
                                         </h4>
                                     </div>
 
@@ -53,7 +53,7 @@
                                                             <!-- Action header -->
                                                             <div class="panel-heading" data-toggle="collapse" href="#collapseaction{{ $action->id }}" style="cursor: pointer;">
                                                                 <h4 class="panel-title">
-                                                                    <a data-toggle="collapse" href="#collapseaction{{ $action->id }}">{{ $action->body }}</a>
+                                                                    <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapseaction{{ $action->id }}"><i class="glyphicon glyphicon-chevron-right"></i>{{ $action->body }}</a>
                                                                 </h4>
                                                                 <br/>
                                                                 <table class="table table-condensed table-bordered action-table">
@@ -159,5 +159,18 @@
         <button type="submit" class="btn btn-primary" style="background: #009FD7">Create New Business Plan</button>
     </div>
 </form>
+
+<!-- Javascript -->
+<script type="text/javascript">
+
+    function toggleChevron(el) {
+        if ($(el).find('i').hasClass('glyphicon-chevron-down'))
+            $(el).find('.glyphicon-chevron-down').removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
+        else
+            $(el).find('.glyphicon-chevron-right').removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
+    }
+
+</script>
+
 
 @endsection
