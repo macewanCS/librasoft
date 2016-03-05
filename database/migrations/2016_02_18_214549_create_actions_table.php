@@ -16,6 +16,7 @@ class CreateActionsTable extends Migration
             $table->increments('id');
             $table->text('body');
             $table->date('date');
+            $table->text('owner');
             $table->text('lead');
             $table->text('collaborators');
             $table->text('status');

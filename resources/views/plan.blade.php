@@ -59,6 +59,7 @@
                                                                 <table class="table table-condensed table-bordered action-table">
                                                                     <tr>
                                                                         <th class="action-table-content">Due</th>
+                                                                        <th class="action-table-content">Owner</th>
                                                                         <th class="action-table-content">Lead</th>
                                                                         <th class="action-table-content">Collaborators</th>
                                                                         <th class="action-table-content">Status</th>
@@ -66,6 +67,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="action-table-content">{{ $action->date }}</td>
+                                                                        <th class="action-table-content">{{ $action->owner }}</th>
                                                                         <td class="action-table-content">{{ $action->lead }}</td>
                                                                         <td class="action-table-content">{{ $action->collaborators }}</td>
                                                                         <td class="action-table-content">{{ $action->status }}</td>
