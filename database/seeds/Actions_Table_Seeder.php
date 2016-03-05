@@ -15,6 +15,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.13: Review public computing needs and develop strategies to meet those needs",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Vicky Varga",
             'collaborators'=> "IT, DLI",
             'status'=> "Projects in each of 2014, 2015, 2016",
@@ -26,6 +27,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.23: Establish a fine-free day to take place every second year",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Jody Crilly",
             'collaborators'=> "Marketing, Vicky, Deputy CEO (sponsor)",
             'status'=> "Completed",
@@ -37,6 +39,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.25: Extend literacy van services to underserved communities in Edmonton and surrounding areas.",
             'date'=> \Carbon\Carbon::createFromDate(2014, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Elaine Jones",
             'collaborators'=> "FAO, Marketing",
             'status'=> "Service is currently at 50%; anticipate 4 vans and full staffing complement fully operational by fall of 2016",
@@ -48,6 +51,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.26: Implement lending machines in underserved areas of Edmonton",
             'date'=> \Carbon\Carbon::createFromDate(2015, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Deputy CEO",
             'collaborators'=> "Vicky",
             'status'=> "",
@@ -59,6 +63,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.28: Design new eplGO spaces with a greater focus on digital literacy services and with media spaces for underserved communities. ",
             'date'=> \Carbon\Carbon::createFromDate(2015, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Deputy CEO",
             'collaborators'=> "",
             'status'=> "",
@@ -70,6 +75,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.32: Reach out to customers whose membership has lapsed",
             'date'=> \Carbon\Carbon::createFromDate(2014, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Membership Team",
             'collaborators'=> "IT, Rachael, R&A",
             'status'=> "Completed",
@@ -81,6 +87,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 2.12: Implement a single point of discovery solution for EPL content. ",
             'date'=> \Carbon\Carbon::createFromDate(2015, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Sharon Karr (CMA)",
             'collaborators'=> "Web Services, IT",
             'status'=> "",
@@ -92,6 +99,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 2.6: Develop an Open Data policy that includes how we will use and share our own data; participate in Edmonton's Open Data community and support data literacy initiatives.",
             'date'=> \Carbon\Carbon::createFromDate(2014, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Digital Public Spaces Librarian",
             'collaborators'=> "Adult Programming, DLI, IT",
             'status'=> "Completed",
@@ -103,6 +111,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.2: Expand creation technology, services  to branches.",
             'date'=> \Carbon\Carbon::createFromDate(2014, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Peter Schoenberg",
             'collaborators'=> "IT, Marketing, FAO",
             'status'=> "IP",
@@ -114,6 +123,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.12: Review technology needs to provide services and implement strategies to meet them",
             'date'=> \Carbon\Carbon::createFromDate(2015, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "Peter Schoenberg",
             'collaborators'=> "IT, R&A, Discovery",
             'status'=> "IP",
@@ -125,6 +135,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 4.6: Complete reviews to ensure ongoing improvement of interlibrary loans, custodial, service point operations, and others.",
             'date'=> \Carbon\Carbon::createFromDate(2014, 01, 01)->toDateTimeString(),
+            'owner'=>"IT",
             'lead'=> "",
             'collaborators'=> "A&R",
             'status'=> "",
@@ -136,6 +147,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.1: Host EPL Day celebrations at all branches on March 13, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 3, 13)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "L Mackenzie, J McPhee",
             'collaborators'=> "Marketing, Purchasing, All branches",
             'status'=> "",
@@ -147,6 +159,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 1.2: Evaluate the 2016 event and create a proposal for 2017 by November 30, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 11, 1)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "L Mackenzie, J McPhee",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -158,6 +171,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 2.1: Live stream two forward thinking speaker series events in 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 12, 1)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing, ITS, DLI",
             'status'=> "",
@@ -169,6 +183,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.1: Host a guest speaker during Freedom to Read Weak related to intellectual freedom",
             'date'=> \Carbon\Carbon::createFromDate(2016, 2, 25)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "J Woods",
             'collaborators'=> "Marketing, Adult Services, Fund Development, Volunteers",
             'status'=> "",
@@ -180,6 +195,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.2: Host a guest speaker on LTGBQ rights and awareness by September 15, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 1, 5)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "Events person",
             'collaborators'=> "Marketing, Adult Services, Fund Development, Volunteers",
             'status'=> "",
@@ -191,6 +207,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.3: Host an Alberta mayors forum with Mayor Nenshi and Mayor Iveson by October 31, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 10, 31)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "S Foremski",
             'collaborators'=> "Marketing, Adult Services, Fund Development, Volunteers",
             'status'=> "",
@@ -202,6 +219,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.4: Host a guest speaker in partnership with the Alberta Real Estate Board by June 30, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 6, 30)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "B Crittenden",
             'collaborators'=> "Marketing, Fund Development, Volunteers",
             'status'=> "",
@@ -213,6 +231,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.5: Host Reza Aslan to speak on confronting islamaphobia on May 18, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 5, 18)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -224,6 +243,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.6: Manage ongoing list of potential speakers and partnerships",
             'date'=> "Ongoing",
+            'owner'=>"Events Team",
             'lead'=> "S Foremski, Events person",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -235,6 +255,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.7: Finalize 2017 bookings by September 30, 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 9, 1)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -246,6 +267,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 3.8: Host a guest speaker during Freedom to Read Weak related to intellectual freedom",
             'date'=> \Carbon\Carbon::createFromDate(2016, 5, 1)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -257,6 +279,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 4.1: Obtain $10,000 in shared cost partnerships for 2016 events",
             'date'=> \Carbon\Carbon::createFromDate(2016, 12, 1)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "Events person, E Stuebing",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -269,6 +292,7 @@ class Actions_Table_Seeder extends Seeder
             'body'=> "Action 4.2: Create best practice document around event sharing and cost sharing with partner
             organizations",
             'date'=> \Carbon\Carbon::createFromDate(2016, 3, 31)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "Events person, E Stuebing",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -280,6 +304,7 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'body'=> "Action 5.1: Obtain $40,000 in sponsorships through the FTSS in 2016",
             'date'=> \Carbon\Carbon::createFromDate(2016, 3, 31)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "Events person, E Stuebing",
             'collaborators'=> "Marketing",
             'status'=> "",
@@ -292,6 +317,7 @@ class Actions_Table_Seeder extends Seeder
             'body'=> "Action 6.1: Complete a request by August 1, 2016 for Bill Gates to speak at EPL at no cost
             (travel fees excluded)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 8, 31)->toDateTimeString(),
+            'owner'=>"Events Team",
             'lead'=> "J McPhee, B Crittenden",
             'collaborators'=> "Marketing",
             'status'=> "",
