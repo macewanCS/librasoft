@@ -17,9 +17,9 @@
         @foreach($plan->goals as $goal)
 
         <div class="panel panel-primary" >
-            <div  class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
+            <div  onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
                 <h4 class="panel-title" >
-                    <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" ><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
+                    <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" ><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
                 </h4>
             </div>
 
@@ -33,9 +33,9 @@
 
                                 @foreach($goal->objectives as $objective)
 
-                                    <div class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
+                                    <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                         <h4 class="panel-title">
-                                            <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-right"></i> {{ $objective->body }}</a>
+                                            <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-right"></i> {{ $objective->body }}</a>
                                         </h4>
                                     </div>
 
@@ -51,14 +51,15 @@
                                                         @foreach($objective->actions as $action)
 
                                                             <!-- Action header -->
-                                                            <div class="panel-heading" data-toggle="collapse" href="#collapseaction{{ $action->id }}" style="cursor: pointer;">
+                                                            <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseaction{{ $action->id }}" style="cursor: pointer;">
                                                                 <h4 class="panel-title">
-                                                                    <a onClick="toggleChevron(this)" data-toggle="collapse" href="#collapseaction{{ $action->id }}"><i class="glyphicon glyphicon-chevron-right"></i>{{ $action->body }}</a>
+                                                                    <a data-toggle="collapse" href="#collapseaction{{ $action->id }}"><i class="glyphicon glyphicon-chevron-right"></i>{{ $action->body }}</a>
                                                                 </h4>
                                                                 <br/>
                                                                 <table class="table table-condensed table-bordered action-table">
                                                                     <tr>
                                                                         <th class="action-table-content">Due</th>
+                                                                        <th class="action-table-content">Owner</th>
                                                                         <th class="action-table-content">Lead</th>
                                                                         <th class="action-table-content">Collaborators</th>
                                                                         <th class="action-table-content">Status</th>
@@ -66,6 +67,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="action-table-content">{{ $action->date }}</td>
+                                                                        <th class="action-table-content">{{ $action->owner }}</th>
                                                                         <td class="action-table-content">{{ $action->lead }}</td>
                                                                         <td class="action-table-content">{{ $action->collaborators }}</td>
                                                                         <td class="action-table-content">{{ $action->status }}</td>
@@ -91,6 +93,7 @@
                                                                                             <th class="task-table-owner">Owner</th>
                                                                                             <th class="task-table-lead">Lead</th>
                                                                                             <th class="task-table-status">Status</th>
+                                                                                            <th class="task-table-edit">Edit</th>
                                                                                         </tr>
                                                                                         <!-- /Header -->
 
@@ -113,6 +116,10 @@
                                                                                                         echo "In progress";
                                                                                                     }
                                                                                                 ?>
+                                                                                            </td>
+                                                                                            <td class="task-table-edit">
+                                                                                                <!-- edit button-->
+                                                                                                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
                                                                                             </td>
                                                                                         </tr>
                                                                                         @endforeach
@@ -161,16 +168,9 @@
 </form>
 
 <!-- Javascript -->
-<script type="text/javascript">
-
-    function toggleChevron(el) {
-        if ($(el).find('i').hasClass('glyphicon-chevron-down'))
-            $(el).find('.glyphicon-chevron-down').removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-right");
-        else
-            $(el).find('.glyphicon-chevron-right').removeClass("glyphicon-chevron-right").addClass("glyphicon-chevron-down");
-    }
-
-</script>
+<!--Chnages Icons arrows in accordion -->
+<script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
+<!-- Create pop up window-->
 
 
-@endsection
+@stop
