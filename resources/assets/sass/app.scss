@@ -28,7 +28,7 @@
   width: 20%;
 }
 
-body {
+html, body {
   height: 100%;
 }
 
@@ -36,21 +36,15 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -4em;
+  margin: 0 auto -3em;
 }
 
 .footer, .push {
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  height: 4em;
+  height: 3em;
 }
 
 #footer-list {
-  width: 40%;
-  position: fixed;
-  right: 0;
-
+  float: right;
   li {
     padding-left: 10px;
     padding-right: 10px;
