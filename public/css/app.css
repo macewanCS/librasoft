@@ -1,20 +1,24 @@
 .task-table .action-table {
   table-layout: fixed; }
 
-.task-table-task {
-  width: 75%; }
-
 .task-table-due {
-  width: 60px; }
+  min-width: 80px;
+  max-width: 80px; }
 
 .task-table-owner {
-  width: 60px; }
+  min-width: 55px;
+  max-width: 55px; }
 
 .task-table-lead {
-  width: 75px; }
+  min-width: 100px;
+  max-width: 100px; }
 
 .task-table-status {
-  width: 60px; }
+  min-width: 75px;
+  max-width: 75px; }
+
+.task-table-task {
+  max-width: 100%; }
 
 .action-table-content {
   width: 20%; }
