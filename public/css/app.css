@@ -19,16 +19,20 @@
 .action-table-content {
   width: 20%; }
 
-#footer {
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  height: 43px; }
+html, body {
+  height: 100%; }
+
+.non-footer-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -3em; }
+
+.footer, .push {
+  height: 3em; }
 
 #footer-list {
-  width: 40%;
-  position: fixed;
-  right: 0; }
+  float: right; }
   #footer-list li {
     padding-left: 10px;
     padding-right: 10px; }

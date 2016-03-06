@@ -26,7 +26,6 @@
             <!-- Objective Group-->
             <div id="collapsegoal{{ $goal->id }}" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    <body>
                     <div class="bs-example2">
                         <div class="panel-group">
                             <div class="panel panel-default">
@@ -150,7 +149,6 @@
 
                         </div>
                     </div>
-                    </body>
                 </div>
             </div>
         </div>
@@ -158,8 +156,6 @@
         @endforeach
     </div>
 </div>
-
-</body>
 
 <form method="get" action="/plan/new">
     <div class="form-group" style="padding-left: 40px; padding-right: 40px">

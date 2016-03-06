@@ -9,7 +9,7 @@ use App\Http\Requests;
 class MyWorkController extends Controller
 {
     public function work(){
-        return view('mywork');
+        return view('myWork');
     }
 
 }
