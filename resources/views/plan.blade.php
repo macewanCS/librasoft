@@ -57,7 +57,7 @@
                                                                 <br/>
                                                                 <table class="table table-condensed table-bordered action-table">
                                                                     <tr>
-                                                                        <th class="action-table-content">Due</th>
+                                                                        <th class="action-table-due">Due</th>
                                                                         <th class="action-table-content">Owner</th>
                                                                         <th class="action-table-content">Lead</th>
                                                                         <th class="action-table-content">Collaborators</th>
@@ -65,7 +65,7 @@
                                                                         <th class="action-table-content">Success Measures</th>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="action-table-content">{{ $action->date }}</td>
+                                                                        <td class="action-table-due">{{ $action->date }}</td>
                                                                         <th class="action-table-content">{{ $action->owner }}</th>
                                                                         <td class="action-table-content">{{ $action->lead }}</td>
                                                                         <td class="action-table-content">{{ $action->collaborators }}</td>
@@ -84,19 +84,21 @@
                                                                         <div class="panel-group" class="active">
                                                                             <div class="panel panel-default">
 
-                                                                                    <table class="table table-striped table-bordered table-hover task-table">
+                                                                                    <table id="tasks" class="table table-striped table-bordered table-hover sortable task-table">
                                                                                         <!-- Header -->
+                                                                                        <thead>
                                                                                         <tr>
                                                                                             <th class="task-table-task">Task</th>
                                                                                             <th class="task-table-due">Due</th>
                                                                                             <th class="task-table-owner">Owner</th>
                                                                                             <th class="task-table-lead">Lead</th>
                                                                                             <th class="task-table-status">Status</th>
-                                                                                            <th class="task-table-edit">Edit</th>
                                                                                         </tr>
+                                                                                        </thead>
                                                                                         <!-- /Header -->
 
                                                                                         <!-- Body -->
+                                                                                        <tbody>
                                                                                         @foreach($action->tasks as $task)
                                                                                         <tr>
                                                                                             <td class="task-table-task">
@@ -107,7 +109,14 @@
                                                                                             <td class="task-table-due">{{ $task->date }}</td>
                                                                                             <td class="task-table-owner">{{ $task->owner }}</td>
                                                                                             <td class="task-table-lead">{{ $task->lead }}</td>
-                                                                                            <td class="task-table-status">
+                                                                                            <td <?php
+                                                                                                    if ($task->status == "done") {
+                                                                                                        echo 'class = "task-table-status success"';
+                                                                                                    }
+                                                                                                    else {
+                                                                                                        echo 'class = "task-table-status danger"';
+                                                                                                    }
+                                                                                                    ?>>
                                                                                                 <?php
                                                                                                     if ($task->status == "done") {
                                                                                                         echo "Done";
@@ -116,12 +125,9 @@
                                                                                                     }
                                                                                                 ?>
                                                                                             </td>
-                                                                                            <td class="task-table-edit">
-                                                                                                <!-- edit button-->
-                                                                                                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
-                                                                                            </td>
                                                                                         </tr>
                                                                                         @endforeach
+                                                                                        </tbody>
                                                                                         <!-- /Body -->
 
                                                                                     </table>
