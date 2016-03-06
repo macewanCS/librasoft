@@ -48,7 +48,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('plan/new/obj', 'PlanController@createObj');
     Route::get('plan/new/action', 'PlanController@createAction');
     Route::get('plan/new/task', 'PlanController@createTask');
-    Route::get('profile/{user}', '')
+    Route::get('profile/{user}', 'ProfileController@profile');
 });
 
 // role
