@@ -62,11 +62,6 @@ Route::get('plan/edit', 'PlanController@edit');
 
 
 //BLADE DIRECTIVES
-=======
-    Route::get('profile/{user}', 'ProfileController@profile');
-});
->>>>>>> Add profile route
-
 // role
 Blade::directive('role', function ($expression) {
     return "<?php if (Auth::check() && Auth::User()->is{$expression}): ?>";
