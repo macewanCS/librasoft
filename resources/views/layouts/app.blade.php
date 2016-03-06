@@ -37,6 +37,7 @@
 
             <!-- Add jQuery library -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/sorttable.js') }}"></script>
 
     <!-- Add fancyBox -->
     <link rel="stylesheet" href="source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
