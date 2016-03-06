@@ -28,7 +28,18 @@
   width: 20%;
 }
 
-#footer {
+body {
+  height: 100%;
+}
+
+.non-footer-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.footer, .push {
   bottom: 0;
   position: fixed;
   width: 100%;
