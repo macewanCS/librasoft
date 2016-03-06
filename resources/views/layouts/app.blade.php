@@ -117,7 +117,7 @@
 
 
     <!-- Footer -->
-    <div id="footer" class="well well-sm">
+    <div class="well well-sm footer">
         <ul id="footer-list" class="list-inline">
             <li><a href="http://www.epl.ca/">Edmonton Public Library</a></li>
             <li><a href="https://epl.bibliocommons.com/info/terms">Terms of Use</a></li>
