@@ -1,21 +1,27 @@
 .task-table .action-table {
   table-layout: fixed; }
 
+.task-table td, .task-table th {
+  text-align: center; }
+
+td.task-table-task, th.task-table-task {
+  text-align: left; }
+
 .task-table-due {
-  min-width: 80px;
-  max-width: 80px; }
-
-.task-table-owner {
-  min-width: 55px;
-  max-width: 55px; }
-
-.task-table-lead {
   min-width: 100px;
   max-width: 100px; }
 
-.task-table-status {
+.task-table-owner {
   min-width: 75px;
   max-width: 75px; }
+
+.task-table-lead {
+  min-width: 120px;
+  max-width: 120px; }
+
+.task-table-status {
+  min-width: 95px;
+  max-width: 95px; }
 
 .task-table-task {
   max-width: 100%; }
