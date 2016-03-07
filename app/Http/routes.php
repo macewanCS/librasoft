@@ -28,7 +28,7 @@ Route::get('tasks/{task}', 'TasksController@show');
 // PasswordController will handle resetting forgotten passwords
 Route::Controllers([
     'auth' => '\App\Http\Controllers\Auth\AuthController',
-    'password' => '\App\Http\Controllers\Auth\PasswordController'
+    'password/reset' => '\App\Http\Controllers\Auth\PasswordController'
 
 ]);
 
