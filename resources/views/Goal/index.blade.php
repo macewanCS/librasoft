@@ -7,6 +7,7 @@
         <div class="panel panel-primary">
             <?php
             $myTasks = DB::table('tasks')->take(1)->get()
+
             ?>
 
             <div class="panel-heading" style="background: #009FD7">Task</div>
@@ -57,21 +58,19 @@
             <div class="panel-body" >
                 <div>
                     <ul>
-                        <li> something</li>
-                        <li> something 2</li>
+                            <li> a note will go here</li>-->
                     </ul>
                 </div>
 
                 <hr>
 
+                <form method="POST" action="/goal">
                 <div class="form-group">
-
                     <textarea name="body" class="form-control">  </textarea>
                 </div>
 
-
-                    <button type="submit" class="btn btn-primary">Add Note</button>
-
+                <button type="submit" class="btn btn-primary">Add Note</button>
+                </form>
             </div>
         </div>
     </div>
