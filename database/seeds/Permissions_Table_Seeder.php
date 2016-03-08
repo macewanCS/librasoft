@@ -79,5 +79,16 @@ class Permissions_Table_Seeder extends Seeder
             ],
             'description'   => 'manage myWork permissions'
         ]);
+
+        $permission->create([
+            'name' => 'admin',
+            'slug' => [
+                'create'    => true,
+                'view'      => true,
+                'update'    => true,
+                'delete'    => true
+            ],
+            'description'   => 'manage admin permissions'
+        ]);
     }
 }
