@@ -321,7 +321,7 @@ class Actions_Table_Seeder extends Seeder
             'lead'=> "J McPhee, B Crittenden",
             'collaborators'=> "Marketing",
             'status'=> "",
-            'success'=> "Successful acquiston of Bill Gates as speaker",
+            'success'=> "Successful acquisition of Bill Gates as speaker",
             'objective_id'=>13
         ]);
 
