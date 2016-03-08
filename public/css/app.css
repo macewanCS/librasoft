@@ -26,8 +26,20 @@ td.task-table-task, th.task-table-task {
 .task-table-task {
   max-width: 100%; }
 
-.action-table-content {
-  width: 16.7%; }
+.action-table-success {
+  width: 100%; }
+
+.action-table-due, .action-table-owner {
+  min-width: 100px;
+  max-width: 100px; }
+
+.action-table-lead, .action-table-collaborators {
+  min-width: 150px;
+  max-width: 150px; }
+
+.action-table-status {
+  min-width: 200px;
+  max-width: 200px; }
 
 html, body {
   height: 100%; }
