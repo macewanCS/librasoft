@@ -37,7 +37,7 @@ class Goals_Table_Seeder extends Seeder
 
         //5 Events team last objective
         DB::table('goals')->insert([
-            'body' => "Non Goal Objectives",
+            'body' => "Non-Business Plan",
             'plan_id' => 1
         ]);
     }

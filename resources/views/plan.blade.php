@@ -56,22 +56,27 @@
                                                                 </h4>
                                                                 <br/>
                                                                 <table class="table table-condensed table-bordered action-table">
+                                                                    <thead>
                                                                     <tr>
                                                                         <th class="action-table-due">Due</th>
-                                                                        <th class="action-table-content">Owner</th>
-                                                                        <th class="action-table-content">Lead</th>
-                                                                        <th class="action-table-content">Collaborators</th>
-                                                                        <th class="action-table-content">Status</th>
-                                                                        <th class="action-table-content">Success Measures</th>
+                                                                        <th class="action-table-owner">Owner</th>
+                                                                        <th class="action-table-lead">Lead</th>
+                                                                        <th class="action-table-collaborators">Collaborators</th>
+                                                                        <th class="action-table-status">Status</th>
+                                                                        <th class="action-table-success">Success Measures</th>
                                                                     </tr>
+                                                                    </thead>
+
+                                                                    <tbody>
                                                                     <tr>
                                                                         <td class="action-table-due">{{ $action->date }}</td>
-                                                                        <th class="action-table-content">{{ $action->owner }}</th>
-                                                                        <td class="action-table-content">{{ $action->lead }}</td>
-                                                                        <td class="action-table-content">{{ $action->collaborators }}</td>
-                                                                        <td class="action-table-content">{{ $action->status }}</td>
-                                                                        <td class="action-table-content">{{ $action->success }}</td>
+                                                                        <th class="action-table-owner">{{ $action->owner }}</th>
+                                                                        <td class="action-table-lead">{{ $action->lead }}</td>
+                                                                        <td class="action-table-collaborators">{{ $action->collaborators }}</td>
+                                                                        <td class="action-table-status">{{ $action->status }}</td>
+                                                                        <td class="action-table-success">{{ $action->success }}</td>
                                                                     </tr>
+                                                                    </tbody>
                                                                 </table>
                                                             </div>
 

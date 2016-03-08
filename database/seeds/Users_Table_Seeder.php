@@ -31,5 +31,32 @@ class Users_Table_Seeder extends Seeder
             'permission' => 'Admin'
         ]);
         $admin->assignRole('admin');
+
+        $jmcphee = $user->create([
+            'name'          => 'J McPhee',
+            'email'         => 'jmcphee@epl.ca',
+            'password'      => bcrypt('password'),
+            'department'    => 'IT',
+            'permission'    => 'DepLead'
+        ]);
+        $jmcphee->assignRole('deplead');
+
+        $lmackenzie = $user->create([
+            'name'          => 'L MacKenzie',
+            'email'         => 'lmackenzie@epl.ca',
+            'password'      => bcrypt('password'),
+            'department'    => 'IT',
+            'permission'    => 'TeamLead'
+        ]);
+        $lmackenzie->assignRole('teamlead');
+
+        $ejones = $user->create([
+            'name'          => 'E Jones',
+            'email'         => 'ejones@epl.ca',
+            'password'      => bcrypt('password'),
+            'department'    => 'IT',
+            'permission'    => 'BasicUser'
+        ]);
+        $ejones->assignRole('basicuser');
     }
 }
