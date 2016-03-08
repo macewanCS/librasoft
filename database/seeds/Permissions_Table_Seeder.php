@@ -71,6 +71,7 @@ class Permissions_Table_Seeder extends Seeder
 
         $permission->create([
             'name' => 'mywork',
+
             'slug' => [
                 'create'    => true,
                 'view'      => true,
@@ -78,6 +79,6 @@ class Permissions_Table_Seeder extends Seeder
                 'delete'    => true
             ],
             'description'   => 'manage myWork permissions'
-        ]);
+
     }
 }

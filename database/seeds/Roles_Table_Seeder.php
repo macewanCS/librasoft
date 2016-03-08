@@ -29,7 +29,6 @@ class Roles_Table_Seeder extends Seeder
         ]);
         $rolebpLead->assignPermission('mywork');
 
-
         $roledepLead = $role->create([
             'name'=> 'DepLead',
             'slug'=> 'deplead',
