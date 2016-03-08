@@ -27,8 +27,8 @@ class Roles_Table_Seeder extends Seeder
             'slug'=> 'bplead',
             'description'=> 'Manage Business Plan privileges'
         ]);
-        $rolebpLead->assignPermission('mywork');
 
+        $rolebpLead->assignPermission('mywork');
 
         $roledepLead = $role->create([
             'name'=> 'DepLead',

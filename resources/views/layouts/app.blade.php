@@ -105,13 +105,6 @@
             </div>
         </nav>
 
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $(".fancybox").fancybox();
-            });
-        </script>
-
         @yield('content')
 
         <div class="push"></div>
