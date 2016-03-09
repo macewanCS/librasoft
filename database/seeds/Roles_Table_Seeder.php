@@ -35,6 +35,7 @@ class Roles_Table_Seeder extends Seeder
             'description'=> 'Manage Department Lead privileges'
         ]);
         $roledepLead->assignPermission('objective');
+        $roledepLead->assignPermission('mywork');
 
         $roleteamLead = $role->create([
             'name'=> 'TeamLead',
@@ -42,6 +43,7 @@ class Roles_Table_Seeder extends Seeder
             'description'=> 'Manage Team Lead privileges'
         ]);
         $roleteamLead->assignPermission('action');
+        $roleteamLead->assignPermission('mywork');
 
         $rolebasicUser = $role->create([
             'name'=> 'BasicUser',
