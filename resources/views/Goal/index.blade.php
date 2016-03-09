@@ -41,10 +41,62 @@
 
                     <!-- /Body -->
                 </table>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
 
         </div>
     </div>
+
+    <div style="padding-left: 40px; padding-right: 40px;">
+
+        <hr>
+
+    </div>
+
+    <div class="bs-example" style="padding-left: 40px; padding-right: 40px;" >
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="background: #009FD7">Task layout two</div>
+            <div class="panel-body" >
+                <h2>
+                    Due:
+                    <br/>
+                    <small>{{ $task->date }}</small>
+                    <textarea name="body" class="form-control">{{ $task->date}} </textarea>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </h2>
+                <h2>
+                    Lead:
+                    <br/>
+                    <textarea name="body" class="form-control">{{ $task->lead }} </textarea>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </h2>
+                <h2>
+                    Collaborators:
+                    <br/>
+                    <small>{{ $task->collaborators }}</small>
+                    <textarea name="body" class="form-control">{{ $task->collaborators }} </textarea>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </h2>
+                <h2>
+                    Success Measures:
+                    <br/>
+                    <small>{{ $task->success }}</small>
+                    <textarea name="body" class="form-control">{{ $task->success}} </textarea>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </h2>
+                <h2>
+                    Status:
+                    <br/>
+                    <small>{{ $task->status }}</small>
+                    <textarea name="body" class="form-control">{{ $task->status }} </textarea>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <div style="padding-left: 40px; padding-right: 40px;">
 
