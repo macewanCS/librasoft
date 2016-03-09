@@ -7,7 +7,7 @@
 
             <div class="panel-body" style="padding: 0px">
                 <?php
-                $myTasks = DB::table('tasks')->take(2)->get()
+                $myTasks = DB::table('tasks')->where('lead', 'Vicky')->get();
                 ?>
                 <table class="table table-striped table-bordered table-hover">
 

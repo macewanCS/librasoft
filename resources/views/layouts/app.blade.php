@@ -79,7 +79,7 @@
                     <ul class="nav navbar-nav" style="padding-top: 33px; font-size: 25px;">
                         <li><a href="{{ url('/') }}">Dashboard</a></li>
                         <li><a href="{{ url('/plan') }}">Plan</a></li>
-                        <li><a href="{{ url('/manage') }}">Archives</a></li>
+                        <!--li><a href="{{ url('/manage') }}">Archives</a></li-->
                         <li><a href="{{ url('/mywork') }}">My Work</a></li>
                     </ul>
 

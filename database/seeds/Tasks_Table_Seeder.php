@@ -16,7 +16,7 @@ class Tasks_Table_Seeder extends Seeder
             'owner'=> "IT",
             'body'=> "Implement approved recommendations from the 2015 Public Computing Report",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
-            'lead'=> "Vicky Varga",
+            'lead'=> "Vicky",
             'collaborators'=> "IT Project Team",
             'status'=> "",
             'success'=> "",
