@@ -60,7 +60,7 @@
                 <h2>
                     Due:
                     <br/>
-                    <textarea name="body" class="form-control">{{ $task->date}} </textarea>
+                    <textarea name="body" class="form-control" style="width: 400px; height: 50px;">{{ $task->date}} </textarea>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </h2>
                 <h2>
