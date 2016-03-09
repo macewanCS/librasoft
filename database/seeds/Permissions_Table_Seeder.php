@@ -81,14 +81,14 @@ class Permissions_Table_Seeder extends Seeder
         ]);
 
         $permission->create([
-            'name' => 'admin',
+            'name' => 'register',
             'slug' => [
                 'create'    => true,
                 'view'      => true,
                 'update'    => true,
                 'delete'    => true
             ],
-            'description'   => 'manage admin permissions'
+            'description'   => 'manage register permissions'
         ]);
     }
 }
