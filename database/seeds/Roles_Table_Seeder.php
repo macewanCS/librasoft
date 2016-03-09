@@ -21,7 +21,7 @@ class Roles_Table_Seeder extends Seeder
             'description'=> 'Manage Administration privileges'
         ]);
         $roleAdmin->assignPermission(Permission::all());
-        $roleAdmin->assignPermission('register');
+        //$roleAdmin->assignPermission('register');
 
         $rolebpLead = $role->create([
             'name'=> 'BPLead',
