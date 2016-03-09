@@ -9,7 +9,11 @@
                 <div class="panel-heading" style="background: #009FD7">Announcements</div>
 
                 <div class="panel-body" style="height: 200px">
-                    Hello
+                    <ul>
+                        <li> The EPL is having Bill gates as a guest speaker sometime this year.</li>
+                        <li> EPL Day celebrations at all branches on March 13, 2016</li>
+                        <li> The EPL is having Reza Aslan to speak on confronting islamaphobia on May 18, 2016</li>
+                    </ul>
                 </div>
             </div>
         </div>
