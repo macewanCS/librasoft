@@ -80,7 +80,7 @@
                         <li><a href="{{ url('/') }}">Dashboard</a></li>
                         <li><a href="{{ url('/plan') }}">Plan</a></li>
                         <li><a href="{{ url('/manage') }}">Archives</a></li>
-                        <li><a href="{{ url('/mywork') }}">My Work</a></li>
+                        @permission('view.mywork')<li><a href="{{ url('/mywork') }}">My Work</a></li>@endpermission
                     </ul>
 
                     <!-- Right Side Of Navbar -->
