@@ -81,7 +81,6 @@
                         @permission('view.mywork')<li><a href="{{ url('/mywork') }}">My Work</a></li>@endpermission
                         <li><a href="{{ url('/plan') }}">Plan</a></li>
                         <!--li><a href="{{ url('/manage') }}">Archives</a></li-->
-                        <li><a href="{{ url('/manage') }}">Archives</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -89,9 +88,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            @role("admin")
-                            <li><a href="{{ url('/register') }}">Admin</a></li>
-                            @endrole
+                            @permission('view.mywork')<li><a href="{{ url('/register') }}">Register</a></li>@endpermission
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
