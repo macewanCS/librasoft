@@ -88,7 +88,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            @permission('view.mywork')<li><a href="{{ url('/register') }}">Register</a></li>@endpermission
+                            @permission('view.register')<li><a href="{{ url('/register') }}">Register</a></li>@endpermission
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
