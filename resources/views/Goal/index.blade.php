@@ -55,12 +55,11 @@
 
     <div class="bs-example" style="padding-left: 40px; padding-right: 40px;" >
         <div class="panel panel-primary">
-            <div class="panel-heading" style="background: #009FD7">Task layout two</div>
+            <div class="panel-heading" style="background: #009FD7">{{$task->body}}</div>
             <div class="panel-body" >
                 <h2>
                     Due:
                     <br/>
-                    <small>{{ $task->date }}</small>
                     <textarea name="body" class="form-control">{{ $task->date}} </textarea>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </h2>
