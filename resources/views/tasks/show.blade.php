@@ -87,8 +87,8 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
 
+                    </div>
 
                     <!-- Notes end -->
                 </div>
