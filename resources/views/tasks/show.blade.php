@@ -35,7 +35,11 @@
                     <!-- /Body -->
                 </table>
                 <!-- table end-->
+<<<<<<< 70edac9fcecd255a22add23046f5c91d9dd4425a
                 {{--<h5>Note: Click on a table cell to edit that cell.</h5>--}}
+=======
+                <!-- <h5>Note: Click on a table cell to edit that cell.</h5> -->
+>>>>>>> added permissions for notes
 
                 <!-- save all button-->
                 <div>
@@ -65,6 +69,7 @@
                             </ul>
                         </div>
                     </div>
+
 
                     @role('admin|deplead|teamlead|bplead')<div class="panel panel-primary">
 
