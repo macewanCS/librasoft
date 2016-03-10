@@ -168,11 +168,11 @@
     </div>
 </div>
 
-<form method="get" action="/plan/new">
+<!--form method="get" action="/plan/new">
     <div class="form-group" style="padding-left: 40px; padding-right: 40px">
         <button type="submit" class="btn btn-primary" style="background: #009FD7">Create New Business Plan</button>
     </div>
-</form>
+</form-->
 
 <!-- Javascript -->
 <!--Chnages Icons arrows in accordion -->

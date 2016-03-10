@@ -8,7 +8,7 @@
             <div class="panel-body" style="padding: 0px">
                 <?php
                 $id =  Auth::user()->name;
-                $myTasks = DB::table('tasks')->where('lead', $id)->get();
+                $myTasks = DB::table('tasks')->where('lead', $id)->where('status', '')->get();
                 ?>
                 <table class="table table-striped table-bordered table-hover">
 

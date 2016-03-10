@@ -18,7 +18,6 @@
             </div>
         </div>
     </div>
-
     <div class="dashboard-row">
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
