@@ -58,5 +58,14 @@ class Users_Table_Seeder extends Seeder
             'permission'    => 'BasicUser'
         ]);
         $ejones->assignRole('basicuser');
+
+        $new = $user->create([
+            'name'          => 'New User',
+            'email'         => 'nuser@epl.ca',
+            'password'      => bcrypt('password'),
+            'department'    => 'IT',
+            'permission'    => 'BasicUser'
+        ]);
+        $new->assignRole('basicuser');
     }
 }
