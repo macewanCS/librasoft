@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>EPS Management System</title>
+    <title>EPL Management System</title>
 
     <!-- JQuery -->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
