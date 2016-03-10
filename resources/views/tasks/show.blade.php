@@ -88,7 +88,8 @@
                             </form>
                         </div>
                     </div>
-
+                        <button type="submit" class="btn btn-primary" style="float: right" id="note">Add Note</button>
+                    </form>
                     <!-- Notes end -->
                 </div>
             </div>
