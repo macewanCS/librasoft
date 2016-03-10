@@ -56,7 +56,7 @@
 </head>
 <body id="app-layout">
     <div class="non-footer-wrapper">
-        <nav class="navbar navbar-default" style="height: 90px; background: white">
+        <nav class="navbar navbar-default" style="height: 90px; background: white; width: 100%; nav-left: auto">
             <div class="container">
                 <div class="navbar-header">
 
