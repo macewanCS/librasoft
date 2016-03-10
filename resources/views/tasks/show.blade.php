@@ -39,7 +39,7 @@
 
                 <!-- save all button-->
                 <div>
-                <button type="submit" class="btn btn-primary" style="float: right">Save All</button>
+                <button type="submit" class="btn btn-primary" style="background: #009FD7; float: right;">Save All</button>
                 </div>
                 <!-- save all button end-->
 
@@ -53,7 +53,7 @@
                 <div class="col-md-6 col-md-offset-3">
 
                     <div class="panel panel-primary">
-                        <div class="panel-heading">Notes</div>
+                        <div class="panel-heading" style="background: #009FD7">Notes</div>
 
                         <div class="panel-body">
                             <ul class="list-group">
@@ -68,7 +68,7 @@
 
                     <div class="panel panel-primary">
 
-                        <div class="panel-heading">Add a Note</div>
+                        <div class="panel-heading" style="background: #009FD7">Add a Note</div>
 
                         <div class="panel-body">
                             <form method="POST" action="/tasks/{{ $task->id }}/notes">
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary" style="float: right">Add Note</button>
+                                    <button type="submit" class="btn btn-primary" style="float: right; background: #009FD7;">Add Note</button>
                                 </div>
                             </form>
                         </div>
