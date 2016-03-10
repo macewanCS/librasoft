@@ -3,8 +3,8 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-xs-2" style="left: 6%; width: 625px;">
+    <div class="dashboard-row">
+        <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Announcements</div>
 
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-2" style="left: 7.5%; width: 625px">
+        <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">News Feed</div>
 
@@ -31,8 +31,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-2" style="left: 6%; width: 625px">
+    <div class="dashboard-row">
+        <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Recently update</div>
 
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-2" style="left: 7.5%; width: 625px">
+        <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Recently Finished</div>
 
@@ -52,8 +52,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-2" style="left: 6%; width: 625px">
+    <div class="dashboard-row">
+        <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7"> Recent Comments</div>
 
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-2" style="left: 7.5%; width: 625px">
+        <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Due Date Approaching</div>
 

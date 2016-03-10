@@ -59,4 +59,11 @@ html, body {
     padding-left: 10px;
     padding-right: 10px; }
 
+.dashboard-panel {
+  width: 625px; }
+
+.dashboard-row {
+  width: 1300px;
+  margin: 0 auto; }
+
 /*# sourceMappingURL=app.css.map */
