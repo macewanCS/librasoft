@@ -39,7 +39,7 @@
 
                 <!-- save all button-->
                 <div>
-                 <!--<button type="submit" class="btn btn-primary" style="background: #009FD7; float: right;">Save All</button> -->
+                <button type="submit" class="btn btn-primary" style="background: #009FD7; float: right;">Save All</button>
                 </div>
                 <!-- save all button end-->
 
@@ -85,8 +85,11 @@
                                 </div>
                             </form>
                         </div>
+
                     </div>@endrole
 
+
+                    </div>
 
                     <!-- Notes end -->
                 </div>
