@@ -53,6 +53,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('mywork', 'MyWorkController@work');
     Route::get('profile/{user}', 'ProfileController@profile');
     Route::get('register', 'RegisterController@register');
+    Route::post('register', 'Auth\AuthController@create');
 });
 
 Route::get('plan/edit', 'PlanController@edit');

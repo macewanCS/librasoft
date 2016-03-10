@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div class="dashboard-row">
         <div class="col-xs-2 dashboard-panel">
@@ -30,6 +31,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="dashboard-row">
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Recently Finished</div>
@@ -43,15 +47,16 @@
         </div>
 
         <div class="col-xs-2 dashboard-panel">
-        <div id="test" class="col-xs-2" style="left: 7.5%; width: 625px">
-            <div class="panel panel-primary">
-                <div class="panel-heading" style="background: #009FD7">News Feed</div>
+            <div id="test" class="col-xs-2" style="left: 7.5%; width: 625px">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background: #009FD7">News Feed</div>
 
-                <div class="panel-body" style="height: 200px">
-                    <ul>
-                        <li> Place holder </li>
-                        <li> another place holder </li>
-                    </ul>
+                    <div class="panel-body" style="height: 200px">
+                        <ul>
+                            <li> Place holder </li>
+                            <li> another place holder </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
