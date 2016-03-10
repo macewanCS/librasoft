@@ -148,7 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         //Kodeine\Acl\AclServiceProvider::class,
-
+        
         /*
          * Application Service Providers...
          */
@@ -156,6 +156,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
         /*
          * IDE Helper
          */
