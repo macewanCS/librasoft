@@ -174,7 +174,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "done",
             'success'=> "",
             'action_id'=>9
         ]);
