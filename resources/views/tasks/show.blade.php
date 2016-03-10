@@ -35,7 +35,7 @@
                     <!-- /Body -->
                 </table>
                 <!-- table end-->
-                <h5>Note: Click on a table cell to edit that cell.</h5>
+                {{--<h5>Note: Click on a table cell to edit that cell.</h5>--}}
 
                 <!-- save all button-->
                 <div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-primary">
+                    @role('admin|deplead|teamlead|bplead')<div class="panel panel-primary">
 
                         <div class="panel-heading" style="background: #009FD7">Add a Note</div>
 
@@ -85,7 +85,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div>@endrole
 
 
                     <!-- Notes end -->
