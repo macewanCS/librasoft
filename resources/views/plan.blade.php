@@ -16,10 +16,10 @@
     <div class="panel-group">
         @foreach($plan->goals as $goal)
 
-        <div class="panel panel-primary" >
+        <div class="panel panel-primary">
             <div  onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
                 <h4 class="panel-title" >
-                    <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" ><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
+                    <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
                 </h4>
             </div>
 
@@ -44,7 +44,7 @@
 
                                             <!-- Action Group -->
                                             <div class="bs-example3">
-                                                <div class="panel-group" class="active">
+                                                <div class="panel-group active">
                                                     <div class="panel panel-default">
 
                                                         @foreach($objective->actions as $action)
