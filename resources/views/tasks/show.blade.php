@@ -51,26 +51,43 @@
 
                 <!-- Notes start -->
                 <div class="col-md-6 col-md-offset-3">
-                    <h4>Notes:</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item"> a note will go here</li>
-                        <li class="list-group-item"> some other note</li>
-                    </ul>
 
-                    <hr>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Notes</div>
 
-                    <h4>Add a Note:</h4>
-                    <form method="POST" action="/tasks/show">
+                        <div class="panel-body">
+                            <ul class="list-group">
 
-                        <div class="form-group">
+                                @foreach($task->notes as $note)
+                                    <li class="list-group-item">{{ $note->content }}</li>
+                                @endforeach
 
-                            <div>
-                                <textarea name="body" class="form-control" style="resize: none;">  </textarea>
-                            </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+
+                        <div class="panel-heading">Add a Note</div>
+
+                        <div class="panel-body">
+                            <form method="POST" action="/tasks/{{ $task->id }}/notes">
+
+                                <div class="form-group">
+                                    <textarea name="content" class="form-control" style="resize: none;" placeholder="Enter a note..."></textarea>
+                                    <input type="hidden" name="user" value="Vicky"/>
+                                    <input type="hidden" name="created_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
+                                    <input type="hidden" name="updated_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary" style="float: right">Add Note</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="float: right">Add Note</button>
-                    </form>
+                    </div>
+
                     <!-- Notes end -->
                 </div>
             </div>

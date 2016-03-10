@@ -143,7 +143,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>5
         ]);
 
-        //10
+        //12
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Liase with Sirsi Dynix to support CMA's Single Sign On (SSO) project",
@@ -155,7 +155,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>7
         ]);
 
-        //11
+        //13
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Release more EPL open data to City of Edmonton open data portal",
@@ -167,7 +167,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>8
         ]);
 
-        //12
+        //14
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Purchase hardware for mini-makerspaces at CSD, WOO, IDY, STR",
@@ -179,7 +179,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>9
         ]);
 
-        //13
+        //15
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Provision iPads for mini-makerspaces at CSD, WOO, IDY, STR",
@@ -191,7 +191,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>9
         ]);
 
-        //14
+        //16
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Provision laptops for mini-makerspaces at CSD, WOO, IDY, STR",
@@ -203,7 +203,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>9
         ]);
 
-        //15
+        //17
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Support the ILS team's implementation of Mobile circ, including purchasing peripherals and configuring branch iPads",
@@ -215,7 +215,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>10
         ]);
 
-        //16
+        //18
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Purchase new iPad kits for each branch currently without one per budget request",
@@ -227,7 +227,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>10
         ]);
 
-        //17
+        //19
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Provision iPad kits",
@@ -239,7 +239,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>10
         ]);
 
-        //18
+        //20
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "In collaboration with DLI, select equipment to replace aging Makerspace equipment",
@@ -251,7 +251,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>10
         ]);
 
-        //19
+        //21
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Implement a regular \"What's up with that?\" style blog post by IT to enhance staff understanding of technology",
@@ -263,7 +263,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>10
         ]);
 
-        //20
+        //22
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Stabilize and standardize the display board environment",
@@ -275,7 +275,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>10
         ]);
 
-        //21
+        //23
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Compare IT's current ticketing sytems against demos of inexpensive, focused ticketing systems to determine if a migration can and should occur.",
@@ -287,7 +287,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>11
         ]);
 
-        //14
+        //24
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Conduct a literature review of Help Desk best practices to determine how EPL's processes can be improved",
@@ -299,7 +299,7 @@ class Tasks_Table_Seeder extends Seeder
             'action_id'=>11
         ]);
 
-        //15
+        //25
         DB::table('tasks')->insert([
             'owner'=> "IT",
             'body'=> "Create an Internal Service Level Agreement document outlining IT's processes and commitments to its customers",
