@@ -7,7 +7,8 @@
 
             <div class="panel-body" style="padding: 0px">
                 <?php
-                $myTasks = DB::table('tasks')->where('lead', 'Vicky')->get();
+                $id =  Auth::user()->name;
+                $myTasks = DB::table('tasks')->where('lead', $id)->get();
                 ?>
                 <table class="table table-striped table-bordered table-hover">
 
@@ -58,8 +59,8 @@
 
             <div class="panel-body" style="padding: 0px">
                 <?php
-                $task = DB::table('tasks')->find(10);
-                $task->status = "done";
+                $id =  Auth::user()->name;
+                $myTasks = DB::table('tasks')->where('lead', $id)->where('status', 'done')->get();
                 ?>
                 <table class="table table-striped table-bordered table-hover">
 
@@ -74,6 +75,7 @@
                     <!-- /Header -->
 
                     <!-- Body -->
+                    @foreach($myTasks as $task)
                     <tr>
                         <td>
                             <a class="fancybox" href="tasks/{{ $task->id }}">
@@ -93,6 +95,7 @@
                             ?>
                         </td>
                     </tr>
+                    @endforeach
                     <!-- /Body -->
 
                 </table>
