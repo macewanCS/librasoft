@@ -39,7 +39,9 @@
 
                 <!-- save all button-->
                 <div>
+
                 <button type="submit" class="btn btn-primary" style="background: #009FD7; float: right;">Save All</button>
+
                 </div>
                 <!-- save all button end-->
 
@@ -87,7 +89,6 @@
                         </div>
 
                     </div>@endrole
-
 
                     </div>
 
