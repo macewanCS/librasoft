@@ -39,7 +39,7 @@
 
                 <!-- save all button-->
                 <div>
-                <button type="submit" class="btn btn-primary" style="float: right">Save All</button>
+                <button type="submit" class="btn btn-primary" style="float: right" id="saveAll">Save All</button>
                 </div>
                 <!-- save all button end-->
 
@@ -87,6 +87,8 @@
                         </div>
 
                     </div>
+
+                        <button type="submit" class="btn btn-primary" style="float: right" id="note">Add Note</button>
 
                     <!-- Notes end -->
                 </div>
