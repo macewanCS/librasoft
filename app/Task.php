@@ -20,4 +20,14 @@ class Task extends Model
         return $this->belongsTo(Action::class);
     }
 
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
+    public function addNote(Note $note)
+    {
+        return $this->notes()->save($note);
+    }
+
 }

@@ -14,9 +14,13 @@ class TasksController extends Controller
         return view('task');
     }
 
-    public function show(Task $task)
-    {
+    public function show(Task $task){
         return view('tasks.show')->with('task', $task);
+    }
+
+    public function index()
+    {
+        return view ('tasks.index')->with('tasks', Task::all());
     }
 
     public function newTask() {
