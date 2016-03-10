@@ -4,6 +4,7 @@
 @section('content')
 
 
+    <div class="dashboard-row">
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Recently update</div>
