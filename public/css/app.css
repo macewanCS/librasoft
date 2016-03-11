@@ -8,38 +8,50 @@ td.task-table-task, th.task-table-task {
   text-align: left; }
 
 .task-table-due {
-  min-width: 100px;
-  max-width: 100px; }
+  min-width: 70px;
+  max-width: 70px; }
 
 .task-table-owner {
   min-width: 75px;
   max-width: 75px; }
 
 .task-table-lead {
-  min-width: 120px;
-  max-width: 120px; }
+  min-width: 90px;
+  max-width: 90px; }
 
 .task-table-status {
-  min-width: 95px;
-  max-width: 95px; }
+  min-width: 75px;
+  max-width: 75px; }
 
 .task-table-task {
-  max-width: 100%; }
+  min-width: 350px;
+  max-width: 350px;}
+
+.task-table-id {
+  min-width: 50px;
+  max-width: 50px;
+}
 
 .action-table-success {
-  width: 100%; }
+  min-width: 150px;
+  max-width: 150px;}
 
-.action-table-due, .action-table-owner {
-  min-width: 100px;
-  max-width: 100px; }
+.action-table-owner {
+  min-width: 75px;
+  max-width: 75px;
+}
+
+.action-table-due{
+  min-width: 70px;
+  max-width: 70px; }
 
 .action-table-lead, .action-table-collaborators {
-  min-width: 150px;
-  max-width: 150px; }
+  min-width: 90px;
+  max-width: 90px; }
 
 .action-table-status {
-  min-width: 200px;
-  max-width: 200px; }
+  min-width: 70px;
+  max-width: 70px; }
 
 html, body {
   height: 100%; }
