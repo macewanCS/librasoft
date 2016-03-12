@@ -56,7 +56,7 @@
 </head>
 <body id="app-layout">
     <div class="non-footer-wrapper">
-        <nav class="navbar navbar-default" style="height: 90px; background: white">
+        <nav class="navbar navbar-default" style="height: 90px; background: white; width: 100%; nav-left: auto">
             <div class="container">
                 <div class="navbar-header">
 
@@ -112,7 +112,7 @@
 
 
     <!-- Footer -->
-    <div class="well well-sm footer">
+    <div class="well well-sm footer" style="bottom: 0; width: 100%">
         <ul id="footer-list" class="list-inline">
             <li><a href="http://www.epl.ca/">Edmonton Public Library</a></li>
             <li><a href="https://epl.bibliocommons.com/info/terms">Terms of Use</a></li>
