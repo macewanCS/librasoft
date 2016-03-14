@@ -1,57 +1,67 @@
-.task-table .action-table {
-  table-layout: fixed; }
+.action-table {
+  table-layout: fixed;
+  width: auto; }
 
-.task-table td, .task-table th {
-  text-align: center; }
-
-td.task-table-task, th.task-table-task {
-  text-align: left; }
-
-.task-table-due {
-  min-width: 70px;
-  max-width: 70px; }
-
-.task-table-owner {
-  min-width: 75px;
-  max-width: 75px; }
-
-.task-table-lead {
-  min-width: 90px;
-  max-width: 90px; }
-
-.task-table-status {
-  min-width: 75px;
-  max-width: 75px; }
-
-.task-table-task {
-  min-width: 350px;
-  max-width: 350px;}
-
-.task-table-id {
-  min-width: 50px;
-  max-width: 50px;
+/*.task-table {
+  td, th {
+    text-align: center;
+  }
 }
 
-.action-table-success {
-  min-width: 150px;
-  max-width: 150px;}
+td.task-table-task, th.task-table-task {
+  text-align: left;
+}
 
-.action-table-owner {
+.task-table-due {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.task-table-owner {
   min-width: 75px;
   max-width: 75px;
 }
 
-.action-table-due{
-  min-width: 70px;
-  max-width: 70px; }
+.task-table-lead {
+  min-width: 120px;
+  max-width: 120px;
+}
 
-.action-table-lead, .action-table-collaborators {
-  min-width: 90px;
-  max-width: 90px; }
+.task-table-status {
+  min-width: 95px;
+  max-width: 95px;
+}
 
-.action-table-status {
-  min-width: 70px;
-  max-width: 70px; }
+.task-table-task {
+  max-width: 100%;
+}*/
+.table-success {
+  min-width: 250px;
+  max-width: 250px; }
+
+.table-due {
+  min-width: 100px;
+  max-width: 100px;
+  font-weight: normal; }
+
+.table-owner {
+  min-width: 150px;
+  max-width: 150px; }
+
+.table-id {
+  min-width: 60px;
+  max-width: 60px; }
+
+.table-lead, .table-collaborators {
+  min-width: 150px;
+  max-width: 150px; }
+
+.table-status {
+  min-width: 100px;
+  max-width: 100px; }
+
+.table-task {
+  width: 100%; }
 
 html, body {
   height: 100%; }
