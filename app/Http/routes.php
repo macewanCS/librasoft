@@ -52,7 +52,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('plan/new/task', 'PlanController@createTask');
     Route::get('mywork', 'MyWorkController@work');
     Route::get('profile/{user}', 'ProfileController@profile');
-    Route::get('tasks/{task}', 'TasksController@show');
     Route::get('register', 'RegisterController@register');
     Route::post('register', 'Auth\AuthController@create');
 });

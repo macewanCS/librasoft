@@ -32,56 +32,56 @@
                                             <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse">
                                                 <div class="panel-body">
                                                     <!--<p>{{ $objective->body }}</p>-->
-                                                    @foreach($objective->actions as $action)
 
 
                                                     <table class="table table-condensed table-bordered action-table">
                                                         <thead>
                                                         <tr>
-                                                            <th class="action-table-id">ID</th>
-                                                            <th class="task-table-task">Action /task</th>
-                                                            <th class="action-table-due">Due</th>
-                                                            <th class="action-table-owner">Department/ Team</th>
-                                                            <th class="action-table-lead">Lead</th>
-                                                            <th class="action-table-success">Success Measures</th>
-                                                            <th class="action-table-status">Status</th>
+                                                            <th class="table-id">ID</th>
+                                                            <th class="table-task">Action /task</th>
+                                                            <th class="table-due">Due</th>
+                                                            <th class="table-owner">Department/ Team</th>
+                                                            <th class="table-lead">Lead</th>
+                                                            <th class="table-success">Success Measures</th>
+                                                            <th class="table-status">Status</th>
                                                         </tr>
                                                         </thead>
 
                                                         <tbody>
+                                                    @foreach($objective->actions as $action)
 
                                                         <tr>
-                                                            <td class="action-table-id"> {{$action->item}}</td>
-                                                            <td class="task-table-task">{{ $action->body }}</td>
-                                                            <th class="action-table-due">{{ $action->date }}</th>
-                                                            <td class="action-table-owner">{{ $action->owner }}</td>
-                                                            <td class="action-table-collaborators">{{ $action->lead }}</td>
-                                                            <td class="action-table-success">{{ $action->success }}</td>
-                                                            <td class="action-table-status">{{ $action->status }}</td>
+                                                            <td class="table-id"> {{$action->item}}</td>
+                                                            <td class="table-task">{{ $action->body }}</td>
+                                                            <th class="table-due">{{ $action->date }}</th>
+                                                            <td class="table-owner">{{ $action->owner }}</td>
+                                                            <td class="table-collaborators">{{ $action->lead }}</td>
+                                                            <td class="table-success">{{ $action->success }}</td>
+                                                            <td class="table-status">{{ $action->status }}</td>
                                                         </tr>
                                                         @foreach($action->tasks as $task)
                                                             <tr>
                                                                 <td></td>
-                                                                <td class="task-table-task">
+                                                                <td class="table-task">
                                                                     <a href="tasks/{{ $task->id }}">
                                                                         {{ $task->body }}
                                                                     </a>
                                                                 </td>
-                                                                <td class="task-table-due">{{ $task->date }}</td>
-                                                                <td class="task-table-owner">{{ $task->owner }}</td>
-                                                                <td class="task-table-lead">{{ $task->lead }}</td>
+                                                                <td class="table-due">{{ $task->date }}</td>
+                                                                <td class="table-owner">{{ $task->owner }}</td>
+                                                                <td class="table-lead">{{ $task->lead }}</td>
                                                                 <td></td>
                                                                 <td <?php
-                                                                        if ($task->status == "done") {
-                                                                            echo 'class = "task-table-status success"';
+                                                                        if ($task->status == "Completed") {
+                                                                            echo 'class = "table-status success"';
                                                                         }
                                                                         else {
-                                                                            echo 'class = "task-table-status danger"';
+                                                                            echo 'class = "table-status danger"';
                                                                         }
                                                                         ?>>
                                                                     <?php
-                                                                    if ($task->status == "done") {
-                                                                        echo "Done";
+                                                                    if ($task->status == "Completed") {
+                                                                        echo "Completed";
                                                                     } else {
                                                                         echo "In progress";
                                                                     }
@@ -91,10 +91,10 @@
                                                         @endforeach
 
                                                         </tbody>
-                                                    </table>
 
 
                                                     @endforeach
+                                                    </table>
                                                 </div>
                                             </div>
 

@@ -1,10 +1,11 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.task-table .action-table {
+.action-table {
   table-layout: fixed;
+  width: auto;
 }
 
-.task-table {
+/*.task-table {
   td, th {
     text-align: center;
   }
@@ -36,25 +37,41 @@ td.task-table-task, th.task-table-task {
 
 .task-table-task {
   max-width: 100%;
+}*/
+
+.table-success {
+  min-width: 250px;
+  max-width: 250px;
 }
 
-.action-table-success {
-  width: 100%
-}
-
-.action-table-due, .action-table-owner {
+.table-due {
   min-width: 100px;
   max-width: 100px;
+  font-weight: normal;
 }
 
-.action-table-lead, .action-table-collaborators {
+.table-owner {
   min-width: 150px;
   max-width: 150px;
 }
 
-.action-table-status {
-  min-width: 200px;
-  max-width: 200px;
+.table-id {
+  min-width: 60px;
+  max-width: 60px;
+}
+
+.table-lead, .table-collaborators {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.table-status {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.table-task {
+  width: 100%;
 }
 
 html, body {
