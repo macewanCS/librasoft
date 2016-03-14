@@ -35,15 +35,8 @@
                     <!-- /Body -->
                 </table>
                 <!-- table end-->
-<<<<<<< HEAD
-<<<<<<< 70edac9fcecd255a22add23046f5c91d9dd4425a
-                {{--<h5>Note: Click on a table cell to edit that cell.</h5>--}}
-=======
-                <!-- <h5>Note: Click on a table cell to edit that cell.</h5> -->
->>>>>>> added permissions for notes
-=======
-                <!-- <h5>Note: Click on a table cell to edit that cell.</h5> -->
->>>>>>> 862d38216af945e49b01a28134e7faa492b28b32
+
+                <h5>Note: Click on a table cell to edit that cell.</h5>
 
                 <!-- save all button-->
                 <div>
