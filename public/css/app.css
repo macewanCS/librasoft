@@ -2,39 +2,6 @@
   table-layout: fixed;
   width: auto; }
 
-/*.task-table {
-  td, th {
-    text-align: center;
-  }
-}
-
-td.task-table-task, th.task-table-task {
-  text-align: left;
-}
-
-.task-table-due {
-  min-width: 100px;
-  max-width: 100px;
-}
-
-.task-table-owner {
-  min-width: 75px;
-  max-width: 75px;
-}
-
-.task-table-lead {
-  min-width: 120px;
-  max-width: 120px;
-}
-
-.task-table-status {
-  min-width: 95px;
-  max-width: 95px;
-}
-
-.task-table-task {
-  max-width: 100%;
-}*/
 .table-success {
   min-width: 250px;
   max-width: 250px; }
@@ -87,5 +54,8 @@ html, body {
 .dashboard-row {
   width: 1300px;
   margin: 0 auto; }
+
+* {
+  font-size: 115%; }
 
 /*# sourceMappingURL=app.css.map */
