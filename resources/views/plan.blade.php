@@ -52,12 +52,12 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table">
+                                                        <table class="table table-condensed table-bordered action-table" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-id">ID</th>
                                                                 <th class="table-task">Action/task</th>
-                                                                <th class="table-due">Due</th>
+                                                                <th class="table-due" style="font-weight: bold;">Due</th>
                                                                 <th class="table-owner">Department/Team</th>
                                                                 <th class="table-lead">Lead</th>
                                                                 <th class="table-success">Success Measures</th>
