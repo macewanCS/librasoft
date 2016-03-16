@@ -25,4 +25,8 @@ class Action extends Model
         return $this->hasMany(Task::class);
     }
 
+    public function addTask(Task $task) {
+        return $this->tasks()->save($task);
+    }
+
 }

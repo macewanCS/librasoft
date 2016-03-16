@@ -23,5 +23,9 @@ class Objective extends Model
         return $this->hasMany(Action::class);
     }
 
+    public function addAction(Action $action) {
+        return $this->actions()->save($action);
+    }
+
 
 }
