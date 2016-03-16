@@ -12,9 +12,9 @@
 
 <!-- Goal Group -->
 <div class="panel panel-default">
-    <div class="panel-heading" style="height: 50px;">
+    <div class="panel-heading" style="height: 60px;">
         <div style="float: left; position: relative; top: 50%; transform: translateY(-50%);">
-            <p class="panel-title">Business Plan</p>
+            <p class="panel-title" style="font-size: 120%;">Business Plan</p>
         </div>
         <div style="float: right;">
             <a role="button" class="btn btn-primary" style="background: #009FD7;" href="plan/new">New Business Plan</a>
