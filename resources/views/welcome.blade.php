@@ -3,36 +3,38 @@
 
 @section('content')
 
-    <div class="dashboard-row">
-        <div class="col-xs-2 dashboard-panel">
-            <div class="panel panel-primary">
-                <div class="panel-heading" style="background: #009FD7;">Recently updated</div>
+    <div class="dashboard" style="padding: 0; font-size: 70%;">
 
-                <div class="panel-body" style="height: 200px">
-                    <ul>
-                        <li>Goal 1, Objective 1 description has been updated</li>
-                    </ul>
+        <div class="dashboard-row">
+            <div class="col-xs-2 dashboard-panel">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background: #009FD7;">Recently updated</div>
+
+                    <div class="panel-body" style="height: 200px;">
+                        <ul>
+                            <li>Goal 1, Objective 1 description has been updated</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dashboard-row">
+            <div class="col-xs-2 dashboard-panel">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background: #009FD7">Recently Finished</div>
+
+                    <div class="panel-body" style="height: 200px">
+                        <ul>
+                            <li>Goal 1, Objective1, Action 2 has been completed</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <div class="dashboard-row">
-        <div class="col-xs-2 dashboard-panel">
-            <div class="panel panel-primary">
-                <div class="panel-heading" style="background: #009FD7">Recently Finished</div>
-
-                <div class="panel-body" style="height: 200px">
-                    <ul>
-                        <li>Goal 1, Objective1, Action 2 has been completed</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="dashboard-row">
+        <div class="dashboard-row">
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7"> Recent Comments</div>
@@ -58,6 +60,10 @@
             </div>
         </div>
     </div>
+
+    </div>
+
+    <script type="application/javascript">$(".panel-body").css("font-size", "85%");</script>
 
 @endsection
 {{--@endpermission--}}
