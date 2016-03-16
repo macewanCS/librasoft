@@ -13,9 +13,21 @@ class Plan extends Model
      */
     protected $fillable = ['body'];
 
+    public function plans() {
+        return $this->hasMany(Plan::class);
+    }
+
     public function goals()
     {
         return $this->hasMany(Goal::class);
+    }
+
+    public function addPlan(Plan $plan) {
+        return $this->plans()->save($plan);
+    }
+
+    public function addGoal(Goal $goal) {
+        return $this->goals()->save($goal);
     }
 
 

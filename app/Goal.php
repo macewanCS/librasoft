@@ -24,6 +24,10 @@ class Goal extends Model
         return $this->hasMany(Objective::class);
     }
 
+    public function addObjective(Objective $objective) {
+        return $this->plan()->save($objective);
+    }
+
 
 
 
