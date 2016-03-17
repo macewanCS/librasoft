@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with('plan', \App\Plan::first());
 });
 
 
@@ -40,7 +40,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('welcome')->with('plan', \App\Plan::first());
     });
 
     Route::get('plan', 'PlanController@plan');
