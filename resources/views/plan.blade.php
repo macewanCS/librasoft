@@ -12,9 +12,9 @@
 
 <!-- Goal Group -->
 <div class="panel panel-default">
-    <div class="panel-heading" style="height: 50px;">
+    <div class="panel-heading" style="height: 60px;">
         <div style="float: left; position: relative; top: 50%; transform: translateY(-50%);">
-            <p class="panel-title">Business Plan</p>
+            <p class="panel-title" style="font-size: 120%;">Business Plan</p>
         </div>
         <div style="float: right;">
             <a role="button" class="btn btn-primary" style="background: #009FD7;" href="plan/new">New Business Plan</a>
@@ -52,12 +52,12 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table">
+                                                        <table class="table table-condensed table-bordered action-table" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-id">ID</th>
                                                                 <th class="table-task">Action/task</th>
-                                                                <th class="table-due">Due</th>
+                                                                <th class="table-due" style="font-weight: bold;">Due</th>
                                                                 <th class="table-owner">Department/Team</th>
                                                                 <th class="table-lead">Lead</th>
                                                                 <th class="table-success">Success Measures</th>
