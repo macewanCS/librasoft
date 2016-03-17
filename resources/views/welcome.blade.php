@@ -20,6 +20,8 @@
 
         </div>
 
+
+
         <div class="dashboard-row">
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
@@ -51,11 +53,53 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Due Dates</div>
 
-                <div class="panel-body" style="height: 200px">
-                    <ul>
-                        <li> Task 3.1 is overdue </li>
-                        <li> Task 3.4 due in 10 days </li>
-                    </ul>
+                <div class="panel-body" style="height: 200px; overflow-y: scroll">
+                    <table class="table table-condensed table-bordered action-table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Action/Task</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                    @foreach($plan->goals as $goal)
+                        @foreach($goal->objectives as $objective)
+                            @foreach($objective->actions as $action)
+                                    <?php
+                                        $today = Carbon\Carbon::now();
+                                    ?>
+                                    @if ($action->date == $today)
+
+                                    @elseif($action->date < $today)
+                                        <tbody>
+                                            <tr>
+                                                <td>{{$action->item}}</td>
+                                                <td>{{$action->body}}</td>
+                                                <td>{{$action->date}}</td>
+                                                <td>{{$action->status}}</td>
+                                            </tr>
+
+                                            @foreach($action->tasks as $task)
+                                                @if($task->date == $today)
+                                                @elseif($task->date < $today)
+                                                    <tr>
+                                                        <td>{{$task->item}}</td>
+                                                        <td>{{$task->body}}</td>
+                                                        <td>{{$task->date}}</td>
+                                                        <td>{{$task->status}}</td>
+                                                    </tr>
+                                                @elseif($task->date > $today)
+                                                @endif
+                                            @endforeach
+                                        </tbody>
+                                    @elseif ($action->date > $today) 
+
+                                    @endif
+                            @endforeach
+                        @endforeach
+                    @endforeach
+                    </table>
                 </div>
             </div>
         </div>
@@ -65,5 +109,7 @@
 
     <script type="application/javascript">$(".panel-body").css("font-size", "85%");</script>
 
-@endsection
+
+@stop
+>>>>>>> Add Due Date functionality in dashboard
 {{--@endpermission--}}
