@@ -18,7 +18,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "IT Project Team",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'action_id'=>1
         ]);
@@ -30,8 +30,8 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Michael/Luc",
             'collaborators'=> "Active Networks",
-            'status'=> "",
-            'success'=> "",
+            'status'=> "Completed",
+            'success'=> "In progress",
             'action_id'=>1
         ]);
 
@@ -42,7 +42,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky/John",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'action_id'=>1
         ]);
@@ -54,7 +54,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>1
         ]);
@@ -66,7 +66,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "CMA, Teams, DLI",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>1
         ]);
@@ -78,7 +78,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Manager, IT Infrastructure/Luc Michael",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>1
         ]);
@@ -90,7 +90,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Manager, IT Infrastructure/Luc Michael",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'action_id'=>1
         ]);
@@ -102,7 +102,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>2
         ]);
@@ -114,7 +114,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "Khalil, Robin, Any",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Equipment purchased, configured, and deployed",
             'action_id'=>3
         ]);
@@ -126,7 +126,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "Rachael Collins",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>4
         ]);
@@ -138,7 +138,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "FAC, CMA, LON",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'action_id'=>5
         ]);
@@ -150,7 +150,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky/Andrew/Chris",
             'collaborators'=> "CMA",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "SSO is implemented",
             'action_id'=>7
         ]);
@@ -162,7 +162,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Alex Carruthers",
             'collaborators'=> "Andrew Nisbet",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'action_id'=>8
         ]);
@@ -174,7 +174,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "",
-            'status'=> "done",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>9
         ]);
@@ -186,7 +186,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Khalil",
             'collaborators'=> "Vicky",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'action_id'=>9
         ]);
@@ -198,7 +198,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Robin",
             'collaborators'=> "Jamie/John",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "",
             'action_id'=>9
         ]);
@@ -210,7 +210,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky/Khalil",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Mobile Circ rolled out",
             'action_id'=>10
         ]);
@@ -222,7 +222,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "iPads configured and deployed",
             'action_id'=>10
         ]);
@@ -234,7 +234,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Khalil",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "iPads configured and deployed",
             'action_id'=>10
         ]);
@@ -246,7 +246,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "DLI, MNA",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "New equipment selected, purchased, and deployed",
             'action_id'=>10
         ]);
@@ -258,7 +258,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "Any",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Blogs posted on a regular schedule",
             'action_id'=>10
         ]);
@@ -270,7 +270,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "JD",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "All display boards are functional",
             'action_id'=>10
         ]);
@@ -282,7 +282,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "Vicky",
             'collaborators'=> "PUR",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Demos are completed and a recommendation for which system best meets EPL's needs is forwarded",
             'action_id'=>11
         ]);
@@ -294,7 +294,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "Vicky/Any",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "Report forwarded with recommendations",
             'action_id'=>11
         ]);
@@ -306,7 +306,7 @@ class Tasks_Table_Seeder extends Seeder
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "Vicky/Any",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "Document created",
             'action_id'=>11
         ]);
