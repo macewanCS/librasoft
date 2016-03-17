@@ -17,6 +17,7 @@
             <p class="panel-title" style="font-size: 120%;">Business Plan</p>
         </div>
         <div style="float: right;">
+            <a role="button" class="btn btn-primary" style="background: #009FD7;" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" style="background: #009FD7;" href="plan/new">New Business Plan</a>
         </div>
     </div>
