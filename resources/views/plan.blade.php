@@ -22,6 +22,24 @@
         </div>
     </div>
     <div class="panel-body">
+        <div class="filter" style="padding-bottom: 10px; text-align: center;">
+            <div class="panel panel-primary" style="margin: auto; display: inline-block;">
+                <div class="panel-heading" style="background: #009FD7;">
+                    <h4 class="panel-title" style="font-size: 60%">Filter</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="btn-toolbar" role="toolbar" style="margin: auto;">
+                        <?php
+                            $filter_options = ["Actions", "Tasks"];
+                        ?>
+
+                        @foreach($filter_options as $option)
+                        <a type="button" class="btn btn-primary" style="font-size: 45%; background: #009FD7;" href="tasks/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
             <div class="panel-group">
                 @foreach($plan->goals as $goal)
