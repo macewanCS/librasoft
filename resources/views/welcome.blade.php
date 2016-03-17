@@ -52,7 +52,7 @@
                 <div class="panel-heading" style="background: #009FD7">Due Dates</div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll">
-                    <table class="table table-condensed table-bordered action-table">
+                    <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -70,27 +70,46 @@
                                     @if ($action->date == $today)
 
                                     @elseif($action->date < $today)
+                                        @if($action->status != 'Completed')
                                         <tbody>
                                             <tr>
                                                 <td>{{$action->item}}</td>
                                                 <td>{{$action->body}}</td>
-                                                <td>{{$action->date}}</td>
-                                                <td>{{$action->status}}</td>
+                                                <td style="min-width: 100px; max-width: 100px;">{{$action->date}}</td>
+                                                <td style="min-width: 100px; max-width: 100px;"
+                                                    @if($action->status == 'Ongoing')
+                                                        class="success"
+                                                    @elseif($action->status == 'In progress')
+                                                        class="danger"
+                                                    @endif
+
+                                                >{{$action->status}}</td>
                                             </tr>
 
                                             @foreach($action->tasks as $task)
                                                 @if($task->date == $today)
                                                 @elseif($task->date < $today)
-                                                    <tr>
-                                                        <td>{{$task->item}}</td>
-                                                        <td>{{$task->body}}</td>
-                                                        <td>{{$task->date}}</td>
-                                                        <td>{{$task->status}}</td>
-                                                    </tr>
+                                                    @if($task->status != 'Completed')
+                                                        <tr>
+                                                            <td>{{$task->item}}</td>
+                                                            <td><a href="tasks/{{ $task->id }}">
+                                                                    {{ $task->body }}
+                                                                </a></td>
+                                                            <td style="min-width: 100px; max-width: 100px">{{$task->date}}</td>
+                                                            <td style="min-width: 100px; max-width: 100px"
+                                                                @if($task->status == 'Ongoing')
+                                                                    class="success"
+                                                                @elseif($task->status == 'In progress')
+                                                                    class="danger"
+                                                                @endif
+                                                            >{{$task->status}}</td>
+                                                        </tr>
+                                                    @endif
                                                 @elseif($task->date > $today)
                                                 @endif
                                             @endforeach
                                         </tbody>
+                                            @endif
                                     @elseif ($action->date > $today) 
 
                                     @endif

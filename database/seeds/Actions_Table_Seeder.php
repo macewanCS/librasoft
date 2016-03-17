@@ -19,7 +19,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "Vicky Varga",
             'collaborators'=> "IT, DLI",
-            'status'=> "Projects in each of 2014, 2015, 2016",
+            'status'=> "Ongoing",
             'success'=> "Achieve a 90% completion rating; Increase computer usage by 20%",
             'objective_id'=>1
         ]);
@@ -58,7 +58,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "Deputy CEO",
             'collaborators'=> "Vicky",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "Increased use and knowledge of EPL services in underserved communities",
             'objective_id'=>2
         ]);
@@ -71,7 +71,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "Deputy CEO",
             'collaborators'=> "",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Achieve a 90% satisfaction rating for new and expanded services",
             'objective_id'=>2
         ]);
@@ -97,7 +97,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "Sharon Karr (CMA)",
             'collaborators'=> "Web Services, IT",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Achieve a 90% satisfaction rating with services and content",
             'objective_id'=>3
         ]);
@@ -123,7 +123,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "Peter Schoenberg",
             'collaborators'=> "IT, Marketing, FAO",
-            'status'=> "IP",
+            'status'=> "In progress",
             'success'=> "Yes",
             'objective_id'=>5
         ]);
@@ -136,7 +136,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "Peter Schoenberg",
             'collaborators'=> "IT, R&A, Discovery",
-            'status'=> "IP",
+            'status'=> "In progress",
             'success'=> "Yes",
             'objective_id'=>6
         ]);
@@ -149,7 +149,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"IT",
             'lead'=> "",
             'collaborators'=> "A&R",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "Achieve a 90% satisfaction rating with services",
             'objective_id'=>7
         ]);
@@ -162,7 +162,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "L Mackenzie, J McPhee",
             'collaborators'=> "Marketing, Purchasing, All branches",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Increase in customer visits year over year",
             'objective_id'=>8
         ]);
@@ -175,7 +175,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "L Mackenzie, J McPhee",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "",
             'objective_id'=>8
         ]);
@@ -188,7 +188,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing, ITS, DLI",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Over 500 people watching live and 5000 video hits",
             'objective_id'=>9
         ]);
@@ -201,7 +201,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "J Woods",
             'collaborators'=> "Marketing, Adult Services, Fund Development, Volunteers",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Sold out event, full venue and 100% sell through of fund development seats",
             'objective_id'=>10
         ]);
@@ -214,7 +214,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "Events person",
             'collaborators'=> "Marketing, Adult Services, Fund Development, Volunteers",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "Sold out event, full venue and 100% sell through of fund development seats",
             'objective_id'=>10
         ]);
@@ -227,7 +227,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "S Foremski",
             'collaborators'=> "Marketing, Adult Services, Fund Development, Volunteers",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Sold out event, full venue and 100% sell through of fund development seats",
             'objective_id'=>10
         ]);
@@ -240,7 +240,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "B Crittenden",
             'collaborators'=> "Marketing, Fund Development, Volunteers",
-            'status'=> "",
+            'status'=> "Completed",
             'success'=> "Sold out event, full venue",
             'objective_id'=>10
         ]);
@@ -253,7 +253,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Sold out event, full venue and 100% sell through of fund development seats",
             'objective_id'=>10
         ]);
@@ -262,11 +262,11 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'item' => "3.6",
             'body'=> "Manage ongoing list of potential speakers and partnerships",
-            'date'=> "Ongoing",
+            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'owner'=>"Events Team",
             'lead'=> "S Foremski, Events person",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "Ongoing",
             'success'=> "",
             'objective_id'=>10
         ]);
@@ -279,7 +279,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Bookings complete by September 2016",
             'objective_id'=>10
         ]);
@@ -292,7 +292,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "J McPhee",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Budget complete by May 2016",
             'objective_id'=>10
         ]);
@@ -305,7 +305,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "Events person, E Stuebing",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "$10,000 in shared cost partnerships",
             'objective_id'=>11
         ]);
@@ -319,7 +319,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "Events person, E Stuebing",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Documents in place by Feb 29, 2016 and uptake from potential partners",
             'objective_id'=>11
         ]);
@@ -332,7 +332,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "Events person, E Stuebing",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "$40,000 in event sponsorships",
             'objective_id'=>12
         ]);
@@ -346,7 +346,7 @@ class Actions_Table_Seeder extends Seeder
             'owner'=>"Events Team",
             'lead'=> "J McPhee, B Crittenden",
             'collaborators'=> "Marketing",
-            'status'=> "",
+            'status'=> "In progress",
             'success'=> "Successful acquisition of Bill Gates as speaker",
             'objective_id'=>13
         ]);
