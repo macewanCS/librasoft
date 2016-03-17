@@ -20,8 +20,6 @@
 
         </div>
 
-
-
         <div class="dashboard-row">
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
@@ -111,5 +109,5 @@
 
 
 @stop
->>>>>>> Add Due Date functionality in dashboard
+
 {{--@endpermission--}}
