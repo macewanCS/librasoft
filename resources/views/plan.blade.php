@@ -22,19 +22,19 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="filter" style="padding-bottom: 10px; text-align: center;">
-            <div class="panel panel-primary" style="margin: auto; display: inline-block;">
-                <div class="panel-heading" style="background: #009FD7;">
-                    <h4 class="panel-title" style="font-size: 60%">Filter</h4>
+        <div class="filter">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Filter</h4>
                 </div>
                 <div class="panel-body">
-                    <div class="btn-toolbar" role="toolbar" style="margin: auto;">
+                    <div class="btn-group" role="group">
                         <?php
-                            $filter_options = ["Actions", "Tasks"];
+                        $filter_options = ["Actions", "Tasks"];
                         ?>
 
                         @foreach($filter_options as $option)
-                        <a type="button" class="btn btn-primary" style="font-size: 45%; background: #009FD7;" href="tasks/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                            <a type="button" class="btn btn-primary" href="/tasks/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table" style="font-size: 12.5%;">
+                                                        <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-id">ID</th>
@@ -169,7 +169,16 @@
 <!-- Javascript -->
 <!--Chnages Icons arrows in accordion -->
 <script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
-<!-- Create pop up window-->
+
+<script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+
+<script type="application/javascript">
+    $(document).ready(function()
+            {
+                $(".action-table").tablesorter();
+            }
+    );
+</script>
 
 
 @stop
