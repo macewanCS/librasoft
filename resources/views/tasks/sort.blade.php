@@ -2,6 +2,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
     <div class="content">
 
         <div class="filter">
@@ -65,7 +66,6 @@
                     </tr>
 
                 @endforeach
-
                 </tbody>
             </table>
         </div>
@@ -80,7 +80,6 @@
             }
         );
     </script>
-
 
 
 @stop
