@@ -26,4 +26,9 @@ class TasksController extends Controller
     public function newTask() {
         return null;
     }
+
+    public function sort($option)
+    {
+        return view ('tasks.sort')->with('option', $option);
+    }
 }

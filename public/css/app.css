@@ -56,6 +56,38 @@ html, body {
   margin: 0 auto; }
 
 * {
-  font-size: 115%; }
+  font-size: 18px; }
+
+.filter {
+  padding-bottom: 10px;
+  text-align: center; }
+  .filter .panel {
+    margin: auto;
+    display: inline-block; }
+  .filter .panel-body {
+    margin: auto; }
+  .filter .btn {
+    width: 74px; }
+
+td .filter-table .item {
+  min-width: 150px;
+  max-width: 150px; }
+
+th .filter-table .item {
+  min-width: 150px;
+  max-width: 150px; }
+
+a .filter {
+  background: #009FD7; }
+
+.panel-heading {
+  background: #009FD7; }
+
+#sort-panel-title {
+  font-size: 60%; }
+
+#sort-container {
+  width: 80%;
+  text-align: center; }
 
 /*# sourceMappingURL=app.css.map */

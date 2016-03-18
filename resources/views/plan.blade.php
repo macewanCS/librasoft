@@ -22,6 +22,24 @@
         </div>
     </div>
     <div class="panel-body">
+        <div class="filter">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Filter</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="btn-group" role="group">
+                        <?php
+                        $filter_options = ["Actions", "Tasks"];
+                        ?>
+
+                        @foreach($filter_options as $option)
+                            <a type="button" class="btn btn-primary" href="/tasks/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
             <div class="panel-group">
                 @foreach($plan->goals as $goal)
@@ -53,7 +71,7 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table" style="font-size: 12.5%;">
+                                                        <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-id">ID</th>
@@ -151,7 +169,16 @@
 <!-- Javascript -->
 <!--Chnages Icons arrows in accordion -->
 <script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
-<!-- Create pop up window-->
+
+<script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+
+<script type="application/javascript">
+    $(document).ready(function()
+            {
+                $(".action-table").tablesorter();
+            }
+    );
+</script>
 
 
 @stop
