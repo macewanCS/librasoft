@@ -54,17 +54,7 @@
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll;">
-                    @foreach($plan->goals as $goal)
-                        @foreach($goal->objectives as $objective)
-                            @foreach($objective->actions as $action)
-                                <?php
-                                $today = Carbon\Carbon::now();
-                                ?>
-                                {{$action->updated_at = $today}}
-                                <p>{{$action->update_at}}</p>
-                            @endforeach
-                        @endforeach
-                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -154,12 +144,12 @@
                 <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Action/Task</th>
-                        <th>Department/ Team</th>
-                        <th>Lead</th>
-                        <th>Date</th>
-                        <th>Status</th>
+                        <th class="ui-table-id">ID</th>
+                        <th class="ui-table-body">Action/Task</th>
+                        <th class="ui-table-owner">Department/ Team</th>
+                        <th class="ui-table-lead">Lead</th>
+                        <th class="ui-table-due">Date</th>
+                        <th class="ui-table-status">Status</th>
                     </tr>
                     </thead>
                     @foreach($plan->goals as $goal)
@@ -174,12 +164,12 @@
                                     @if($action->status != 'Completed')
                                         <tbody>
                                         <tr>
-                                            <td>{{$action->item}}</td>
-                                            <td>{{$action->body}}</td>
-                                            <td>{{$action->owner}}</td>
-                                            <td>{{$action->lead}}</td>
-                                            <td style="min-width: 100px; max-width: 100px;">{{$action->date}}</td>
-                                            <td style="min-width: 100px; max-width: 100px;"
+                                            <td class="ui-table-id">{{$action->item}}</td>
+                                            <td class="ui-table-body">{{$action->body}}</td>
+                                            <td class="ui-table-owner">{{$action->owner}}</td>
+                                            <td class="ui-table-lead">{{$action->lead}}</td>
+                                            <td class="ui-table-due">{{$action->date}}</td>
+                                            <td style="font-size: 13px; min-width: 100px; max-width: 100px;"
                                                 @if($action->status == 'Ongoing')
                                                 class="success"
                                                 @elseif($action->status == 'In progress')
@@ -194,14 +184,15 @@
                                             @elseif($task->date < $today)
                                                 @if($task->status != 'Completed')
                                                     <tr>
-                                                        <td>{{$task->item}}</td>
-                                                        <td><a href="tasks/{{ $task->id }}" style="color: #0EBFE9">
+                                                        <td class="ui-table-id">{{$task->item}}</td>
+                                                        <td class="ui-table-body">
+                                                            <a href="tasks/{{ $task->id }}" style="color: #0EBFE9">
                                                                 {{ $task->body }}
                                                             </a></td>
-                                                        <td style="min-width: 100px; max-width: 100px; ">{{$task->owner}}</td>
-                                                        <td style="min-width: 120px; max-width: 120px">{{$task->lead}}</td>
-                                                        <td style="min-width: 100px; max-width: 100px">{{$task->date}}</td>
-                                                        <td style="min-width: 100px; max-width: 100px"
+                                                        <td class="ui-table-owner">{{$task->owner}}</td>
+                                                        <td class="ui-table-lead">{{$task->lead}}</td>
+                                                        <td class="ui-table-due">{{$task->date}}</td>
+                                                        <td style="font-size: 13px; min-width: 100px; max-width: 100px;"
                                                             @if($task->status == 'Ongoing')
                                                             class="success"
                                                             @elseif($task->status == 'In progress')
