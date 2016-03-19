@@ -113,7 +113,7 @@ class Actions_Table_Seeder extends Seeder
         //8 IT
         DB::table('actions')->insert([
             'item' => "2.6",
-            'body'=> "Develop an Open Data policy that includes how we will use and share our own data; participate in Edmonton's Open Data community and support data literacy initiatives.",
+            'body'=> "Develop an Open Data policy that helper how we will use and share our own data; participate in Edmonton's Open Data community and support data literacy initiatives.",
             'date'=> \Carbon\Carbon::createFromDate(2014, 01, 01)->toDateTimeString(),
             'owner'=>"IT",
             'lead'=> "Digital Public Spaces Librarian",
