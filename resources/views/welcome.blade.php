@@ -54,17 +54,7 @@
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll;">
-                    @foreach($plan->goals as $goal)
-                        @foreach($goal->objectives as $objective)
-                            @foreach($objective->actions as $action)
-                                <?php
-                                $today = Carbon\Carbon::now();
-                                ?>
-                                {{$action->updated_at = $today}}
-                                <p>{{$action->update_at}}</p>
-                            @endforeach
-                        @endforeach
-                    @endforeach
+
                 </div>
             </div>
         </div>
