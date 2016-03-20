@@ -37,9 +37,23 @@
                         <a onclick="popupFinished()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
-                    <div class="panel-body" style="height: 200px">
+                    <div class="panel-body" style="height: 200px; overflow-y: scroll;">
                         <ul>
-                            <li>Goal 1, Objective1, Action 2 has been completed</li>
+                            @foreach($plan->goals as $goal)
+                                @foreach($goal->objectives as $objective)
+                                    @foreach($objective->actions as $action)
+
+
+
+                                        @foreach($action->tasks as $task)
+
+                                        @endforeach
+
+
+
+                                    @endforeach
+                                @endforeach
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -60,7 +74,9 @@
                                 @foreach($objective->actions as $action)
                                     @foreach($action->tasks as $task)
                                         @foreach($task->notes as $note)
-                                            <li> <a href="tasks/{{ $task->id }}">{{$note->content}}</a><p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
+                                            <li>
+                                                <a href="tasks/{{ $task->id }}">{{$note->content}}</a>
+                                                <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
                                             </li>
                                         @endforeach
                                     @endforeach
