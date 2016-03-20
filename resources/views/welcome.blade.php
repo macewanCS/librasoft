@@ -17,7 +17,7 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7;">Recently updated
-                        <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">more detail..</a>
+                        <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
                     <div class="panel-body" style="height: 200px;">
@@ -34,7 +34,7 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7">Recently Finished
-                        <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">more detail..</a>
+                        <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
                     <div class="panel-body" style="height: 200px">
@@ -50,7 +50,7 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7"> Recent Comments
-                    <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">more detail..</a>
+                    <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll;">
@@ -61,7 +61,7 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Due Dates
-                    <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">more detail..</a>
+                    <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll">
