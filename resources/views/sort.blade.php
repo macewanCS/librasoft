@@ -79,7 +79,7 @@
 
                     <tr>
                         @if($option == 'actions') <td class="item">{{ $data->item }}</td> @endif
-                        <td class="desc">@if($option == 'tasks')<a href="tasks/{{ $task->id }}">@endif{{ $data->body }}@if($option == 'tasks')</a>@endif</td>
+                        <td class="desc">@if($option == 'tasks')<a href="/tasks/{{ $data->id }}">@endif{{ $data->body }}@if($option == 'tasks')</a>@endif</td>
                         <td class="due">{{ $data->date }}</td>
                         <td class="dept">{{ $data->owner }}</td>
                         <td class="action-lead">

@@ -151,7 +151,7 @@
                                                                     <tr>
                                                                         <td></td>
                                                                         <td class="table-task">
-                                                                            <a href="tasks/{{ $task->id }}">
+                                                                            <a href="/tasks/{{ $task->id }}">
                                                                                 {{ $task->body }}
                                                                             </a>
                                                                         </td>
