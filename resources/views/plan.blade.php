@@ -34,7 +34,7 @@
                         ?>
 
                         @foreach($filter_options as $option)
-                            <a type="button" class="btn btn-primary" href="/tasks/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                            <a type="button" class="btn btn-primary" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
                         @endforeach
                     </div>
                 </div>
