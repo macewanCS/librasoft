@@ -17,7 +17,7 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7;">Recently updated
-                        <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                        <a onclick="popupUpdated()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
                     <div class="panel-body" style="height: 200px;">
@@ -34,7 +34,7 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7">Recently Finished
-                        <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                        <a onclick="popupFinished()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
                     <div class="panel-body" style="height: 200px">
@@ -50,18 +50,31 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7"> Recent Comments
-                    <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                    <a onclick="popupComments()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll;">
-
+                    <ul>
+                        @foreach($plan->goals as $goal)
+                            @foreach($goal->objectives as $objective)
+                                @foreach($objective->actions as $action)
+                                    @foreach($action->tasks as $task)
+                                        @foreach($task->notes as $note)
+                                            <li> <a href="tasks/{{ $task->id }}">{{$note->content}}</a><p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
+                                            </li>
+                                        @endforeach
+                                    @endforeach
+                                @endforeach
+                            @endforeach
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Due Dates
-                    <a onclick="popup()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                    <a onclick="popupDates()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll">
@@ -137,9 +150,10 @@
 
     </div>
 
-
+    <!-- Popup divs-->
+    <!--Due date popup -->
     <div class="hide fade">
-        <div id="dialog"  title="Dute Date" class="panel panel-primary">
+        <div id="date"  title="Dute Dates" class="panel panel-primary">
             <div class="panel-body overflow-y: scroll" >
                 <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
                     <thead>
@@ -245,6 +259,36 @@
                         @endforeach
                     @endforeach
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Comments popup -->
+    <div class="hide fade">
+        <div id="comments"  title="Recent Comments" class="panel panel-primary">
+            <div class="panel-body overflow-y: scroll" >
+
+               Hi
+            </div>
+        </div>
+    </div>
+
+    <!--Updated popup -->
+    <div class="hide fade">
+        <div id="updated"  title="Recently Updated" class="panel panel-primary">
+            <div class="panel-body overflow-y: scroll" >
+
+                bye
+            </div>
+        </div>
+    </div>
+
+    <!--Finished popup -->
+    <div class="hide fade">
+        <div id="finished"  title="Recently Finished" class="panel panel-primary">
+            <div class="panel-body overflow-y: scroll" >
+
+                Hello
             </div>
         </div>
     </div>
