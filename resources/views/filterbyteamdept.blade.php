@@ -78,7 +78,23 @@
                         <td class="desc">{{ $result->body }}</td>
                         <td class="due">{{ $result->date }}</td>
                         <td class="dept">{{ $result->owner }}</td>
-                        <td class="action-lead">{{ $result->lead }}</td>
+                        <td class="action-lead">
+                            <?php
+                                $leads = explode("__,__", $result->lead);
+                                foreach ($leads as $lead) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $lead)->first()->name;
+                                    } else {
+                                        echo $lead;
+                                    }
+
+                                    if ($lead != $leads[count($leads)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                            ?>
+                        </td>
                         <td class="suc">{{ $result->success }}</td>
                         <td class="stat">{{ $result->status }}</td>
                     </tr>
@@ -88,7 +104,23 @@
                             <td class="desc">{{ $task->body }}</td>
                             <td class="due">{{ $task->date }}</td>
                             <td class="dept">{{ $task->owner }}</td>
-                            <td class="action-lead">{{ $task->lead }}</td>
+                            <td class="action-lead">
+                                <?php
+                                    $leads = explode("__,__", $task->lead);
+                                    foreach ($leads as $lead) {
+                                        // Check if it's a valid email address
+                                        if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                            echo \App\User::where("email", $lead)->first()->name;
+                                        } else {
+                                            echo $lead;
+                                        }
+
+                                        if ($lead != $leads[count($leads)-1]) {
+                                            echo ", ";
+                                        }
+                                    }
+                                ?>
+                            </td>
                             <td class="suc">{{ $task->success }}</td>
                             <td class="stat">{{ $task->status }}</td>
                         </tr>

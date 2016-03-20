@@ -115,7 +115,23 @@
                                                                     <td class="table-task">{{ $action->body }}</td>
                                                                     <th class="table-due">{{ $action->date }}</th>
                                                                     <td class="table-owner">{{ $action->owner }}</td>
-                                                                    <td class="table-collaborators">{{ $action->lead }}</td>
+                                                                    <td class="table-collaborators">
+                                                                        <?php
+                                                                            $leads = explode("__,__", $action->lead);
+                                                                            foreach ($leads as $lead) {
+                                                                                // Check if it's a valid email address
+                                                                                if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                                                                    echo \App\User::where("email", $lead)->first()->name;
+                                                                                } else {
+                                                                                    echo $lead;
+                                                                                }
+
+                                                                                if ($lead != $leads[count($leads)-1]) {
+                                                                                    echo ", ";
+                                                                                }
+                                                                            }
+                                                                        ?>
+                                                                    </td>
                                                                     <td class="table-success">{{ $action->success }}</td>
                                                                     <td
                                                                             @if ($action->status == "Completed")
@@ -141,7 +157,23 @@
                                                                         </td>
                                                                         <td class="table-due">{{ $task->date }}</td>
                                                                         <td class="table-owner">{{ $task->owner }}</td>
-                                                                        <td class="table-lead">{{ $task->lead }}</td>
+                                                                        <td class="table-lead">
+                                                                            <?php
+                                                                                $leads = explode("__,__", $task->lead);
+                                                                                foreach ($leads as $lead) {
+                                                                                    // Check if it's a valid email address
+                                                                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                                                                        echo \App\User::where("email", $lead)->first()->name;
+                                                                                    } else {
+                                                                                        echo $lead;
+                                                                                    }
+
+                                                                                    if ($lead != $leads[count($leads)-1]) {
+                                                                                        echo ", ";
+                                                                                    }
+                                                                                }
+                                                                            ?>
+                                                                        </td>
                                                                         <td></td>
                                                                         <td
                                                                                 @if ($task->status == "Completed")

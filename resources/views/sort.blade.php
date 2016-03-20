@@ -82,7 +82,23 @@
                         <td class="desc">{{ $data->body }}</td>
                         <td class="due">{{ $data->date }}</td>
                         <td class="dept">{{ $data->owner }}</td>
-                        <td class="action-lead">{{ $data->lead }}</td>
+                        <td class="action-lead">
+                            <?php
+                                $leads = explode("__,__", $data->lead);
+                                foreach ($leads as $lead) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $lead)->first()->name;
+                                    } else {
+                                        echo $lead;
+                                    }
+
+                                    if ($lead != $leads[count($leads)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                            ?>
+                        </td>
                         <td class="suc">{{ $data->success }}</td>
                         <td class="stat">{{ $data->status }}</td>
                     </tr>
