@@ -77,9 +77,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-listing">
-                        <li><a href="{{ url('/') }}">Dashboard</a></li>
-                        <li><a href="{{ url('/plan') }}">Plan</a></li>
-                        @permission('view.mywork')<li><a href="{{ url('/mywork') }}">My Work</a></li>@endpermission
+                        <li class="navbar-item navbar-spacing"><a href="{{ url('/') }}">Dashboard</a></li>
+                        <li class="navbar-item"><a href="{{ url('/plan') }}">Plan</a></li>
+                        @permission('view.mywork')<li class="navbar-item"><a href="{{ url('/mywork') }}">My Work</a></li>@endpermission
                         <!--li><a href="{{ url('/manage') }}">Archives</a></li-->
                     </ul>
 
