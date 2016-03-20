@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class Tasks_Table_Seeder extends Seeder
 {
@@ -22,6 +23,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "IT Project Team",
             'status'=> "In progress",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -34,6 +36,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "Active Networks",
             'status'=> "Completed",
             'success'=> "In progress",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -46,6 +49,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 02, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -53,11 +57,12 @@ class Tasks_Table_Seeder extends Seeder
         DB::table('tasks')->insert([
             'owner'=> "IT Services",
             'body'=> "Investigate and prepare to replace LibOnline in 2017 with business case, budged request, and high level migration plan",
-            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'date'=> \Carbon\Carbon::createFromDate(2016, 03, 15)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -70,6 +75,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "CMA" . $SEPARATOR . "Teams" . $SEPARATOR . "DLI",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 02, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -82,6 +88,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 03, 20)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -94,6 +101,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -106,6 +114,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 03, 18)->toDateTimeString(),
             'action_id'=>2
         ]);
 
@@ -118,6 +127,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "dkhalil@epl.ca" . $SEPARATOR . "drobin@epl.ca" . $SEPARATOR . "Any",
             'status'=> "In progress",
             'success'=> "Equipment purchased, configured, and deployed",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>3
         ]);
 
@@ -130,6 +140,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "crachael@epl.ca",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>4
         ]);
 
@@ -142,6 +153,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "FAC" . $SEPARATOR . "CMA" . $SEPARATOR . "LON",
             'status'=> "In progress",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>5
         ]);
 
@@ -154,6 +166,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "CMA",
             'status'=> "Completed",
             'success'=> "SSO is implemented",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>7
         ]);
 
@@ -166,6 +179,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "nandrew@epl.ca",
             'status'=> "In progress",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>8
         ]);
 
@@ -178,6 +192,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>9
         ]);
 
@@ -190,6 +205,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "vvarga@epl.ca",
             'status'=> "In progress",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>9
         ]);
 
@@ -202,6 +218,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "djamie@epl.ca" . $SEPARATOR . "djohn@epl.ca",
             'status'=> "Completed",
             'success'=> "",
+            'updated_at' => Carbon::createFromDate(2016, 03, 12)->toDateTimeString(),
             'action_id'=>9
         ]);
 
@@ -214,6 +231,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "Mobile Circ rolled out",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>10
         ]);
 
@@ -226,6 +244,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "iPads configured and deployed",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>10
         ]);
 
@@ -238,6 +257,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "iPads configured and deployed",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>10
         ]);
 
@@ -250,6 +270,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "DLI" . $SEPARATOR . "MNA",
             'status'=> "Completed",
             'success'=> "New equipment selected, purchased, and deployed",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>10
         ]);
 
@@ -262,6 +283,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "Blogs posted on a regular schedule",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>10
         ]);
 
@@ -274,6 +296,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "djohn@epl.ca",
             'status'=> "In progress",
             'success'=> "All display boards are functional",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>10
         ]);
 
@@ -286,6 +309,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "PUR",
             'status'=> "In progress",
             'success'=> "Demos are completed and a recommendation for which system best meets EPL's needs is forwarded",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>11
         ]);
 
@@ -298,6 +322,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "Report forwarded with recommendations",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>11
         ]);
 
@@ -310,6 +335,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "Completed",
             'success'=> "Document created",
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>11
         ]);
     }

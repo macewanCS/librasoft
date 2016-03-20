@@ -37,10 +37,54 @@
                         <a onclick="popupFinished()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
-                    <div class="panel-body" style="height: 200px">
-                        <ul>
-                            <li>Goal 1, Objective1, Action 2 has been completed</li>
-                        </ul>
+                    <div class="panel-body" style="height: 200px; overflow-y: scroll;">
+                        <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Action/Task</th>
+                                <th>Updated</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            @foreach($plan->goals as $goal)
+                                @foreach($goal->objectives as $objective)
+                                    @foreach($objective->actions as $action)
+                                        <?php
+                                        $today = Carbon\Carbon::now();
+                                        ?>
+                                        <!-- item is in between dates -->
+                                        @if($action->date <= $today)
+                                            @if($action->status == 'Completed')
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="ui-table-id">{{$action->item}}</td>
+                                                        <td class="ui-table-body">{{$action->body}}</td>
+                                                        <td class="ui-table-due">{{$action->updated_at}}</td>
+                                                        <td class="success ui-table-status">{{$action->status}}</td>
+                                                    </tr>
+                                                @foreach($action->tasks as $task)
+                                                    @if($task->date <= $today)
+                                                        @if($task->status == 'Completed')
+                                                            <tr>
+                                                                <td class="ui-table-id">{{$task->item}}</td>
+                                                                <td class="ui-table-body">
+                                                                    <a class="ui-table-body" href="tasks/{{ $task->id }}">
+                                                                        {{ $task->body }}
+                                                                    </a></td>
+                                                                <td class="ui-table-due">{{$task->updated_at}}</td>
+                                                                <td class="success ui-table-status">{{$task->status}}</td>
+                                                            </tr>
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                                </tbody>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                @endforeach
+                            @endforeach
+                        </table>
                     </div>
                 </div>
             </div>
@@ -60,7 +104,9 @@
                                 @foreach($objective->actions as $action)
                                     @foreach($action->tasks as $task)
                                         @foreach($task->notes as $note)
-                                            <li> <a href="tasks/{{ $task->id }}">{{$note->content}}</a><p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
+                                            <li>
+                                                <a href="tasks/{{ $task->id }}">{{$note->content}}</a>
+                                                <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
                                             </li>
                                         @endforeach
                                     @endforeach
@@ -118,7 +164,8 @@
                                                     @if($task->status != 'Completed')
                                                         <tr>
                                                             <td class="ui-table-id">{{$task->item}}</td>
-                                                            <td class="ui-table-body"><a href="tasks/{{ $task->id }}">
+                                                            <td class="ui-table-body">
+                                                                <a class="ui-table-body" href="tasks/{{ $task->id }}">
                                                                     {{ $task->body }}
                                                                 </a></td>
                                                             <td class="ui-table-due">{{$task->date}}</td>
@@ -301,8 +348,91 @@
     <div class="hide fade">
         <div id="finished"  title="Recently Finished" class="panel panel-primary">
             <div class="panel-body overflow-y: scroll" >
+                <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
+                    <thead>
+                    <tr>
+                        <th class="ui-table-id">ID</th>
+                        <th class="ui-table-body">Action/Task</th>
+                        <th class="ui-table-owner">Department/ Team</th>
+                        <th class="ui-table-lead">Lead</th>
+                        <th class="ui-table-due">Updated</th>
+                        <th class="ui-table-status">Status</th>
+                    </tr>
+                    </thead>
+                    @foreach($plan->goals as $goal)
+                    @foreach($goal->objectives as $objective)
+                    @foreach($objective->actions as $action)
+                    <?php
+                    $today = Carbon\Carbon::now();
+                    ?>
+                            <!-- item is in between dates -->
+                    @if($action->date <= $today)
+                        @if($action->status == 'Completed')
+                            <tbody>
+                            <tr>
+                                <td class="ui-table-id">{{$action->item}}</td>
+                                <td class="ui-table-body">{{$action->body}}</td>
+                                <td class="ui-table-owner">{{$action->owner}}</td>
+                                <td class="ui-table-lead">
+                                    <?php
+                                    $leads = explode("__,__", $action->lead);
+                                    foreach ($leads as $lead) {
+                                        // Check if it's a valid email address
+                                        if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                            echo \App\User::where("email", $lead)->first()->name;
+                                        } else {
+                                            echo $lead;
+                                        }
 
-                Hello
+                                        if ($lead != $leads[count($leads)-1]) {
+                                            echo ", ";
+                                        }
+                                    }
+                                    ?>
+                                </td>
+                                <td class="ui-table-due">{{$action->updated_at}}</td>
+                                <td class="success ui-table-status">{{$action->status}}</td>
+                            </tr>
+                            @foreach($action->tasks as $task)
+                                @if($task->date <= $today)
+                                    @if($task->status == 'Completed')
+                                        <tr>
+                                            <td class="ui-table-id">{{$task->item}}</td>
+                                            <td class="ui-table-body">
+                                                <a class="ui-table-body" href="tasks/{{ $task->id }}">
+                                                    {{ $task->body }}
+                                                </a></td>
+                                            <td class="ui-table-owner">{{$task->owner}}</td>
+                                            <td class="ui-table-lead">
+                                                <?php
+                                                $leads = explode("__,__", $task->lead);
+                                                foreach ($leads as $lead) {
+                                                    // Check if it's a valid email address
+                                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                                        echo \App\User::where("email", $lead)->first()->name;
+                                                    } else {
+                                                        echo $lead;
+                                                    }
+
+                                                    if ($lead != $leads[count($leads)-1]) {
+                                                        echo ", ";
+                                                    }
+                                                }
+                                                ?>
+                                            </td>
+                                            <td class="ui-table-due">{{$task->updated_at}}</td>
+                                            <td class="success ui-table-status">{{$task->status}}</td>
+                                        </tr>
+                                    @endif
+                                @endif
+                            @endforeach
+                            </tbody>
+                        @endif
+                    @endif
+                    @endforeach
+                    @endforeach
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>
