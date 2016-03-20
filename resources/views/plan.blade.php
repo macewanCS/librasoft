@@ -49,14 +49,14 @@
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Departments</li>
                             @foreach($dept_options as $dept_option)
-                                <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $dept_option)); ?>
-                                <li><a href="#">{{ $dept_option->name }}</a></li>
+                                <?php $lower_option = strtolower($dept_option->name); ?>
+                                <li><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
                             @endforeach
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Teams</li>
                             @foreach($team_options as $team_option)
-                                <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $team_option)); ?>
-                                <li><a href="#">{{ $team_option->name }}</a></li>
+                                <?php $lower_option = strtolower($team_option->name); ?>
+                                <li><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -97,8 +97,8 @@
                                                         <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
-                                                                <th class="table-id">ID</th>
-                                                                <th class="table-task">Action/task</th>
+                                                                <th class="table-id">Action</th>
+                                                                <th class="table-task">Description</th>
                                                                 <th class="table-due" style="font-weight: bold;">Due</th>
                                                                 <th class="table-owner">Department/Team</th>
                                                                 <th class="table-lead">Lead</th>

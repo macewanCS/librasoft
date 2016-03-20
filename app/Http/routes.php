@@ -27,6 +27,8 @@ Route::get('tasks/{task}', 'TasksController@show');
 Route::post('tasks/{task}/notes', 'NotesController@store');
 
 Route::get('sort/{option}', function ($option) {return view ('sort')->with('option', $option);});
+Route::get('sort/dept/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
+Route::get('sort/team/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
 
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords

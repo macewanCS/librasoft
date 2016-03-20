@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="content">
-
         <div class="filter">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -12,16 +11,16 @@
                 <div class="panel-body">
                     <div class="btn-group" role="group">
                         <?php
-                            use App\Department;
-                            use App\Team;
-                            $filter_options = ["Actions", "Tasks"];
-                            $dept_options = Department::all();
-                            $team_options = Team::all();
+                        use App\Department;
+                        use App\Team;
+                        $filter_options = ["Actions", "Tasks"];
+                        $dept_options = Department::all();
+                        $team_options = Team::all();
                         ?>
 
                         @foreach($filter_options as $filter_option)
                             <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $filter_option)); ?>
-                            <a type="button" class="btn btn-primary acttskbutton" href="/sort/{{ $lower_option }}" @if($lower_option == $option) disabled="disabled" @endif>{{ $filter_option }}</a>
+                            <a type="button" class="btn btn-primary acttskbutton" href="/sort/{{ $lower_option }}">{{ $filter_option }}</a>
                         @endforeach
                     </div>
                     <div class="dropdown">
@@ -33,30 +32,37 @@
                             <li class="dropdown-header">Departments</li>
                             @foreach($dept_options as $dept_option)
                                 <?php $lower_option = strtolower($dept_option->name); ?>
-                                <li><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
+                                <li @if($lower_option == $dept) class="disabled" @endif><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
                             @endforeach
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Teams</li>
                             @foreach($team_options as $team_option)
                                 <?php $lower_option = strtolower($team_option->name); ?>
-                                <li><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
+                                <li @if($lower_option == $dept) class="disabled" @endif><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="panel panel-primary sort-panel">
-            <div class="panel-heading">
-                <h4 class="panel-title">{{ ucwords(strtolower($option)) }}</h4>
-            </div>
+    <div class="panel panel-primary sort-panel">
+        <div class="panel-heading">
+            <h4 class="panel-title">{{ ucwords(strtolower($dept)) }}</h4>
+        </div>
+        <?php
+        use \App\Action;
+            $results = Action::where('owner', strtolower($dept))->get();
+        ?>
 
-            <!-- Action table -->
+        @if(count($results) < 1)
+            <div class="panel-body"><h4>No records found.</h4></div>
+        @else
             <table class="table table-bordered table-striped table-hover filter-table tablesorter">
                 <thead>
                 <tr>
-                    @if($option == 'actions')<th class="item">Action</th>@endif
+                    <th class="item">Action</th>
                     <th class="desc">Description</th>
                     <th class="due">Due</th>
                     <th class="dept">Department/Team</th>
@@ -65,43 +71,45 @@
                     <th class="stat">Status</th>
                 </tr>
                 </thead>
-
                 <tbody>
-                <?php
-                    if ($option == 'actions') {
-                        $results = DB::table('actions')->orderBy('item', 'asc')->get();
-                    } else {
-                        $results = DB::table('tasks')->orderBy('body', 'asc')->get();
-                    }
-                ?>
-
-                @foreach($results as $data)
-
+                @foreach($results as $result)
                     <tr>
-                        @if($option == 'actions') <td class="item">{{ $data->item }}</td> @endif
-                        <td class="desc">{{ $data->body }}</td>
-                        <td class="due">{{ $data->date }}</td>
-                        <td class="dept">{{ $data->owner }}</td>
-                        <td class="action-lead">{{ $data->lead }}</td>
-                        <td class="suc">{{ $data->success }}</td>
-                        <td class="stat">{{ $data->status }}</td>
+                        <td class="item">{{ $result->item }}</td>
+                        <td class="desc">{{ $result->body }}</td>
+                        <td class="due">{{ $result->date }}</td>
+                        <td class="dept">{{ $result->owner }}</td>
+                        <td class="action-lead">{{ $result->lead }}</td>
+                        <td class="suc">{{ $result->success }}</td>
+                        <td class="stat">{{ $result->status }}</td>
                     </tr>
-
+                    @foreach($result->tasks as $task)
+                        <tr>
+                            <td class="item"></td>
+                            <td class="desc">{{ $task->body }}</td>
+                            <td class="due">{{ $task->date }}</td>
+                            <td class="dept">{{ $task->owner }}</td>
+                            <td class="action-lead">{{ $task->lead }}</td>
+                            <td class="suc">{{ $task->success }}</td>
+                            <td class="stat">{{ $task->status }}</td>
+                        </tr>
+                    @endforeach
                 @endforeach
                 </tbody>
             </table>
-        </div>
+
+        @endif
     </div>
 
     <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
 
     <script type="application/javascript">
         $(document).ready(function()
-            {
-                $(".filter-table").tablesorter();
-            }
+                {
+                    $(".filter-table").tablesorter();
+                }
         );
     </script>
+
 
 
 @stop
