@@ -13,7 +13,7 @@ class Department_Table_Seeder extends Seeder
     {
         //1
         DB::table('departments')->insert([
-            'name' => "IT"
+            'name' => "IT Services"
         ]);
 
         //2
@@ -23,12 +23,22 @@ class Department_Table_Seeder extends Seeder
 
         //3
         DB::table('departments')->insert([
-            'name' => "Marketing"
+            'name' => "Financial Services"
         ]);
 
         //4
         DB::table('departments')->insert([
             'name' => "Finance"
+        ]);
+
+        //5
+        DB::table('departments')->insert([
+            'name' => "Fund Development"
+        ]);
+
+        //6
+        DB::table('departments')->insert([
+            'name' => "Collection Management and Access"
         ]);
     }
 }

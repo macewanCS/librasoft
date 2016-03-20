@@ -16,12 +16,12 @@
   max-width: 150px; }
 
 .table-id {
-  min-width: 60px;
-  max-width: 60px; }
+  min-width: 65px;
+  max-width: 65px; }
 
 .table-lead, .table-collaborators {
-  min-width: 150px;
-  max-width: 150px; }
+  min-width: 160px;
+  max-width: 160px; }
 
 .table-status {
   min-width: 100px;
@@ -41,6 +41,28 @@ html, body {
 
 .footer, .push {
   height: 3em; }
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 47px; }
+
+.layout-navbar {
+  height: 90px;
+  background: white;
+  width: 100%;
+  nav-left: auto; }
+
+.navbar-brand {
+  width: 190px;
+  height: 70px; }
+
+.navbar-listing {
+  padding-top: 33px; }
+
+.sort-panel {
+  width: 99%;
+  margin: 0 auto; }
 
 #footer-list {
   float: right; }
@@ -66,8 +88,11 @@ html, body {
     display: inline-block; }
   .filter .panel-body {
     margin: auto; }
-  .filter .btn {
+  .filter .acttskbutton {
     width: 74px; }
+
+.dropdown-toggle {
+  width: 148px; }
 
 td .filter-table .item {
   min-width: 150px;
@@ -90,27 +115,21 @@ a .filter {
   width: 80%;
   text-align: center; }
 
-/*# sourceMappingURL=app.css.map */
-
 /*# Dialog box styling*/
-
 .ui-widget.success-dialog {
-  font-family: Verdana,Arial,sans-serif;
-}
+  font-family: Verdana,Arial,sans-serif; }
 
 .ui-widget-content.success-dialog {
   background: #F9F9F9;
-  border: 1px solid #009FD7;;
-  color: #222222;
-}
+  border: 1px solid #009FD7;
+  color: #222222; }
 
 .ui-dialog.success-dialog {
   left: 0;
   outline: 0 none;
   padding: 0 !important;
   position: absolute;
-  top: 0;
-}
+  top: 0; }
 
 .ui-dialog.success-dialog .ui-dialog-content {
   background: none repeat scroll 0 0 transparent;
@@ -118,51 +137,42 @@ a .filter {
   overflow: auto;
   position: relative;
   padding: 0 !important;
-  margin: 0;
-}
+  margin: 0; }
 
 .ui-dialog.success-dialog .ui-widget-header {
-  background: #009FD7;;
+  background: #009FD7;
   border: 0;
   color: #fff;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 .ui-dialog.success-dialog .ui-dialog-titlebar {
   padding: 0.1em .5em;
-  position: relative;
-
-}
+  position: relative; }
 
 .ui-table-id {
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 .ui-table-body {
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 .ui-table-owner {
   font-size: 13px;
   min-width: 100px;
-  max-width: 100px;
-}
+  max-width: 100px; }
 
 .ui-table-lead {
   font-size: 13px;
   min-width: 120px;
-  max-width: 120px;
-}
+  max-width: 120px; }
 
 .ui-table-due {
   font-size: 13px;
   min-width: 90px;
-  max-width: 90px;
-}
+  max-width: 90px; }
 
 .ui-table-status {
   font-size: 13px;
   min-width: 100px;
-  max-width: 100px;
-}
+  max-width: 100px; }
 
+/*# sourceMappingURL=app.css.map */
