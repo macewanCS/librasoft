@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="panel panel-primary">
+        <div class="panel panel-primary sort-panel">
             <div class="panel-heading">
                 <h4 class="panel-title">{{ strtoupper($option) }}</h4>
             </div>

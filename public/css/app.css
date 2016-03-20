@@ -60,6 +60,10 @@ html, body {
 .navbar-listing {
   padding-top: 33px; }
 
+.sort-panel {
+  width: 99%;
+  margin: 0 auto; }
+
 #footer-list {
   float: right; }
   #footer-list li {
