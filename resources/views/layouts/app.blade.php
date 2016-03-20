@@ -56,7 +56,7 @@
 </head>
 <body id="app-layout">
     <div class="non-footer-wrapper">
-        <nav class="navbar navbar-default" style="height: 90px; background: white; width: 100%; nav-left: auto">
+        <nav class="navbar navbar-default layout-navbar">
             <div class="container">
                 <div class="navbar-header">
 
@@ -70,13 +70,13 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{asset("/img/DesktopLogo_190x70.png")}}" alt="EPL Logo" style="width:190px;height:70px;">
+                        <img src="{{asset("/img/DesktopLogo_190x70.png")}}" alt="EPL Logo">
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav" style="padding-top: 33px; font-size: 25px;">
+                    <ul class="nav navbar-nav navbar-listing">
                         <li><a href="{{ url('/') }}">Dashboard</a></li>
                         <li><a href="{{ url('/plan') }}">Plan</a></li>
                         @permission('view.mywork')<li><a href="{{ url('/mywork') }}">My Work</a></li>@endpermission
@@ -84,7 +84,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right" style="padding-top: 33px; font-size: 25px;">
+                    <ul class="nav navbar-nav navbar-right navbar-listing">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
@@ -112,7 +112,7 @@
 
 
     <!-- Footer -->
-    <div class="well well-sm footer" style="bottom: 0; width: 100%; height: 47px; font-size: 80%;">
+    <div class="well well-sm footer">
         <ul id="footer-list" class="list-inline">
             <li><a href="http://www.epl.ca/">Edmonton Public Library</a></li>
             <li><a href="https://epl.bibliocommons.com/info/terms">Terms of Use</a></li>
