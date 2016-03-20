@@ -88,8 +88,11 @@ html, body {
     display: inline-block; }
   .filter .panel-body {
     margin: auto; }
-  .filter .btn {
+  .filter .acttskbutton {
     width: 74px; }
+
+.dropdown-toggle {
+  width: 148px; }
 
 td .filter-table .item {
   min-width: 150px;
