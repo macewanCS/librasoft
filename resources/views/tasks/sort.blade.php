@@ -2,7 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
     <div class="content">
 
         <div class="filter">
