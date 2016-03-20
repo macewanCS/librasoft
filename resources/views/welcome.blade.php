@@ -267,8 +267,22 @@
     <div class="hide fade">
         <div id="comments"  title="Recent Comments" class="panel panel-primary">
             <div class="panel-body overflow-y: scroll" >
-
-               Hi
+                <ul class="list-group">
+                    @foreach($plan->goals as $goal)
+                        @foreach($goal->objectives as $objective)
+                            @foreach($objective->actions as $action)
+                                @foreach($action->tasks as $task)
+                                    @foreach($task->notes as $note)
+                                        <li class="list-group-item">
+                                            <a href="tasks/{{ $task->id }}" style="color: #0EBFE9">{{$note->content}}</a>
+                                            <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
+                                        </li>
+                                    @endforeach
+                                @endforeach
+                            @endforeach
+                        @endforeach
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>
