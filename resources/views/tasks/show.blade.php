@@ -15,7 +15,7 @@
                         <th style="min-width: 100px; max-width: 100px;">Due</th>
                         <th>Owner</th>
                         <th>Lead</th>
-                        <th>collaborators</th>
+                        <th>Collaborators</th>
                         <th>Status</th>
                         <th>Success Measures</th>
                     </tr>
@@ -43,7 +43,23 @@
                                 }
                             ?>
                         </td>
-                        <td contenteditable="true" id="collaborators">{{ $task->collaborators }}</td>
+                        <td contenteditable="true" id="collaborators">
+                            <?php
+                                $collaborators = explode("__,__", $task->collaborators);
+                                foreach ($collaborators as $collaborator) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($collaborator, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $collaborator)->first()->name;
+                                    } else {
+                                        echo $collaborator;
+                                    }
+
+                                    if ($collaborator != $collaborators[count($collaborators)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                            ?>
+                        </td>
                         <td contenteditable="true" id="status">{{ $task->status}}</td>
                         <td contenteditable="true" id="success">{{ $task->success}}</td>
                     </tr>
