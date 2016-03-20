@@ -167,7 +167,23 @@
                                             <td class="ui-table-id">{{$action->item}}</td>
                                             <td class="ui-table-body">{{$action->body}}</td>
                                             <td class="ui-table-owner">{{$action->owner}}</td>
-                                            <td class="ui-table-lead">{{$action->lead}}</td>
+                                            <td class="ui-table-lead">
+                                                <?php
+                                                    $leads = explode("__,__", $action->lead);
+                                                    foreach ($leads as $lead) {
+                                                        // Check if it's a valid email address
+                                                        if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                                            echo \App\User::where("email", $lead)->first()->name;
+                                                        } else {
+                                                            echo $lead;
+                                                        }
+
+                                                        if ($lead != $leads[count($leads)-1]) {
+                                                            echo ", ";
+                                                        }
+                                                    }
+                                                ?>
+                                            </td>
                                             <td class="ui-table-due">{{$action->date}}</td>
                                             <td style="font-size: 13px; min-width: 100px; max-width: 100px;"
                                                 @if($action->status == 'Ongoing')
@@ -190,7 +206,23 @@
                                                                 {{ $task->body }}
                                                             </a></td>
                                                         <td class="ui-table-owner">{{$task->owner}}</td>
-                                                        <td class="ui-table-lead">{{$task->lead}}</td>
+                                                        <td class="ui-table-lead">
+                                                            <?php
+                                                                $leads = explode("__,__", $task->lead);
+                                                                foreach ($leads as $lead) {
+                                                                    // Check if it's a valid email address
+                                                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                                                        echo \App\User::where("email", $lead)->first()->name;
+                                                                    } else {
+                                                                        echo $lead;
+                                                                    }
+
+                                                                    if ($lead != $leads[count($leads)-1]) {
+                                                                        echo ", ";
+                                                                    }
+                                                                }
+                                                            ?>
+                                                        </td>
                                                         <td class="ui-table-due">{{$task->date}}</td>
                                                         <td style="font-size: 13px; min-width: 100px; max-width: 100px;"
                                                             @if($task->status == 'Ongoing')
