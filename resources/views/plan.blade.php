@@ -30,12 +30,35 @@
                 <div class="panel-body">
                     <div class="btn-group" role="group">
                         <?php
+                        use App\Department;
+                        use App\Team;
                         $filter_options = ["Actions", "Tasks"];
+                        $dept_options = Department::all();
+                        $team_options = Team::all();
                         ?>
 
                         @foreach($filter_options as $option)
-                            <a type="button" class="btn btn-primary" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                            <a type="button" class="btn btn-primary acttskbutton" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
                         @endforeach
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="teamDeptDropdown" data-toggle="dropdown">
+                            Team/Department
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Departments</li>
+                            @foreach($dept_options as $dept_option)
+                                <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $dept_option)); ?>
+                                <li><a href="#">{{ $dept_option->name }}</a></li>
+                            @endforeach
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Teams</li>
+                            @foreach($team_options as $team_option)
+                                <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $team_option)); ?>
+                                <li><a href="#">{{ $team_option->name }}</a></li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
