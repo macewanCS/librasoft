@@ -15,7 +15,7 @@
                         <th style="min-width: 100px; max-width: 100px;">Due</th>
                         <th>Owner</th>
                         <th>Lead</th>
-                        <th>collaborators</th>
+                        <th>Collaborators</th>
                         <th>Status</th>
                         <th>Success Measures</th>
                     </tr>
@@ -26,8 +26,40 @@
                     <tr>
                         <td contenteditable='true' id="date">{{ $task->date }}</td>
                         <td contenteditable='true' id="owner">{{ $task->owner }}</td>
-                        <td contenteditable="true" id="lead">{{ $task->lead }}</td>
-                        <td contenteditable="true" id="collaborators">{{ $task->collaborators }}</td>
+                        <td contenteditable="true" id="lead">
+                            <?php
+                                $leads = explode("__,__", $task->lead);
+                                foreach ($leads as $lead) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $lead)->first()->name;
+                                    } else {
+                                        echo $lead;
+                                    }
+
+                                    if ($lead != $leads[count($leads)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                            ?>
+                        </td>
+                        <td contenteditable="true" id="collaborators">
+                            <?php
+                                $collaborators = explode("__,__", $task->collaborators);
+                                foreach ($collaborators as $collaborator) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($collaborator, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $collaborator)->first()->name;
+                                    } else {
+                                        echo $collaborator;
+                                    }
+
+                                    if ($collaborator != $collaborators[count($collaborators)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                            ?>
+                        </td>
                         <td contenteditable="true" id="status">{{ $task->status}}</td>
                         <td contenteditable="true" id="success">{{ $task->success}}</td>
                     </tr>
