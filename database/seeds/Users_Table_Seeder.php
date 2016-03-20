@@ -167,14 +167,14 @@ class Users_Table_Seeder extends Seeder
         ]);
         $djohn->assignRole('basicuser');
 
-        $dandrew = $user->create([
-            'name'          => 'Andrew Doe',
-            'email'         => 'dandrew@epl.ca',
+        $nandrew = $user->create([
+            'name'          => 'Andrew Nisbet',
+            'email'         => 'nandrew@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT',
             'permission'    => 'BasicUser'
         ]);
-        $dandrew->assignRole('basicuser');
+        $nandrew->assignRole('basicuser');
 
         $dchris = $user->create([
             'name'          => 'Chris Doe',
@@ -211,5 +211,23 @@ class Users_Table_Seeder extends Seeder
             'permission'    => 'BasicUser'
         ]);
         $drobin->assignRole('basicuser');
+
+        $crachael = $user->create([
+            'name'          => 'Rachael Collins',
+            'email'         => 'crachael@epl.ca',
+            'password'      => bcrypt('password'),
+            'department'    => 'IT',
+            'permission'    => 'BasicUser'
+        ]);
+        $crachael->assignRole('basicuser');
+
+        $djamie = $user->create([
+            'name'          => 'Jamie Doe',
+            'email'         => 'djamie@epl.ca',
+            'password'      => bcrypt('password'),
+            'department'    => 'IT',
+            'permission'    => 'BasicUser'
+        ]);
+        $djamie->assignRole('basicuser');
     }
 }
