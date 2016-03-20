@@ -67,7 +67,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Investigate options for new customer technology in collaboration with CMA/collections & Teams (eg Adult iPad installations; gaming floor projectors)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
-            'collaborators'=> "CMA, Teams, DLI",
+            'collaborators'=> "CMA" . $SEPARATOR . "Teams" . $SEPARATOR . "DLI",
             'status'=> "Completed",
             'success'=> "",
             'action_id'=>1
@@ -115,7 +115,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Aid in the selection, purchase, and configuration of equipment for the fourth literacy van",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
-            'collaborators'=> "Khalil, Robin, Any",
+            'collaborators'=> "dkhalil@epl.ca" . $SEPARATOR . "drobin@epl.ca" . $SEPARATOR . "Any",
             'status'=> "In progress",
             'success'=> "Equipment purchased, configured, and deployed",
             'action_id'=>3
@@ -127,7 +127,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Implement the approved recommendations from the Lending Machines report",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
-            'collaborators'=> "Rachael Collins",
+            'collaborators'=> "crachael@epl.ca",
             'status'=> "Completed",
             'success'=> "",
             'action_id'=>4
@@ -139,7 +139,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Provide planning support for eplGo North (MCN)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
-            'collaborators'=> "FAC, CMA, LON",
+            'collaborators'=> "FAC" . $SEPARATOR . "CMA" . $SEPARATOR . "LON",
             'status'=> "In progress",
             'success'=> "",
             'action_id'=>5
@@ -150,7 +150,7 @@ class Tasks_Table_Seeder extends Seeder
             'owner'=> "IT Services",
             'body'=> "Liase with Sirsi Dynix to support CMA's Single Sign On (SSO) project",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
-            'lead'=> "vvarga@epl.ca" . $SEPARATOR . "dandrew@epl.ca" . $SEPARATOR . "dchris@epl.ca",
+            'lead'=> "vvarga@epl.ca" . $SEPARATOR . "nandrew@epl.ca" . $SEPARATOR . "dchris@epl.ca",
             'collaborators'=> "CMA",
             'status'=> "Completed",
             'success'=> "SSO is implemented",
@@ -163,7 +163,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Release more EPL open data to City of Edmonton open data portal",
             'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
             'lead'=> "acarruthers@epl.ca",
-            'collaborators'=> "Andrew Nisbet",
+            'collaborators'=> "nandrew@epl.ca",
             'status'=> "In progress",
             'success'=> "",
             'action_id'=>8
@@ -187,7 +187,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Provision iPads for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "dkhalil@epl.ca",
-            'collaborators'=> "Vicky",
+            'collaborators'=> "vvarga@epl.ca",
             'status'=> "In progress",
             'success'=> "",
             'action_id'=>9
@@ -199,7 +199,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Provision laptops for mini-makerspaces at CSD, WOO, IDY, STR",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "drobin@epl.ca",
-            'collaborators'=> "Jamie/John",
+            'collaborators'=> "djamie@epl.ca" . $SEPARATOR . "djohn@epl.ca",
             'status'=> "Completed",
             'success'=> "",
             'action_id'=>9
@@ -247,7 +247,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "In collaboration with DLI, select equipment to replace aging Makerspace equipment",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
-            'collaborators'=> "DLI, MNA",
+            'collaborators'=> "DLI" . $SEPARATOR . "MNA",
             'status'=> "Completed",
             'success'=> "New equipment selected, purchased, and deployed",
             'action_id'=>10
@@ -271,7 +271,7 @@ class Tasks_Table_Seeder extends Seeder
             'body'=> "Stabilize and standardize the display board environment",
             'date'=> \Carbon\Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
-            'collaborators'=> "JD",
+            'collaborators'=> "djohn@epl.ca",
             'status'=> "In progress",
             'success'=> "All display boards are functional",
             'action_id'=>10
