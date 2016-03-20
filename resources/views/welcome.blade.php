@@ -86,10 +86,10 @@
                                         @if($action->status != 'Completed')
                                         <tbody>
                                             <tr>
-                                                <td>{{$action->item}}</td>
-                                                <td>{{$action->body}}</td>
-                                                <td style="min-width: 100px; max-width: 100px;">{{$action->date}}</td>
-                                                <td style="min-width: 100px; max-width: 100px;"
+                                                <td class="ui-table-id">{{$action->item}}</td>
+                                                <td class="ui-table-body">{{$action->body}}</td>
+                                                <td class="ui-table-due">{{$action->date}}</td>
+                                                <td style="font-size: 13px; min-width: 100px; max-width: 100px;"
                                                     @if($action->status == 'Ongoing')
                                                         class="success"
                                                     @elseif($action->status == 'In progress')
@@ -104,12 +104,12 @@
                                                 @elseif($task->date < $today)
                                                     @if($task->status != 'Completed')
                                                         <tr>
-                                                            <td>{{$task->item}}</td>
-                                                            <td><a href="tasks/{{ $task->id }}">
+                                                            <td class="ui-table-id">{{$task->item}}</td>
+                                                            <td class="ui-table-body"><a href="tasks/{{ $task->id }}">
                                                                     {{ $task->body }}
                                                                 </a></td>
-                                                            <td style="min-width: 100px; max-width: 100px">{{$task->date}}</td>
-                                                            <td style="min-width: 100px; max-width: 100px"
+                                                            <td class="ui-table-due">{{$task->date}}</td>
+                                                            <td style="font-size: 13px; min-width: 100px; max-width: 100px;"
                                                                 @if($task->status == 'Ongoing')
                                                                     class="success"
                                                                 @elseif($task->status == 'In progress')
