@@ -60,6 +60,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('profile/{user}', 'ProfileController@profile');
     Route::get('register', 'RegisterController@register');
     Route::post('register', 'Auth\AuthController@create');
+    Route::get('tasks/{task}', 'TasksController@show');
+
+    Route::post('tasks/{task}/notes', 'NotesController@store');
 });
 
 Route::get('plan/edit', 'PlanController@edit');

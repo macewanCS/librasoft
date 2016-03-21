@@ -92,7 +92,10 @@
                             <ul class="list-group">
 
                                 @foreach($task->notes as $note)
-                                    <li class="list-group-item">{{ $note->content }}</li>
+                                    <li class="list-group-item">
+                                        {{ $note->content }}
+                                        <p>Posted by {{ $note->user }} on {{ $note->created_at }}.</p>
+                                    </li>
                                 @endforeach
 
                             </ul>
@@ -111,6 +114,7 @@
                                     <input type="hidden" name="user" value="Vicky"/>
                                     <input type="hidden" name="created_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
                                     <input type="hidden" name="updated_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 </div>
 
                                 <div class="form-group">
