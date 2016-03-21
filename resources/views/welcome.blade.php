@@ -98,13 +98,13 @@
                 </div>
 
                 <div class="panel-body" style="height: 200px; overflow-y: scroll;">
-                    <ul>
+                    <ul class="list-group">
                         @foreach($plan->goals as $goal)
                             @foreach($goal->objectives as $objective)
                                 @foreach($objective->actions as $action)
                                     @foreach($action->tasks as $task)
                                         @foreach($task->notes as $note)
-                                            <li>
+                                            <li class="list-group-item">
                                                 <a href="tasks/{{ $task->id }}">{{$note->content}}</a>
                                                 <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
                                             </li>
