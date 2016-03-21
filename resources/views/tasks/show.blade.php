@@ -111,6 +111,7 @@
                                     <input type="hidden" name="user" value="Vicky"/>
                                     <input type="hidden" name="created_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
                                     <input type="hidden" name="updated_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 </div>
 
                                 <div class="form-group">
