@@ -1,3 +1,9 @@
+.navbar-item {
+  font-size: 14px; }
+
+.navbar-spacing {
+  padding-left: 20px; }
+
 .action-table {
   table-layout: fixed;
   width: auto; }
