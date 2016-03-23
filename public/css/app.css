@@ -181,4 +181,8 @@ a .filter {
   min-width: 100px;
   max-width: 100px; }
 
+.search-bar {
+  position: relative;
+  top: 8px; }
+
 /*# sourceMappingURL=app.css.map */
