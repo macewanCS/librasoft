@@ -17,17 +17,17 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7;">Recently updated
-                        <a onclick="popupUpdated()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                        <a onclick="popupUpdated()" role="button" class="btn btn-primary background-blue-float">More</a>
                     </div>
 
-                    <div class="panel-body" style="height: 200px; overflow-y: scroll;">
+                    <div class="panel-body overflow-y-height">
                         <ul class="list-group">
                         <?php
                             $today = Carbon\Carbon::now();
                         ?>
                         @foreach($act as $action)
                             <li class="list-group-item"><a href="">{{$action->item}}: {{$action->body}}</a>
-                                <p style="font-size: 13px">
+                                <p class="ul-fontSize">
                                     - Lead:
                                     <?php
                                     $leads = explode("__,__", $action->lead);
@@ -50,7 +50,7 @@
                             @foreach($tasks as $task)
                                 <li class="list-group-item">
                                     <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
-                                    <p style="font-size: 13px">
+                                    <p class="ul-fontSize">
                                         - Lead:
                                         <?php
                                         $leads = explode("__,__", $task->lead);
@@ -84,10 +84,10 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7">Recently Finished
-                        <a onclick="popupFinished()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                        <a onclick="popupFinished()" role="button" class="btn btn-primary background-blue-float">More</a>
                     </div>
 
-                    <div class="panel-body" style="height: 200px; overflow-y: scroll;">
+                    <div class="panel-body overflow-y-height">
                         <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
                             <thead>
                             <tr>
@@ -144,10 +144,10 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7"> Recent Comments
-                    <a onclick="popupComments()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                    <a onclick="popupComments()" role="button" class="btn btn-primary background-blue-float">More</a>
                 </div>
 
-                <div class="panel-body" style="height: 200px; overflow-y: scroll;">
+                <div class="panel-body overflow-y-height">
                     <ul class="list-group">
                         @foreach($plan->goals as $goal)
                             @foreach($goal->objectives as $objective)
@@ -156,7 +156,7 @@
                                         @foreach($task->notes as $note)
                                             <li class="list-group-item">
                                                 <a href="tasks/{{ $task->id }}">{{$note->content}}</a>
-                                                <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
+                                                <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p>
                                             </li>
                                         @endforeach
                                     @endforeach
@@ -170,10 +170,10 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Due Dates
-                    <a onclick="popupDates()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
+                    <a onclick="popupDates()" role="button" class="btn btn-primary background-blue-float">More</a>
                 </div>
 
-                <div class="panel-body" style="height: 200px; overflow-y: scroll">
+                <div class="panel-body overflow-y-height">
                     <table class="table table-condensed table-bordered action-table" style="font-size: 60%">
                         <thead>
                         <tr>
@@ -372,7 +372,7 @@
                                     @foreach($task->notes as $note)
                                         <li class="list-group-item">
                                             <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$note->content}}</a>
-                                            <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
+                                            <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p>
                                         </li>
                                     @endforeach
                                 @endforeach
@@ -395,7 +395,7 @@
                     @foreach($act as $action)
                         <li class="list-group-item">
                             <a href="" style="color: #3D80BA">{{$action->item}}: {{$action->body}}</a>
-                            <p style="font-size: 13px">
+                            <p class="ul-fontSize">
                                 - Lead:
                                 <?php
                                 $leads = explode("__,__", $action->lead);
@@ -418,7 +418,7 @@
                         @foreach($tasks as $task)
                             <li class="list-group-item">
                                 <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$task->body}}</a>
-                                <p style="font-size: 13px">
+                                <p class="ul-fontSize">
                                     - Lead:
                                     <?php
                                     $leads = explode("__,__", $task->lead);
