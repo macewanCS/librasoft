@@ -69,10 +69,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('manage', 'ManageController@manage');
     Route::get('plan/new', 'PlanController@showPlan');
     Route::post('plan/new', 'PlanController@createPlan');
-    Route::get('plan/new/goal', 'PlanController@showGoal');
-    Route::get('plan/new/obj', 'PlanController@showObj');
-    Route::get('plan/new/action', 'PlanController@showAction');
-    Route::get('plan/new/task', 'PlanController@showTask');
     Route::get('plan/done', 'PlanController@showDone');
     Route::get('mywork', 'MyWorkController@work');
     Route::get('profile/{user}', 'ProfileController@profile');
