@@ -24,7 +24,9 @@ class GoalsController extends Controller
         return view('Goal.index', compact('plan'));
     }
 
-
+    public function show(Goal $goal){
+        return view('goals.show')->with('goal', $goal);
+    }
 
     public function newGoal() {
         return null;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Objective;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,5 +16,9 @@ class ObjsController extends Controller
 
     public function newObjs() {
         return null;
+    }
+
+    public function show(Objective $objective){
+        return view('objectives.show')->with('objective', $objective);
     }
 }
