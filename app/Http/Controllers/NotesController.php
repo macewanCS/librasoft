@@ -19,4 +19,8 @@ class NotesController extends Controller
 
         return back();
     }
+
+    public function show(Note $note){
+        return view('notes.show')->with('note', $note);
+    }
 }
