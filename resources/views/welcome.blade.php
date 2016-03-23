@@ -20,9 +20,14 @@
                         <a onclick="popupUpdated()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
-                    <div class="panel-body" style="height: 200px;">
+                    <div class="panel-body" style="height: 200px; overflow-y: scroll;">
                         <ul>
-                            <li>Goal 1, Objective 1 description has been updated</li>
+                        <?php
+                            $today = Carbon\Carbon::now();
+                        ?>
+                        @foreach($act as $action2)
+                            <li>{{$action2->body}}</li>
+                        @endforeach
                         </ul>
                     </div>
                 </div>
