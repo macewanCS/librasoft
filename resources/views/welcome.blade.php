@@ -20,9 +20,59 @@
                         <a onclick="popupUpdated()" role="button" class="btn btn-primary" style="background: #009FD7; float: right;">More</a>
                     </div>
 
-                    <div class="panel-body" style="height: 200px;">
-                        <ul>
-                            <li>Goal 1, Objective 1 description has been updated</li>
+                    <div class="panel-body" style="height: 200px; overflow-y: scroll;">
+                        <ul class="list-group">
+                        <?php
+                            $today = Carbon\Carbon::now();
+                        ?>
+                        @foreach($act as $action)
+                            <li class="list-group-item">{{$action->item}}: {{$action->body}}
+                                <p style="font-size: 13px">
+                                    - Lead:
+                                    <?php
+                                    $leads = explode("__,__", $action->lead);
+                                    foreach ($leads as $lead) {
+                                        // Check if it's a valid email address
+                                        if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                            echo \App\User::where("email", $lead)->first()->name;
+                                        } else {
+                                            echo $lead;
+                                        }
+
+                                        if ($lead != $leads[count($leads)-1]) {
+                                            echo ", ";
+                                        }
+                                    }
+                                    ?>
+                                    , Updated: {{$action->updated_at}}, Status: {{$action->status}}
+                                </p>
+                            </li>
+                            @foreach($tasks as $task)
+                                <li class="list-group-item">
+                                    <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
+                                    <p style="font-size: 13px">
+                                        - Lead:
+                                        <?php
+                                        $leads = explode("__,__", $task->lead);
+                                        foreach ($leads as $lead) {
+                                            // Check if it's a valid email address
+                                            if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                                echo \App\User::where("email", $lead)->first()->name;
+                                            } else {
+                                                echo $lead;
+                                            }
+
+                                            if ($lead != $leads[count($leads)-1]) {
+                                                echo ", ";
+                                            }
+                                        }
+                                        ?>
+                                        , Updated: {{$task->updated_at}}, Status: {{$task->status}}
+                                    </p>
+                                </li>
+
+                            @endforeach
+                        @endforeach
                         </ul>
                     </div>
                 </div>
@@ -338,8 +388,60 @@
     <div class="hide fade">
         <div id="updated"  title="Recently Updated" class="panel panel-primary">
             <div class="panel-body overflow-y: scroll" >
+                <ul class="list-group">
+                    <?php
+                    $today = Carbon\Carbon::now();
+                    ?>
+                    @foreach($act as $action)
+                        <li class="list-group-item">{{$action->item}}: {{$action->body}}
+                            <p style="font-size: 13px">
+                                - Lead:
+                                <?php
+                                $leads = explode("__,__", $action->lead);
+                                foreach ($leads as $lead) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $lead)->first()->name;
+                                    } else {
+                                        echo $lead;
+                                    }
 
-                bye
+                                    if ($lead != $leads[count($leads)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                                ?>
+                                , Updated: {{$action->updated_at}}, Status: {{$action->status}}
+                            </p>
+                        </li>
+                        @foreach($tasks as $task)
+                            <li class="list-group-item">
+                                <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
+                                <p style="font-size: 13px">
+                                    - Lead:
+                                    <?php
+                                    $leads = explode("__,__", $task->lead);
+                                    foreach ($leads as $lead) {
+                                        // Check if it's a valid email address
+                                        if (filter_var($lead, FILTER_VALIDATE_EMAIL)) {
+                                            echo \App\User::where("email", $lead)->first()->name;
+                                        } else {
+                                            echo $lead;
+                                        }
+
+                                        if ($lead != $leads[count($leads)-1]) {
+                                            echo ", ";
+                                        }
+                                    }
+                                    ?>
+                                    , Updated: {{$task->updated_at}}, Status: {{$task->status}}
+                                </p>
+                            </li>
+
+                        @endforeach
+                    @endforeach
+                </ul>
+
             </div>
         </div>
     </div>
