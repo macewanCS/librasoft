@@ -26,7 +26,7 @@
                             $today = Carbon\Carbon::now();
                         ?>
                         @foreach($act as $action)
-                            <li class="list-group-item">{{$action->item}}: {{$action->body}}
+                            <li class="list-group-item"><a href="">{{$action->item}}: {{$action->body}}</a>
                                 <p style="font-size: 13px">
                                     - Lead:
                                     <?php
@@ -313,7 +313,7 @@
                                                     <tr>
                                                         <td class="ui-table-id">{{$task->item}}</td>
                                                         <td class="ui-table-body">
-                                                            <a href="tasks/{{ $task->id }}" style="color: #0EBFE9">
+                                                            <a href="tasks/{{ $task->id }}" style="color: #3D80BA">
                                                                 {{ $task->body }}
                                                             </a></td>
                                                         <td class="ui-table-owner">{{$task->owner}}</td>
@@ -371,7 +371,7 @@
                                 @foreach($action->tasks as $task)
                                     @foreach($task->notes as $note)
                                         <li class="list-group-item">
-                                            <a href="tasks/{{ $task->id }}" style="color: #0EBFE9">{{$note->content}}</a>
+                                            <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$note->content}}</a>
                                             <p style="font-size: 13px">- Posted by {{$note->user}} at {{$note->created_at}}</p>
                                         </li>
                                     @endforeach
@@ -393,7 +393,8 @@
                     $today = Carbon\Carbon::now();
                     ?>
                     @foreach($act as $action)
-                        <li class="list-group-item">{{$action->item}}: {{$action->body}}
+                        <li class="list-group-item">
+                            <a href="" style="color: #3D80BA">{{$action->item}}: {{$action->body}}</a>
                             <p style="font-size: 13px">
                                 - Lead:
                                 <?php
@@ -416,7 +417,7 @@
                         </li>
                         @foreach($tasks as $task)
                             <li class="list-group-item">
-                                <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
+                                <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$task->body}}</a>
                                 <p style="font-size: 13px">
                                     - Lead:
                                     <?php
@@ -441,7 +442,6 @@
                         @endforeach
                     @endforeach
                 </ul>
-
             </div>
         </div>
     </div>
@@ -473,7 +473,7 @@
                             <tbody>
                             <tr>
                                 <td class="ui-table-id">{{$action->item}}</td>
-                                <td class="ui-table-body">{{$action->body}}</td>
+                                <td class="ui-table-body"><a href="" style="color: #3D80BA">{{$action->body}}</a></td>
                                 <td class="ui-table-owner">{{$action->owner}}</td>
                                 <td class="ui-table-lead">
                                     <?php
@@ -501,7 +501,7 @@
                                         <tr>
                                             <td class="ui-table-id">{{$task->item}}</td>
                                             <td class="ui-table-body">
-                                                <a class="ui-table-body" href="tasks/{{ $task->id }}">
+                                                <a class="ui-table-body" href="tasks/{{ $task->id }}" style="color: #3D80BA">
                                                     {{ $task->body }}
                                                 </a></td>
                                             <td class="ui-table-owner">{{$task->owner}}</td>

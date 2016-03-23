@@ -244,7 +244,9 @@ a {
   max-width: 100px;
 }
 
-/*# unordered list styling*/
+
+
+/*# Dashboard styling*/
 
 .ul-fontSize {
   font-size: 13px;
@@ -254,3 +256,26 @@ a {
   position: relative;
   top: 8px;
 }
+
+.link-color {
+  background: #3D80BA;
+}
+
+.table-fontSize{
+  font-size: 60%;
+}
+
+.background-blue {
+  background: #009FD7;
+}
+
+.background-blue-float{
+  background: #009FD7;
+  float: right;
+}
+
+.overflow-y-height{
+  height: 200px;
+  overflow-y: scroll;
+}
+
