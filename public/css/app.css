@@ -181,6 +181,10 @@ a .filter {
   min-width: 100px;
   max-width: 100px; }
 
+/*# unordered list styling*/
+.ul-fontSize {
+  font-size: 13px; }
+
 .search-bar {
   position: relative;
   top: 8px; }
