@@ -17,6 +17,8 @@
             <p class="panel-title" style="font-size: 120%;">Business Plan</p>
         </div>
         <div style="float: right;">
+            <a id="openAll" role="button" class="btn btn-primary" style="background: #009FD7;">Open All</a>
+            <a id="closeAll" role="button" class="btn btn-primary" style="background: #009FD7;">Close All</a>
             <a role="button" class="btn btn-primary" style="background: #009FD7;" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" style="background: #009FD7;" href="plan/new">New Business Plan</a>
         </div>
@@ -63,8 +65,9 @@
                 </div>
             </div>
         </div>
+        <!-- Accordion starts-->
         <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
-            <div class="panel-group">
+            <div class="panel-group" id="accordion">
                 @foreach($plan->goals as $goal)
 
                     <div class="panel panel-primary">
@@ -85,11 +88,11 @@
 
                                                 <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                                     <h4 class="panel-title">
-                                                        <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-right"></i> {{ $objective->body }}</a>
+                                                        <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-down"></i> {{ $objective->body }}</a>
                                                     </h4>
                                                 </div>
 
-                                                <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse">
+                                                <div id="collapseobjective{{ $objective->id }}" class="panel-collapse collapse in">
                                                     <div class="panel-body">
                                                         <!--<p>{{ $objective->body }}</p>-->
 
@@ -225,7 +228,26 @@
 <!--Chnages Icons arrows in accordion -->
 <script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
 
-<script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+
+<script type="application/javascript">
+    jQuery(document).ready(function () {
+        jQuery('#closeAll').on('click', function(e){
+            jQuery('.panel-collapse').each(function(){
+                jQuery(this).removeClass("in");
+            });
+        });
+    });
+</script>
+
+<script type="application/javascript">
+    jQuery(document).ready(function () {
+        jQuery('#openAll').on('click', function(e){
+            jQuery('.panel-collapse').each(function(){
+                jQuery(this).addClass("in");
+            });
+        });
+    });
+</script>
 
 <script type="application/javascript">
     $(document).ready(function()
