@@ -85,6 +85,17 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right navbar-listing">
+                        <!-- Search -->
+                        <li class="search-bar">
+                            <form method="POST" action="/search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="term">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default" href="/search">Go</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
