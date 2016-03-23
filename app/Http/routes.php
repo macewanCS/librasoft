@@ -30,6 +30,17 @@ Route::get('sort/{option}', function ($option) {return view ('sort')->with('opti
 Route::get('sort/dept/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
 Route::get('sort/team/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
 
+Route::get('notes/show/{note}', 'NotesController@show');
+Route::get('goals/show/{goal}', 'GoalsController@show');
+Route::get('departments/show/{department}', 'DepartmentsController@show');
+Route::get('actions/show/{action}', 'ActionsController@show');
+Route::get('tasks/show/{task}', 'TasksController@show');
+Route::get('teams/show/{team}', 'TeamsController@show');
+Route::get('users/show/{id}', 'ProfileController@show');
+Route::get('objectives/show/{objective}', 'ObjsController@show');
+
+Route::post('search', 'SearchController@search');
+
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords
 Route::Controllers([
