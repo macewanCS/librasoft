@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome')->with('plan', \App\Plan::first());
+    //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
+
+    return view('welcome')->with('plan', \App\Plan::first())->with('act',DB::table('actions')->orderby('updated_at', 'desc')->get());
 });
 
 
@@ -44,7 +46,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', function () {
-        return view('welcome')->with('plan', \App\Plan::first());
+        //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
+        return view('welcome')->with('plan', \App\Plan::first())->with('act',DB::table('actions')->orderby('updated_at', 'desc')->get());
     });
 
     Route::get('plan', 'PlanController@plan');
