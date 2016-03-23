@@ -12,7 +12,7 @@ class Business_Plans_Table_Seeder extends Seeder
     public function run()
     {
         DB::table('plans')->insert([
-            'body'=> "Business Plan 2016/2017"
+            'date'=> \Carbon\Carbon::createFromDate(2016)->toDateTimeString(),
         ]);
     }
 }
