@@ -11,12 +11,8 @@ class Plan extends Model
      *
      * @var array
      */
-    protected $fillable = ['body'];
+    protected $fillable = ['date'];
 
-    public function archive() {
-        return $this->belongsTo(Plan::class);
-    }
-    
     public function goals()
     {
         return $this->hasMany(Goal::class);
@@ -25,7 +21,10 @@ class Plan extends Model
     public function addGoal(Goal $goal) {
         return $this->goals()->save($goal);
     }
-    
+
+    public function addPlan(Plan $plan) {
+        return $this->save($plan);
+    }
 
 
 }

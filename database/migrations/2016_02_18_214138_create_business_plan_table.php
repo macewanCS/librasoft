@@ -14,7 +14,7 @@ class CreateBusinessPlanTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('body');
+            $table->date('date');
             $table->timestamps();
         });
     }

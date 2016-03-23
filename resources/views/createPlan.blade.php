@@ -1,7 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery UI Datepicker - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script>
+            $(function() {
+                $( "#datepicker" ).datepicker({
+                    changeYear: true,
+                    showButtonPanel: true
+                });
+            });
+        </script>
+    </head>
+    <body>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -15,7 +31,8 @@
                                 <label for="step1Label" class="col-sm-3" style="font-size: 11pt; top: 7px">
                                     Step 1: Give your plan a name:
                                 </label>
-                                <textarea class="col-sm-4" name="body" required style="height: 35px;resize: none"></textarea>
+                                <p>Start Date:<input type="text" id="datepicker"></p>
+                                <p>End Date: <input type="text" id="datepicker"></p>
                             </div>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div>
@@ -27,6 +44,7 @@
             </div>
         </div>
     </div>
+    </body>
 
 
 
