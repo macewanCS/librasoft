@@ -23,9 +23,11 @@
                     <div class="panel-body overflow-y-height">
                         <ul class="list-group">
                         <?php
-                            $today = Carbon\Carbon::now();
+                            $today = Carbon\Carbon::today();
+                            $today = $today->subMonth(1);
                         ?>
                         @foreach($act as $action)
+                            @if( $action->updated_at > $today)
                             <li class="list-group-item"><a href="">{{$action->item}}: {{$action->body}}</a>
                                 <p class="ul-fontSize">
                                     - Lead:
@@ -48,6 +50,7 @@
                                 </p>
                             </li>
                             @foreach($tasks as $task)
+                                @if($task->updated_at > $today)
                                 <li class="list-group-item">
                                     <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
                                     <p class="ul-fontSize">
@@ -70,8 +73,9 @@
                                         , Updated: {{$task->updated_at}}, Status: {{$task->status}}
                                     </p>
                                 </li>
-
+                                @endif
                             @endforeach
+                            @endif
                         @endforeach
                         </ul>
                     </div>
@@ -149,19 +153,17 @@
 
                 <div class="panel-body overflow-y-height">
                     <ul class="list-group">
-                        @foreach($plan->goals as $goal)
-                            @foreach($goal->objectives as $objective)
-                                @foreach($objective->actions as $action)
-                                    @foreach($action->tasks as $task)
-                                        @foreach($task->notes as $note)
-                                            <li class="list-group-item">
-                                                <a href="tasks/{{ $task->id }}">{{$note->content}}</a>
-                                                <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p>
-                                            </li>
-                                        @endforeach
-                                    @endforeach
-                                @endforeach
-                            @endforeach
+                        <?php
+                            $today = Carbon\Carbon::now();
+                            $today = $today->subMonth(1);
+                        ?>
+                        @foreach($notes as $note)
+                            @if($note->created_at > $today)
+                            <li class="list-group-item"> 
+                                <a href="tasks/{{ $task->id }}">{{$note->content}}</a> 
+                                <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p> 
+                            </li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>
@@ -365,19 +367,17 @@
         <div id="comments"  title="Recent Comments" class="panel panel-primary">
             <div class="panel-body overflow-y: scroll" >
                 <ul class="list-group">
-                    @foreach($plan->goals as $goal)
-                        @foreach($goal->objectives as $objective)
-                            @foreach($objective->actions as $action)
-                                @foreach($action->tasks as $task)
-                                    @foreach($task->notes as $note)
-                                        <li class="list-group-item">
-                                            <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$note->content}}</a>
-                                            <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p>
-                                        </li>
-                                    @endforeach
-                                @endforeach
-                            @endforeach
-                        @endforeach
+                    <?php
+                    $today = Carbon\Carbon::now();
+                    $today = $today->subMonth(1);
+                    ?>
+                    @foreach($notes as $note)
+                        @if($note->created_at > $today)
+                            <li class="list-group-item"> 
+                                <a href="tasks/{{ $task->id }}">{{$note->content}}</a> 
+                                <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p> 
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
@@ -390,9 +390,11 @@
             <div class="panel-body overflow-y: scroll" >
                 <ul class="list-group">
                     <?php
-                    $today = Carbon\Carbon::now();
+                        $today = Carbon\Carbon::today();
+                        $today = $today->subMonth(1);
                     ?>
                     @foreach($act as $action)
+                        @if( $action->updated_at > $today)
                         <li class="list-group-item">
                             <a href="" style="color: #3D80BA">{{$action->item}}: {{$action->body}}</a>
                             <p class="ul-fontSize">
@@ -416,6 +418,7 @@
                             </p>
                         </li>
                         @foreach($tasks as $task)
+                            @if($task->updated_at > $today)
                             <li class="list-group-item">
                                 <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$task->body}}</a>
                                 <p class="ul-fontSize">
@@ -438,8 +441,9 @@
                                     , Updated: {{$task->updated_at}}, Status: {{$task->status}}
                                 </p>
                             </li>
-
+                            @endif
                         @endforeach
+                        @endif
                     @endforeach
                 </ul>
             </div>
