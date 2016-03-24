@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\DB;
 use App\Plan;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -20,7 +22,11 @@ class PlanController extends Controller
     }
 
     public function createPlan(Request $request) {
-        Plan::first()->addPlan(new Plan($request->all()));
+
+        $plan = new Plan();
+        $plan->startdate = Carbon::create($request->startdate,1,1,0,0,0);
+        $plan->enddate = Carbon::create($request->enddate,1,1,0,0,0);
+        $plan->save();
         return view('createDone');
     }
 

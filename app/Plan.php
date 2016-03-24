@@ -12,7 +12,7 @@ class Plan extends Model
      * @var array
      */
 
-    protected $fillable = ['date'];
+    protected $fillable = ['startdate','enddate'];
 
     public function archive() {
         return $this->belongsTo(Plan::class);
@@ -26,11 +26,5 @@ class Plan extends Model
     public function addGoal(Goal $goal) {
         return $this->goals()->save($goal);
     }
-    
-
-    public function addPlan(Plan $plan) {
-        return $this->save($plan);
-    }
-
 
 }
