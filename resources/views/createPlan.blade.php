@@ -31,8 +31,8 @@
                                 <label for="step1Label" class="col-sm-3" style="font-size: 11pt; top: 7px">
                                     Step 1: Give your plan a name:
                                 </label>
-                                <p>Start Date:<input type="text" id="datepicker"></p>
-                                <p>End Date: <input type="text" id="datepicker"></p>
+                                <p>Start Date:<input name="startdate" type="text" id="datepicker"></p>
+                                <p>End Date: <input name="enddate" type="text" id="datepicker"></p>
                             </div>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div>
