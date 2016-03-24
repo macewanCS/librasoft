@@ -204,15 +204,7 @@ a .filter {
   float: right; }
 
 .link-color {
-<<<<<<< HEAD
-<<<<<<< de1d52388b4869effa4ab5584ef1f1d0de588dd1
-  background: #3D80BA; }
-=======
   color: #3D80BA; }
->>>>>>> Refactor dashboard
-=======
-  color: #3D80BA; }
->>>>>>> 9a4b4bdae4b9e78b9c0152d62758b25d53c18594
 
 .table-fontSize {
   font-size: 60%; }
