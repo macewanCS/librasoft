@@ -203,6 +203,19 @@ a .filter {
   background: #009FD7;
   float: right; }
 
+.link-color {
+  color: #3D80BA; }
+
+.table-fontSize {
+  font-size: 60%; }
+
+.background-blue {
+  background: #009FD7; }
+
+.background-blue-float {
+  background: #009FD7;
+  float: right; }
+
 .overflow-y-height {
   height: 200px;
   overflow-y: scroll; }
