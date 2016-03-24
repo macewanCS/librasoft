@@ -83,8 +83,8 @@
                                                     <div class="panel-body">
                                                         <!--<p>{{ $objective->body }}</p>-->
 
-
                                                         <table class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter">
+                                                        <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-task">Description</th>
@@ -101,6 +101,8 @@
 
                                                                 <tr>
                                                                     <td class="table-task">Action: <a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></td>
+                                                                    <td class="table-id"><a href="#">{{$action->item}}</a></td>
+                                                                    <td class="table-task">{{ $action->body }}</td>
                                                                     <th class="table-due">{{ $action->date }}</th>
                                                                     <td class="table-owner">{{ $action->owner }}</td>
                                                                     <td class="table-collaborators">
@@ -241,6 +243,15 @@
             @endfor
         }
     );
+</script>
+
+<script>
+    $('.table-id a').editable({
+        type: 'text',
+        name: 'username',
+        url: '/post',
+        title: 'Enter username'
+    });
 </script>
 
 
