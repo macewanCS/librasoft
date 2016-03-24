@@ -17,33 +17,23 @@ class Notes_Table_Seeder extends Seeder
         $now = Carbon::now()->format('Y-m-d H:i:s');
 
         for ($i = 1; $i <= 25; $i++) {
-            if ($i % 4 >= 0) {
-                DB::table('notes')->insert([
-                    'content' => 'New task created.',
-                    'user' => 'Vicky',
-                    'task_id' => $i,
-                    'created_at' => $now,
-                    'updated_at' => $now,
-                ]);
-            }
-
             if ($i % 4 >= 1) {
                 DB::table('notes')->insert([
                     'content' => 'First comment - Hello World!',
-                    'user' => 'Vicky',
+                    'user' => 'jwoods',
                     'task_id' => $i,
-                    'created_at' => $now,
-                    'updated_at' => $now,
+                    'created_at' => Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
+                    'updated_at' => Carbon::createFromDate(2016, 03, 01)->toDateTimeString(),
                 ]);
             }
 
             if ($i % 4 >= 2) {
                 DB::table('notes')->insert([
                     'content' => 'Can we get an update please?',
-                    'user' => 'Vicky',
+                    'user' => 'lmackenzie',
                     'task_id' => $i,
-                    'created_at' => $now,
-                    'updated_at' => $now,
+                    'created_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
+                    'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
                 ]);
             }
 
@@ -52,8 +42,8 @@ class Notes_Table_Seeder extends Seeder
                     'content' => 'Nearly complete, how\'s your progress?',
                     'user' => 'Vicky',
                     'task_id' => $i,
-                    'created_at' => $now,
-                    'updated_at' => $now,
+                    'created_at' => Carbon::createFromDate(2016, 03, 14)->toDateTimeString(),
+                    'updated_at' => Carbon::createFromDate(2016, 03, 14)->toDateTimeString(),
                 ]);
             }
         }
