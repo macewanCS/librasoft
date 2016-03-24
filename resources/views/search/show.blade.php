@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <div class="panel panel-primary">
+    <div class="bs-example">
+        <div class="panel panel-primary">
         <div class="panel-heading"><h4 class="panel-title">Results for "{{ $term }}"</h4></div>
         <div class="panel-body">
             <table class="table table-bordered table-striped table-hover">
@@ -12,13 +13,13 @@
                     @if(in_array($result_class, ["goal", "objective"]))
                         <tr>
                             <td>
-                                <a href="/{{ $result_class }}s/show/{{ $result->id }}">{{ $result->body }}</a>
+                                <a href="/{{ $result_class }}s/show/{{ $result->id }}">{{ ucwords($result_class) }}: {{ $result->body }}</a>
                             </td>
                         </tr>
                     @elseif($result_class == "action")
                         <tr>
                             <td>
-                                <a href="/{{ $result_class }}s/show/{{ $result->id }}">Action {{ $result->item }}: {{ $result->body }}</a>
+                                <a href="/{{ $result_class }}s/show/{{ $result->id }}">Action: {{ $result->body }}</a>
                             </td>
                         </tr>
                     @elseif($result_class == "task")
@@ -45,6 +46,7 @@
             </table>
 
         </div>
+    </div>
     </div>
 
 

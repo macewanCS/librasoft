@@ -5,12 +5,12 @@
     <div class="bs-example" style="padding-left: 40px; padding-right: 40px;" >
         <div class="panel panel-primary">
 
-            <div class="panel-heading" style="background: #009FD7">{{$task->body}}</div>
+            <div class="panel-heading" style="background: #009FD7"><h4 class="panel-title">{{$task->body}}</h4></div>
             <div class="panel-body">
                 <!-- table-->
                 <table class="table table-striped table-bordered table-hover">
 
-                    <!-- Header -->
+                    <thead>
                     <tr>
                         <th style="min-width: 100px; max-width: 100px;">Due</th>
                         <th>Owner</th>
@@ -19,10 +19,9 @@
                         <th>Status</th>
                         <th>Success Measures</th>
                     </tr>
-                    <!-- /Header -->
+                    </thead>
 
-                    <!-- Body -->
-
+                    <tbody>
                     <tr>
                         <td contenteditable='true' id="date">{{ $task->date }}</td>
                         <td contenteditable='true' id="owner">{{ $task->owner }}</td>
@@ -63,8 +62,8 @@
                         <td contenteditable="true" id="status">{{ $task->status}}</td>
                         <td contenteditable="true" id="success">{{ $task->success}}</td>
                     </tr>
+                    </tbody>
 
-                    <!-- /Body -->
                 </table>
                 <!-- table end-->
 
