@@ -21,24 +21,24 @@ class SearchController extends Controller
         $results = array();
         $term = $request->get('term');
 
-        $goals = Goal::where('body', 'like', '%' . $term . '%')->get();
-        $objectives = Objective::where('body', 'like', '%' . $term . '%')->get();
-        $actions = Action::where('body', 'like', '%' . $term . '%')->get();
+        $goals = Goal::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
+        $objectives = Objective::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
+        $actions = Action::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
 
-        foreach (Action::where('item', 'like', '%' . $term . '%') as $matching_action_item) {
+        foreach (Action::where('item', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get() as $matching_action_item) {
             $actions[] = $matching_action_item;
         }
 
-        $tasks = Task::where('body', 'like', '%' . $term . '%')->get();
-        $teams = Team::where('name', 'like', '%' . $term . '%')->get();
-        $departments = Department::where('name', 'like', '%' . $term . '%')->get();
-        $users = User::where('name', 'like', '%' . $term . '%')->get();
+        $tasks = Task::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
+        $teams = Team::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get();
+        $departments = Department::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get();
+        $users = User::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get();
 
-        foreach (User::where('email', 'like', '%' . $term . '%') as $matching_user_email) {
+        foreach (User::where('email', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get() as $matching_user_email) {
             $users[] = $matching_user_email;
         }
 
-        $notes = Note::where('content', 'like', '%' . $term . '%')->get();
+        $notes = Note::where('content', 'like', '%' . $term . '%')->orderBy('content', 'asc')->get();
 
         $types = [$goals, $objectives, $actions, $tasks, $teams, $departments, $users, $notes];
 
