@@ -26,11 +26,5 @@ class Plan extends Model
     public function addGoal(Goal $goal) {
         return $this->goals()->save($goal);
     }
-    
-
-    public function addPlan(Plan $plan) {
-        return $this->save($plan);
-    }
-
 
 }

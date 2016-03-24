@@ -10,10 +10,11 @@
         <link rel="stylesheet" href="/resources/demos/style.css">
         <script>
             $(function() {
-                $( "#datepicker" ).datepicker({
-                    changeYear: true,
-                    showButtonPanel: true
-                });
+                for (i = 2016; i < 2100; i++)
+                {
+                    $('#startpicker').append($('<option />').val(i).html(i));
+                    $('#endpicker').append($('<option />').val(i).html(i));
+                }
             });
         </script>
     </head>
@@ -28,11 +29,11 @@
                         Complete the following steps to get your new Business Plan up and running quickly!
                         <form role="form" method="POST" action="{{ url('/plan/new') }}">
                             <div class="form-group row" style="padding-left: 25px; padding-top: 30px;">
-                                <label for="step1Label" class="col-sm-3" style="font-size: 11pt; top: 7px">
-                                    Step 1: Give your plan a name:
+                                <label for="step1Label" class="col-sm-4" style="font-size: 14pt;">
+                                    Step 1: Choose a plan year range:
                                 </label>
-                                <p>Start Date:<input name="startdate" type="text" id="datepicker"></p>
-                                <p>End Date: <input name="enddate" type="text" id="datepicker"></p>
+                                <select name="startdate" id="startpicker"></select>
+                                <select name="enddate" id="endpicker"></select>
                             </div>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div>
