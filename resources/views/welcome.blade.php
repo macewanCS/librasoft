@@ -31,7 +31,7 @@
                             @if( $action->updated_at > $today)
                             <li class="list-group-item"><a href="">{{$action->body}}</a>
                                 <p class="ul-fontSize">
-                                    - Lead:
+                                    - <bold>Lead:</bold>
                                     <?php
                                     $leads = explode("__,__", $action->lead);
                                     foreach ($leads as $lead) {
@@ -47,7 +47,7 @@
                                         }
                                     }
                                     ?>
-                                    , Updated: {{$action->updated_at}}, Status: {{$action->status}}
+                                    , <bold>Updated:</bold> {{$action->updated_at}}, <bold>Status:</bold> {{$action->status}}
                                 </p>
                             </li>
                             @endif
@@ -58,7 +58,7 @@
                                 <li class="list-group-item">
                                     <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
                                     <p class="ul-fontSize">
-                                        - Lead:
+                                        - <bold>Lead:</bold>
                                         <?php
                                         $leads = explode("__,__", $task->lead);
                                         foreach ($leads as $lead) {
@@ -74,7 +74,7 @@
                                             }
                                         }
                                         ?>
-                                        , Updated: {{$task->updated_at}}, Status: {{$task->status}}
+                                        , <bold>Updated:</bold> {{$task->updated_at}}, <bold>Status:</bold> {{$task->status}}
                                     </p>
                                 </li>
                             @endif
@@ -105,7 +105,7 @@
                                     @if($action->status == "Completed")
                                     <li class="list-group-item"><a href="">{{$action->body}}</a>
                                         <p class="ul-fontSize">
-                                            - Lead:
+                                            - <bold>Lead:</bold>
                                             <?php
                                             $leads = explode("__,__", $action->lead);
                                             foreach ($leads as $lead) {
@@ -121,7 +121,7 @@
                                                 }
                                             }
                                             ?>
-                                            , Department: {{$task->owner}}, Updated: {{$action->updated_at}}
+                                            , <bold>Department:</bold> {{$task->owner}}, <bold>Updated:</bold> {{$action->updated_at}}
                                             </p>
                                         </li>
                                         @endif
@@ -134,7 +134,7 @@
                                         <li class="list-group-item">
                                             <a href="tasks/{{ $task->id }}">{{$task->body}}</a>
                                             <p class="ul-fontSize">
-                                                - Lead:
+                                                - <bold>Lead:</bold>
                                                 <?php
                                                 $leads = explode("__,__", $task->lead);
                                                 foreach ($leads as $lead) {
@@ -150,7 +150,7 @@
                                                     }
                                                 }
                                                 ?>
-                                                , Department: {{$task->owner}}, Updated: {{$task->updated_at}}
+                                                , <bold>Department:</bold> {{$task->owner}}, <bold>Updated:</bold> {{$task->updated_at}}
                                             </p>
                                         </li>
                                     @endif
@@ -175,7 +175,6 @@
                             $today = Carbon\Carbon::now();
                             $today = $today->subMonth(1);
                         ?>
-                        <li class="list-group-item" >Notes:</li>
                         @foreach($notes as $note)
                             @if($note->created_at > $today)
                             <li class="list-group-item"> 
@@ -341,7 +340,6 @@
                     $today = Carbon\Carbon::now();
                     $today = $today->subMonth(1);
                     ?>
-                    <li class="list-group-item" >Notes:</li>
                     @foreach($notes as $note)
                         @if($note->created_at > $today)
                             <li class="list-group-item"> 
@@ -370,7 +368,7 @@
                         <li class="list-group-item">
                             <a href="" style="color: #3D80BA">{{$action->body}}</a>
                             <p class="ul-fontSize">
-                                - Lead:
+                                - <bold>Lead:</bold>
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -386,7 +384,7 @@
                                     }
                                 }
                                 ?>
-                                , Updated: {{$action->updated_at}}, Status: {{$action->status}}
+                                , <bold>Updated:</bold> {{$action->updated_at}}, <bold>Status:</bold> {{$action->status}}
                             </p>
                         </li>
                         @endif
@@ -397,7 +395,7 @@
                             <li class="list-group-item">
                                 <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$task->body}}</a>
                                 <p class="ul-fontSize">
-                                    - Lead:
+                                    - <bold>Lead:</bold>
                                     <?php
                                     $leads = explode("__,__", $task->lead);
                                     foreach ($leads as $lead) {
@@ -413,7 +411,7 @@
                                         }
                                     }
                                     ?>
-                                    , Updated: {{$task->updated_at}}, Status: {{$task->status}}
+                                    , <bold>Updated:</bold> {{$task->updated_at}}, <bold>Status:</bold> {{$task->status}}
                                 </p>
                             </li>
                          @endif
@@ -438,7 +436,7 @@
                             @if($action->status == "Completed")
                                 <li class="list-group-item"><a href="" style="color: #3D80BA">{{$action->body}}</a>
                                     <p class="ul-fontSize">
-                                        - Lead:
+                                        - <bold>Lead:</bold>
                                         <?php
                                         $leads = explode("__,__", $action->lead);
                                         foreach ($leads as $lead) {
@@ -454,7 +452,7 @@
                                             }
                                         }
                                         ?>
-                                        , Department: {{$task->owner}}, Updated: {{$action->updated_at}}
+                                        , <bold>Department:</bold> {{$task->owner}}, <bold>Updated:</bold> {{$action->updated_at}}
                                 </li>
                             @endif
                         @endif
@@ -466,7 +464,7 @@
                                 <li class="list-group-item">
                                     <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$task->body}}</a>
                                     <p class="ul-fontSize">
-                                        - Lead:
+                                        - <bold>Lead:</bold>
                                         <?php
                                         $leads = explode("__,__", $task->lead);
                                         foreach ($leads as $lead) {
@@ -482,7 +480,7 @@
                                             }
                                         }
                                         ?>
-                                        , Department: {{$task->owner}}, Updated: {{$task->updated_at}}
+                                        , <bold>Department:</bold> {{$task->owner}}, <bold>Updated:</bold> {{$task->updated_at}}
                                     </p>
                                 </li>
                             @endif
