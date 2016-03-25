@@ -29,7 +29,8 @@
                         <li class="list-group-item"> Actions:</li>
                         @foreach($act as $action)
                             @if( $action->updated_at > $today)
-                            <li class="list-group-item"><a href="">{{$action->body}}</a>
+                            <li class="list-group-item">
+                                <a href="/actions/show/{{ $action->id }}">{{$action->body}}</a>
                                 <p class="ul-fontSize">
                                     - <bold>Lead:</bold>
                                     <?php
@@ -103,7 +104,8 @@
                             @foreach($act as $action)
                                 @if( $action->updated_at > $today)
                                     @if($action->status == "Completed")
-                                    <li class="list-group-item"><a href="">{{$action->body}}</a>
+                                    <li class="list-group-item">
+                                        <a href="/actions/show/{{ $action->id }}">{{$action->body}}</a>
                                         <p class="ul-fontSize">
                                             - <bold>Lead:</bold>
                                             <?php
@@ -203,7 +205,8 @@
                             @if($action->status != "Completed")
                                 @if($action->date > $today)
                                     @if($action->date < $today->addMonth(3))
-                                        <li class="list-group-item"><a href="">{{$action->body}}</a>
+                                        <li class="list-group-item">
+                                            <a href="/actions/show/{{ $action->id }}">{{$action->body}}</a>
                                              <p class="ul-fontSize">
                                                 - <bold>Lead: </bold>
                                                 <?php
@@ -284,7 +287,8 @@
                         @if($action->status != "Completed")
                             @if($action->date > $today)
                                 @if($action->date < $today->addMonth(3))
-                                    <li class="list-group-item"><a href="" style="color: #3D80BA">{{$action->body}}</a>
+                                    <li class="list-group-item">
+                                        <a href="/actions/show/{{ $action->id }}" style="color: #3D80BA">{{$action->body}}</a>
                                         <p class="ul-fontSize">
                                             - <bold>Lead: </bold>
                                             <?php
@@ -383,7 +387,7 @@
                     @foreach($act as $action)
                         @if( $action->updated_at > $today)
                         <li class="list-group-item">
-                            <a href="" style="color: #3D80BA">{{$action->body}}</a>
+                            <a href="/actions/show/{{ $action->id }}" style="color: #3D80BA">{{$action->body}}</a>
                             <p class="ul-fontSize">
                                 - <bold>Lead:</bold>
                                 <?php
@@ -451,7 +455,8 @@
                     @foreach($act as $action)
                         @if( $action->updated_at > $today)
                             @if($action->status == "Completed")
-                                <li class="list-group-item"><a href="" style="color: #3D80BA">{{$action->body}}</a>
+                                <li class="list-group-item">
+                                    <a href="/actions/show/{{ $action->id }}" style="color: #3D80BA">{{$action->body}}</a>
                                     <p class="ul-fontSize">
                                         - <bold>Lead:</bold>
                                         <?php
