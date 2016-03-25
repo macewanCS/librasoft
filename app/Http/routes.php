@@ -14,7 +14,7 @@
 Route::get('/', function () {
     //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
 
-    return view('welcome')->with('plan', \App\Plan::first())->
+    return view('welcome')->
         with('act',DB::table('actions')->orderby('updated_at', 'desc')->get())->
         with('tasks', DB::table('tasks')->orderby('updated_at', 'desc')->get())->
         with('notes', DB::table('notes')->orderby('created_at', 'desc')->get());
@@ -61,7 +61,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', function () {
         //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
-        return view('welcome')->with('plan', \App\Plan::first())->
+        return view('welcome')->
         with('act',DB::table('actions')->orderby('updated_at', 'desc')->get())->
         with('tasks', DB::table('tasks')->orderby('updated_at', 'desc')->get())->
         with('notes', DB::table('notes')->orderby('created_at', 'desc')->get());
