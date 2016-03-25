@@ -18,12 +18,12 @@ class Tasks_Table_Seeder extends Seeder
         DB::table('tasks')->insert([
             'owner'=> "IT Services",
             'body'=> "Implement approved recommendations from the 2015 Public Computing Report",
-            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'date'=> \Carbon\Carbon::createFromDate(2016, 05, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
             'collaborators'=> "IT Project Team",
             'status'=> "In progress",
             'success'=> "",
-            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -31,12 +31,12 @@ class Tasks_Table_Seeder extends Seeder
         DB::table('tasks')->insert([
             'owner'=> "IT Services",
             'body'=> "Upgrade LibOnline to the latest version (4.9)",
-            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'date'=> \Carbon\Carbon::createFromDate(2016, 04, 01)->toDateTimeString(),
             'lead'=> "dmichael@epl.ca" . $SEPARATOR . "dluc@epl.ca",
             'collaborators'=> "Active Networks",
             'status'=> "Completed",
             'success'=> "In progress",
-            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -101,7 +101,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "",
-            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -148,12 +148,12 @@ class Tasks_Table_Seeder extends Seeder
         DB::table('tasks')->insert([
             'owner'=> "IT Services",
             'body'=> "Provide planning support for eplGo North (MCN)",
-            'date'=> \Carbon\Carbon::createFromDate(2016, 01, 01)->toDateTimeString(),
+            'date'=> \Carbon\Carbon::createFromDate(2016, 04, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
             'collaborators'=> "FAC" . $SEPARATOR . "CMA" . $SEPARATOR . "LON",
             'status'=> "In progress",
             'success'=> "",
-            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
             'action_id'=>5
         ]);
 
