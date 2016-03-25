@@ -39,7 +39,7 @@ class Notes_Table_Seeder extends Seeder
 
             if ($i % 4 >= 3) {
                 DB::table('notes')->insert([
-                    'content' => 'Nearly complete, how\'s your progress?',
+                    'content' => 'Nearly complete finsihed refactoring some of the data pages, how\'s your progress?',
                     'user' => 'Vicky',
                     'task_id' => $i,
                     'created_at' => Carbon::createFromDate(2016, 03, 14)->toDateTimeString(),
