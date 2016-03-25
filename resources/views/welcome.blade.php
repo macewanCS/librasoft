@@ -361,7 +361,7 @@
                         @if($note->created_at > $today)
                             <li class="list-group-item"> 
                                 <a href="tasks/{{ $task->id }}" style="color: #3D80BA">{{$note->content}}</a> 
-                                <p class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</p> 
+                                <br><em class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</em>
                             </li>
                         @endif
                     @endforeach
