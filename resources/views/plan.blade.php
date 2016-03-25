@@ -73,7 +73,7 @@
                     <div class="panel panel-primary">
                         <div  onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
                             <h4 class="panel-title" >
-                                <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"><i class="glyphicon glyphicon-chevron-down"></i> {{ $goal->body }} </a>
+                                <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"><i class="glyphicon glyphicon-chevron-down"></i>Goal: {{ $goal->body }} </a>
                             </h4>
                         </div>
 
@@ -88,7 +88,7 @@
 
                                                 <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                                     <h4 class="panel-title">
-                                                        <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-down"></i> {{ $objective->body }}</a>
+                                                        <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-down"></i>Objective: {{ $objective->body }}</a>
                                                     </h4>
                                                 </div>
 
@@ -100,7 +100,6 @@
                                                         <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
-                                                                <th class="table-id">Action</th>
                                                                 <th class="table-task">Description</th>
                                                                 <th class="table-due" style="font-weight: bold;">Due</th>
                                                                 <th class="table-owner">Department/Team</th>
@@ -114,8 +113,7 @@
                                                             @foreach($objective->actions as $action)
 
                                                                 <tr>
-                                                                    <td class="table-id"> {{$action->item}}</td>
-                                                                    <td class="table-task">{{ $action->body }}</td>
+                                                                    <td class="table-task">Action: <a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></td>
                                                                     <th class="table-due">{{ $action->date }}</th>
                                                                     <td class="table-owner">{{ $action->owner }}</td>
                                                                     <td class="table-collaborators">
@@ -152,8 +150,7 @@
                                                                 </tr>
                                                                 @foreach($action->tasks as $task)
                                                                     <tr>
-                                                                        <td></td>
-                                                                        <td class="table-task">
+                                                                        <td class="table-task">Task:
                                                                             <a href="/tasks/{{ $task->id }}">
                                                                                 {{ $task->body }}
                                                                             </a>
