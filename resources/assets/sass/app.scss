@@ -297,3 +297,18 @@ a {
   padding-right: 20px;
 }
 
+.options-panel {
+  display: inline-block;
+  position: fixed;
+  top: 110px;
+  .options-panel-div {
+    padding: 6px;
+  }
+  .options-panel-head {
+    background: #009FD7;
+  }
+}
+
+.btn-primary {
+  background: #009FD7;
+}
