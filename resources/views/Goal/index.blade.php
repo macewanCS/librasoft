@@ -2,32 +2,43 @@
 
 
 @section('content')
-    <head>
-        <meta charset="utf-8">
-        <title>jQuery UI Dialog - Default functionality</title>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-    </head>
-    <body>
-
-    <div class="hide fade">
-        <div id="dialog"  title="hello" class="panel panel-primary">
-            <div class="panel-body">
-                <p>This is the default dialog which is useful for displaying information.</p>
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#category-1"><br /><br />
+                    Camera Settings<br /><br />
+                </a>
+            </div>
+            <div id="category-1" class="accordion-body collapse" style="height: 0px; ">
+                <div class="accordion-inner">
+                    <p>The camera settings</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#category-2"><br /><br />
+                    Acquisition Settings<br /><br />
+                </a>
+            </div>
+            <div id="category-2" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <p>The acquisition settings.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div>
-        <button onclick="popup()"> hello</button>
-    </div>
 
-    </body>
 
-    <script type="text/javascript" src="{{URL::asset('js/popUpWindow.js')}}"></script>
-    <script type="text/html" src="{{URL::asset('html/popUpForm.html')}}"></script>
+ 
+    <script>
+        $(document).ready(function() {
+            $('#category-2').collapse('show');
+        });
+    </script>
+
 @stop
 
 

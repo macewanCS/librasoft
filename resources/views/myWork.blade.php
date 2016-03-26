@@ -32,8 +32,7 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Action</th>
-                            <th>Task</th>
+                            <th>Description</th>
                             <th>Due</th>
                             <th>Owner</th>
                             <th>Lead</th>
@@ -44,8 +43,7 @@
                     <tbody>
                     @foreach($myActions as $action)
                         <tr>
-                            <td>{{ $action->item }}</td>
-                            <td>{{ $action->body }}</td>
+                            <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
                             <td>{{ $action->date }}</td>
                             <td>{{ $action->owner }}</td>
                             <td>
@@ -78,10 +76,9 @@
                     @endforeach
                     @foreach($myTasks as $task)
                         <tr>
-                            <td></td>
                             <td>
                                 <a href="/tasks/{{ $task->id }}">
-                                    {{ $task->body }}
+                                    Task: {{ $task->body }}
                                 </a>
                             </td>
                             <td>{{ $task->date }}</td>
