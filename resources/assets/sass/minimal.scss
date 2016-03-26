@@ -1,0 +1,89 @@
+.page-header {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.head {
+  padding-bottom: 20px;
+}
+
+.epl-blue-bg {
+  background: #009FD7;
+}
+
+.business-plan {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#bp-count {
+  float: right;
+}
+
+#objective-title {
+  color: darken(#3C763D, 15%);
+}
+
+.panel-heading, .panel-body {
+  padding: 6px;
+}
+
+.action-table {
+  #due {
+    min-width: 85px;
+    max-width: 85px;
+  }
+  #owner {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  #lead {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  #collab {
+    min-width: 130px;
+    max-width: 130px;
+  }
+  #status {
+    min-width: 150px;
+    max-width: 150px;
+  }
+  #success {
+    width: 100%;
+  }
+}
+
+.task-table {
+  #task {
+    width: 100%;
+  }
+  #due {
+    min-width: 85px;
+    max-width: 85px;
+  }
+  #owner {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  #lead {
+    min-width: 100px;
+    max-width: 100px;
+  }
+  #collab {
+    min-width: 130px;
+    max-width: 130px;
+  }
+  #status {
+    min-width: 150px;
+    max-width: 150px;
+  }
+  #success {
+    min-width: 150px;
+    max-width: 150px;
+  }
+}
+
+#print-button {
+  float: right;
+}

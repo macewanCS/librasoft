@@ -43,6 +43,7 @@ Route::get('tasks/show/{task}', 'TasksController@show');
 Route::get('teams/show/{team}', 'TeamsController@show');
 Route::get('users/show/{id}', 'ProfileController@show');
 Route::get('objectives/show/{objective}', 'ObjsController@show');
+Route::get('print', 'ExportController@minimal');
 
 Route::post('search', 'SearchController@search');
 
