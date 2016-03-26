@@ -43,6 +43,12 @@
                                     <textarea name="goal1" rows="1" required style="resize:none"></textarea>
                                 </div>
                                 <div>
+                                    <div>
+                                        <label for="obj1Label" class="col-sm-3" style="font-size: 14pt;">Objective 1 name:</label>
+                                        <textarea name="obj1" rows="1" required style="resize:none"></textarea>
+                                    </div>
+                                </div>
+                                <div>
                                     <label for="goal2Label" class="col-sm-2" style="font-size: 14pt;">Goal 2 name:</label>
                                     <textarea name="goal2" rows="1" required style="resize:none"></textarea>
                                 </div>
