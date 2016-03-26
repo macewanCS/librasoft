@@ -1,0 +1,77 @@
+.page-header {
+  width: 100%;
+  margin: 0 auto; }
+
+.head {
+  padding-bottom: 20px; }
+
+.epl-blue-bg {
+  background: #009FD7; }
+
+.business-plan {
+  width: 100%;
+  margin: 0 auto; }
+
+#bp-count {
+  float: right; }
+
+#objective-title {
+  color: #224323; }
+
+.panel-heading, .panel-body {
+  padding: 6px; }
+
+.action-table #due {
+  min-width: 85px;
+  max-width: 85px; }
+
+.action-table #owner {
+  min-width: 100px;
+  max-width: 100px; }
+
+.action-table #lead {
+  min-width: 100px;
+  max-width: 100px; }
+
+.action-table #collab {
+  min-width: 130px;
+  max-width: 130px; }
+
+.action-table #status {
+  min-width: 150px;
+  max-width: 150px; }
+
+.action-table #success {
+  width: 100%; }
+
+.task-table #task {
+  width: 100%; }
+
+.task-table #due {
+  min-width: 85px;
+  max-width: 85px; }
+
+.task-table #owner {
+  min-width: 100px;
+  max-width: 100px; }
+
+.task-table #lead {
+  min-width: 100px;
+  max-width: 100px; }
+
+.task-table #collab {
+  min-width: 130px;
+  max-width: 130px; }
+
+.task-table #status {
+  min-width: 150px;
+  max-width: 150px; }
+
+.task-table #success {
+  min-width: 150px;
+  max-width: 150px; }
+
+#print-button {
+  float: right; }
+
+/*# sourceMappingURL=minimal.css.map */
