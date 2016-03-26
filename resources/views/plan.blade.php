@@ -52,6 +52,7 @@
             <a id="closeAll" role="button" class="btn btn-primary">Close All Categories</a>
             <a role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
+            <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
         </div>
     </div>
 </div>
@@ -242,6 +243,8 @@
             }
     );
 </script>
+
+
 
 
 @stop
