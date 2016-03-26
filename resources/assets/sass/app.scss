@@ -80,11 +80,6 @@ html, body {
   padding-top: 33px;
 }
 
-.sort-panel {
-  width: 99%;
-  margin: 0 auto;
-}
-
 #footer-list {
   float: right;
   li {
@@ -311,4 +306,9 @@ a {
 
 .btn-primary {
   background: #009FD7;
+}
+
+.plan-content-panel, .sort-panel {
+  padding-left: 178px;
+  padding-right: 15px;
 }

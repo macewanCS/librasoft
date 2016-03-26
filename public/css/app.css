@@ -62,10 +62,6 @@ html, body {
 .navbar-listing {
   padding-top: 33px; }
 
-.sort-panel {
-  width: 99%;
-  margin: 0 auto; }
-
 #footer-list {
   float: right; }
   #footer-list li {
@@ -231,5 +227,9 @@ a .filter {
 
 .btn-primary {
   background: #009FD7; }
+
+.plan-content-panel, .sort-panel {
+  padding-left: 178px;
+  padding-right: 15px; }
 
 /*# sourceMappingURL=app.css.map */
