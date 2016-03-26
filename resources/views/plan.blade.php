@@ -11,62 +11,53 @@
 </div>-->
 
 <!-- Goal Group -->
-<div class="panel panel-default">
-    <div class="panel-heading" style="height: 60px;">
-        <div style="float: left; position: relative; top: 50%; transform: translateY(-50%);">
-            <p class="panel-title" style="font-size: 120%;">Business Plan</p>
-        </div>
-        <div style="float: right;">
-            <a id="openAll" role="button" class="btn btn-primary" style="background: #009FD7;">Open All</a>
-            <a id="closeAll" role="button" class="btn btn-primary" style="background: #009FD7;">Close All</a>
-            <a role="button" class="btn btn-primary" style="background: #009FD7;" href="#">Edit Business Plan</a>
-            <a role="button" class="btn btn-primary" style="background: #009FD7;" href="plan/new">New Business Plan</a>
+<div class="panel panel-primary options-panel">
+    <div class="panel-heading options-panel-div options-panel-head"><h4 class="panel-title">Options</h4></div>
+    <div class="panel-body options-panel-div">
+        <div class="btn-group-vertical" role="group">
+            <?php
+            use App\Department;
+            use App\Team;
+            $filter_options = ["Actions", "Tasks"];
+            $dept_options = Department::all();
+            $team_options = Team::all();
+            ?>
+
+            @foreach($filter_options as $option)
+                <a type="button" class="btn btn-primary" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+            @endforeach
+
+
+            <div class="dropdown btn-group">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="teamDeptDropdown" data-toggle="dropdown">
+                    Team/Department
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header">Departments</li>
+                    @foreach($dept_options as $dept_option)
+                        <?php $lower_option = strtolower($dept_option->name); ?>
+                        <li><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
+                    @endforeach
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Teams</li>
+                    @foreach($team_options as $team_option)
+                        <?php $lower_option = strtolower($team_option->name); ?>
+                        <li><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <a id="openAll" role="button" class="btn btn-primary">Open All</a>
+            <a id="closeAll" role="button" class="btn btn-primary">Close All</a>
+            <a role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
+            <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
         </div>
     </div>
-    <div class="panel-body">
-        <div class="filter">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Filter</h4>
-                </div>
-                <div class="panel-body">
-                    <div class="btn-group" role="group">
-                        <?php
-                        use App\Department;
-                        use App\Team;
-                        $filter_options = ["Actions", "Tasks"];
-                        $dept_options = Department::all();
-                        $team_options = Team::all();
-                        ?>
+</div>
 
-                        @foreach($filter_options as $option)
-                            <a type="button" class="btn btn-primary acttskbutton" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
-                        @endforeach
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="teamDeptDropdown" data-toggle="dropdown">
-                            Team/Department
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header">Departments</li>
-                            @foreach($dept_options as $dept_option)
-                                <?php $lower_option = strtolower($dept_option->name); ?>
-                                <li><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
-                            @endforeach
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Teams</li>
-                            @foreach($team_options as $team_option)
-                                <?php $lower_option = strtolower($team_option->name); ?>
-                                <li><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Accordion starts-->
-        <div class="bs-example" style="padding-left: 40px; padding-right: 40px">
+        <div class="bs-example" style="padding-left: 178px; padding-right: 40px">
             <div class="panel-group" id="accordion">
                 @foreach($plan->goals as $goal)
 
@@ -212,8 +203,6 @@
                 @endforeach
             </div>
         </div>
-    </div>
-</div>
 
 <!--form method="get" action="/plan/new">
     <div class="form-group" style="padding-left: 40px; padding-right: 40px">
