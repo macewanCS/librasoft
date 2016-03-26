@@ -232,4 +232,10 @@ a .filter {
   padding-left: 178px;
   padding-right: 15px; }
 
+.active-navbar-element {
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-radius: 10px 10px 0 0; }
+
 /*# sourceMappingURL=app.css.map */
