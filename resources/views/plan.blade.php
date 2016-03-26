@@ -57,7 +57,7 @@
 </div>
 
         <!-- Accordion starts-->
-        <div class="bs-example" style="padding-left: 178px; padding-right: 40px">
+        <div class="plan-content-panel">
             <div class="panel-group" id="accordion">
                 @foreach($plan->goals as $goal)
 
