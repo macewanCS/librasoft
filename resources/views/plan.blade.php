@@ -48,8 +48,8 @@
                 </ul>
             </div>
 
-            <a id="openAll" role="button" class="btn btn-primary">Open All</a>
-            <a id="closeAll" role="button" class="btn btn-primary">Close All</a>
+            <a id="openAll" role="button" class="btn btn-primary">Open All Categories</a>
+            <a id="closeAll" role="button" class="btn btn-primary">Close All Categories</a>
             <a role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
         </div>
