@@ -16,6 +16,19 @@
                     $('#endpicker').append($('<option />').val(i).html(i));
                 }
             });
+
+            $(document).ready(function(){
+                $('#btn1').click(function(){
+                    $('#step1, #btn1').fadeOut(function(){
+                        $('#step2, #btn4').fadeIn();
+                    });
+                });
+                $('#btn4').click(function(){
+                    $('#step2, #btn4').fadeOut(function() {
+                        $('#step1, #btn1').fadeIn();
+                    });
+                });
+            });
         </script>
     </head>
     <body>
@@ -28,64 +41,66 @@
                     <div class="panel-body">
                         Complete the following steps to get your new Business Plan up and running quickly!
                         <form role="form" method="POST" action="{{ url('/plan/new') }}">
-                            <div class="form-group" style="padding-left: 25px; padding-top: 30px;">
-                                <label for="step1Label" style="font-size: 14pt;">
+                            <!-- Step 1 -->
+                            <div class="form-group pb-step" id="step1">
+                                <label for="step1Label" class="pb-label">
                                     Step 1: Choose a plan year range:
                                 </label>
                                 <select name="startdate" id="startpicker"></select>
                                 <select name="enddate" id="endpicker"></select>
                             </div>
+                            <div id="btn1">
+                                <button class="btn btn-primary pb-btn" type="button">Next</button>
+                            </div>
 
-                            <div class="form-group" style="padding-left: 25px;">
-                                <label for="step2Label" style="font-size: 14pt;">Step 2:</label>
-                                <div>
-                                    <label for="goal1Label" class="col-sm-2" style="font-size: 14pt;">Goal 1 name:</label>
-                                    <textarea name="goal1" rows="1" required style="resize:none"></textarea>
+                            <!-- Step 2 -->
+                            <div class="form-group pb-display pb-step" id="step2">
+                                <label for="step2Label" class="pb-label">Step 2:</label>
+                                <div class="pb-inner-step">
+                                    <label for="goal1Label" class="pb-label">Goal 1 name:</label>
+                                    <textarea name="goal1" rows="1" class="pb-text" required></textarea>
+                                    <button class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
-                                <div>
-                                    <div>
-                                        <label for="obj1Label" class="col-sm-3" style="font-size: 14pt;">Objective 1 name:</label>
-                                        <textarea name="obj1" rows="1" required style="resize:none"></textarea>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="goal2Label" class="col-sm-2" style="font-size: 14pt;">Goal 2 name:</label>
-                                    <textarea name="goal2" rows="1" required style="resize:none"></textarea>
-                                </div>
-                                <div>
-                                    <label for="goal3Label" class="col-sm-2" style="font-size: 14pt;">Goal 3 name:</label>
-                                    <textarea name="goal3" rows="1" required style="resize:none"></textarea>
-                                </div>
-                                <div>
-                                    <label for="goal4Label" class="col-sm-2" style="font-size: 14pt;">Goal 4 name:</label>
-                                    <textarea name="goal4" rows="1" required style="resize:none"></textarea>
+                                <div class="pb-inner-step">
+                                    <label for="goal2Label" class="pb-label">Goal 2 name:</label>
+                                    <textarea name="goal2" rows="1" class="pb-text" required></textarea>
+                                    <button class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                             </div>
 
-                            <div class="form-group" style="padding-left: 25px">
-                                <label for="step3Label" style="font-size: 14pt;">Step 3:</label>
-                                <div>
-                                    <label for="obj1Label" class="col-sm-3" style="font-size: 14pt;">Objective 1 name:</label>
+                            <div class="pb-display" id="btn4">
+                                <button class="btn btn-primary pb-btn" type="button">Back</button>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="form-group pb-display pb-step" id="step3">
+                                <label for="step3Label" class="pb-label-font">Step 3:</label>
+                                <div id="step3a" style="display:none">
+                                    <label for="G1O1Label" class="col-sm-3 pb-label-font">Objective 1 name:</label>
                                     <textarea name="obj1" rows="1" required style="resize:none"></textarea>
                                 </div>
-                                <div>
+                                <div id="step3a" style="display:none">
                                     <label for="obj2Label" class="col-sm-3" style="font-size: 14pt;">Objective 2 name:</label>
                                     <textarea name="obj2" rows="1" required style="resize:none"></textarea>
                                 </div>
-                                <div>
-                                    <label for="obj3Label" class="col-sm-3" style="font-size: 14pt;">Objective 3 name:</label>
+                                <div id="step3b" style="display:none">
+                                    <label for="G2O1Label" class="col-sm-3" style="font-size: 14pt;">Objective 1 name:</label>
                                     <textarea name="obj3" rows="1" required style="resize:none"></textarea>
                                 </div>
-                                <div>
-                                    <label for="obj4Label" class="col-sm-3" style="font-size: 14pt;">Objective 4 name:</label>
+                                <div id="step3b" style="display:none">
+                                    <label for="G2O2Label" class="col-sm-3" style="font-size: 14pt;">Objective 2 name:</label>
                                     <textarea name="obj4" rows="1" required style="resize:none"></textarea>
                                 </div>
                             </div>
 
+                            <!-- Step 4 -->
 
+                            <!-- Step 5 -->
+
+                            <!-- Submit everything -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div>
-                                <button class="btn btn-primary col-sm-1" type="submit" style="position: relative; left: 30px; top: 5px">Submit</button>
+                                <button class="btn btn-primary col-sm-1" type="submit" style="display: none; position: relative; left: 30px; top: 5px">Submit</button>
                             </div>
                         </form>
                     </div>

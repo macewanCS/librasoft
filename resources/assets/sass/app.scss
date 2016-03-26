@@ -319,3 +319,46 @@ a {
   border-right: 1px solid grey;
   border-radius: 10px 10px 0 0;
 }
+
+/*# Create Plan styling */
+
+.pb-label {
+  font-size: 14pt;
+  float: left;
+  clear: left;
+}
+
+.pb-btn {
+  position: relative;
+  left: 25px;
+  float: left;
+  clear: left;
+}
+
+.pb-arrow-btn {
+  float: left;
+}
+
+.pb-display {
+  display: none;
+}
+
+.pb-step {
+  padding-left: 30px;
+  padding-top: 15px;
+  float: left;
+  clear: left;
+}
+
+.pb-inner-step {
+  padding-left: 40px;
+  float: left;
+  clear: left;
+}
+
+.pb-text {
+  resize: none;
+  float: left;
+  clear: none;
+}
+
