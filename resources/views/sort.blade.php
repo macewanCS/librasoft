@@ -41,6 +41,7 @@
                             @endforeach
                         </ul>
                     </div>
+                    <a type="button" class="btn btn-primary" href="/plan">Clear Filter</a>
                 </div>
             </div>
         </div>
