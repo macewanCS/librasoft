@@ -3,28 +3,25 @@
 @section('content')
 
     <div class="content">
-        <div class="filter">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h4 class="panel-title">Filter</h4>
-                </div>
-                <div class="panel-body">
-                    <div class="btn-group" role="group">
-                        <?php
-                        use App\Department;
-                        use App\Team;
-                        $filter_options = ["Actions", "Tasks"];
-                        $dept_options = Department::all();
-                        $team_options = Team::all();
-                        ?>
+        <div class="panel panel-primary options-panel">
+            <div class="panel-heading options-panel-div options-panel-head"><h4 class="panel-title">Options</h4></div>
+            <div class="panel-body options-panel-div">
+                <div class="btn-group-vertical" role="group">
+                    <?php
+                    use App\Department;
+                    use App\Team;
+                    $filter_options = ["Actions", "Tasks"];
+                    $dept_options = Department::all();
+                    $team_options = Team::all();
+                    ?>
 
-                        @foreach($filter_options as $filter_option)
-                            <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $filter_option)); ?>
-                            <a type="button" class="btn btn-primary acttskbutton" href="/sort/{{ $lower_option }}">{{ $filter_option }}</a>
-                        @endforeach
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="teamDeptDropdown" data-toggle="dropdown">
+                    @foreach($filter_options as $option)
+                        <a type="button" class="btn btn-primary" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                    @endforeach
+
+
+                    <div class="dropdown btn-group">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="teamDeptDropdown" data-toggle="dropdown">
                             Team/Department
                             <span class="caret"></span>
                         </button>
@@ -47,7 +44,8 @@
         </div>
     </div>
 
-    <div class="panel panel-primary sort-panel">
+    <div class="sort-panel">
+    <div class="panel panel-primary">
         <div class="panel-heading">
             <h4 class="panel-title">{{ ucwords(strtolower($dept)) }}</h4>
         </div>
@@ -62,7 +60,6 @@
             <table class="table table-bordered table-striped table-hover filter-table tablesorter">
                 <thead>
                 <tr>
-                    <th class="item">Action</th>
                     <th class="desc">Description</th>
                     <th class="due">Due</th>
                     <th class="dept">Department/Team</th>
@@ -74,8 +71,7 @@
                 <tbody>
                 @foreach($results as $result)
                     <tr>
-                        <td class="item">{{ $result->item }}</td>
-                        <td class="desc">{{ $result->body }}</td>
+                        <td class="desc"><a href="/actions/show/{{ $result->id }}">Action: {{ $result->body }}</a></td>
                         <td class="due">{{ $result->date }}</td>
                         <td class="dept">{{ $result->owner }}</td>
                         <td class="action-lead">
@@ -100,8 +96,7 @@
                     </tr>
                     @foreach($result->tasks as $task)
                         <tr>
-                            <td class="item"></td>
-                            <td class="desc">{{ $task->body }}</td>
+                            <td class="desc"><a href="/tasks/show/{{ $task->id }}">Task: {{ $task->body }}</a></td>
                             <td class="due">{{ $task->date }}</td>
                             <td class="dept">{{ $task->owner }}</td>
                             <td class="action-lead">
@@ -130,7 +125,7 @@
             </table>
 
         @endif
-    </div>
+    </div></div>
 
     <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
 
