@@ -79,7 +79,7 @@
                     <ul class="nav navbar-nav navbar-listing">
                         <li class="navbar-item navbar-spacing"><a @if($_SERVER['REQUEST_URI'] == "/") class="active-navbar-element" @endif href="{{ url('/') }}">Dashboard</a></li>
                         <li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/plan") class="active-navbar-element" @endif  href="{{ url('/plan') }}">Plan</a></li>
-                        @permission('view.mywork')<li class="navbar-item"><a href="{{ url('/mywork') }}">My Work</a></li>@endpermission
+                        @permission('view.mywork')<li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/mywork") class="active-navbar-element" @endif href="{{ url('/mywork') }}">My Work</a></li>@endpermission
                         <!--li><a href="{{ url('/manage') }}">Archives</a></li-->
                     </ul>
 
