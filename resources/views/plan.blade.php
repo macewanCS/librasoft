@@ -89,7 +89,7 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
+                                                        <table class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-task">Description</th>
@@ -183,10 +183,10 @@
                                                                     </tr>
                                                                 @endforeach
 
-                                                            </tbody>
-
 
                                                             @endforeach
+
+                                                            </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -236,11 +236,16 @@
     });
 </script>
 
+<script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+
 <script type="application/javascript">
     $(document).ready(function()
-            {
-                $(".action-table").tablesorter();
-            }
+        {
+            <?php use App\Objective; ?>
+            @for($i = 1; $i < count(Objective::get()->all()); $i++)
+            $(".action-table{{ $i }}").tablesorter();
+            @endfor
+        }
     );
 </script>
 
