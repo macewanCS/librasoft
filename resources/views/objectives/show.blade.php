@@ -4,8 +4,9 @@
 
     <div class="bs-example">
         <div class="panel panel-primary">
-            <div class="panel-heading"><h4 class="panel-title">Objective: {{ $objective->body }}</h4></div>
+            <div class="panel-heading" style="background: #009FD7;"><h4 class="panel-title">Objective: {{ $objective->body }}</h4></div>
             <div class="panel-body">
+                <h4><a href="/goals/show/{{ $objective->goal()->get()->first()->id }}">Belongs to Goal: {{ $objective->goal()->get()->first()->body }}</a></h4>
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                     <tr>

@@ -29,7 +29,7 @@
                         }
                     }
                 ?>
-                <table class="table table-striped table-bordered table-hover">
+                <table class="table table-striped table-bordered table-hover tablesorter mywork-table">
                     <thead>
                         <tr>
                             <th>Description</th>
@@ -117,5 +117,15 @@
 
         </div>
     </div>
+
+    <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+
+    <script type="application/javascript">
+        $(document).ready(function()
+            {
+                $(".mywork-table").tablesorter();
+            }
+        );
+    </script>
 
 @endsection

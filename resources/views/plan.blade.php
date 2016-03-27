@@ -52,7 +52,7 @@
         <!-- Accordion starts-->
         <div class="plan-content-panel">
             <div class="panel-group" id="accordion">
-                @foreach($plan->goals as $goal)
+                @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
 
                     <div class="panel panel-primary">
                         <div  onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
@@ -68,7 +68,7 @@
                                     <div class="panel-group">
                                         <div class="panel panel-default">
 
-                                            @foreach($goal->objectives as $objective)
+                                            @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
 
                                                 <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
                                                     <h4 class="panel-title">
@@ -81,7 +81,7 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
+                                                        <table class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-task">Description</th>
@@ -94,7 +94,7 @@
                                                             </thead>
 
                                                             <tbody>
-                                                            @foreach($objective->actions as $action)
+                                                            @foreach($objective->actions()->orderBy('body', 'asc')->get() as $action)
 
                                                                 <tr>
                                                                     <td class="table-task">Action: <a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></td>
@@ -132,7 +132,7 @@
                                                                         @endif
                                                                     </td>
                                                                 </tr>
-                                                                @foreach($action->tasks as $task)
+                                                                @foreach($action->tasks()->orderBy('body', 'asc')->get() as $task)
                                                                     <tr>
                                                                         <td class="table-task">Task:
                                                                             <a href="/tasks/{{ $task->id }}">
@@ -175,10 +175,10 @@
                                                                     </tr>
                                                                 @endforeach
 
-                                                            </tbody>
-
 
                                                             @endforeach
+
+                                                            </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -227,11 +227,16 @@
     });
 </script>
 
+<script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+
 <script type="application/javascript">
     $(document).ready(function()
-            {
-                $(".action-table").tablesorter();
-            }
+        {
+            <?php use App\Objective; ?>
+            @for($i = 1; $i < count(Objective::get()->all()); $i++)
+            $(".action-table{{ $i }}").tablesorter();
+            @endfor
+        }
     );
 </script>
 
