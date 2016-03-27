@@ -48,7 +48,7 @@
 
         <div class="sort-panel">
             <div class="panel panel-primary">
-                <div class="panel-heading">
+                <div class="panel-heading" style="background: #009FD7;">
                     <h4 class="panel-title">&nbsp;</h4>
                 </div>
 
