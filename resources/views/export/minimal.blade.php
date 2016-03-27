@@ -32,7 +32,7 @@
 
 <div class="business-plan">
     @if(count($plan->goals->all()) > 0)
-    @foreach($plan->goals as $goal)
+    @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7;">
                 <span class="badge" id="bp-count">{{ count($goal->objectives->all()) }} Objective(s)</span>
@@ -41,7 +41,7 @@
             <div class="panel-body">
 
                 @if(count($goal->objectives->all()) > 0)
-                @foreach($goal->objectives as $objective)
+                @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
                     <div class="panel panel-success">
                         <div class="panel-heading" style="background: #73C146;">
                             <span class="badge" id="bp-count">{{ count($objective->actions->all()) }} Action(s)</span>
@@ -50,7 +50,7 @@
                         <div class="panel-body">
 
                             @if(count($objective->actions->all()) > 0)
-                            @foreach($objective->actions as $action)
+                            @foreach($objective->actions()->orderBy('body', 'asc')->get() as $action)
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <span class="badge" id="bp-count">{{ count($action->tasks->all()) }} Task(s)</span>
@@ -128,7 +128,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($action->tasks as $task)
+                                            @foreach($action->tasks()->orderBy('body', 'asc')->get() as $task)
                                                 <tr>
                                                     <td id="task">{{ $task->body }}</td>
                                                     <td id="due">{{ $task->date }}</td>
