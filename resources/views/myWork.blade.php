@@ -33,10 +33,11 @@
                     <thead>
                         <tr>
                             <th>Description</th>
-                            <th>Due</th>
-                            <th>Owner</th>
-                            <th>Lead</th>
-                            <th>Status</th>
+                            <th class="mw-table-due">Due</th>
+                            <th class="mw-table-owner">Owner</th>
+                            <th class="mw-table-lead">Lead</th>
+                            <th class="mw-table-collab">Collaborators</th>
+                            <th class="mw-table-status">Status</th>
                         </tr>
                     </thead>
 
@@ -44,9 +45,9 @@
                     @foreach($myActions as $action)
                         <tr>
                             <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
-                            <td>{{ $action->date }}</td>
-                            <td>{{ $action->owner }}</td>
-                            <td>
+                            <td class="mw-table-due">{{ $action->date }}</td>
+                            <td class="mw-table-owner">{{ $action->owner }}</td>
+                            <td class="mw-table-lead">
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -63,7 +64,24 @@
                                 }
                                 ?>
                             </td>
-                            <td>
+                            <td class="mw-table-collab">
+                                <?php
+                                $collaborators = explode("__,__", $action->collaborators);
+                                foreach ($collaborators as $collaborator) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($collaborator, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $collaborator)->first()->name;
+                                    } else {
+                                        echo $collaborator;
+                                    }
+
+                                    if ($collaborator != $collaborators[count($collaborators)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                                ?>
+                            </td>
+                            <td class="mw-table-status">
                                 <?php
                                 if ($action->status == "done") {
                                     echo "Done";
@@ -81,9 +99,9 @@
                                     Task: {{ $task->body }}
                                 </a>
                             </td>
-                            <td>{{ $task->date }}</td>
-                            <td>{{ $task->owner }}</td>
-                            <td>
+                            <td class="mw-table-due">{{ $task->date }}</td>
+                            <td class="mw-table-owner">{{ $task->owner }}</td>
+                            <td class="mw-table-lead">
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -100,7 +118,24 @@
                                 }
                                 ?>
                             </td>
-                            <td>
+                            <td class="mw-table-collab">
+                                <?php
+                                $collaborators = explode("__,__", $task->collaborators);
+                                foreach ($collaborators as $collaborator) {
+                                    // Check if it's a valid email address
+                                    if (filter_var($collaborator, FILTER_VALIDATE_EMAIL)) {
+                                        echo \App\User::where("email", $collaborator)->first()->name;
+                                    } else {
+                                        echo $collaborator;
+                                    }
+
+                                    if ($collaborator != $collaborators[count($collaborators)-1]) {
+                                        echo ", ";
+                                    }
+                                }
+                                ?>
+                            </td>
+                            <td class="mw-table-status">
                                 <?php
                                 if ($task->status == "done") {
                                     echo "Done";

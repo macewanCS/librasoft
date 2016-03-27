@@ -358,3 +358,43 @@ a {
 #bp-count {
   float: right;
 }
+
+/*# mywork styling*/
+
+.mw-table-id {
+  font-size: 16px;
+}
+
+.mw-table-body {
+  font-size: 16px;
+}
+
+.mw-table-owner {
+  font-size: 16px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.mw-table-lead {
+  font-size: 16px;
+  min-width: 120px;
+  max-width: 120px;
+}
+
+.mw-table-collab{
+  font-size: 16px;
+  min-width: 120px;
+  max-width: 120px;
+}
+
+.mw-table-due {
+  font-size: 16px;
+  min-width: 105px;
+  max-width: 105px;
+}
+
+.mw-table-status {
+  font-size: 16px;
+  min-width: 100px;
+  max-width: 100px;
+}

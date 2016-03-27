@@ -23,6 +23,13 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'department',
+        'permission',
+    ];
 
     /**
      * Where to redirect users after login / registration.
@@ -65,6 +72,7 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         $user = new User();
+        $user->assignrole($data['department']);
         return $user->create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -72,6 +80,5 @@ class AuthController extends Controller
             'permission' => $data['permission'],
             'password' => bcrypt($data['password']),
         ]);
-        $user->assignrole($data['department']);
     }
 }

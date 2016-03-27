@@ -91,7 +91,7 @@
                                 @foreach($task->notes as $note)
                                     <li class="list-group-item">
                                         {{ $note->content }}
-                                        <p>Posted by {{ $note->user }} on {{ $note->created_at }}.</p>
+                                        <br><em class="ul-fontSize">- Posted by {{ $note->user }} on {{ $note->created_at }}.</em>
                                     </li>
                                 @endforeach
 
