@@ -321,6 +321,10 @@ a {
 .plan-content-panel, .sort-panel {
   padding-left: 178px;
   padding-right: 15px;
+
+  .panel-body {
+    padding: 7px;
+  }
 }
 
 .active-navbar-element {
@@ -333,4 +337,8 @@ a {
 #more-button {
   position: relative;
   top: -4px;
+}
+
+.small-panel-body {
+  padding: 7px;
 }

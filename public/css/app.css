@@ -238,6 +238,8 @@ a .filter {
 .plan-content-panel, .sort-panel {
   padding-left: 178px;
   padding-right: 15px; }
+  .plan-content-panel .panel-body, .sort-panel .panel-body {
+    padding: 7px; }
 
 .active-navbar-element {
   border-top: 1px solid grey;
@@ -248,5 +250,8 @@ a .filter {
 #more-button {
   position: relative;
   top: -4px; }
+
+.small-panel-body {
+  padding: 7px; }
 
 /*# sourceMappingURL=app.css.map */
