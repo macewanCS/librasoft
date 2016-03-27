@@ -81,15 +81,29 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('tasks/{task}', 'TasksController@show');
 
     Route::post('tasks/{task}/notes', 'NotesController@store');
+
+    Route::post('tasks/{task}/notes', 'NotesController@store');
+
+    Route::get('sort/{option}', function ($option) {return view ('sort')->with('option', $option);});
+    Route::get('sort/dept/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
+    Route::get('sort/team/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
+
+    Route::get('notes/show/{note}', 'NotesController@show');
+    Route::get('goals/show/{goal}', 'GoalsController@show');
+    Route::get('departments/show/{department}', 'DepartmentsController@show');
+    Route::get('actions/show/{action}', 'ActionsController@show');
+    Route::get('tasks/show/{task}', 'TasksController@show');
+    Route::get('teams/show/{team}', 'TeamsController@show');
+    Route::get('users/show/{id}', 'ProfileController@show');
+    Route::get('objectives/show/{objective}', 'ObjsController@show');
+    Route::get('print', 'ExportController@minimal');
+
+    Route::get("export/tsv", 'ExportController@tabs');
+
+
 });
 
 Route::get('plan/edit', 'PlanController@edit');
-
-
-
-
-
-
 
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
