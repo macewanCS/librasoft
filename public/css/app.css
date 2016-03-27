@@ -69,7 +69,14 @@ html, body {
     padding-right: 10px; }
 
 .dashboard-panel {
-  width: 625px; }
+  width: 625px;
+  padding: 5px 5px; }
+  .dashboard-panel .panel {
+    margin: 0; }
+  .dashboard-panel .list-group-item {
+    padding: 5px; }
+  .dashboard-panel .panel-body {
+    padding: 7px; }
 
 .dashboard-row {
   width: 1300px;
@@ -231,6 +238,8 @@ a .filter {
 .plan-content-panel, .sort-panel {
   padding-left: 178px;
   padding-right: 15px; }
+  .plan-content-panel .panel-body, .sort-panel .panel-body {
+    padding: 7px; }
 
 .active-navbar-element {
   border-top: 1px solid grey;
@@ -241,5 +250,8 @@ a .filter {
 #more-button {
   position: relative;
   top: -4px; }
+
+.small-panel-body {
+  padding: 7px; }
 
 /*# sourceMappingURL=app.css.map */

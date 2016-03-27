@@ -5,7 +5,7 @@
     <div class="bs-example">
         <div class="panel panel-primary">
         <div class="panel-heading" style="background: #009FD7;"><h4 class="panel-title">Results for "{{ $term }}"</h4></div>
-        <div class="panel-body">
+        <div class="panel-body small-panel-body">
             <table class="table table-bordered table-striped table-hover">
                 <tbody>
                 @foreach($results as $result)

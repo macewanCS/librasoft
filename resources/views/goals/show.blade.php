@@ -5,7 +5,7 @@
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7;"><h4 class="panel-title">Goal: {{ $goal->body }}</h4></div>
-            <div class="panel-body">
+            <div class="panel-body small-panel-body">
                 <?php use Carbon\Carbon; ?>
                 <h4><a href="/plan">Belongs to Plan:
                         {{ Carbon::createFromFormat("Y-m-d", $goal->plan()->get()->first()->startdate)->format("Y") }} -

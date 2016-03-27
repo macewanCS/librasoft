@@ -6,7 +6,7 @@
         <div class="panel panel-primary">
 
             <div class="panel-heading" style="background: #009FD7"><h4 class="panel-title">{{$task->body}}</h4></div>
-            <div class="panel-body">
+            <div class="panel-body small-panel-body">
                 <h4><a href="/actions/show/{{ $task->action()->get()->first()->id }}">Belongs to Action: {{ $task->action()->get()->first()->body }}</a></h4>
                 <table class="table table-striped table-bordered table-hover">
 
@@ -87,7 +87,7 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background: #009FD7">Notes</div>
 
-                        <div class="panel-body">
+                        <div class="panel-body small-panel-body">
                             <ul class="list-group">
 
                                 @foreach($task->notes as $note)
@@ -105,7 +105,7 @@
 
                         <div class="panel-heading" style="background: #009FD7">Add a Note</div>
 
-                        <div class="panel-body">
+                        <div class="panel-body small-panel-body">
                             <form method="POST" action="/tasks/{{ $task->id }}/notes">
 
                                 <div class="form-group">
