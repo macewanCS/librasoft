@@ -69,7 +69,14 @@ html, body {
     padding-right: 10px; }
 
 .dashboard-panel {
-  width: 625px; }
+  width: 625px;
+  padding: 5px 5px; }
+  .dashboard-panel .panel {
+    margin: 0; }
+  .dashboard-panel .list-group-item {
+    padding: 5px; }
+  .dashboard-panel .panel-body {
+    padding: 7px; }
 
 .dashboard-row {
   width: 1300px;

@@ -90,6 +90,16 @@ html, body {
 
 .dashboard-panel {
   width: 625px;
+  padding: 5px 5px;
+  .panel {
+    margin: 0;
+  }
+  .list-group-item {
+    padding: 5px;
+  }
+  .panel-body {
+     padding: 7px;
+   }
 }
 
 .dashboard-row {
