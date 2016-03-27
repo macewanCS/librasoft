@@ -56,6 +56,7 @@
 
                     <div class="panel panel-primary">
                         <div  onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapsegoal{{ $goal->id }}" style="background: #009FD7; cursor: pointer;">
+                            <span class="badge" id="bp-count">{{ count($goal->objectives->all()) }} Objective(s)</span>
                             <h4 class="panel-title" >
                                 <a  data-toggle="collapse" href="#collapsegoal{{ $goal->id }}"><i class="glyphicon glyphicon-chevron-down"></i>Goal: {{ $goal->body }} </a>
                             </h4>
@@ -71,6 +72,7 @@
                                             @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
 
                                                 <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
+                                                    <span class="badge" id="bp-count">{{ count($objective->actions->all()) }} Action(s)</span>
                                                     <h4 class="panel-title">
                                                         <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-down"></i>Objective: {{ $objective->body }}</a>
                                                     </h4>
@@ -81,7 +83,7 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
 
-                                                        <table class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter" style="font-size: 12.5%;">
+                                                        <table class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-task">Description</th>
