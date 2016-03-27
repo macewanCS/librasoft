@@ -303,7 +303,7 @@ class Tasks_Table_Seeder extends Seeder
         //23
         DB::table('tasks')->insert([
             'owner'=> "IT Services",
-            'body'=> "Compare IT's current ticketing sytems against demos of inexpensive, focused ticketing systems to determine if a migration can and should occur.",
+            'body'=> "Compare IT's current ticketing systems against demos of inexpensive, focused ticketing systems to determine if a migration can and should occur.",
             'date'=> \Carbon\Carbon::createFromDate(2016, 06, 01)->toDateTimeString(),
             'lead'=> "vvarga@epl.ca",
             'collaborators'=> "PUR",
