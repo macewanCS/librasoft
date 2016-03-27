@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="bs-example" style="padding-left: 40px; padding-right: 40px;" >
+    <div class="bs-example">
         <div class="panel panel-primary">
 
             <div class="panel-heading" style="background: #009FD7"><h4 class="panel-title">{{$task->body}}</h4></div>
@@ -12,7 +12,7 @@
 
                     <thead>
                     <tr>
-                        <th style="min-width: 100px; max-width: 100px;">Due</th>
+                        <th>Due</th>
                         <th>Owner</th>
                         <th>Lead</th>
                         <th>Collaborators</th>
@@ -71,15 +71,13 @@
 
                 <!-- save all button-->
                 <div>
-                <button type="submit" class="btn btn-primary" style="background: #009FD7; float: right;">Save All</button>
+                <button type="submit" class="btn btn-primary" id="save-button">Save All</button>
                 </div>
                 <!-- save all button end-->
 
-                <!-- page break-->
-                <div style="padding-top: 30px;">
-                    <hr>
+                <div id="page-break">
+                    <hr/>
                 </div>
-                <!-- page break end-->
 
                 <!-- Notes start -->
                 <div class="col-md-6 col-md-offset-3">
@@ -109,7 +107,7 @@
                             <form method="POST" action="/tasks/{{ $task->id }}/notes">
 
                                 <div class="form-group">
-                                    <textarea name="content" class="form-control" style="resize: none;" placeholder="Enter a note..."></textarea>
+                                    <textarea name="content" class="form-control note-entry" placeholder="Enter a note..."></textarea>
                                     <input type="hidden" name="user" value="Vicky"/>
                                     <input type="hidden" name="created_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
                                     <input type="hidden" name="updated_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bs-example" style="padding-left: 40px; padding-right: 40px;" >
+    <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7">In Progress</div>
 
-            <div class="panel-body" style="padding: 0px">
+            <div class="panel-body small-panel-body">
                 <?php
                     $id =  Auth::user()->email;
                     $myTasks = array();
