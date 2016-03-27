@@ -46,6 +46,7 @@ Route::get('objectives/show/{objective}', 'ObjsController@show');
 Route::get('print', 'ExportController@minimal');
 
 Route::post('search', 'SearchController@search');
+Route::get("export/tsv", 'ExportController@tabs');
 
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords
