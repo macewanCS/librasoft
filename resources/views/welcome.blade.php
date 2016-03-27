@@ -17,7 +17,7 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7;">Recently updated
-                        <a onclick="popupUpdated()" role="button" class="btn btn-primary background-blue-float">More</a>
+                        <a onclick="popupUpdated()" role="button" class="btn btn-primary background-blue-float" id="more-button">More</a>
                     </div>
 
                     <div class="panel-body overflow-y-height">
@@ -26,7 +26,7 @@
                             $today = Carbon\Carbon::today();
                             $today = $today->subMonth(1);
                         ?>
-                        <li class="list-group-item"> Actions:</li>
+                        <li class="list-group-item">Actions:</li>
                         @foreach($act as $action)
                             @if( $action->updated_at > $today)
                             <li class="list-group-item">
@@ -91,7 +91,7 @@
             <div class="col-xs-2 dashboard-panel">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7">Recently Finished
-                        <a onclick="popupFinished()" role="button" class="btn btn-primary background-blue-float">More</a>
+                        <a onclick="popupFinished()" role="button" class="btn btn-primary background-blue-float" id="more-button">More</a>
                     </div>
 
                     <div class="panel-body overflow-y-height">
@@ -168,7 +168,7 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7"> Recent Comments
-                    <a onclick="popupComments()" role="button" class="btn btn-primary background-blue-float">More</a>
+                    <a onclick="popupComments()" role="button" class="btn btn-primary background-blue-float" id="more-button">More</a>
                 </div>
 
                 <div class="panel-body overflow-y-height">
@@ -192,7 +192,7 @@
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background: #009FD7">Upcomming Due Dates
-                    <a onclick="popupDates()" role="button" class="btn btn-primary background-blue-float">More</a>
+                    <a onclick="popupDates()" role="button" class="btn btn-primary background-blue-float" id="more-button">More</a>
                 </div>
 
                 <div class="panel-body overflow-y-height">
