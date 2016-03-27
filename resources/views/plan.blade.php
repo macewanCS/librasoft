@@ -1,14 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-        <!-- div for filter options-->
-<!--<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">Filter</div>
-
-        <div class="panel-body"></div>
-    </div>
-</div>-->
 
 <!-- Goal Group -->
 <div class="panel panel-primary options-panel">
@@ -48,8 +40,8 @@
                 </ul>
             </div>
 
-            <a id="openAll" role="button" class="btn btn-primary">Open All Categories</a>
-            <a id="closeAll" role="button" class="btn btn-primary">Close All Categories</a>
+            <!--<a id="openAll" role="button"` class="btn btn-primary" data-toggle="collapse">Open All Categories</a>
+            <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
             <a role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
@@ -205,12 +197,6 @@
             </div>
         </div>
 
-<!--form method="get" action="/plan/new">
-    <div class="form-group" style="padding-left: 40px; padding-right: 40px">
-        <button type="submit" class="btn btn-primary" style="background: #009FD7">Create New Business Plan</button>
-    </div>
-</form-->
-
 <!-- Javascript -->
 <!--Chnages Icons arrows in accordion -->
 <script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
@@ -220,7 +206,10 @@
     jQuery(document).ready(function () {
         jQuery('#closeAll').on('click', function(e){
             jQuery('.panel-collapse').each(function(){
-                jQuery(this).removeClass("in");
+                if (jQuery(this).hasClass("in")){
+                    jQuery(this).removeClass("in");
+                }
+
             });
         });
     });
@@ -230,7 +219,9 @@
     jQuery(document).ready(function () {
         jQuery('#openAll').on('click', function(e){
             jQuery('.panel-collapse').each(function(){
-                jQuery(this).addClass("in");
+                if (!jQuery(this).hasClass("in")){
+                    jQuery(this).addClass("in");
+                }
             });
         });
     });
