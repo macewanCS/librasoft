@@ -35,7 +35,7 @@
     @foreach($plan->goals as $goal)
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7;">
-                <span class="badge" id="bp-count">{{ count($goal->objectives->all()) }} Objectives</span>
+                <span class="badge" id="bp-count">{{ count($goal->objectives->all()) }} Objective(s)</span>
                 <h4 class="panel-title">{{ $goal->body }}</h4>
             </div>
             <div class="panel-body">
@@ -44,7 +44,7 @@
                 @foreach($goal->objectives as $objective)
                     <div class="panel panel-success">
                         <div class="panel-heading" style="background: #73C146;">
-                            <span class="badge" id="bp-count">{{ count($objective->actions->all()) }} Actions</span>
+                            <span class="badge" id="bp-count">{{ count($objective->actions->all()) }} Action(s)</span>
                             <h4 class="panel-title" id="objective-title">{{ $objective->body }}</h4>
                         </div>
                         <div class="panel-body">
@@ -53,7 +53,7 @@
                             @foreach($objective->actions as $action)
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <span class="badge" id="bp-count">{{ count($action->tasks->all()) }} Tasks</span>
+                                        <span class="badge" id="bp-count">{{ count($action->tasks->all()) }} Task(s)</span>
                                         <h4 class="panel-title">{{ $action->body }}</h4>
                                         <br/>
                                         <table class="table table-striped table-bordered table-condensed action-table">
