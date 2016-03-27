@@ -191,7 +191,7 @@
         </div>
         <div class="col-xs-2 dashboard-panel">
             <div class="panel panel-primary">
-                <div class="panel-heading" style="background: #009FD7">Upcomming Due Dates
+                <div class="panel-heading" style="background: #009FD7">Coming Due
                     <a onclick="popupDates()" role="button" class="btn btn-primary background-blue-float" id="more-button">More</a>
                 </div>
 
