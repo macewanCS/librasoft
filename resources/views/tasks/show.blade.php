@@ -7,7 +7,7 @@
 
             <div class="panel-heading" style="background: #009FD7"><h4 class="panel-title">{{$task->body}}</h4></div>
             <div class="panel-body">
-                <h4><a href="/actions/show/{{ $task->action()->get()->first()->id }}">Action: {{ $task->action()->get()->first()->body }}</a></h4>
+                <h4><a href="/actions/show/{{ $task->action()->get()->first()->id }}">Belongs to Action: {{ $task->action()->get()->first()->body }}</a></h4>
                 <table class="table table-striped table-bordered table-hover">
 
                     <thead>
