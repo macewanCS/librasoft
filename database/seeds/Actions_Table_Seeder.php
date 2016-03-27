@@ -362,8 +362,7 @@ class Actions_Table_Seeder extends Seeder
         // 22 Events team
         DB::table('actions')->insert([
             'item' => "4.2",
-            'body'=> "Create best practice document around event sharing and cost sharing with partner
-            organizations",
+            'body'=> "Create best practice document around event sharing and cost sharing with partner organizations",
             'date'=> \Carbon\Carbon::createFromDate(2016, 3, 31)->toDateTimeString(),
             'owner'=> "Events Team",
             'lead'=> "Events person" . $SEPARATOR . "estuebing@epl.ca",
@@ -393,8 +392,7 @@ class Actions_Table_Seeder extends Seeder
         // 24 Events team
         DB::table('actions')->insert([
             'item' => "6.1",
-            'body'=> "Complete a request by August 1, 2016 for Bill Gates to speak at EPL at no cost
-            (travel fees excluded)",
+            'body'=> "Complete a request by August 1, 2016 for Bill Gates to speak at EPL at no cost (travel fees excluded)",
             'date'=> \Carbon\Carbon::createFromDate(2016, 8, 31)->toDateTimeString(),
             'owner'=> "Events Team",
             'lead'=> "jmcphee@epl.ca" . $SEPARATOR . "bcrittenden@epl.ca",

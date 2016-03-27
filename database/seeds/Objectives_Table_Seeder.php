@@ -55,8 +55,7 @@ class Objectives_Table_Seeder extends Seeder
 
         //8 Events team
         DB::table('objectives')->insert([
-            'body'=> "Together with out community we provide successful, meaningful services that
-            are highly rated and heavily used.",
+            'body'=> "Together with our community we provide successful, meaningful services that are highly rated and heavily used.",
             'goal_id' => 1
         ]);
 
@@ -80,8 +79,7 @@ class Objectives_Table_Seeder extends Seeder
 
         //12 Events team
         DB::table('objectives')->insert([
-            'body'=>"We have a vibrant fund development with increase donor diversity, and increased
-            value of donations and sponsorships.",
+            'body'=>"We have a vibrant fund development with increase donor diversity, and increased value of donations and sponsorships.",
             'goal_id' => 4
         ]);
 
