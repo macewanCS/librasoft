@@ -3,68 +3,74 @@
 
 @section('content')
 
-    <div class="container">
-        <a href="#" class="btn btn-default openall">open all</a> <a href="#" class="btn btn-default closeall">close all</a>
-        <hr>
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                            Collapsible Group Item #1
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        ONe Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                            Collapsible Group Item #2
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Two Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                            Collapsible Group Item #3
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Three Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+
+    <script type="application/javascript" src="{{URL::asset('js/addInput.js')}}"></script>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery UI Datepicker - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script type="text/javascript" src="{{ URL::asset('js/createPlan.js') }}"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Plan Builder</div>
+                            <div class="panel-body">
+                                <!-- Step 1-->
+                                <div class="form-group pb-step" id="step1">
+                                    <form id="date">
+                                        <label for="step1Label" class="pb-label">
+                                            Step 1: Choose a plan year range:
+                                        </label>
+                                        <select name="startdate" id="startpicker"></select>
+                                        <select name="enddate" id="endpicker"></select>
+
+                                        <div id="toGoals">
+                                        <button class="btn btn-primary pb-btn" type="button">Next</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Step 2 --> 
+                                <div class="form-group pb-display pb-step" id="step2"> 
+                                    <label for="step2Label" class="pb-label">Step 2: Add goals</label> 
+                                    <br>  
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">  
+                                    <form id="goals">
+                                        <div style="margin-bottom:4px;" class="clonedInput">
+                                            <input type="button" class="btnDel" value="-" disabled="disabled" />
+                                            <input type="text" name="input1" />
+                                        </div>
+
+                                        <div>
+                                            <input type="button" id="btnAdd" value="+" />
+                                        </div>
+                                    </form>
+                                    <div class="pb-display" id="backToPlan" style="padding-top: 20px;"> 
+                                        <button class="btn btn-primary pb-btn" type="button">Back</button> 
+                                        <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button> 
+                                        <button id="toObjs2" class="btn btn-primary pb-arrow-btn" type="button" style="float: right"> Next</button> 
+                                    </div>  
+                                </div>
+
+
+
+
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </body>
 
-
-
- 
-    <script>
-        $('.closeall').click(function(){
-            $('.panel-collapse.in')
-                    .collapse('hide');
-        });
-        $('.openall').click(function(){
-            $('.panel-collapse:not(".in")')
-                    .collapse('show');
-        });
-    </script>
 
 @stop
 
