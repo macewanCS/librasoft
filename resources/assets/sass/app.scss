@@ -330,9 +330,13 @@ a {
 
 .pb-btn {
   position: relative;
-  left: 25px;
   float: left;
   clear: left;
+}
+
+.pb-submit-btn {
+  position: relative;
+  left: 10px;
 }
 
 .pb-arrow-btn {
