@@ -21,9 +21,14 @@
                     <div class="panel-body">
                         Complete the following steps to get your new Business Plan up and running quickly!
                         <form role="form" method="POST" action="{{ url('/plan/new') }}">
+<<<<<<< HEAD
                             <!-- Step 1 -->
                             <div class="form-group pb-step" id="step1">
                                 <label for="step1Label" class="pb-label">
+=======
+                            <div class="form-group" style="padding-left: 25px; padding-top: 30px;">
+                                <label for="step1Label" style="font-size: 14pt;">
+>>>>>>> e114e64490764eccf61556ba20bbd865b6cd2bc0
                                     Step 1: Choose a plan year range:
                                 </label>
                                 <select name="startdate" id="startpicker"></select>
