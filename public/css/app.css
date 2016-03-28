@@ -298,4 +298,41 @@ a .filter {
   min-width: 100px;
   max-width: 100px; }
 
+/*# Create Plan styling */
+.pb-label {
+  font-size: 14pt;
+  float: left;
+  clear: left; }
+
+.pb-btn {
+  position: relative;
+  float: left;
+  clear: left; }
+
+.pb-submit-btn {
+  position: relative;
+  left: 10px; }
+
+.pb-arrow-btn {
+  float: left; }
+
+.pb-display {
+  display: none; }
+
+.pb-step {
+  padding-left: 30px;
+  padding-top: 15px;
+  float: left;
+  clear: left; }
+
+.pb-inner-step {
+  padding-left: 40px;
+  float: left;
+  clear: left; }
+
+.pb-text {
+  resize: none;
+  float: left;
+  clear: none; }
+
 /*# sourceMappingURL=app.css.map */
