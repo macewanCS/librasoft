@@ -26,7 +26,6 @@ Route::get('/', function () {
 
 Route::get('plan', 'PlanController@plan');
 Route::get('manage', 'ManageController@manage');
-Route::get('goal', 'GoalsController@index');
 Route::get('tasks/{task}', 'TasksController@show');
 
 Route::post('tasks/{task}/notes', 'NotesController@store');
