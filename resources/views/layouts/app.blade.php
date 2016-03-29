@@ -39,9 +39,11 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="{{ URL::asset('js/sorttable.js') }}"></script>
 
-    <!-- Add fancyBox -->
-    <link rel="stylesheet" href="source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="{{URL::asset('js/popUpWindow.js')}}"></script>
 
     <style>
         body {
@@ -108,6 +110,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <!-- <a href="{{ url('/profile') }}"><i class="fa fa-btn"></i>Profile</a> -->
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                    <li><a role="button" onclick="showDetails()"><i class="fa fa-btn"></i>My Info</a></li>
                                 </ul>
                             </li>
                         @endif
@@ -116,10 +119,36 @@
             </div>
         </nav>
 
+
+
         @yield('content')
 
         <div class="push"></div>
     </div>
+
+
+    <!--user popup -->
+    <div class="hide fade">
+        <div id="user"  title="My Information" class="panel panel-primary">
+            <div class="panel-body overflow-y: scroll" >
+                <?php
+                    $id = Auth::user();
+                ?>
+                <section class="mw-section">
+                    <div class="mw-div-one">
+                        <img src="{{asset("/img/defaultUser.png")}}" alt="User Pic">
+                    </div>
+                    <div class="mw-div-two">
+                        <h3>{{$id->name}}</h3>
+                        Email: {{$id->email}} <br> Department: {{$id->department}} <br> Permission: {{$id->permission}}
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+
 
 
     <!-- Footer -->
