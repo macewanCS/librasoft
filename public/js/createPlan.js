@@ -10,6 +10,12 @@ $(function() {
     }
 });
 
+function getData() {
+    var Row = document.getElementById("action1row");
+    var Cells = Row.getElementsByTagName("td");
+    
+}
+
 $(document).ready(function(){
     //Step 1
     //Next button: Plan->Goals

@@ -1,15 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
+<head>
         <meta charset="utf-8">
         <title>jQuery UI Datepicker - Default functionality</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
         <script type="text/javascript" src="{{ URL::asset('js/createPlan.js') }}"></script>
-
     </head>
     <body>
     <div class="container">
@@ -39,12 +37,12 @@
                                 <label for="step2Label" class="pb-label">Step 2:</label>
                                 <div class="pb-inner-step">
                                     <label for="goal1Label" class="pb-label">Goal 1 name:</label>
-                                    <textarea name="goal1" rows="1" class="pb-text" required></textarea>
+                                    <textarea name="goal1" rows="1" class="pb-text"></textarea>
                                     <button id="toObjs1" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                                 <div class="pb-inner-step">
                                     <label for="goal2Label" class="pb-label">Goal 2 name:</label>
-                                    <textarea name="goal2" rows="1" class="pb-text" required></textarea>
+                                    <textarea name="goal2" rows="1" class="pb-text"></textarea>
                                     <button id="toObjs2" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
 
@@ -62,12 +60,12 @@
                                 <label for="step3Label" class="pb-label">Step 3:</label>
                                 <div id="step3a" class="pb-display pb-inner-step">
                                     <label for="G1O1Label" class="pb-label">Objective 1 name:</label>
-                                    <textarea name="obj1" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj1" rows="1" class="pb-text"></textarea>
                                     <button id="toActions1" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                                 <div id="step3a" class="pb-display pb-inner-step">
                                     <label for="G1O2Label" class="pb-label">Objective 2 name:</label>
-                                    <textarea name="obj2" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj2" rows="1" class="pb-text"></textarea>
                                     <button id="toActions2" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
 
@@ -81,12 +79,12 @@
                                 <label for="step3Label" class="pb-label">Step 3:</label>
                                 <div id="step3b" class="pb-display pb-inner-step">
                                     <label for="G2O1Label" class="pb-label">Objective 1 name:</label>
-                                    <textarea name="obj3" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj3" rows="1" class="pb-text"></textarea>
                                     <button id="toActions3" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                                 <div id="step3b" class="pb-display pb-inner-step">
                                     <label for="G2O2Label" class="pb-label">Objective 2 name:</label>
-                                    <textarea name="obj4" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj4" rows="1" class="pb-text"></textarea>
                                     <button id="toActions4" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
 
@@ -106,7 +104,7 @@
                                     <table name="actiontable1" class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Due (YYYY/MM/DD)</th>
+                                                <th>Due (YYYY-MM-DD)</th>
                                                 <th>Owner</th>
                                                 <th>Lead</th>
                                                 <th>Collaborators</th>
@@ -115,13 +113,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td contenteditable="true" id="date"></td>
-                                                <td contenteditable="true" id="owner"></td>
-                                                <td contenteditable="true" id="lead"></td>
-                                                <td contenteditable="true" id="collaborators"></td>
-                                                <td contenteditable="true" id="status"></td>
-                                                <td contenteditable="true" id="success"></td>
+                                            <tr id="action1row">
+                                                <td contenteditable="true" id="date" name="dateA1"></td>
+                                                <td contenteditable="true" id="owner" name="ownerA1"></td>
+                                                <td contenteditable="true" id="lead" name="leadA1"></td>
+                                                <td contenteditable="true" id="collaborators" name="collabA1"></td>
+                                                <td contenteditable="true" id="status" name="statusA1"></td>
+                                                <td contenteditable="true" id="success" name="successA1"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -164,7 +162,7 @@
                                 <label for="step4Label" class="pb-label">Step 4:</label>
                                 <div id="step4b" class="pb-display pb-inner-step">
                                     <label for="G1O2A1Label" class="pb-label">Action 1 name:</label>
-                                    <textarea name="action3" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="action3" rows="1" class="pb-text"></textarea>
                                     <button id="toTasks3" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                     <table name="actiontable3" class="table table-striped table-bordered table-hover">
                                         <thead>
@@ -191,7 +189,7 @@
                                 </div>
                                 <div id="step4b" class="pb-display pb-inner-step">
                                     <label for="G1O2A2Label" class="pb-label">Action 2 name:</label>
-                                    <textarea name="action4" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="action4" rows="1" class="pb-text"></textarea>
                                     <button id="toTasks4" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                     <table name="actiontable4" class="table table-striped table-bordered table-hover">
                                         <thead>
