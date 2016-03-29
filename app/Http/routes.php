@@ -98,6 +98,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('objectives/show/{objective}', 'ObjsController@show');
     Route::get('print', 'ExportController@minimal');
 
+    Route::post('search', 'SearchController@search');
     Route::get("export/tsv", 'ExportController@tabs');
 
 

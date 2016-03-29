@@ -39,6 +39,10 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="{{ URL::asset('js/sorttable.js') }}"></script>
 
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -90,6 +94,7 @@
                         <!-- Search -->
                         <li class="search-bar">
                             <form method="POST" action="/search">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search" name="term">
                                     <span class="input-group-btn">
@@ -126,11 +131,13 @@
         <div class="push"></div>
     </div>
 
-
     <!--user popup -->
     <div class="hide fade">
         <div id="user"  title="My Information" class="panel panel-primary">
             <div class="panel-body overflow-y: scroll" >
+                @if(Auth::guest())
+
+                @else
                 <?php
                     $id = Auth::user();
                 ?>
@@ -143,13 +150,10 @@
                         Email: {{$id->email}} <br> Department: {{$id->department}} <br> Permission: {{$id->permission}}
                     </div>
                 </section>
-
+                @endif
             </div>
         </div>
     </div>
-
-
-
 
     <!-- Footer -->
     <div class="well well-sm footer">
