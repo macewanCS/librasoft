@@ -52,7 +52,7 @@
 
         <!-- Accordion starts-->
         <div class="plan-content-panel">
-            <div class="panel-group" id="accordion">
+            <div class="panel-group" id="accordion"> <button id="edit" class="btn btn-default">Edit Plan</button>
                 @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
 
                     <div class="panel panel-primary">
@@ -73,7 +73,7 @@
                                             @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
 
                                                 <div onClick="toggleChevron(this)" class="panel-heading" data-toggle="collapse" href="#collapseobjective{{ $objective->id }}" style="cursor: pointer;">
-                                                    <span class="badge" id="bp-count">{{ count($objective->actions->all()) }} Action(s)</span>
+                                                    <span class="badge" id="bp-count" class="table-edit">{{ count($objective->actions->all()) }} Action(s)</span>
                                                     <h4 class="panel-title">
                                                         <a data-toggle="collapse" href="#collapseobjective{{ $objective->id }}"><i class="glyphicon glyphicon-chevron-down"></i>Objective: {{ $objective->body }}</a>
                                                     </h4>
@@ -83,8 +83,8 @@
                                                     <div class="panel-body">
                                                         <!--<p>{{ $objective->body }}</p>-->
 
-
-                                                        <table class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter">
+                                                        <table id="table-edit" class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter">
+                                                        <table id="table-edit" class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-task">Description</th>
@@ -101,6 +101,8 @@
 
                                                                 <tr>
                                                                     <td class="table-task">Action: <a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></td>
+                                                                    <!--<td class="table-id">{{$action->item}}</td>
+                                                                    <td class="table-task">{{ $action->body }}</td> -->
                                                                     <th class="table-due">{{ $action->date }}</th>
                                                                     <td class="table-owner">{{ $action->owner }}</td>
                                                                     <td class="table-collaborators">
@@ -120,7 +122,7 @@
                                                                             }
                                                                         ?>
                                                                     </td>
-                                                                    <td class="table-success">{{ $action->success }}</td>
+                                                                    <td class="table-success" id="success"> @role('admin')<a href="#" data-pk="{{$action->id}}" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
                                                                     <td
                                                                             @if ($action->status == "Completed")
                                                                             class="table-status success"
@@ -137,8 +139,8 @@
                                                                 </tr>
                                                                 @foreach($action->tasks()->orderBy('body', 'asc')->get() as $task)
                                                                     <tr>
-                                                                        <td class="table-task">Task:
-                                                                            <a href="/tasks/{{ $task->id }}">
+                                                                        <td class="table-task" id="task">Task:
+                                                                            <a data-pk="{{ $task->id }}" href="/tasks/{{ $task->id }}">
                                                                                 {{ $task->body }}
                                                                             </a>
                                                                         </td>
@@ -241,6 +243,62 @@
             @endfor
         }
     );
+</script>
+
+<!-- Editing Functions -->
+
+<script>
+    $(function() {
+
+        $.fn.editable.defaults.mode = 'popup'
+
+        $('#edit').click(function () {
+            $('#table-edit .editable').editable('toggleDisabled')
+        });
+
+        $(function(value) {
+            if ($.trim(value) == '')
+                    return 'Value is required.';
+        });
+
+        $('#success a').editable({
+            type: 'textarea',
+            url: '{{URL::to("/")}}/plan/{action}',
+            title: 'Enter Success Measure',
+            placement: 'top',
+            send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
+
+        $('#task a').editable({
+            success: function (response, newValue) {
+                this.$element.attr('href', 'http://' + newValue);
+            },
+            type: 'text',
+            url: '{{URL::to("/")}}/plan/{task}',
+            title: 'Enter Task Description',
+            placement: 'top',
+            send: 'always',
+            ajaxOption: {
+                datatype: 'json'
+            }
+        })
+
+        /*$('#table-edit .editable').on('hidden', function(e, reason){
+            if(reason === 'save' || reason === 'nochange') {
+                var $next = $(this).closest('tr').next().find('.editable');
+                if($('#autoopen').is(':checked')) {
+                    setTimeout(function() {
+                        $next.editable('show');
+                    }, 300);
+                } else {
+                    $next.focus();
+                }
+            }
+        });*/
+    });
 </script>
 
 
