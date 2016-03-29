@@ -16,7 +16,6 @@ function popupDates(){
 }
 
 function popupComments(){
-    var temp = 3
     $( "#comments" ).dialog({
         maxHeight: 600,
         minHeight: 600,
@@ -30,7 +29,6 @@ function popupComments(){
 }
 
 function popupUpdated(){
-    var temp = 3
     $( "#updated" ).dialog({
         maxHeight: 600,
         minHeight: 600,
@@ -44,12 +42,24 @@ function popupUpdated(){
 }
 
 function popupFinished(){
-    var temp = 3
     $( "#finished" ).dialog({
         maxHeight: 600,
         minHeight: 600,
         maxWidth: 800,
         minWidth: 800,
+        draggable: false,
+        resizable: false,
+        dialogClass: 'no-close success-dialog',
+        modal: true
+    });
+}
+
+function showDetails(){
+    $( "#user" ).dialog({
+        maxHeight: 300,
+        minHeight: 300,
+        maxWidth: 700,
+        minWidth: 700,
         draggable: false,
         resizable: false,
         dialogClass: 'no-close success-dialog',
