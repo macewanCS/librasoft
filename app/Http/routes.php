@@ -104,6 +104,8 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::get('plan/edit', 'PlanController@edit');
+Route::post('/plan/{action}', 'ActionsController@postSuccess');
+Route::post('/plan/{task}', 'TasksController@postTask');
 
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
