@@ -42,7 +42,7 @@
 
             <!--<a id="openAll" role="button"` class="btn btn-primary" data-toggle="collapse">Open All Categories</a>
             <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
-            <a role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
+            <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
             <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
@@ -52,7 +52,7 @@
 
         <!-- Accordion starts-->
         <div class="plan-content-panel">
-            <div class="panel-group" id="accordion"> <button id="edit" class="btn btn-default">Edit Plan</button>
+            <div class="panel-group" id="accordion">
                 @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
 
                     <div class="panel panel-primary">
@@ -100,9 +100,7 @@
                                                             @foreach($objective->actions()->orderBy('body', 'asc')->get() as $action)
 
                                                                 <tr>
-                                                                    <td class="table-task">Action: <a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></td>
-                                                                    <!--<td class="table-id">{{$action->item}}</td>
-                                                                    <td class="table-task">{{ $action->body }}</td> -->
+                                                                    <td class="table-task">Action: <a hre="#" data-pk="{{$action->id}}" class="editable editable-click editable-disabled"><a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></a></td>
                                                                     <th class="table-due">{{ $action->date }}</th>
                                                                     <td class="table-owner">{{ $action->owner }}</td>
                                                                     <td class="table-collaborators">
@@ -140,7 +138,7 @@
                                                                 @foreach($action->tasks()->orderBy('body', 'asc')->get() as $task)
                                                                     <tr>
                                                                         <td class="table-task" id="task">Task:
-                                                                            <a data-pk="{{ $task->id }}" href="/tasks/{{ $task->id }}">
+                                                                            <a data-pk="{{ $task->id }}" href="#" href="/tasks/{{ $task->id }}">
                                                                                 {{ $task->body }}
                                                                             </a>
                                                                         </td>
@@ -270,12 +268,12 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#task a').editable({
-            success: function (response, newValue) {
+            /*success: function (response, newValue) {
                 this.$element.attr('href', 'http://' + newValue);
-            },
+            },*/
             type: 'text',
             url: '{{URL::to("/")}}/plan/{task}',
             title: 'Enter Task Description',
@@ -284,20 +282,9 @@
             ajaxOption: {
                 datatype: 'json'
             }
-        })
+        });
 
-        /*$('#table-edit .editable').on('hidden', function(e, reason){
-            if(reason === 'save' || reason === 'nochange') {
-                var $next = $(this).closest('tr').next().find('.editable');
-                if($('#autoopen').is(':checked')) {
-                    setTimeout(function() {
-                        $next.editable('show');
-                    }, 300);
-                } else {
-                    $next.focus();
-                }
-            }
-        });*/
+
     });
 </script>
 
