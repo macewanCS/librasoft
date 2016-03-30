@@ -11,7 +11,6 @@ $(function() {
 });
 
 
-
 $(document).ready(function(){
     //Step 1
     //Next button: Plan->Goals
