@@ -258,7 +258,7 @@
 
         $('#edit').click(function () {
             $('#table-edit .editable').editable('toggleDisabled')
-        })
+        });
 
         $(function(value) {
             if ($.trim(value) == '')
@@ -274,12 +274,9 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#task-description a').editable({
-            /*success: function (response, newValue) {
-                this.$element.attr('href', 'http://' + newValue);
-            },*/
             type: 'text',
             url: '{{URL::to("/")}}/plan/task/description',
             title: 'Enter Task Description',
@@ -288,12 +285,9 @@
             ajaxOption: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#action-description a').editable({
-            /*success: function (response, newValue) {
-                this.$element.attr('href', 'http://' + newValue);
-            },*/
             type: 'text',
             url: '{{URL::to("/")}}/plan/action/description',
             title: 'Enter Action Description',
@@ -302,7 +296,7 @@
             ajaxOption: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#action-date a').editable({
             showbuttons: false,
@@ -315,7 +309,7 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#task-date a').editable({
             showbuttons: false,
@@ -328,7 +322,7 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#action-department a').editable({
             type: 'select',
@@ -344,7 +338,7 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
         $('#task-department a').editable({
             type: 'select',
@@ -360,7 +354,7 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
 
         $('#action-lead a').editable({
@@ -379,7 +373,7 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
 
 
         $('#task-lead a').editable({
@@ -398,7 +392,7 @@
             ajaxOptions: {
                 datatype: 'json'
             }
-        })
+        });
     });
 </script>
 @endrole
