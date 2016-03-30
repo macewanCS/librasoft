@@ -104,9 +104,16 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::get('plan/edit', 'PlanController@edit');
-Route::post('/plan/{action}', 'ActionsController@postSuccess');
-Route::post('/plan/{task}', 'TasksController@postTask');
+Route::post('plan/action/success', 'ActionsController@postSuccess');
+Route::post('plan/action/description', 'ActionsController@postDescription');
+Route::post('plan/action/date', 'ActionsController@postDate');
+Route::post('plan/action/department', 'ActionsController@postDepartment');
+Route::post('plan/action/lead', 'ActionsController@postLead');
 
+Route::post('plan/task/description', 'TasksController@postTask');
+Route::post('plan/task/date', 'TasksController@postTaskDate');
+Route::post('plan/task/department', 'TasksController@postDepartment');
+Route::post('plan/task/lead', 'TasksController@postLead');
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
 // role
