@@ -65,7 +65,7 @@ class PlanController extends Controller
         //Add Action 1
         $action1 = new Action();
         $action1->body = $request->action1;
-        $action1->date = Carbon::create($request->dateA1);
+        $action1->date = Carbon::createFromFormat('Y-m-d', $request->dateA1);
         $action1->owner = $request->ownerA1;
         $action1->lead = $request->leadA1;
         $action1->collaborators = $request->collabA1;
