@@ -78,14 +78,14 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'item' => "1.28",
             'body'=> "Design new eplGO spaces with a greater focus on digital literacy services and with media spaces for underserved communities. ",
-            'date'=> \Carbon\Carbon::createFromDate(2015, 01, 01)->toDateTimeString(),
+            'date'=> \Carbon\Carbon::createFromDate(2015, 05, 01)->toDateTimeString(),
             'owner'=> "IT Services",
             'lead'=> "dceo@epl.ca",
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "Achieve a 90% satisfaction rating for new and expanded services",
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 02, 28)->toDateTimeString(),
             'objective_id'=>2
         ]);
 
@@ -108,14 +108,14 @@ class Actions_Table_Seeder extends Seeder
         DB::table('actions')->insert([
             'item' => "2.12",
             'body'=> "Implement a single point of discovery solution for EPL content. ",
-            'date'=> \Carbon\Carbon::createFromDate(2015, 01, 01)->toDateTimeString(),
+            'date'=> \Carbon\Carbon::createFromDate(2015, 05, 01)->toDateTimeString(),
             'owner'=> "IT Services",
             'lead'=> "skarr@epl.ca",
             'collaborators'=> "Web Services" . $SEPARATOR . "IT",
             'status'=> "In progress",
             'success'=> "Achieve a 90% satisfaction rating with services and content",
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::createFromDate(2016, 05, 9)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 02, 9)->toDateTimeString(),
             'objective_id'=>3
         ]);
 

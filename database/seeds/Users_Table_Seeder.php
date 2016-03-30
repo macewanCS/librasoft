@@ -21,7 +21,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BPLead'
         ]);
-        $vicky->assignRole('bplead');
+        $vicky->assignRole('admin');
 
         $admin = $user->create([
             'name'=> 'Admin',
@@ -39,7 +39,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'DepLead'
         ]);
-        $jmcphee->assignRole('deplead');
+        $jmcphee->assignRole('admin');
 
         $lmackenzie = $user->create([
             'name'          => 'L MacKenzie',
@@ -48,7 +48,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'TeamLead'
         ]);
-        $lmackenzie->assignRole('teamlead');
+        $lmackenzie->assignRole('admin');
 
         $ejones = $user->create([
             'name'          => 'E Jones',
@@ -57,7 +57,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $ejones->assignRole('basicuser');
+        $ejones->assignRole('admin');
 
         $jcrilly = $user->create([
             'name'          => 'Jody Crilly',
@@ -66,7 +66,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $jcrilly->assignRole('basicuser');
+        $jcrilly->assignRole('admin');
 
         $dceo = $user->create([
             'name'          => 'Deputy CEO',
@@ -75,7 +75,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BPLead'
         ]);
-        $dceo->assignRole('bplead');
+        $dceo->assignRole('admin');
 
         $skarr = $user->create([
             'name'          => 'Sharon Karr',
@@ -84,7 +84,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $skarr->assignRole('basicuser');
+        $skarr->assignRole('admin');
 
         $dpsl = $user->create([
             'name'          => 'Digital Public Spaces Librarian',
@@ -93,7 +93,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $dpsl->assignRole('basicuser');
+        $dpsl->assignRole('admin');
 
         $pschoenberg = $user->create([
             'name'          => 'Peter Schoenberg',
@@ -102,7 +102,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $pschoenberg->assignRole('basicuser');
+        $pschoenberg->assignRole('admin');
 
         $jwoods = $user->create([
             'name'          => 'J Woods',
@@ -111,7 +111,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $jwoods->assignRole('basicuser');
+        $jwoods->assignRole('admin');
 
         $sforemski = $user->create([
             'name'          => 'S Foremski',
@@ -120,7 +120,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $sforemski->assignRole('basicuser');
+        $sforemski->assignRole('admin');
 
         $bcrittenden = $user->create([
             'name'          => 'B Crittenden',
@@ -129,7 +129,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $bcrittenden->assignRole('basicuser');
+        $bcrittenden->assignRole('admin');
 
         $estuebing = $user->create([
             'name'          => 'E Stuebing',
@@ -138,7 +138,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $estuebing->assignRole('basicuser');
+        $estuebing->assignRole('admin');
 
         $dmichael = $user->create([
             'name'          => 'Michael Doe',
@@ -147,7 +147,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $dmichael->assignRole('basicuser');
+        $dmichael->assignRole('admin');
 
         $dluc = $user->create([
             'name'          => 'Luc Doe',
@@ -156,7 +156,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $dluc->assignRole('basicuser');
+        $dluc->assignRole('admin');
 
         $djohn = $user->create([
             'name'          => 'John Doe',
@@ -165,7 +165,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $djohn->assignRole('basicuser');
+        $djohn->assignRole('admin');
 
         $nandrew = $user->create([
             'name'          => 'Andrew Nisbet',
@@ -174,7 +174,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $nandrew->assignRole('basicuser');
+        $nandrew->assignRole('admin');
 
         $dchris = $user->create([
             'name'          => 'Chris Doe',
@@ -183,7 +183,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $dchris->assignRole('basicuser');
+        $dchris->assignRole('admin');
 
         $acarruthers = $user->create([
             'name'          => 'Alex Carruthers',
@@ -192,7 +192,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $acarruthers->assignRole('basicuser');
+        $acarruthers->assignRole('admin');
 
         $dkhalil = $user->create([
             'name'          => 'Khalil Doe',
@@ -201,7 +201,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $dkhalil->assignRole('basicuser');
+        $dkhalil->assignRole('admin');
 
         $drobin = $user->create([
             'name'          => 'Robin Doe',
@@ -210,7 +210,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $drobin->assignRole('basicuser');
+        $drobin->assignRole('admin');
 
         $crachael = $user->create([
             'name'          => 'Rachael Collins',
@@ -219,7 +219,7 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $crachael->assignRole('basicuser');
+        $crachael->assignRole('admin');
 
         $djamie = $user->create([
             'name'          => 'Jamie Doe',
@@ -228,6 +228,6 @@ class Users_Table_Seeder extends Seeder
             'department'    => 'IT Services',
             'permission'    => 'BasicUser'
         ]);
-        $djamie->assignRole('basicuser');
+        $djamie->assignRole('admin');
     }
 }

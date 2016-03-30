@@ -23,7 +23,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "IT Project Team",
             'status'=> "In progress",
             'success'=> "",
-            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 01, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -36,7 +36,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "Active Networks",
             'status'=> "Completed",
             'success'=> "In progress",
-            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 02, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -101,7 +101,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "",
             'status'=> "In progress",
             'success'=> "",
-            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 03, 28)->toDateTimeString(),
             'action_id'=>1
         ]);
 
@@ -153,7 +153,7 @@ class Tasks_Table_Seeder extends Seeder
             'collaborators'=> "FAC" . $SEPARATOR . "CMA" . $SEPARATOR . "LON",
             'status'=> "In progress",
             'success'=> "",
-            'updated_at' => Carbon::createFromDate(2016, 05, 28)->toDateTimeString(),
+            'updated_at' => Carbon::createFromDate(2016, 02, 28)->toDateTimeString(),
             'action_id'=>5
         ]);
 
