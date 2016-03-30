@@ -50,5 +50,7 @@ class Roles_Table_Seeder extends Seeder
             'slug'=> 'basicuser',
             'description'=> 'Manage Basic User privileges'
         ]);
+        $rolebasicUser->assignPermission('mywork');
+        $rolebasicUser->assignPermission('action');
     }
 }
