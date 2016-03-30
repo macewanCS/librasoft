@@ -112,6 +112,11 @@ class TasksController extends Controller
     {
         $task->status = "Completed";
         $task->save();
+
+        if (count($task->action->tasks->where('status', 'Completed')->all()) == count($task->action->tasks->all())) {
+            $task->action->status = "Completed";
+            $task->action->save();
+        }
         return back();
     }
 }
