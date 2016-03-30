@@ -89,8 +89,8 @@
                                                             <tr>
                                                                 <th class="table-task">Description</th>
                                                                 <th class="table-due" style="font-weight: bold;">Due</th>
-                                                                <th class="table-owner">Department/Team</th>
-                                                                <th class="table-lead">Lead</th>
+                                                                <th class="table-owner">Department</th>
+                                                                <th class="table-lead">Team Lead</th>
                                                                 <th class="table-success">Success Measures</th>
                                                                 <th class="table-status">Status</th>
                                                             </tr>
@@ -100,10 +100,14 @@
                                                             @foreach($objective->actions()->orderBy('body', 'asc')->get() as $action)
 
                                                                 <tr>
-                                                                    <td class="table-task">Action: <a hre="#" data-pk="{{$action->id}}" class="editable editable-click editable-disabled"><a href="/actions/show/{{ $action->id }}">{{ $action->body }}</a></a></td>
-                                                                    <th class="table-due">{{ $action->date }}</th>
-                                                                    <td class="table-owner">{{ $action->owner }}</td>
-                                                                    <td class="table-collaborators">
+                                                                    <td class="table-task" id="action-description">Action:
+                                                                        <a data-pk="{{ $action->id }}" href="/actions/show/{{ $action->id }}">
+                                                                            {{ $action->body }}
+                                                                        </a>
+                                                                    </td>
+                                                                    <th class="table-due" id="action-date"><a data-pk="{{ $action->id }}" href="#" class="editable editable-click" data-original-title="">{{ $action->date }}</a></th>
+                                                                    <td class="table-owner" id="action-department"><a data-pk="{{ $action->id }}" href="#">{{ $action->owner }}</a></td>
+                                                                    <td class="table-collaborators" id="action-lead"><a data-pk="{{ $action->id }}" href="#">
                                                                         <?php
                                                                             $leads = explode("__,__", $action->lead);
                                                                             foreach ($leads as $lead) {
@@ -119,8 +123,9 @@
                                                                                 }
                                                                             }
                                                                         ?>
+                                                                        </a>
                                                                     </td>
-                                                                    <td class="table-success" id="success"> @role('admin')<a href="#" data-pk="{{$action->id}}" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
+                                                                    <td class="table-success" id="success-measures"> @role('admin')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
                                                                     <td
                                                                             @if ($action->status == "Completed")
                                                                             class="table-status success"
@@ -137,14 +142,14 @@
                                                                 </tr>
                                                                 @foreach($action->tasks()->orderBy('body', 'asc')->get() as $task)
                                                                     <tr>
-                                                                        <td class="table-task" id="task">Task:
-                                                                            <a data-pk="{{ $task->id }}" href="#" href="/tasks/{{ $task->id }}">
+                                                                        <td class="table-task" id="task-description">Task:
+                                                                            <a data-pk="{{ $task->id }}" href="/tasks/{{ $task->id }}">
                                                                                 {{ $task->body }}
                                                                             </a>
                                                                         </td>
-                                                                        <td class="table-due">{{ $task->date }}</td>
-                                                                        <td class="table-owner">{{ $task->owner }}</td>
-                                                                        <td class="table-lead">
+                                                                        <td class="table-due" id="task-date"><a href="#" data-pk="{{ $task->id }}" >{{ $task->date }}</a></td>
+                                                                        <td class="table-owner" id="task-department"><a href="#" data-pk="{{ $task->id }}">{{ $task->owner }}</a></td>
+                                                                        <td class="table-lead" id="task-lead"><a data-pk="{{ $task->id }}" href="#">
                                                                             <?php
                                                                                 $leads = explode("__,__", $task->lead);
                                                                                 foreach ($leads as $lead) {
@@ -160,6 +165,7 @@
                                                                                     }
                                                                                 }
                                                                             ?>
+                                                                            </a>
                                                                         </td>
                                                                         <td></td>
                                                                         <td
@@ -244,7 +250,7 @@
 </script>
 
 <!-- Editing Functions -->
-
+@role('admin')
 <script>
     $(function() {
 
@@ -252,41 +258,150 @@
 
         $('#edit').click(function () {
             $('#table-edit .editable').editable('toggleDisabled')
-        });
+        })
 
         $(function(value) {
             if ($.trim(value) == '')
                     return 'Value is required.';
         });
 
-        $('#success a').editable({
+        $('#success-measures a').editable({
             type: 'textarea',
-            url: '{{URL::to("/")}}/plan/{action}',
+            url: '{{URL::to("/")}}/plan/action/success',
             title: 'Enter Success Measure',
             placement: 'top',
             send: 'always',
             ajaxOptions: {
                 datatype: 'json'
             }
-        });
+        })
 
-        $('#task a').editable({
+        $('#task-description a').editable({
             /*success: function (response, newValue) {
                 this.$element.attr('href', 'http://' + newValue);
             },*/
             type: 'text',
-            url: '{{URL::to("/")}}/plan/{task}',
+            url: '{{URL::to("/")}}/plan/task/description',
             title: 'Enter Task Description',
             placement: 'top',
             send: 'always',
             ajaxOption: {
                 datatype: 'json'
             }
-        });
+        })
+
+        $('#action-description a').editable({
+            /*success: function (response, newValue) {
+                this.$element.attr('href', 'http://' + newValue);
+            },*/
+            type: 'text',
+            url: '{{URL::to("/")}}/plan/action/description',
+            title: 'Enter Action Description',
+            placement: 'top',
+            send: 'always',
+            ajaxOption: {
+                datatype: 'json'
+            }
+        })
+
+        $('#action-date a').editable({
+            showbuttons: false,
+            type: 'date',
+            viewformat: 'yyyy-mm-dd',
+            url: '{{URL::to("/")}}/plan/action/date',
+            title: 'Select Due date',
+            placement: 'right',
+            send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
+
+        $('#task-date a').editable({
+            showbuttons: false,
+            type: 'date',
+            viewformat: 'yyyy-mm-dd',
+            url: '{{URL::to("/")}}/plan/task/date',
+            title: 'Select Due date',
+            placement: 'right',
+            send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
+
+        $('#action-department a').editable({
+            type: 'select',
+            url: '{{URL::to("/")}}/plan/action/department',
+            title: 'Select Department',
+            placement: 'right',
+            send: 'always',
+            prepend: 'Select',
+            source: [
+                {value: 'Events Team', text: 'Events Team'},
+                {value: 'IT Services', text: 'IT Services'}
+            ],
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
+
+        $('#task-department a').editable({
+            type: 'select',
+            url: '{{URL::to("/")}}/plan/task/department',
+            title: 'Select Department',
+            placement: 'right',
+            send: 'always',
+            prepend: 'Select',
+            source: [
+                {value: 'Events Team', text: 'Events Team'},
+                {value: 'IT Services', text: 'IT Services'}
+            ],
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
 
 
+        $('#action-lead a').editable({
+            inputclass: 'input-large',
+            type: 'select2',
+            select2: {
+                tags: ['Vicky Varga', 'Admin', 'J McPhee', 'E Jones', 'Jody Crilly', 'Deputy CEO', 'Sharon Karr',
+                    'Digital Public Spaces Librarian', 'Peter Schoenberg', 'J Woods', 'S Foremski', 'B Crittenden',
+                    'E Stuebing', 'Michael Doe', 'Luc Doe', 'John Doe', 'Andrew Nisbet', 'Chris Doe', 'Alex Carruthers',
+                    'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
+                tokenSeparators: [","," "]
+            },
+            url: '{{URL::to("/")}}/plan/action/lead',
+            title: 'Input Leads',
+            send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
+
+
+        $('#task-lead a').editable({
+            inputclass: 'input-large',
+            type: 'select2',
+            select2: {
+                tags: ['Vicky Varga', 'Admin', 'J McPhee', 'E Jones', 'Jody Crilly', 'Deputy CEO', 'Sharon Karr',
+                    'Digital Public Spaces Librarian', 'Peter Schoenberg', 'J Woods', 'S Foremski', 'B Crittenden',
+                    'E Stuebing', 'Michael Doe', 'Luc Doe', 'John Doe', 'Andrew Nisbet', 'Chris Doe', 'Alex Carruthers',
+                    'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
+                tokenSeparators: [","," "]
+            },
+            url: '{{URL::to("/")}}/plan/task/lead',
+            title: 'Input Leads',
+            send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        })
     });
 </script>
+@endrole
 
 
 

@@ -44,10 +44,21 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript" src="{{URL::asset('js/popUpWindow.js')}}"></script>
 
+    <!-- Bootstrap Date/Time picker -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.js"></script>
+
     <!-- Add x-editable -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+    <!-- Select 2 -->
+    <link href="http://fk.github.io/select2-bootstrap-css/css/select2-bootstrap.css" rel="stylesheet"/>
+    <link href="http://select2.github.io/select2/select2-3.5.2/select2.css" rel="stylesheet"/>
+    <link href="http://fk.github.io/select2-bootstrap-css/css/bootstrap.min.css"/>
+    <script src="http://select2.github.io/select2/select2-3.4.2/select2.js"></script>
+
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <script type="text/javascript">
