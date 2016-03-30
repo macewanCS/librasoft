@@ -107,7 +107,6 @@
                         <li class="navbar-item navbar-spacing"><a @if($_SERVER['REQUEST_URI'] == "/") class="active-navbar-element" @endif href="{{ url('/') }}">Dashboard</a></li>
                         <li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/plan") class="active-navbar-element" @endif  href="{{ url('/plan') }}">Plan</a></li>
                         @permission('view.mywork')<li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/mywork") class="active-navbar-element" @endif href="{{ url('/mywork') }}">My Work</a></li>@endpermission
-                        <!--li><a href="{{ url('/manage') }}">Archives</a></li-->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -128,15 +127,14 @@
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
                         @else
-                            @role('admin')<li><a href="{{ url('/register') }}">Register</a></li>@endrole
+                            <!--<li><a href="{{ url('/register') }}">Register</a></li>-->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <!-- <a href="{{ url('/profile') }}"><i class="fa fa-btn"></i>Profile</a> -->
-                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                     <li><a role="button" onclick="showDetails()"><i class="fa fa-btn"></i>My Info</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                                 </ul>
                             </li>
                         @endif
