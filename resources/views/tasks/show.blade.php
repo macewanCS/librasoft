@@ -5,9 +5,16 @@
     <div class="bs-example">
         <div class="panel panel-primary">
 
-            <div class="panel-heading" style="background: #009FD7"><h4 class="panel-title">{{$task->body}}</h4></div>
+            <div class="panel-heading" style="background: #009FD7">
+                <h4 class="panel-title">{{$task->body}}</h4>
+            </div>
             <div class="panel-body small-panel-body">
                 <h4><a href="/actions/show/{{ $task->action()->get()->first()->id }}">Belongs to Action: {{ $task->action()->get()->first()->body }}</a></h4>
+                @if($task->status != "Completed")
+                    @role('admin|deplead|teamlead|bplead')
+                        <a role="button" class="btn btn-primary" href="/tasks/{{ $task->id }}/markcomplete">Mark Completed</a>
+                    @endrole
+                @endif
                 <table class="table table-striped table-bordered table-hover">
 
                     <thead>
@@ -23,9 +30,9 @@
 
                     <tbody>
                     <tr>
-                        <td contenteditable='true' id="date">{{ $task->date }}</td>
-                        <td contenteditable='true' id="owner">{{ $task->owner }}</td>
-                        <td contenteditable="true" id="lead">
+                        <td id="date">{{ $task->date }}</td>
+                        <td id="owner">{{ $task->owner }}</td>
+                        <td id="lead">
                             <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -42,7 +49,7 @@
                                 }
                             ?>
                         </td>
-                        <td contenteditable="true" id="collaborators">
+                        <td id="collaborators">
                             <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -59,15 +66,15 @@
                                 }
                             ?>
                         </td>
-                        <td contenteditable="true" id="status">{{ $task->status}}</td>
-                        <td contenteditable="true" id="success">{{ $task->success}}</td>
+                        <td id="status">{{ $task->status}}</td>
+                        <td id="success">{{ $task->success}}</td>
                     </tr>
                     </tbody>
 
                 </table>
                 <!-- table end-->
 
-                <h5>Note: Click on a table cell to edit that cell.</h5>
+                {{--<h5>Note: Click on a table cell to edit that cell.</h5>
 
                 <!-- save all button-->
                 <div>
@@ -77,7 +84,7 @@
 
                 <div id="page-break">
                     <hr/>
-                </div>
+                </div>--}}
 
                 <!-- Notes start -->
                 <div class="col-md-6 col-md-offset-3">
@@ -108,7 +115,7 @@
 
                                 <div class="form-group">
                                     <textarea name="content" class="form-control note-entry" placeholder="Enter a note..."></textarea>
-                                    <input type="hidden" name="user" value="Vicky"/>
+                                    <input type="hidden" name="user" value=@if(!Auth::guest())"{{ Auth::user()->name }}"@else"Unknown User"@endif/>
                                     <input type="hidden" name="created_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
                                     <input type="hidden" name="updated_at" value="{{ Carbon\Carbon::now()->format('Y-m-d H:i:s') }}"/>
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
