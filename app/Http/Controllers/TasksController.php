@@ -107,4 +107,11 @@ class TasksController extends Controller
             return \Response::json(array('status' => 0));
         }
     }
+
+    public function MarkComplete(Task $task)
+    {
+        $task->status = "Completed";
+        $task->save();
+        return back();
+    }
 }
