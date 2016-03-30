@@ -8,6 +8,12 @@
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script type="text/javascript" src="{{ URL::asset('js/createPlan.js') }}"></script>
+        <script>
+            $(function() {
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker" ).datepicker("show");
+            });
+        </script>
     </head>
     <body>
     <div class="container">
@@ -113,13 +119,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr id="action1row">
-                                                <td contenteditable="true" id="date" name="dateA1"></td>
-                                                <td contenteditable="true" id="owner" name="ownerA1"></td>
-                                                <td contenteditable="true" id="lead" name="leadA1"></td>
-                                                <td contenteditable="true" id="collaborators" name="collabA1"></td>
-                                                <td contenteditable="true" id="status" name="statusA1"></td>
-                                                <td contenteditable="true" id="success" name="successA1"></td>
+                                            <tr>
+                                                <td><input name="dateA1" type="date" id="datepicker"></td>
+                                                <td><textarea name="ownerA1" rows="1"></textarea></td>
+                                                <td><textarea name="leadA1" rows="1"></textarea></td>
+                                                <td><textarea name="collabA1" rows="1"></textarea></td>
+                                                <td><textarea name="statusA1" rows="1"></textarea></td>
+                                                <td><textarea name="successA1" rows="1"></textarea></td>
                                             </tr>
                                         </tbody>
                                     </table>
