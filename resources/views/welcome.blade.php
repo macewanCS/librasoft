@@ -180,7 +180,7 @@
                         @foreach($notes as $note)
                             @if($note->created_at > $today)
                             <li class="list-group-item"> 
-                                <a href="tasks/{{ $task->id }}">{{$note->content}}</a> 
+                                <a href="tasks/{{ $note->task_id }}">{{$note->content}}</a> 
                                 <br><em class="ul-fontSize">- Posted by {{$note->user}} at {{$note->created_at}}</em>
                             </li>
                             @endif
