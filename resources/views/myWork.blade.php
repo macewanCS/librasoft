@@ -3,7 +3,7 @@
 @section('content')
     <div class="bs-example">
         <div class="panel panel-primary">
-            <div class="panel-heading" style="background: #009FD7">In Progress</div>
+            <div class="panel-heading" style="background: #009FD7">Current Work</div>
 
             <div class="panel-body small-panel-body">
                 <?php
