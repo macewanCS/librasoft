@@ -42,8 +42,10 @@
 
             <!--<a id="openAll" role="button"` class="btn btn-primary" data-toggle="collapse">Open All Categories</a>
             <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
+            @role('admin|deplead|teamlead|bplead')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
+            @endrole
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
             <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
         </div>
@@ -84,7 +86,7 @@
                                                         <!--<p>{{ $objective->body }}</p>-->
 
                                                         <table id="table-edit" class="table table-condensed table-bordered action-table action-table{{ $objective->id }} tablesorter">
-                                                        <table id="table-edit" class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">
+                                                        {{--<table id="table-edit" class="table table-condensed table-bordered action-table tablesorter" style="font-size: 12.5%;">--}}
                                                             <thead>
                                                             <tr>
                                                                 <th class="table-task">Description</th>
