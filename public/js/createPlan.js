@@ -10,6 +10,9 @@ $(function() {
     }
 });
 
+$(function() {
+    var values = $('#collabA2').val();
+})
 
 
 $(document).ready(function(){

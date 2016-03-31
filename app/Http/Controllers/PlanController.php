@@ -73,6 +73,17 @@ class PlanController extends Controller
         $action1->success = $request->successA1;
         $obj1->actions()->save($action1);
 
+        //Add Action 2
+        $action2 = new Action();
+        $action2->body = $request->action2;
+        $action2->date = Carbon::createFromFormat('Y-m-d', $request->dateA2);
+        $action2->owner = $request->ownerA2;
+        $action2->lead = $request->leadA2;
+        $action2->collaborators = $request->collabA2;
+        $action2->status = $request->statusA2;
+        $action2->success = $request->successA2;
+        $obj1->actions()->save($action2);
+
         return view('createDone');
     }
 
