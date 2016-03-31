@@ -1,26 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
+<head>
         <meta charset="utf-8">
         <title>jQuery UI Datepicker - Default functionality</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
         <script type="text/javascript" src="{{ URL::asset('js/createPlan.js') }}"></script>
-
+        <script>
+            $(function() {
+                $( "#datepicker" ).datepicker();
+                $( "#datepicker" ).datepicker("show");
+            });
+        </script>
     </head>
     <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
+            <div>
+                <div class="panel panel-primary">
                     <div class="panel-heading">Plan Builder</div>
 
                     <div class="panel-body">
                         Complete the following steps to get your new Business Plan up and running quickly!
                         <form role="form" method="POST" action="{{ url('/plan/new') }}">
+                            <?php
+                            $users = DB::table('users')->orderBy('name', 'asc')->get();
+                            $depts = DB::table('departments')->orderBy('name', 'asc')->get();
+                            $teams = DB::table('teams')->orderBy('name', 'asc')->get();
+                             ?>
                             <!-- Step 1 -->
                             <div class="form-group pb-step" id="step1">
                                 <label for="step1Label" class="pb-label">
@@ -39,12 +48,12 @@
                                 <label for="step2Label" class="pb-label">Step 2:</label>
                                 <div class="pb-inner-step">
                                     <label for="goal1Label" class="pb-label">Goal 1 name:</label>
-                                    <textarea name="goal1" rows="1" class="pb-text" required></textarea>
+                                    <textarea name="goal1" rows="1" class="pb-text"></textarea>
                                     <button id="toObjs1" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                                 <div class="pb-inner-step">
                                     <label for="goal2Label" class="pb-label">Goal 2 name:</label>
-                                    <textarea name="goal2" rows="1" class="pb-text" required></textarea>
+                                    <textarea name="goal2" rows="1" class="pb-text"></textarea>
                                     <button id="toObjs2" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
 
@@ -62,12 +71,12 @@
                                 <label for="step3Label" class="pb-label">Step 3:</label>
                                 <div id="step3a" class="pb-display pb-inner-step">
                                     <label for="G1O1Label" class="pb-label">Objective 1 name:</label>
-                                    <textarea name="obj1" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj1" rows="1" class="pb-text"></textarea>
                                     <button id="toActions1" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                                 <div id="step3a" class="pb-display pb-inner-step">
                                     <label for="G1O2Label" class="pb-label">Objective 2 name:</label>
-                                    <textarea name="obj2" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj2" rows="1" class="pb-text"></textarea>
                                     <button id="toActions2" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
 
@@ -81,12 +90,12 @@
                                 <label for="step3Label" class="pb-label">Step 3:</label>
                                 <div id="step3b" class="pb-display pb-inner-step">
                                     <label for="G2O1Label" class="pb-label">Objective 1 name:</label>
-                                    <textarea name="obj3" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj3" rows="1" class="pb-text"></textarea>
                                     <button id="toActions3" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
                                 <div id="step3b" class="pb-display pb-inner-step">
                                     <label for="G2O2Label" class="pb-label">Objective 2 name:</label>
-                                    <textarea name="obj4" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="obj4" rows="1" class="pb-text"></textarea>
                                     <button id="toActions4" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                 </div>
 
@@ -106,22 +115,55 @@
                                     <table name="actiontable1" class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Due (YYYY/MM/DD)</th>
-                                                <th>Owner</th>
-                                                <th>Lead</th>
-                                                <th>Collaborators</th>
-                                                <th>Status</th>
-                                                <th>Success Measures</th>
+                                                <th class="pb-table-date">Due Date</th>
+                                                <th class="pb-table-owner">Owner</th>
+                                                <th class="pb-table-lead">Lead</th>
+                                                <th class="pb-table-collab">Collaborators</th>
+                                                <th class="pb-table-status">Status</th>
+                                                <th class="pb-table-success">Success Measures</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td contenteditable="true" id="date"></td>
-                                                <td contenteditable="true" id="owner"></td>
-                                                <td contenteditable="true" id="lead"></td>
-                                                <td contenteditable="true" id="collaborators"></td>
-                                                <td contenteditable="true" id="status"></td>
-                                                <td contenteditable="true" id="success"></td>
+                                                <td class="pb-table-date"><input name="dateA1" type="date" id="datepicker" class="pb-table-input"></td>
+                                                <td class="pb-table-owner">
+                                                    <select name="ownerA1" class="pb-table-select">
+                                                        <option selected value>Select</option>
+                                                        @foreach ($users as $user)
+                                                            <option value="{{$user->name}}">{{ $user->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </td>
+                                                <td class="pb-table-lead">
+                                                    <select name="leadA1" class="pb-table-select" multiple>
+                                                        <option selected value>Select</option>
+                                                        @foreach ($users as $user)
+                                                            <option value="{{$user->name}}">{{ $user->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </td>
+                                                <td class="pb-table-collab">
+                                                    <select name="collabA1" class="pb-table-select-collab" multiple>
+                                                        <option selected value>Select</option>
+                                                        @foreach ($users as $user)
+                                                            <option value="{{$user->name}}">{{ $user->name }}</option>
+                                                            @endforeach
+                                                        @foreach ($depts as $dept)
+                                                            <option value="{{ $dept->name}}">{{ $dept->name }}</option>
+                                                            @endforeach
+                                                        @foreach ($teams as $team)
+                                                            <option value="{{$team->name}}">{{ $team->name }}</option>
+                                                            @endforeach
+                                                    </select>
+                                                </td>
+                                                <td class="pb-table-status">
+                                                    <select name="statusA1" class="pb-table-select-status">
+                                                        <option selected value>Select</option>
+                                                        <option value="In-Progress">In-Progress</option>
+                                                        <option value="Completed">Completed</option>
+                                                    </select>
+                                                </td>
+                                                <td class="pb-table-success"><textarea name="successA1" rows="3" class="pb-text pb-table-text"></textarea></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -133,22 +175,55 @@
                                     <table name="actiontable2" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA2" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA2" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA2" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA2" id="collabA2" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA2" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA2" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -164,7 +239,7 @@
                                 <label for="step4Label" class="pb-label">Step 4:</label>
                                 <div id="step4b" class="pb-display pb-inner-step">
                                     <label for="G1O2A1Label" class="pb-label">Action 1 name:</label>
-                                    <textarea name="action3" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="action3" rows="1" class="pb-text"></textarea>
                                     <button id="toTasks3" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                     <table name="actiontable3" class="table table-striped table-bordered table-hover">
                                         <thead>
@@ -191,7 +266,7 @@
                                 </div>
                                 <div id="step4b" class="pb-display pb-inner-step">
                                     <label for="G1O2A2Label" class="pb-label">Action 2 name:</label>
-                                    <textarea name="action4" rows="1" required class="pb-text"></textarea>
+                                    <textarea name="action4" rows="1" class="pb-text"></textarea>
                                     <button id="toTasks4" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                     <table name="actiontable4" class="table table-striped table-bordered table-hover">
                                         <thead>

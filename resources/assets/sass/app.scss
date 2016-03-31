@@ -468,3 +468,53 @@ a {
   clear: none;
 }
 
+.pb-table-date {
+  min-width: 110px;
+  max-width: 110px;
+}
+
+.pb-table-owner {
+  min-width: 65px;
+  max-width: 65px;
+}
+
+.pb-table-lead {
+  min-width: 65px;
+  max-width: 65px;
+}
+
+.pb-table-collab {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.pb-table-status {
+  min-width: 90px;
+  max-width: 90px;
+}
+
+.pb-table-success {
+  min-width: 230px;
+  max-width: 230px;
+}
+
+.pb-table-input {
+  width: 155px;
+}
+
+.pb-table-select {
+  width: 80px;
+}
+
+.pb-table-select-collab {
+  width: 210px;
+}
+
+.pb-table-select-status {
+  width: 120px;
+}
+
+.pb-table-text {
+  width: 325px;
+}
+

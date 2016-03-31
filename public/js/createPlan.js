@@ -10,6 +10,11 @@ $(function() {
     }
 });
 
+$(function() {
+    var values = $('#collabA2').val();
+})
+
+
 $(document).ready(function(){
     //Step 1
     //Next button: Plan->Goals
