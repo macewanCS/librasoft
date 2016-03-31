@@ -167,7 +167,7 @@
                                                                             ?>
                                                                             </a>
                                                                         </td>
-                                                                        <td></td>
+                                                                        <td class="table-success" id="task-success"> @role('admin')<a data-pk="{{ $task->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $task->success }}</a></td>
                                                                         <td
                                                                                 @if ($task->status == "Completed")
                                                                                 class="table-status success" id="task-status"
@@ -276,6 +276,17 @@
             }
         });
 
+        $('#task-success a').editable({
+            type: 'textarea',
+            url: '{{URL::to("/")}}/plan/task/success',
+            title: 'Enter Success Measure',
+            placement: 'top',
+            send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        });
+
         $('#task-description a').editable({
             type: 'text',
             url: '{{URL::to("/")}}/plan/task/description',
@@ -333,7 +344,12 @@
             prepend: 'Select',
             source: [
                 {value: 'Events Team', text: 'Events Team'},
-                {value: 'IT Services', text: 'IT Services'}
+                {value: 'IT Services', text: 'IT Services'},
+                {value: 'Human Resources', text: 'Human Resources'},
+                {value: 'Financial Services', text: 'Financial Services'},
+                {value: 'Finance', text: 'Finance'},
+                {value: 'Fund Development', text: 'Fund Development'},
+                {value: 'Collection Management and Access', text: 'Collection Management and Access'}
             ],
             ajaxOptions: {
                 datatype: 'json'
@@ -349,7 +365,12 @@
             prepend: 'Select',
             source: [
                 {value: 'Events Team', text: 'Events Team'},
-                {value: 'IT Services', text: 'IT Services'}
+                {value: 'IT Services', text: 'IT Services'},
+                {value: 'Human Resources', text: 'Human Resources'},
+                {value: 'Financial Services', text: 'Financial Services'},
+                {value: 'Finance', text: 'Finance'},
+                {value: 'Fund Development', text: 'Fund Development'},
+                {value: 'Collection Management and Access', text: 'Collection Management and Access'}
             ],
             ajaxOptions: {
                 datatype: 'json'
