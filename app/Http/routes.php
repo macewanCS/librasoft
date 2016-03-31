@@ -110,11 +110,13 @@ Route::post('plan/action/description', 'ActionsController@postDescription');
 Route::post('plan/action/date', 'ActionsController@postDate');
 Route::post('plan/action/department', 'ActionsController@postDepartment');
 Route::post('plan/action/lead', 'ActionsController@postLead');
+Route::post('plan/action/status', 'ActionsController@postStatus');
 
 Route::post('plan/task/description', 'TasksController@postTask');
 Route::post('plan/task/date', 'TasksController@postTaskDate');
 Route::post('plan/task/department', 'TasksController@postDepartment');
 Route::post('plan/task/lead', 'TasksController@postLead');
+Route::post('plan/task/status', 'TasksController@postStatus');
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
 // role

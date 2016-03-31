@@ -122,4 +122,24 @@ class ActionsController extends Controller
             return \Response::json(array('status' => 0));
         }
     }
+
+    public function postStatus(Request $request) {
+        //get id
+        $pk = $request->pk;
+
+        $col = 'status';
+
+        //get new success
+        $value = $request->value;
+
+        //Get action data row where success is stored
+        if ($finditem = Action::where('id', $pk)->update([$col => $value]))
+        {
+            return \Response::json(array('status' => 1));
+        }
+        else
+        {
+            return \Response::json(array('status' => 0));
+        }
+    }
 }
