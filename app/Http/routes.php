@@ -112,6 +112,7 @@ Route::post('plan/action/department', 'ActionsController@postDepartment');
 Route::post('plan/action/lead', 'ActionsController@postLead');
 Route::post('plan/action/status', 'ActionsController@postStatus');
 
+Route::post('plan/task/success', 'TasksController@postSuccess');
 Route::post('plan/task/description', 'TasksController@postTask');
 Route::post('plan/task/date', 'TasksController@postTaskDate');
 Route::post('plan/task/department', 'TasksController@postDepartment');
