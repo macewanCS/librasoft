@@ -98,7 +98,7 @@ class TasksController extends Controller
         $value = User::where('name', $value);
 
         //Get action data row where success is stored
-        if ($finditem = Action::where('id', $pk)->update([$col => $value]))
+        if ($finditem = Task::where('id', $pk)->update([$col => $value]))
         {
             return \Response::json(array('status' => 1));
         }
@@ -118,5 +118,25 @@ class TasksController extends Controller
             $task->action->save();
         }
         return back();
+    }
+
+    public function postStatus(Request $request) {
+        //get id
+        $pk = $request->pk;
+
+        $col = 'status';
+
+        //get new success
+        $value = $request->value;
+
+        //Get action data row where success is stored
+        if ($finditem = Task::where('id', $pk)->update([$col => $value]))
+        {
+            return \Response::json(array('status' => 1));
+        }
+        else
+        {
+            return \Response::json(array('status' => 0));
+        }
     }
 }

@@ -128,15 +128,15 @@
                                                                     <td class="table-success" id="success-measures"> @role('admin')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
                                                                     <td
                                                                             @if ($action->status == "Completed")
-                                                                            class="table-status success"
+                                                                            class="table-status success" id="action-status"
                                                                             @else
-                                                                            class="table-status danger"
+                                                                            class="table-status danger" id="action-status"
                                                                             @endif
                                                                     >
                                                                         @if ($action->status == "Completed")
-                                                                            Completed
+                                                                            <a data-pk="{{ $action->id }}" href="#">Completed</a>
                                                                         @else
-                                                                            In progress
+                                                                            <a data-pk="{{ $action->id }}" href="#">In progress</a>
                                                                         @endif
                                                                     </td>
                                                                 </tr>
@@ -148,8 +148,8 @@
                                                                             </a>
                                                                         </td>
                                                                         <td class="table-due" id="task-date"><a href="#" data-pk="{{ $task->id }}" >{{ $task->date }}</a></td>
-                                                                        <td class="table-owner" id="task-department"><a href="#" data-pk="{{ $task->id }}">{{ $task->owner }}</a></td>
-                                                                        <td class="table-lead" id="task-lead"><a data-pk="{{ $task->id }}" href="#">
+                                                                        <td class="table-owner" id="task-department">@role('admin')<a href="#" data-pk="{{ $task->id }}">{{ $task->owner }}</a>@endrole</td>
+                                                                        <td class="table-lead" id="task-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                                                             <?php
                                                                                 $leads = explode("__,__", $task->lead);
                                                                                 foreach ($leads as $lead) {
@@ -170,15 +170,15 @@
                                                                         <td></td>
                                                                         <td
                                                                                 @if ($task->status == "Completed")
-                                                                                class="table-status success"
+                                                                                class="table-status success" id="task-status"
                                                                                 @else
-                                                                                class="table-status danger"
+                                                                                class="table-status danger" id="task-status"
                                                                                 @endif
                                                                         >
                                                                             @if ($task->status == "Completed")
-                                                                                Completed
+                                                                                <a data-pk="{{ $task->status }}" href="#">Completed</a>
                                                                             @else
-                                                                                In progress
+                                                                                <a data-pk="{{ $task->status }}" href="#">In progress</a>
                                                                             @endif
                                                                         </td>
                                                                     </tr>
@@ -367,7 +367,7 @@
                     'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                 tokenSeparators: [","," "]
             },
-            url: '{{URL::to("/")}}/plan/action/lead',
+            //url: '{{URL::to("/")}}/plan/action/lead',
             title: 'Input Leads',
             send: 'always',
             ajaxOptions: {
@@ -386,9 +386,41 @@
                     'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                 tokenSeparators: [","," "]
             },
-            url: '{{URL::to("/")}}/plan/task/lead',
+            //url: '{{URL::to("/")}}/plan/task/lead',
             title: 'Input Leads',
             send: 'always',
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        });
+
+        $('#action-status a').editable({
+            type: 'select',
+            url: '{{URL::to("/")}}/plan/action/status',
+            title: 'Select Status',
+            placement: 'left',
+            send: 'always',
+            prepend: 'Select',
+            source: [
+                {value: 'Completed', text: 'Completed'},
+                {value: 'In Progress', text: 'In Progress'}
+            ],
+            ajaxOptions: {
+                datatype: 'json'
+            }
+        });
+
+        $('#task-status a').editable({
+            type: 'select',
+            url: '{{URL::to("/")}}/plan/task/status',
+            title: 'Select Status',
+            placement: 'left',
+            send: 'always',
+            prepend: 'Select',
+            source: [
+                {value: 'Completed', text: 'Completed'},
+                {value: 'In Progress', text: 'In Progress'}
+            ],
             ajaxOptions: {
                 datatype: 'json'
             }
