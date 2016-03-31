@@ -73,6 +73,7 @@ class PlanController extends Controller
         $action1->success = $request->successA1;
         $obj1->actions()->save($action1);
 
+
         //Add Action 2
         $action2 = new Action();
         $action2->body = $request->action2;
