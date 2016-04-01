@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <title>jQuery UI Dialog - Default functionality</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     </head>
@@ -51,11 +50,10 @@
 
             <!--<a id="openAll" role="button"` class="btn btn-primary" data-toggle="collapse">Open All Categories</a>
             <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
-            @role('admin|deplead|teamlead|bplead')
+            @role('admin')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="#" onclick="addGoal()">Add Goal</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
-            <a id="edit" role="button" class="btn btn-primary" data-toggle="button" class=".active" aria-pressed="false" href="#">Edit Business Plan</a>
             <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
             @endrole
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
