@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery UI Dialog - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    </head>
+
 
 <!-- Goal Group -->
 <div class="panel panel-primary options-panel">
@@ -44,7 +53,8 @@
             <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
             @role('admin|deplead|teamlead|bplead')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
-            <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
+            <a role="button" class="btn btn-primary" href="#" onclick="addGoal()">Add Goal</a>
+            <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
             @endrole
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
             <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
@@ -208,10 +218,31 @@
             </div>
         </div>
 
+<div class="hide fade">
+    <div id="addGoal"  title="Add a new Goal" class="panel panel-primary">
+        <div class="panel-body" >
+            <form method="post" action="/plan/{{$plan->id}}/goals">
+                <div class="form-group">
+                    <label>Goal Name:</label>
+                    <input type="text" class="form-control" id="body">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="float: right; background: #009FD7;">Add Goal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <!-- Javascript -->
 <!--Chnages Icons arrows in accordion -->
 <script type="text/javascript" src="{{URL::asset('js/changeIcon.js')}}"></script>
-
+<script type="text/javascript" src="{{URL::asset('js/popupWindow.js')}}"></script>
 
 <script type="application/javascript">
     jQuery(document).ready(function () {

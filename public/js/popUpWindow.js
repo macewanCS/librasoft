@@ -66,3 +66,16 @@ function showDetails(){
         modal: true
     });
 }
+
+function addGoal() {
+    $("#addGoal").dialog({
+        maxHeight: 200,
+        minHeight: 200,
+        maxWidth: 700,
+        minWidth: 700,
+        draggable: false,
+        resizable: false,
+        dialogClass: 'no-close success-dialog',
+        modal: true
+    });
+}
