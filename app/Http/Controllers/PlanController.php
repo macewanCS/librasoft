@@ -21,6 +21,15 @@ class PlanController extends Controller
         return view('plan')->with('plan', Plan::first());
     }
 
+    public function addGoal(Request $request){
+        $plan = Plan::first();
+        $goal = new Goal();
+        $goal->body = $request->body;
+        $plan->goals()->save($goal);
+        $plan->addGoal($goal);
+        return back();
+    }
+
     public function showPlan() {
         return view('createPlan');
     }
