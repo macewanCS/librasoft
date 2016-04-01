@@ -82,6 +82,7 @@
             @role('admin')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="#" onclick="addGoal()">Add Goal</a>
+            <a role="button" class="btn btn-primary" href="#" onclick="addObjective()">Add Objective</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
             <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
             @endrole
@@ -264,7 +265,29 @@
     </div>
 </div>
 
-
+    <div class="hide fade">
+        <div id="addObjective"  title="Add a new Objective" class="panel panel-primary">
+            <div class="panel-body" >
+                <form method="post" action="/plan/{{$plan->id}}/goal/objective">
+                    <div class="form-group">
+                        <select class="form-control" name="goal">
+                            @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
+                                <option>{{$goal->body}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Objective Name:</label>
+                        <textarea name="body" class="form-control" placeholder="Enter an objective name..."></textarea>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="float: right; background: #009FD7;">Add Objective</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 

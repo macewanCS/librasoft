@@ -79,3 +79,16 @@ function addGoal() {
         modal: true
     });
 }
+
+function addObjective(){
+    $( "#addObjective" ).dialog({
+        maxHeight: 300,
+        minHeight: 300,
+        maxWidth: 700,
+        minWidth: 700,
+        draggable: false,
+        resizable: false,
+        dialogClass: 'no-close success-dialog',
+        modal: true
+    });
+}
