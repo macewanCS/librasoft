@@ -25,7 +25,7 @@ class Goal extends Model
     }
 
     public function addObjective(Objective $objective) {
-        return $this->plan()->save($objective);
+        return $this->objectives()->save($objective);
     }
 
 
