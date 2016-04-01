@@ -25,6 +25,9 @@ Route::get('/', function () {
 // Route for displaying the page
 
 Route::get('plan', 'PlanController@plan');
+
+Route::post('plan/{plan}/goals', 'PlanController@addGoal');
+
 Route::get('manage', 'ManageController@manage');
 Route::get('tasks/{task}', 'TasksController@show');
 
