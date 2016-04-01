@@ -55,6 +55,8 @@
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="#" onclick="addGoal()">Add Goal</a>
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
+            <a id="edit" role="button" class="btn btn-primary" data-toggle="button" class=".active" aria-pressed="false" href="#">Edit Business Plan</a>
+            <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
             @endrole
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
             <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
@@ -290,7 +292,7 @@
         $.fn.editable.defaults.mode = 'popup'
 
         $('#edit').click(function () {
-            $('#table-edit .editable').editable('toggleDisabled')
+            $('#table-edit .editable').editable('toggleDisabled');
         });
 
         $(function(value) {
