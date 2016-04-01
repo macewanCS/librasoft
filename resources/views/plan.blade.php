@@ -224,7 +224,7 @@
             <form method="post" action="/plan/{{$plan->id}}/goals">
                 <div class="form-group">
                     <label>Goal Name:</label>
-                    <input type="text" class="form-control" id="body">
+                    <textarea name="body" class="form-control" placeholder="Enter a goal name..."></textarea>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
                 <div class="form-group">

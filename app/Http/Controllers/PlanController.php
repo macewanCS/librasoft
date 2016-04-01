@@ -27,6 +27,7 @@ class PlanController extends Controller
         $goal->body = $request->body;
         $plan->goals()->save($goal);
         $plan->addGoal($goal);
+        return back();
     }
 
     public function showPlan() {
