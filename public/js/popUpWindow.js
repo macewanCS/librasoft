@@ -69,8 +69,8 @@ function showDetails(){
 
 function addGoal() {
     $("#addGoal").dialog({
-        maxHeight: 200,
-        minHeight: 200,
+        maxHeight: 210,
+        minHeight: 210,
         maxWidth: 700,
         minWidth: 700,
         draggable: false,
