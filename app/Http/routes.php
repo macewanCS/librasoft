@@ -50,6 +50,7 @@ Route::get('print', 'ExportController@minimal');
 Route::post('search', 'SearchController@search');
 Route::get("export/tsv", 'ExportController@tabs');
 Route::get("tasks/{task}/markcomplete", "TasksController@MarkComplete");
+Route::get("plan/{plan}", "PlanController@show");
 
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords
