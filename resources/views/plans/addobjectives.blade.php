@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    function sort_by_name($a, $b) {
+        return strcmp($a->name, $b->name);
+    }
+    function sort_by_body($a, $b) {
+        return strcmp($a->body, $b->body);
+    }
+    use Carbon\Carbon;
+    ?>
 
     <!-- Plan pane -->
     <div class="col-md-2">
@@ -12,12 +21,12 @@
                 <form>
                     <div class="form-group">
                         <label for="planStartDate">Plan Start Date</label>
-                        <input type="text" class="form-control" id="planStartDate" name="startdate" placeholder="{{ $plan->startdate }}" disabled>
+                        <input type="text" class="form-control" id="planStartDate" name="startdate" placeholder="{{ Carbon::createFromFormat("Y-m-d", $plan->startdate)->format("Y") }}" disabled>
                         <span id="helpBlock" class="help-block">Please enter the start date in the form of YYYY-MM-DD. For example, 2018-10-24.</span>
                     </div>
                     <div class="form-group">
                         <label for="planEndDate">Plan End Date</label>
-                        <input type="text" class="form-control" id="planEndDate" name="enddate" placeholder="{{ $plan->enddate }}" disabled>
+                        <input type="text" class="form-control" id="planEndDate" name="enddate" placeholder="{{ Carbon::createFromFormat("Y-m-d", $plan->enddate)->format("Y") }}" disabled>
                         <span id="helpBlock" class="help-block">Please enter the end date in the form of YYYY-MM-DD. For example, 2020-10-24.</span>
                     </div>
                 </form>
@@ -32,9 +41,16 @@
                 <h4 class="panel-title">Add Goals</h4>
             </div>
             <div class="panel-body">
-                @if(count($plan->goals) > 0)
+                <?php
+                $allgoals = array();
+                foreach($plan->goals as $goal)
+                    $allgoals[] = $goal;
+                usort($allgoals, "sort_by_body");
+                $goalcount = count($allgoals);
+                ?>
+                @if($goalcount > 0)
                     <form>
-                        @foreach($plan->goals as $goal)
+                        @foreach($allgoals as $goal)
                             <div class="form-group">
                                 <label for="goal{{ $goal->id }}">{{ $goal->body }}</label>
                                 <input type="text" class="form-control" id="goal{{ $goal->id }}" placeholder="{{ $goal->body }}" disabled>
@@ -54,20 +70,20 @@
             </div>
             <div class="panel-body">
                 <?php
-                $objective_count = 0;
-                foreach($plan->goals as $goal) {
-                    $objective_count += count($goal->objectives);
-                }
+                $allobjectives = array();
+                foreach($plan->goals as $goal)
+                    foreach($goal->objectives as $objective)
+                        $allobjectives[] = $objective;
+                usort($allobjectives, "sort_by_body");
+                $objective_count = count($allobjectives);
                 ?>
                 @if($objective_count > 0)
                     <form>
-                        @foreach($plan->goals as $goal)
-                            @foreach($goal->objectives as $objective)
-                                <div class="form-group">
-                                    <label for="objective{{ $objective->id }}">{{ $objective->body }}</label>
-                                    <input type="text" class="form-control" id="objective{{ $objective->id }}" placeholder="{{ $objective->body }}" disabled>
-                                </div>
-                            @endforeach
+                        @foreach($allobjectives as $objective)
+                            <div class="form-group">
+                                <label for="objective{{ $objective->id }}">{{ $objective->body }}</label>
+                                <input type="text" class="form-control" id="objective{{ $objective->id }}" placeholder="{{ $objective->body }}" disabled>
+                            </div>
                         @endforeach
                     </form>
                 @endif
@@ -75,7 +91,7 @@
                     <div class="form-group">
                         <label for="goal_selection">Goal</label>
                         <select name="goal_id" class="form-control" id="goal_selection">
-                            @foreach($plan->goals as $goal)
+                            @foreach($allgoals as $goal)
                                 <option value="{{ $goal->id }}">{{ $goal->body }}</option>
                             @endforeach
                         </select>
