@@ -18,7 +18,7 @@ class PlanController extends Controller
 {
     public function plan()
     {
-        return view('plan')->with('plan', Plan::first());
+        return view('plans.plan')->with('plan', Plan::first());
     }
 
     public function addGoal(Request $request){
@@ -103,6 +103,6 @@ class PlanController extends Controller
 
     public function show(Plan $plan)
     {
-        return view('plan')->with('plan', $plan);
+        return view('plans.plan')->with('plan', $plan);
     }
 }
