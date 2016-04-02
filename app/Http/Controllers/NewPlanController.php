@@ -22,6 +22,8 @@ class NewPlanController extends Controller
     public function newPlan(Request $request)
     {
         $newplan = Plan::create($request->all());
+        $newplan->startdate = Carbon::createFromFormat("Y-m-d", $request->planstartdate)->toDateTimeString();
+        $newplan->enddate = Carbon::createFromFormat("Y-m-d", $request->planenddate)->toDateTimeString();
         $newplan->save();
         return view('plans.addgoals')->with('plan', $newplan);
     }
