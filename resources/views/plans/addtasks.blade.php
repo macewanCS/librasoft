@@ -162,21 +162,8 @@
                 <div class="form-group">
                     <label for="action_selection">Action</label>
                     <select name="action_id" class="form-control" id="action_selection">
-                        <?php
-                        $actions = array();
-                        foreach($plan->goals as $goal)
-                            foreach($goal->objectives as $objective)
-                                foreach($objective->actions as $action)
-                                    $actions[] = $action;
-
-                        usort($actions, "sort_by_name");
-                        ?>
-                        @foreach($plan->goals as $goal)
-                            @foreach($goal->objectives as $objective)
-                                @foreach($objective->actions as $action)
-                                    <option value="{{ $action->id }}">{{ $action->body }}</option>
-                                @endforeach
-                            @endforeach
+                        @foreach($allactions as $action)
+                            <option value="{{ $action->id }}">{{ $action->body }}</option>
                         @endforeach
                     </select>
                 </div>

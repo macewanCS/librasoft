@@ -91,12 +91,6 @@
                     <div class="form-group">
                         <label for="goal_selection">Goal</label>
                         <select name="goal_id" class="form-control" id="goal_selection">
-                            <?php
-                            $allgoals = array();
-                            foreach($plan->goals as $goal)
-                                $allgoals[] = $goal;
-                            usort($allgoals, "sort_by_body");
-                            ?>
                             @foreach($allgoals as $goal)
                                 <option value="{{ $goal->id }}">{{ $goal->body }}</option>
                             @endforeach
