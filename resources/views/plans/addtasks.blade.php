@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    function sort_by_name($a, $b) {
+        return strcmp($a->name, $b->name);
+    }
+    ?>
 
     <!-- Plan pane -->
     <div class="col-md-2">
@@ -32,9 +37,16 @@
                 <h4 class="panel-title">Add Goals</h4>
             </div>
             <div class="panel-body">
-                @if(count($plan->goals) > 0)
+                <?php
+                $allgoals = array();
+                foreach($plan->goals as $goal)
+                    $allgoals[] = $goal;
+                usort($allgoals, "sort_by_name");
+                $goalcount = count($allgoals)
+                ?>
+                @if($goalcount > 0)
                     <form>
-                        @foreach($plan->goals as $goal)
+                        @foreach($allgoals as $goal)
                             <div class="form-group">
                                 <label for="goal{{ $goal->id }}">{{ $goal->body }}</label>
                                 <input type="text" class="form-control" id="goal{{ $goal->id }}" placeholder="{{ $goal->body }}" disabled>
@@ -54,20 +66,20 @@
             </div>
             <div class="panel-body">
                 <?php
-                $objective_count = 0;
-                foreach($plan->goals as $goal) {
-                    $objective_count += count($goal->objectives);
-                }
+                $allobjectives = array();
+                foreach($plan->goals as $goal)
+                    foreach($goal->objectives as $objective)
+                        $allobjectives[] = $objective;
+                usort($allobjectives, "sort_by_name");
+                $objective_count = count($allobjectives);
                 ?>
                 @if($objective_count > 0)
                     <form>
-                        @foreach($plan->goals as $goal)
-                            @foreach($goal->objectives as $objective)
-                                <div class="form-group">
-                                    <label for="objective{{ $objective->id }}">{{ $objective->body }}</label>
-                                    <input type="text" class="form-control" id="objective{{ $objective->id }}" placeholder="{{ $objective->body }}" disabled>
-                                </div>
-                            @endforeach
+                        @foreach($allobjectives as $objective)
+                            <div class="form-group">
+                                <label for="objective{{ $objective->id }}">{{ $objective->body }}</label>
+                                <input type="text" class="form-control" id="objective{{ $objective->id }}" placeholder="{{ $objective->body }}" disabled>
+                            </div>
                         @endforeach
                     </form>
                 @endif
@@ -83,24 +95,21 @@
             </div>
             <div class="panel-body">
                 <?php
-                $action_count = 0;
-                foreach ($plan->goals as $goal) {
-                    foreach ($goal->objectives as $objective) {
-                        $action_count += count($objective->actions);
-                    }
-                }
+                $allactions = array();
+                foreach ($plan->goals as $goal)
+                    foreach ($goal->objectives as $objective)
+                        foreach ($objective->actions as $action)
+                            $allactions[] = $action;
+                usort($allactions, "sort_by_name");
+                $action_count = count($allactions);
                 ?>
                 @if($action_count > 0)
                     <form>
-                        @foreach($plan->goals as $goal)
-                            @foreach($goal->objectives as $objective)
-                                @foreach($objective->actions as $action)
-                                    <div class="form-group">
-                                        <label for="action{{ $action->id }}">{{ $action->body }}</label>
-                                        <input type="text" class="form-control" id="action{{ $action->id }}" placeholder="{{ $action->body }}" disabled>
-                                    </div>
-                                @endforeach
-                            @endforeach
+                        @foreach($allactions as $action)
+                            <div class="form-group">
+                                <label for="action{{ $action->id }}">{{ $action->body }}</label>
+                                <input type="text" class="form-control" id="action{{ $action->id }}" placeholder="{{ $action->body }}" disabled>
+                            </div>
                         @endforeach
                     </form>
                 @endif
@@ -116,28 +125,26 @@
         </div>
         <div class="panel-body">
             <?php
-            $task_count = 0;
+            $all_tasks = array();
             foreach ($plan->goals as $goal) {
                 foreach ($goal->objectives as $objective) {
                     foreach ($objective->actions as $action) {
-                        $task_count += count($action->tasks);
+                        foreach ($action->tasks as $task) {
+                            $all_tasks[] = $task;
+                        }
                     }
                 }
             }
+            usort($all_tasks, "sort_by_name");
+            $task_count = count($all_tasks);
             ?>
             @if($task_count > 0)
                 <form>
-                    @foreach($plan->goals as $goal)
-                        @foreach($goal->objectives as $objective)
-                            @foreach($objective->actions as $action)
-                                @foreach($action->tasks as $task)
-                                    <div class="form-group">
-                                        <label for="action{{ $task->id }}">{{ $task->body }}</label>
-                                        <input type="text" class="form-control" id="task{{ $task->id }}" placeholder="{{ $task->body }}" disabled>
-                                    </div>
-                                @endforeach
-                            @endforeach
-                        @endforeach
+                    @foreach($all_tasks as $task)
+                        <div class="form-group">
+                            <label for="action{{ $task->id }}">{{ $task->body }}</label>
+                            <input type="text" class="form-control" id="task{{ $task->id }}" placeholder="{{ $task->body }}" disabled>
+                        </div>
                     @endforeach
                 </form>
             @endif
@@ -145,12 +152,21 @@
             <form method="post" action="/createplan/{{ $plan->id }}/addtasks">
                 <div class="form-group">
                     <label for="newtaskbody">New Task</label>
-                    <input type="text" name="body" class="form-control" id="newtaskbody" placeholder="Enter a name...">
+                    <input type="text" name="body" class="form-control" id="newtaskbody" placeholder="Enter a name..." required>
                     <span id="helpBlock" class="help-block">Please enter a task name.</span>
                 </div>
                 <div class="form-group">
                     <label for="action_selection">Action</label>
                     <select name="action_id" class="form-control" id="action_selection">
+                        <?php
+                        $actions = array();
+                        foreach($plan->goals as $goal)
+                            foreach($goal->objectives as $objective)
+                                foreach($objective->actions as $action)
+                                    $actions[] = $action;
+
+                        usort($actions, "sort_by_name");
+                        ?>
                         @foreach($plan->goals as $goal)
                             @foreach($goal->objectives as $objective)
                                 @foreach($objective->actions as $action)
@@ -162,16 +178,16 @@
                 </div>
                 <div class="form-group">
                     <label for="newtaskdate">Task Due Date</label>
-                    <input type="text" name="duedate" class="form-control" id="newtaskdate" placeholder="YYYY-MM-DD">
+                    <input type="text" name="duedate" class="form-control" id="newtaskdate" placeholder="YYYY-MM-DD" required>
                     <span id="helpBlock" class="help-block">Please enter the task's due date</span>
                 </div>
                 <div class="form-group">
                     <label for="newtaskowner">Task Owner</label>
                     <select name="owner" class="form-control" id="newtaskowner">
-                        @foreach(App\Department::all() as $department)
+                        @foreach(App\Department::orderby("name", "asc")->get()->all() as $department)
                             <option value="{{ $department->name }}">{{ $department->name }}</option>
                         @endforeach
-                        @foreach(App\Team::all() as $team)
+                        @foreach(App\Team::orderby("name", "asc")->get()->all() as $team)
                             <option value="{{ $team->name }}">{{ $team->name }}</option>
                         @endforeach
                     </select>
@@ -179,7 +195,7 @@
                 <div class="form-group">
                     <label for="newtasklead">Task Lead</label>
                     <select name="lead" class="form-control" id="newtasklead">
-                        @foreach(App\User::all() as $user)
+                        @foreach(App\User::orderby("name", "asc")->get()->all() as $user)
                             <option value="{{ $user->email }}">{{ $user->name }}</option>
                         @endforeach
                     </select>
@@ -187,14 +203,20 @@
                 <div class="form-group">
                     <label for="newtaskcollaborators">Task Collaborators</label>
                     <select name="collabs[]" class="form-control" id="newtaskcollaborators" multiple size=5>
-                        @foreach(App\User::all() as $user)
+                        @foreach(App\User::orderby("name", "asc")->get()->all() as $user)
+                            <option value="{{ $user->email }}">{{ $user->name }}</option>
+                        @endforeach
+                        @foreach(App\Department::orderby("name", "asc")->get()->all() as $user)
+                            <option value="{{ $user->email }}">{{ $user->name }}</option>
+                        @endforeach
+                        @foreach(App\Team::orderby("name", "asc")->get()->all() as $user)
                             <option value="{{ $user->email }}">{{ $user->name }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="newtasksuccess">Task Success Measures</label>
-                    <input type="text" name="success" class="form-control" id="newtasksuccess" placeholder="Enter success measures...">
+                    <input type="text" name="success" class="form-control" id="newtasksuccess" placeholder="Enter success measures..." required>
                     <span id="helpBlock" class="help-block">Please enter the task's success measures.</span>
                 </div>
                 <input type="hidden" name="status" value="In Progress">
