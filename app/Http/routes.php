@@ -59,6 +59,7 @@ Route::post("createplan/addplan", "NewPlanController@newPlan");
 Route::post("createplan/{plan}/addgoals", "NewPlanController@addGoal");
 Route::post("createplan/{plan}/addobjectives", "NewPlanController@addObjective");
 Route::post("createplan/{plan}/addactions", "NewPlanController@addAction");
+Route::post("createplan/{plan}/addtasks", "NewPlanController@addTask");
 
 // AuthController will be in charge of user registration and logging users in
 // PasswordController will handle resetting forgotten passwords
@@ -91,6 +92,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('register', 'RegisterController@register');
     Route::post('register', 'Auth\AuthController@create');
     Route::get('tasks/{task}', 'TasksController@show');
+    Route::get("plan/{plan}", "PlanController@show");
 
     Route::post('tasks/{task}/notes', 'NotesController@store');
 

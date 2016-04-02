@@ -12,7 +12,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
-        'body', 'date', 'lead', 'collaborators', 'status', 'success'
+        'body', 'date', 'owner', 'lead', 'collaborators', 'status', 'success', 'action_id'
     ];
 
     public function action()
