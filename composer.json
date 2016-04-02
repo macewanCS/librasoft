@@ -10,7 +10,8 @@
         "barryvdh/laravel-ide-helper": "v2.1.2",
         "doctrine/dbal": " ~2.3",
         "kodeine/laravel-acl": "dev-master",
-        "unisharp/laravel-ckeditor": "^4.5"
+        "unisharp/laravel-ckeditor": "^4.5",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -26,9 +26,9 @@ Route::get('/', function () {
 
 Route::get('plan', 'PlanController@plan');
 
-Route::post('plan/{plan}/goals', 'PlanController@addGoal');
-Route::post('plan/{plan}/goal/objective', 'PlanController@addObjective');
-Route::post('plan/{plan}/goal/objective/action', 'PlanController@addAction');
+Route::post('plan/{plan}/goals', 'PlanController@addNewGoal');
+Route::post('plan/{plan}/goal/objective', 'PlanController@addNewObjective');
+Route::post('plan/{plan}/goal/objective/action', 'PlanController@addNewAction');
 
 
 Route::get('manage', 'ManageController@manage');
