@@ -22,8 +22,6 @@ class NewPlanController extends Controller
     public function newPlan(Request $request)
     {
         $newplan = Plan::create($request->all());
-        $newplan->startdate = Carbon::createFromFormat("Y-m-d", $request->planstartdate)->toDateTimeString();
-        $newplan->enddate = Carbon::createFromFormat("Y-m-d", $request->planenddate)->toDateTimeString();
         $newplan->save();
         return view('plans.addgoals')->with('plan', $newplan);
     }
@@ -57,7 +55,8 @@ class NewPlanController extends Controller
         if (isset($request->add)) {
             $newaction = Action::create($request->all());
             $newaction->date = Carbon::createFromFormat("Y-m-d", $request->duedate)->toDateTimeString();
-            $newaction->collaborators = implode("__,__", $request->collabs);
+            if (isset($request->collabs))
+                $newaction->collaborators = implode("__,__", $request->collabs);
             $newaction->save();
             return view('plans.addactions')->with('plan', $plan);
         } else {
@@ -69,7 +68,8 @@ class NewPlanController extends Controller
     {
         $newtask = Task::create($request->all());
         $newtask->date = Carbon::createFromFormat("Y-m-d", $request->duedate)->toDateTimeString();
-        $newtask->collaborators = implode("__,__", $request->collabs);
+        if (isset($request->collabs))
+            $newtask->collaborators = implode("__,__", $request->collabs);
         $newtask->save();
         return view('plans.addtasks')->with('plan', $plan);
     }
