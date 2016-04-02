@@ -11,7 +11,7 @@ class Objective extends Model
      *
      * @var array
      */
-    protected $fillable = ['body'];
+    protected $fillable = ['body', 'goal_id'];
 
     public function goal()
     {
