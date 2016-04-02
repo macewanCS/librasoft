@@ -9,15 +9,44 @@
 
     </head>
 
+    <?php
+    use App\Department;
+    use App\Team;
+    use App\Plan;
+    use App\Objective;
+    use Carbon\Carbon;
+    ?>
+
 
 <!-- Goal Group -->
 <div class="panel panel-primary options-panel">
     <div class="panel-heading options-panel-div options-panel-head"><h4 class="panel-title">Options</h4></div>
     <div class="panel-body options-panel-div">
         <div class="btn-group-vertical" role="group">
+
+            @if(count(Plan::all()) > 1)
+            <div class="dropdown btn-group">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="planDropdown" data-toggle="dropdown">
+                    Change Plan
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    @foreach(Plan::all() as $plan_option)
+                        <?php
+                        $start_year = Carbon::createFromFormat("Y-m-d", $plan_option->startdate)->format("Y");
+                        $end_year = Carbon::createFromFormat("Y-m-d", $plan_option->enddate)->format("Y");
+                        ?>
+                        <li><a href="/plan/{{ $plan_option->id }}">Plan {{ $start_year }} - {{ $end_year }}</a></li>
+
+                        @if(count(Plan::all()) > $plan_option->id )
+                            <li role="separator" class="divider"></li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             <?php
-            use App\Department;
-            use App\Team;
             $filter_options = ["Actions", "Tasks"];
             $dept_options = Department::all();
             $team_options = Team::all();
@@ -274,7 +303,6 @@
 <script type="application/javascript">
     $(document).ready(function()
         {
-            <?php use App\Objective; ?>
             @for($i = 1; $i < count(Objective::get()->all()); $i++)
             $(".action-table{{ $i }}").tablesorter();
             @endfor
