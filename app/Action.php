@@ -12,7 +12,7 @@ class Action extends Model
      * @var array
      */
     protected $fillable = [
-        'body', 'date', 'lead', 'collaborators', 'status', 'success', 'objective_id'
+        'body', 'date', 'owner', 'lead', 'collaborators', 'status', 'success', 'objective_id'
     ];
 
     public function objective()
