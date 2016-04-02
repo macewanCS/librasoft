@@ -81,8 +81,9 @@
             <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
             @role('admin')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
-            <a role="button" class="btn btn-primary" href="#" onclick="addGoal()">Add Goal</a>
-            <a role="button" class="btn btn-primary" href="#" onclick="addObjective()">Add Objective</a>
+            <a role="button" class="btn btn-primary" href="#" onclick="newGoal()">Add Goal</a>
+            <!--<a role="button" class="btn btn-primary" href="#" onclick="newObjective()">Add Objective</a>
+            <a role="button" class="btn btn-primary" href="#" onclick="newAction()">Add Action</a>-->
             <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
             <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
             @endrole
@@ -248,28 +249,29 @@
             </div>
         </div>
 
-<div class="hide fade">
-    <div id="addGoal"  title="Add a new Goal" class="panel panel-primary">
-        <div class="panel-body" >
-            <form method="post" action="/plan/{{$plan->id}}/goals">
-                <div class="form-group">
-                    <label>Goal Name:</label>
-                    <textarea name="body" class="form-control" placeholder="Enter a goal name..."></textarea>
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary" style="float: right; background: #009FD7;">Add Goal</button>
-                </div>
-            </form>
+    <div class="hide fade">
+        <div id="newGoal"  title="Add a new Goal" class="panel panel-primary">
+            <div class="panel-body" >
+                <form method="post" action="/plan/{{$plan->id}}/goals">
+                    <div class="form-group">
+                        <label>Goal Name:</label>
+                        <textarea name="body" class="form-control" placeholder="Enter a goal name..."></textarea>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="float: right; background: #009FD7;">Add Goal</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="hide fade">
-        <div id="addObjective"  title="Add a new Objective" class="panel panel-primary">
+        <div id="newObjective"  title="Add a new Objective" class="panel panel-primary">
             <div class="panel-body" >
                 <form method="post" action="/plan/{{$plan->id}}/goal/objective">
                     <div class="form-group">
+                        <label>Choose Goal:</label>
                         <select class="form-control" name="goal">
                             @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
                                 <option>{{$goal->body}}</option>
@@ -289,7 +291,38 @@
         </div>
     </div>
 
-
+    <div class="hide fade">
+        <div id="newAction"  title="Add a new Action" class="panel panel-primary">
+            <div class="panel-body" >
+                <form method="post" action="/plan/{{$plan->id}}/goal/objective/action">
+                    <div class="form-group">
+                        <label>Choose Goal:</label>
+                        <select class="form-control" name="goal">
+                            @foreach($plan->goals()->orderBy('body')->get() as $goal)
+                                <option>{{$goal->body}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Choose Objective:</label>
+                        <select class="form-control" name="objective">
+                            @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
+                                <option>{{$objective->body}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Action Name:</label>
+                        <textarea name="body" class="form-control" placeholder="Enter an action name..."></textarea>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" style="float: right; background: #009FD7;">Add Action</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 <!-- Javascript -->
 <!--Chnages Icons arrows in accordion -->

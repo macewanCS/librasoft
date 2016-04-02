@@ -28,6 +28,8 @@ Route::get('plan', 'PlanController@plan');
 
 Route::post('plan/{plan}/goals', 'PlanController@addGoal');
 Route::post('plan/{plan}/goal/objective', 'PlanController@addObjective');
+Route::post('plan/{plan}/goal/objective/action', 'PlanController@addAction');
+
 
 Route::get('manage', 'ManageController@manage');
 Route::get('tasks/{task}', 'TasksController@show');
