@@ -86,6 +86,7 @@
             <a role="button" class="btn btn-primary" href="#" onclick="newAction()">Add Action</a>
             <a role="button" class="btn btn-primary" href="/createplan">New Business Plan</a>
             <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
+
             @endrole
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
             <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
