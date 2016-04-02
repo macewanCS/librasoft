@@ -8,15 +8,15 @@
                 <h4 class="panel-title">Create A New Business Plan</h4>
             </div>
             <div class="panel-body">
-                <form method="post" action="/createplan/addplan">
+                <form id="newplanform" method="post" action="/createplan/addplan" data-parsley-validate="">
                     <div class="form-group">
                         <label for="planStartDate">Plan Start Date</label>
-                        <input type="text" class="form-control" id="planStartDate" name="startdate" placeholder="YYYY-MM-DD">
+                        <input type="text" class="form-control" id="planStartDate" name="startdate" placeholder="YYYY-MM-DD" required>
                         <span id="helpBlock" class="help-block">Please enter the start date in the form of YYYY-MM-DD. For example, 2018-10-24.</span>
                     </div>
                     <div class="form-group">
                         <label for="planEndDate">Plan End Date</label>
-                        <input type="text" class="form-control" id="planEndDate" name="enddate" placeholder="YYYY-MM-DD">
+                        <input type="text" class="form-control" id="planEndDate" name="enddate" placeholder="YYYY-MM-DD" required>
                         <span id="helpBlock" class="help-block">Please enter the end date in the form of YYYY-MM-DD. For example, 2020-10-24.</span>
                     </div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
