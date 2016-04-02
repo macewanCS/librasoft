@@ -32,12 +32,11 @@ class PlanController extends Controller
 
     public function addNewObjective(Request $request){
         $plan = Plan::first();
-        $goal = $plan->goals->where('body', $request->goal);
+        $goal = $plan->goals->where('body', $request->goal)->first();
         $objective = new Objective();
         $objective->body = $request->body;
         $goal->addObjectives($objective);
         return back();
-
     }
 
     public function addNewAction(Request $request){
