@@ -6,6 +6,8 @@ use App\Action;
 use App\Goal;
 use App\Objective;
 use App\Plan;
+use App\Task;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -52,11 +54,21 @@ class NewPlanController extends Controller
     {
         if (isset($request->add)) {
             $newaction = Action::create($request->all());
+            $newaction->date = Carbon::createFromFormat("Y-m-d", $request->duedate)->toDateTimeString();
             $newaction->collaborators = implode("__,__", $request->collabs);
             $newaction->save();
             return view('plans.addactions')->with('plan', $plan);
         } else {
             return view('plans.addtasks')->with('plan', $plan);
         }
+    }
+
+    public function addTask(Request $request, Plan $plan)
+    {
+        $newtask = Task::create($request->all());
+        $newtask->date = Carbon::createFromFormat("Y-m-d", $request->duedate)->toDateTimeString();
+        $newtask->collaborators = implode("__,__", $request->collabs);
+        $newtask->save();
+        return view('plans.addtasks')->with('plan', $plan);
     }
 }
