@@ -46,7 +46,7 @@
                 foreach($plan->goals as $goal)
                     $allgoals[] = $goal;
                 usort($allgoals, "sort_by_body");
-                $goalcount = count($allgoals)
+                $goalcount = count($allgoals);
                 ?>
                 @if($goalcount > 0)
                     <form>
