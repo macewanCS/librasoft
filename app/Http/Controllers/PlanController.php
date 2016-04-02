@@ -30,6 +30,26 @@ class PlanController extends Controller
         return back();
     }
 
+    public function addObjective(Request $request){
+        $plan = Plan::first();
+        $goal = $plan->goals->where('body', $request->goal);
+        $objective = new Objective();
+        $objective->body = $request->body;
+        $goal->addObjectives($objective);
+        return back();
+
+    }
+
+    public function addAction(Request $request){
+        $plan = Plan::first();
+        $goal = $plan->goals->where('body', $request->goal);
+        $objective = $goal->objectives->where('body', $request->objective);
+        $action = new Action();
+        $action->body = $request->body;
+        $objective->addAction($action);
+    }
+
+
     public function showPlan() {
         return view('createPlan');
     }

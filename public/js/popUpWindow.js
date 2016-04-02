@@ -67,10 +67,36 @@ function showDetails(){
     });
 }
 
-function addGoal() {
-    $("#addGoal").dialog({
+function newGoal() {
+    $("#newGoal").dialog({
         maxHeight: 210,
         minHeight: 210,
+        maxWidth: 700,
+        minWidth: 700,
+        draggable: false,
+        resizable: false,
+        dialogClass: 'no-close success-dialog',
+        modal: true
+    });
+}
+
+function newObjective(){
+    $( "#newObjective" ).dialog({
+        maxHeight: 300,
+        minHeight: 300,
+        maxWidth: 700,
+        minWidth: 700,
+        draggable: false,
+        resizable: false,
+        dialogClass: 'no-close success-dialog',
+        modal: true
+    });
+}
+
+function newAction(){
+    $( "#newAction" ).dialog({
+        maxHeight: 375,
+        minHeight: 375,
         maxWidth: 700,
         minWidth: 700,
         draggable: false,
