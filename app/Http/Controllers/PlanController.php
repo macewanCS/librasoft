@@ -22,22 +22,24 @@ class PlanController extends Controller
     }
 
     public function addNewGoal(Request $request){
-        $plan = Plan::first();
+        $plans = Plan::all();
+        $plan = $plans->where('startdate', $request->plan)->first();
         $goal = new Goal();
         $goal->body = $request->body;
+        //$goal->plan_id = $plan->id;
         $plan->goals()->save($goal);
         $plan->addGoal($goal);
         return back();
     }
 
     public function addNewObjective(Request $request){
-        $plan = Plan::first();
-        $goal = $plan->goals->where('body', $request->goal);
+        $plans = Plan::all();
+        $plan = $plans->where('startdate', $request->plan)->first();
+        $goal = $plan->goals->where('body', $request->goal)->first();
         $objective = new Objective();
         $objective->body = $request->body;
         $goal->addObjectives($objective);
         return back();
-
     }
 
     public function addNewAction(Request $request){

@@ -82,10 +82,11 @@
             @role('admin')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newGoal()">Add Goal</a>
-            <!--<a role="button" class="btn btn-primary" href="#" onclick="newObjective()">Add Objective</a>
-            <a role="button" class="btn btn-primary" href="#" onclick="newAction()">Add Action</a>-->
+            <a role="button" class="btn btn-primary" href="#" onclick="newObjective()">Add Objective</a>
+            <a role="button" class="btn btn-primary" href="#" onclick="newAction()">Add Action</a>
             <a role="button" class="btn btn-primary" href="/createplan">New Business Plan</a>
             <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
+
             @endrole
             <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
             <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
@@ -252,7 +253,18 @@
     <div class="hide fade">
         <div id="newGoal"  title="Add a new Goal" class="panel panel-primary">
             <div class="panel-body" >
+                <?php
+                    $plans = Plan::all();
+                    ?>
                 <form method="post" action="/plan/{{$plan->id}}/goals">
+                    <div class="form-group">
+                        <label>Choose Plan:</label>
+                        <select class="form-control" name="plan">
+                            @foreach($plans as $planS)
+                                <option>{{$planS->startdate}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Goal Name:</label>
                         <textarea name="body" class="form-control" placeholder="Enter a goal name..."></textarea>
@@ -270,6 +282,14 @@
         <div id="newObjective"  title="Add a new Objective" class="panel panel-primary">
             <div class="panel-body" >
                 <form method="post" action="/plan/{{$plan->id}}/goal/objective">
+                    <div class="form-group">
+                        <label>Choose Plan:</label>
+                        <select class="form-control" name="plan">
+                            @foreach($plans as $planS)
+                                <option>{{$planS->startdate}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Choose Goal:</label>
                         <select class="form-control" name="goal">
