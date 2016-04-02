@@ -253,7 +253,15 @@
     <div class="hide fade">
         <div id="newGoal"  title="Add a new Goal" class="panel panel-primary">
             <div class="panel-body" >
+                <?php
+                    $plans = Plan::all();
+                    ?>
                 <form method="post" action="/plan/{{$plan->id}}/goals">
+                    <select class="form-control" name="plan">
+                        @foreach($plans as $planS)
+                            <option>{{$planS->startdate}}</option>
+                        @endforeach
+                    </select>
                     <div class="form-group">
                         <label>Goal Name:</label>
                         <textarea name="body" class="form-control" placeholder="Enter a goal name..."></textarea>

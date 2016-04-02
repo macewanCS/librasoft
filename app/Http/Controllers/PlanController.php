@@ -22,9 +22,11 @@ class PlanController extends Controller
     }
 
     public function addNewGoal(Request $request){
-        $plan = Plan::first();
+        $plans = Plan::all();
+        $plan = $plans->where('startdate', $request->plan)->first();
         $goal = new Goal();
         $goal->body = $request->body;
+        //$goal->plan_id = $plan->id;
         $plan->goals()->save($goal);
         $plan->addGoal($goal);
         return back();
