@@ -10,17 +10,17 @@
             </div>
             <div class="panel-body">
                 <form>
-            <div class="form-group">
-                <label for="planStartDate">Plan Start Date</label>
-                <input type="text" class="form-control" id="planStartDate" name="startdate" placeholder="{{ $plan->startdate }}" disabled>
-                <span id="helpBlock" class="help-block">Please enter the start date in the form of YYYY-MM-DD. For example, 2018-10-24.</span>
-            </div>
-            <div class="form-group">
-                <label for="planEndDate">Plan End Date</label>
-                <input type="text" class="form-control" id="planEndDate" name="enddate" placeholder="{{ $plan->enddate }}" disabled>
-                <span id="helpBlock" class="help-block">Please enter the end date in the form of YYYY-MM-DD. For example, 2020-10-24.</span>
-            </div>
-        </form>
+                    <div class="form-group">
+                        <label for="planStartDate">Plan Start Date</label>
+                        <input type="text" class="form-control" id="planStartDate" name="startdate" placeholder="{{ $plan->startdate }}" disabled>
+                        <span id="helpBlock" class="help-block">Please enter the start date in the form of YYYY-MM-DD. For example, 2018-10-24.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="planEndDate">Plan End Date</label>
+                        <input type="text" class="form-control" id="planEndDate" name="enddate" placeholder="{{ $plan->enddate }}" disabled>
+                        <span id="helpBlock" class="help-block">Please enter the end date in the form of YYYY-MM-DD. For example, 2020-10-24.</span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

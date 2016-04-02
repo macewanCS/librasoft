@@ -43,18 +43,18 @@
                     </form>
                 @endif
                 <form method="post" action="/createplan/{{ $plan->id }}/addgoals">
-            <div class="form-group">
-                <label for="newGoal">New Goal</label>
-                <input type="text" name="body" class="form-control" id="newGoal" placeholder="Enter a name...">
-                <span id="helpBlock" class="help-block">Please enter a goal name.</span>
-            </div>
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="plan_id" value="{{ $plan->id }}">
-            <div class="btn-group" style="float: right;">
-                <button type="submit" class="btn btn-primary" name="add" style="background: #6FC144">Add Goal</button>
-                <button type="submit" class="btn btn-primary" name="done" style="background: #6FC144">Done</button>
-            </div>
-        </form>
+                    <div class="form-group">
+                        <label for="newGoal">New Goal</label>
+                        <input type="text" name="body" class="form-control" id="newGoal" placeholder="Enter a name...">
+                        <span id="helpBlock" class="help-block">Please enter a goal name.</span>
+                    </div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="plan_id" value="{{ $plan->id }}">
+                    <div class="btn-group" style="float: right;">
+                        <button type="submit" class="btn btn-primary" name="add" style="background: #6FC144">Add Goal</button>
+                        <button type="submit" class="btn btn-primary" name="done" style="background: #6FC144">Done</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
