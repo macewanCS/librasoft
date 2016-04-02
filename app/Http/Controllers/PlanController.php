@@ -100,4 +100,9 @@ class PlanController extends Controller
     public function edit() {
         return view('plan.edit', compact(''));
     }
+
+    public function show(Plan $plan)
+    {
+        return view('plan')->with('plan', $plan);
+    }
 }
