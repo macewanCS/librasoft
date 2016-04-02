@@ -257,11 +257,14 @@
                     $plans = Plan::all();
                     ?>
                 <form method="post" action="/plan/{{$plan->id}}/goals">
-                    <select class="form-control" name="plan">
-                        @foreach($plans as $planS)
-                            <option>{{$planS->startdate}}</option>
-                        @endforeach
-                    </select>
+                    <div class="form-group">
+                        <label>Choose Plan:</label>
+                        <select class="form-control" name="plan">
+                            @foreach($plans as $planS)
+                                <option>{{$planS->startdate}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Goal Name:</label>
                         <textarea name="body" class="form-control" placeholder="Enter a goal name..."></textarea>
@@ -279,6 +282,14 @@
         <div id="newObjective"  title="Add a new Objective" class="panel panel-primary">
             <div class="panel-body" >
                 <form method="post" action="/plan/{{$plan->id}}/goal/objective">
+                    <div class="form-group">
+                        <label>Choose Plan:</label>
+                        <select class="form-control" name="plan">
+                            @foreach($plans as $planS)
+                                <option>{{$planS->startdate}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Choose Goal:</label>
                         <select class="form-control" name="goal">
