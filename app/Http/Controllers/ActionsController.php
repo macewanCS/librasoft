@@ -120,7 +120,7 @@ class ActionsController extends Controller
                 $value .= "__" . \App\User::where('name', $leads[$i])->first()->email;
             }
             else {
-                $value .= "__," . \App\User::where('name', $leads[$i])->first()->email . "__";
+                $value .= "__" . \App\User::where('name', $leads[$i])->first()->email . "__,";
             }
 
         }
