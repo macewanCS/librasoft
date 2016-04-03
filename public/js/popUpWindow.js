@@ -95,8 +95,8 @@ function newObjective(){
 
 function newAction(){
     $( "#newAction" ).dialog({
-        maxHeight: 375,
-        minHeight: 375,
+        maxHeight: 450,
+        minHeight: 450,
         maxWidth: 700,
         minWidth: 700,
         draggable: false,
