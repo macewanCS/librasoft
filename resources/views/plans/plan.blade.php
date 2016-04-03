@@ -532,7 +532,7 @@
                     'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                 tokenSeparators: [","," "]
             },
-            //url: '{{URL::to("/")}}/plan/action/lead',
+            url: '{{URL::to("/")}}/plan/action/lead',
             title: 'Input Leads',
             send: 'always',
             ajaxOptions: {
@@ -551,7 +551,7 @@
                     'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                 tokenSeparators: [","," "]
             },
-            //url: '{{URL::to("/")}}/plan/task/lead',
+            url: '{{URL::to("/")}}/plan/task/lead',
             title: 'Input Leads',
             send: 'always',
             ajaxOptions: {
