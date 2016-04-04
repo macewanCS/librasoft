@@ -113,9 +113,22 @@ class TasksController extends Controller
 
         $col = 'lead';
 
-        //get new success
-        $value = $request->value;
-        $value = User::where('name', $value);
+        $leads = $request->value;
+        $value = "";
+
+
+        for ($i= 0; $i < count($leads); $i++) {
+            if($i === 0) {
+                $value .= \App\User::where('name', $leads[$i])->first()->email . "__,";
+            }
+            elseif($i === count($leads)-1) {
+                $value .= "__" . \App\User::where('name', $leads[$i])->first()->email;
+            }
+            else {
+                $value .= "__," . \App\User::where('name', $leads[$i])->first()->email . "__";
+            }
+
+        }
 
         //Get action data row where success is stored
         if ($finditem = Task::where('id', $pk)->update([$col => $value]))
