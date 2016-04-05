@@ -36,4 +36,26 @@ class RegisterController extends Controller
         //$user->assignrole($data['department']);
         return back();
     }
+
+    public function edit(Request $request)
+    {
+        $user = User::find($request->id);
+        return view('auth/editUser')->with("user", $user);
+    }
+
+    public function update(Request $request)
+    {
+        $user = User::find($request->id);
+        if (isset($request->save)) {
+            $user->name = $request->name;
+            $user->department = $request->department;
+            $user->team = $request->team;
+            $user->permission = $request->permission;
+            $user->assignRole(strtolower($request->permission));
+            $user->save();
+        } else {
+            $user->delete();
+        }
+        return view('auth/addUser');
+    }
 }
