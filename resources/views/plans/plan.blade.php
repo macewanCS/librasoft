@@ -85,8 +85,8 @@
             <a role="button" class="btn btn-primary" href="#" onclick="newObjective()">Add Objective</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newAction()">Add Action</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newTask()">Add Task</a>
-            <!--<a role="button" class="btn btn-primary" href="/createplan">New Business Plan</a>-->
-            <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
+            <a role="button" class="btn btn-primary" href="/createplan">New Business Plan</a>
+            <!--<a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>-->
 
             @endrole
             <a role="button" class="btn btn-primary" href="/print/{{ $plan->id }}">Print Plan</a>
