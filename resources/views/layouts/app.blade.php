@@ -119,6 +119,7 @@
                                 </div>
                             </form>
                         </li>
+
                         @permission('view.mywork')<li><a href="{{ url('/register') }}">Register</a></li>@endpermission
                         <!-- Authentication Links -->
                         @if (Auth::guest())

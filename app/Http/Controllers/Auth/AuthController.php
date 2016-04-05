@@ -37,7 +37,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    //protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -70,7 +70,7 @@ class AuthController extends Controller
      * @param array|Request $data
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    protected function create(Request $data)
+    /*protected function create(Request $data)
     {
         $user = new User();
 
@@ -83,5 +83,5 @@ class AuthController extends Controller
         ]);
         //$user->assignrole($data['department']);
         return back();
-    }
+    }*/
 }

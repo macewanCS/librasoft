@@ -33,6 +33,8 @@ Route::post('plan/{plan}/goal/objective', 'PlanController@addNewObjective');
 Route::post('plan/{plan}/goal/objective/action', 'PlanController@addNewAction');
 Route::post('plan/{plan}/goal/objective/action/task','PlanController@addNewTask');
 
+Route::get('addUser', 'RegisterController@register');
+Route::post('addUser','RegisterController@addNewUser');
 
 Route::get('manage', 'ManageController@manage');
 Route::get('tasks/{task}', 'TasksController@show');
