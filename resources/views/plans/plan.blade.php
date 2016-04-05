@@ -398,11 +398,20 @@
 <script>
     $(function() {
 
-        $.fn.editable.defaults.mode = 'popup'
+        var defaults = {
+            disabled: true,
+            mode: 'popup',
+            //toggle: 'manual',
+            showbuttons: true,
+            //onblur: 'ignore',
+            inputclass: 'input-large',
+            //savenochange: true,
+            /*success: function () {
+                return false;
+            }*/
+        };
 
-        $('#edit').click(function () {
-            $('#table-edit .editable').editable('toggleDisabled');
-        });
+        $.extend($.fn.editable.defaults, defaults);
 
         $(function(value) {
             if ($.trim(value) == '')
@@ -589,6 +598,10 @@
             ajaxOptions: {
                 datatype: 'json'
             }
+        });
+
+        $('#edit').click(function () {
+            $('#table-edit .editable').editable('toggleDisabled');
         });
     });
 </script>
