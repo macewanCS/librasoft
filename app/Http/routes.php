@@ -142,7 +142,7 @@ Route::post('plan/task/status', 'TasksController@postStatus');
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
 // role
-Blade::directive('role', function ($expression) {
+/*Blade::directive('role', function ($expression) {
     return "<?php if (Auth::check() && Auth::User()->is{$expression}): ?>";
 });
 
@@ -157,6 +157,6 @@ Blade::directive('permission', function ($expression) {
 
 Blade::directive('endpermission', function () {
     return "<?php endif; ?>";
-});
+});*/
 
 
