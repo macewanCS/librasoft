@@ -53,6 +53,19 @@ class PlanController extends Controller
         return back();
     }
 
+    public function addNewTask(Request $request){
+        $plans = Plan::all();
+        $plan = $plans->where('startdate', $request->plan)->first();
+        $goal = $plan->goals->where('body', $request->goal)->first();
+        $objective = $goal->objectives->where('body', $request->objective)->first();
+        $action = $objective->actions->where('body', $request->action)->first();
+        echo "$action";
+        $task = new Task();
+        $task->body = $request->body;
+        $action->addTask($task);
+        return back();
+    }
+
 
     public function showPlan() {
         return view('createPlan');
