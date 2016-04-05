@@ -69,8 +69,8 @@ function showDetails(){
 
 function newGoal() {
     $("#newGoal").dialog({
-        maxHeight: 290,
-        minHeight: 290,
+        maxHeight: 220,
+        minHeight: 220,
         maxWidth: 700,
         minWidth: 700,
         draggable: false,
@@ -82,8 +82,8 @@ function newGoal() {
 
 function newObjective(){
     $( "#newObjective" ).dialog({
-        maxHeight: 370,
-        minHeight: 370,
+        maxHeight: 300,
+        minHeight: 300,
         maxWidth: 700,
         minWidth: 700,
         draggable: false,
@@ -95,8 +95,8 @@ function newObjective(){
 
 function newAction(){
     $( "#newAction" ).dialog({
-        maxHeight: 450,
-        minHeight: 450,
+        maxHeight: 380,
+        minHeight: 380,
         maxWidth: 700,
         minWidth: 700,
         draggable: false,
