@@ -6,6 +6,24 @@
   height: 34px;
 }
 
+/*#task-description a {
+    color: #337ab7;
+}
+
+#task-description a:hover {
+  text-decoration: underline;
+  cursor: hand;
+}
+
+#action-description a {
+  color: #337ab7;
+}
+
+#action-description a:hover {
+  text-decoration: underline;
+  cursor: hand;
+}*/
+
 .navbar-spacing {
   padding-left: 20px; }
 
