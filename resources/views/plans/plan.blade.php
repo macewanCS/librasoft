@@ -84,8 +84,8 @@
             <a role="button" class="btn btn-primary" href="#" onclick="newGoal()">Add Goal</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newObjective()">Add Objective</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newAction()">Add Action</a>
-            <a role="button" class="btn btn-primary" href="/createplan">New Business Plan</a>
-            <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
+            <!--<a role="button" class="btn btn-primary" href="/createplan">New Business Plan</a>-->
+            <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a>
 
             @endrole
             <a role="button" class="btn btn-primary" href="/print/{{ $plan->id }}">Print Plan</a>
@@ -253,16 +253,11 @@
     <div class="hide fade">
         <div id="newGoal"  title="Add a new Goal" class="panel panel-primary">
             <div class="panel-body" >
-                <?php
-                    $plans = Plan::all();
-                    ?>
                 <form method="post" action="/plan/{{$plan->id}}/goals">
-                    <div class="form-group">
-                        <label>Choose Plan:</label>
+                    <div class="form-group hide">
+                        <label>Plan year:</label>
                         <select class="form-control" name="plan">
-                            @foreach($plans as $planS)
-                                <option>{{$planS->startdate}}</option>
-                            @endforeach
+                            <option>{{$plan->startdate}}</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -282,7 +277,7 @@
         <div id="newObjective"  title="Add a new Objective" class="panel panel-primary">
             <div class="panel-body" >
                 <form method="post" action="/plan/{{$plan->id}}/goal/objective">
-                    <div class="form-group">
+                    <div class="form-group hide">
                         <label>Plan year:</label>
                         <select class="form-control" name="plan">
                             <option>{{$plan->startdate}}</option>
@@ -313,7 +308,7 @@
         <div id="newAction"  title="Add a new Action" class="panel panel-primary">
             <div class="panel-body" >
                 <form method="post" action="/plan/{{$plan->id}}/goal/objective/action">
-                    <div class="form-group">
+                    <div class="form-group hide">
                         <label>Plan year:</label>
                         <select class="form-control" name="plan">
                             <option>{{$plan->startdate}}</option>

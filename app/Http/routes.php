@@ -71,7 +71,7 @@ Route::Controllers([
 
 ]);
 
-
+Route::auth();
 // auth
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
