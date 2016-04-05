@@ -105,3 +105,16 @@ function newAction(){
         modal: true
     });
 }
+
+function newTask(){
+    $( "#newTask" ).dialog({
+        maxHeight: 460,
+        minHeight: 460,
+        maxWidth: 700,
+        minWidth: 700,
+        draggable: false,
+        resizable: false,
+        dialogClass: 'no-close success-dialog',
+        modal: true
+    });
+}
