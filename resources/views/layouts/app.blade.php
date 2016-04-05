@@ -120,7 +120,7 @@
                             </form>
                         </li>
 
-                        @permission('view.mywork')<li><a href="{{ url('/register') }}">Register</a></li>@endpermission
+                        @permission('view.mywork')<li><a href="{{ url('/register') }}">Add User</a></li>@endpermission
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
