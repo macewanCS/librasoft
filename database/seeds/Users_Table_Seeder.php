@@ -39,7 +39,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'jmcphee@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
-            'team'          => 'Foundational Programming Team',
+            'team'          => 'Events Team',
             'permission'    => 'DepLead'
         ]);
         $jmcphee->assignRole('admin');
