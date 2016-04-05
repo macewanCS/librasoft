@@ -102,7 +102,7 @@
                     <ul class="nav navbar-nav navbar-listing">
                         <li class="navbar-item navbar-spacing"><a @if($_SERVER['REQUEST_URI'] == "/") class="active-navbar-element" @endif href="{{ url('/') }}">Dashboard</a></li>
                         <li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/plan") class="active-navbar-element" @endif  href="{{ url('/plan') }}">Plan</a></li>
-                        <li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/mywork") class="active-navbar-element" @endif href="{{ url('/mywork') }}">My Work</a></li>
+                        @permission('view.mywork')<li class="navbar-item"><a @if($_SERVER['REQUEST_URI'] == "/mywork") class="active-navbar-element" @endif href="{{ url('/mywork') }}">My Work</a></li>@endpermission
                     </ul>
 
                     <!-- Right Side Of Navbar -->
