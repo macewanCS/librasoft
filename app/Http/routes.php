@@ -11,6 +11,8 @@
 |
 */
 
+use App\Plan;
+
 Route::get('/', function () {
     //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
 
@@ -36,9 +38,9 @@ Route::get('tasks/{task}', 'TasksController@show');
 
 Route::post('tasks/{task}/notes', 'NotesController@store');
 
-Route::get('sort/{option}', function ($option) {return view ('sort')->with('option', $option);});
-Route::get('sort/dept/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
-Route::get('sort/team/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
+Route::get('sort/{plan}/{option}', function ($plan, $option) {return view ('sort')->with('option', $option)->with('plan', Plan::findOrFail($plan));});
+Route::get('sort/{plan}/dept/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
+Route::get('sort/{plan}/team/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
 
 Route::get('notes/show/{note}', 'NotesController@show');
 Route::get('goals/show/{goal}', 'GoalsController@show');
@@ -48,10 +50,10 @@ Route::get('tasks/show/{task}', 'TasksController@show');
 Route::get('teams/show/{team}', 'TeamsController@show');
 Route::get('users/show/{id}', 'ProfileController@show');
 Route::get('objectives/show/{objective}', 'ObjsController@show');
-Route::get('print', 'ExportController@minimal');
+Route::get('print/{plan}', 'ExportController@minimal');
 
 Route::post('search', 'SearchController@search');
-Route::get("export/tsv", 'ExportController@tabs');
+Route::get("export/tsv/{plan}", 'ExportController@tabs');
 Route::get("tasks/{task}/markcomplete", "TasksController@MarkComplete");
 Route::get("plan/{plan}", "PlanController@show");
 Route::get("createplan", "NewPlanController@showNewPlan");
@@ -98,9 +100,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::post('tasks/{task}/notes', 'NotesController@store');
 
-    Route::get('sort/{option}', function ($option) {return view ('sort')->with('option', $option);});
-    Route::get('sort/dept/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
-    Route::get('sort/team/{dept}', function ($dept) {return view ('filterbyteamdept')->with('dept', $dept);});
+    Route::get('sort/{plan}/{option}', function (Plan $plan, $option) {return view ('sort')->with('option', $option)->with('plan', $plan);});
+    Route::get('sort/{plan}/dept/{dept}', function (Plan $plan, $dept) {return view ('filterbyteamdept')->with('dept', $dept)->with('plan', $plan);});
+    Route::get('sort/{plan}/team/{dept}', function (Plan $plan, $dept) {return view ('filterbyteamdept')->with('dept', $dept)->with('plan', $plan);});
 
     Route::get('notes/show/{note}', 'NotesController@show');
     Route::get('goals/show/{goal}', 'GoalsController@show');

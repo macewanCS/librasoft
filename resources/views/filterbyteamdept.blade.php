@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    function sort_by_body($a, $b) {
+        return strcmp($a->body, $b->body);
+    }
+    ?>
 
     <div class="content">
         <div class="panel panel-primary options-panel">
@@ -16,7 +21,7 @@
                     ?>
 
                     @foreach($filter_options as $option)
-                        <a type="button" class="btn btn-primary" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                        <a type="button" class="btn btn-primary" href="/sort/{{ $plan->id }}/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
                     @endforeach
 
 
@@ -28,19 +33,17 @@
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Departments</li>
                             @foreach($dept_options as $dept_option)
-                                <?php $lower_option = strtolower($dept_option->name); ?>
-                                <li @if($lower_option == $dept) class="disabled" @endif><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
+                                <li @if(strtolower($dept_option->name) == $dept) class="disabled" @endif><a href="/sort/{{ $plan->id }}/dept/{{ strtolower($dept_option->name) }}">{{ $dept_option->name }}</a></li>
                             @endforeach
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Teams</li>
                             @foreach($team_options as $team_option)
-                                <?php $lower_option = strtolower($team_option->name); ?>
-                                <li @if($lower_option == $dept) class="disabled" @endif><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
+                                <li @if(strtolower($team_option->name) == $dept) class="disabled" @endif><a href="/sort/{{ $plan->id }}/team/{{ strtolower($team_option->name) }}">{{ $team_option->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
 
-                    <a type="button" class="btn btn-primary" href="/plan">Clear Filter</a>
+                    <a type="button" class="btn btn-primary" href="/plan/{{ $plan->id }}">Clear Filter</a>
                 </div>
             </div>
         </div>
@@ -49,11 +52,16 @@
     <div class="sort-panel">
     <div class="panel panel-primary">
         <div class="panel-heading" style="background: #009FD7;">
-            <h4 class="panel-title">{{ ucwords(strtolower($dept)) }}</h4>
+            <h4 class="panel-title">{{ ucwords($dept) }}</h4>
         </div>
         <?php
-        use \App\Action;
-            $results = Action::where('owner', strtolower($dept))->get();
+        $results = array();
+            foreach($plan->goals as $goal)
+                foreach ($goal->objectives as $objective)
+                    foreach ($objective->actions as $action)
+                        if (strtolower($action->owner) == strtolower($dept))
+                            $results[] = $action;
+        usort($results, "sort_by_body");
         ?>
 
         @if(count($results) < 1)
@@ -96,7 +104,13 @@
                         <td class="suc">{{ $result->success }}</td>
                         <td class="stat">{{ $result->status }}</td>
                     </tr>
-                    @foreach($result->tasks as $task)
+                    <?php
+                    $tasks = array();
+                    foreach ($result->tasks as $task)
+                        $tasks[] = $task;
+                    usort($tasks, "sort_by_body");
+                    ?>
+                    @foreach($tasks as $task)
                         <tr>
                             <td class="desc"><a href="/tasks/show/{{ $task->id }}">Task: {{ $task->body }}</a></td>
                             <td class="due">{{ $task->date }}</td>

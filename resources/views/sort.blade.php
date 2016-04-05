@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    function sort_by_body($a, $b) {
+        return strcmp($a->body, $b->body);
+    }
+    ?>
 
     <div class="content">
 
@@ -18,7 +23,7 @@
 
                     @foreach($filter_options as $filter_option)
                         <?php $lower_option = strtolower(preg_replace('/[^a-z0-9]+/i', '', $filter_option)); ?>
-                        <a type="button" class="btn btn-primary" href="/sort/{{ $lower_option }}" @if($lower_option == $option) disabled="disabled" @endif>{{ $filter_option }}</a>
+                        <a type="button" class="btn btn-primary" href="/sort/{{ $plan->id }}/{{ $lower_option }}" @if($lower_option == $option) disabled="disabled" @endif>{{ $filter_option }}</a>
                     @endforeach
 
 
@@ -31,17 +36,17 @@
                             <li class="dropdown-header">Departments</li>
                             @foreach($dept_options as $dept_option)
                                 <?php $lower_option = strtolower($dept_option->name); ?>
-                                <li><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
+                                <li><a href="/sort/{{ $plan->id }}/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
                             @endforeach
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Teams</li>
                             @foreach($team_options as $team_option)
                                 <?php $lower_option = strtolower($team_option->name); ?>
-                                <li><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
+                                <li><a href="/sort/{{ $plan->id }}/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
-                    <a type="button" class="btn btn-primary" href="/plan">Clear Filter</a>
+                    <a type="button" class="btn btn-primary" href="/plan/{{ $plan->id }}">Clear Filter</a>
                 </div>
             </div>
         </div>
@@ -67,11 +72,19 @@
 
                     <tbody>
                     <?php
-                    if ($option == 'actions') {
-                        $results = DB::table('actions')->orderBy('item', 'asc')->get();
-                    } else {
-                        $results = DB::table('tasks')->orderBy('body', 'asc')->get();
+                    $results = array();
+                    foreach($plan->goals as $goal)
+                        foreach($goal->objectives as $objective)
+                            foreach($objective->actions as $action)
+                                $results[] = $action;
+                    if ($option == "tasks") {
+                        $tasks = array();
+                        foreach ($results as $action)
+                            foreach($action->tasks as $task)
+                                $tasks[] = $task;
+                        $results = $tasks;
                     }
+                    usort($results, "sort_by_body")
                     ?>
 
                     @foreach($results as $data)
