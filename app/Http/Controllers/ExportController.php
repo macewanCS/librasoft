@@ -12,17 +12,17 @@ use View;
 
 class ExportController extends Controller
 {
-    public function minimal()
+    public function minimal(Plan $plan)
     {
-        return view('export.minimal')->with("plan", Plan::first());
+        return view('export.minimal')->with("plan", $plan);
     }
 
-    public function tabs()
+    public function tabs(Plan $plan)
     {
         // Take a business plan and create a tsv representation
         $tsv = "Type\tDescription\tDue\tOwner\tLead\tCollaborators\tStatus\tSuccess Measures\r\n";
 
-        foreach (Plan::first()->goals()->orderBy('body', 'asc')->get() as $goal) {
+        foreach ($plan->goals()->orderBy('body', 'asc')->get() as $goal) {
             $tsv .= "Goal\t" . $goal->body . str_repeat("\t", 6) . "\r\n";
 
             if (count($goal->objectives->all()) > 0) {

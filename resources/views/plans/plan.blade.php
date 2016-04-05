@@ -53,7 +53,7 @@
             ?>
 
             @foreach($filter_options as $option)
-                <a type="button" class="btn btn-primary" href="/sort/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
+                <a type="button" class="btn btn-primary" href="/sort/{{ $plan->id }}/{{ strtolower(preg_replace('/[^a-z0-9]+/i', '', $option)) }}">{{ $option }}</a>
             @endforeach
 
 
@@ -66,13 +66,13 @@
                     <li class="dropdown-header">Departments</li>
                     @foreach($dept_options as $dept_option)
                         <?php $lower_option = strtolower($dept_option->name); ?>
-                        <li><a href="/sort/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
+                        <li><a href="/sort/{{ $plan->id }}/dept/{{ $lower_option }}">{{ $dept_option->name }}</a></li>
                     @endforeach
                     <li role="separator" class="divider"></li>
                     <li class="dropdown-header">Teams</li>
                     @foreach($team_options as $team_option)
                         <?php $lower_option = strtolower($team_option->name); ?>
-                        <li><a href="/sort/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
+                        <li><a href="/sort/{{ $plan->id }}/team/{{ $lower_option }}">{{ $team_option->name }}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -88,8 +88,8 @@
             <!-- <a role="button" class="btn btn-primary" href="plan/new">New Business Plan</a> -->
 
             @endrole
-            <a role="button" class="btn btn-primary" href="/print">Print Plan</a>
-            <a role="button" class="btn btn-primary" href="/export/tsv">Export to TSV</a>
+            <a role="button" class="btn btn-primary" href="/print/{{ $plan->id }}">Print Plan</a>
+            <a role="button" class="btn btn-primary" href="/export/tsv/{{ $plan->id }}">Export to TSV</a>
         </div>
     </div>
 </div>
