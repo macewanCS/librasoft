@@ -62,8 +62,8 @@
 
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="btn-group" style="float: right;">
-                    <button type="submit" class="btn btn-primary" name="save" style="background: #E40D5D">Save</button>
-                    <button type="submit" class="btn btn-primary" name="delete" style="background: #E40D5D">Delete User</button>
+                    <button type="submit" class="btn btn-primary" name="save">Save</button>
+                    <button type="submit" class="btn btn-primary" name="delete">Delete User</button>
                 </div>
             </form>
         </div>
