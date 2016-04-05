@@ -64,7 +64,7 @@
             }
         });
     </script>
-    
+
 
     <style>
         body {
@@ -120,7 +120,7 @@
                             </form>
                         </li>
 
-                        @permission('view.mywork')<li><a href="{{ url('/register') }}">Add User</a></li>@endpermission
+                        @permission('view.mywork')<li><a href="{{ url('/usermanagement') }}">Admin</a></li>@endpermission
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
