@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -66,19 +67,21 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return User
+     * @param array|Request $data
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
         $user = new User();
-        $user->assignrole($data['department']);
-        return $user->create([
+
+        $user->create([
             'name' => $data['name'],
             'email' => $data['email'],
             'department' => $data['department'],
             'permission' => $data['permission'],
             'password' => bcrypt($data['password']),
         ]);
+        //$user->assignrole($data['department']);
+        return back();
     }
 }
