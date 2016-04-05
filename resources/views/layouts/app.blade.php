@@ -114,7 +114,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search" name="term">
                                     <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-default" href="/search">Go</button>
+                                        <button id="search-go" type="submit" class="btn btn-default" href="/search">Go</button>
                                     </span>
                                 </div>
                             </form>
