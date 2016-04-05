@@ -244,22 +244,55 @@
                                     <table name="actiontable3" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA3" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA3" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA3" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA3" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA3" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA3" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -271,22 +304,55 @@
                                     <table name="actiontable4" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA4" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA4" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA4" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA4" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA4" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA4" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -307,22 +373,55 @@
                                     <table name="actiontable5" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA5" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA5" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA5" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA5" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA5" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA5" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -334,22 +433,55 @@
                                     <table name="actiontable6" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA6" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA6" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA6" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA6" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA6" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA6" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -370,22 +502,55 @@
                                     <table name="actiontable7" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA7" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA7" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA7" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA7" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA7" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA7" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -397,22 +562,55 @@
                                     <table name="actiontable8" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateA8" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerA8" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadA8" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabA8" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusA8" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successA8" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -433,22 +631,55 @@
                                     <table name="tasktable1" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT1" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT1" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT1" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT1" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT1" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT1" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -459,22 +690,55 @@
                                     <table name="tasktable2" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT2" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT2" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT2" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT2" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT2" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT2" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -494,22 +758,55 @@
                                     <table name="tasktable3" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT3" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT3" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT3" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT3" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT3" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT3" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -520,22 +817,55 @@
                                     <table name="tasktable4" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT4" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT4" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT4" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT4" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT4" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT4" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -555,22 +885,55 @@
                                     <table name="tasktable5" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT5" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT5" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT5" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT5" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT5" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT5" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -581,22 +944,55 @@
                                     <table name="tasktable5" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT6" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT6" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT6" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT6" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT6" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT6" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -616,22 +1012,55 @@
                                     <table name="tasktable7" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT7" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT7" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT7" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT7" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT7" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT7" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -642,22 +1071,55 @@
                                     <table name="tasktable8" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT8" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT8" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT8" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT8" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT8" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT8" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -677,22 +1139,55 @@
                                     <table name="tasktable9" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT9" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT9" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT9" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT9" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT9" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT9" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -703,22 +1198,55 @@
                                     <table name="tasktable10" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT10" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT10" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT10" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT10" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT10" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT10" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -738,22 +1266,55 @@
                                     <table name="tasktable11" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT11" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT11" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT11" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT11" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT11" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT11" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -764,22 +1325,55 @@
                                     <table name="tasktable12" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT12" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT12" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT12" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT12" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT12" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT12" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -799,22 +1393,55 @@
                                     <table name="tasktable13" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT13" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT13" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT13" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT13" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT13" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT13" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -825,22 +1452,55 @@
                                     <table name="tasktable14" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT14" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT14" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT14" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT14" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT14" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT14" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -860,22 +1520,55 @@
                                     <table name="tasktable15" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT15" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT15" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT15" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT15" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT15" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT15" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -886,22 +1579,55 @@
                                     <table name="tasktable16" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Due (YYYY/MM/DD)</th>
-                                            <th>Owner</th>
-                                            <th>Lead</th>
-                                            <th>Collaborators</th>
-                                            <th>Status</th>
-                                            <th>Success Measures</th>
+                                            <th class="pb-table-date">Due Date</th>
+                                            <th class="pb-table-owner">Owner</th>
+                                            <th class="pb-table-lead">Lead</th>
+                                            <th class="pb-table-collab">Collaborators</th>
+                                            <th class="pb-table-status">Status</th>
+                                            <th class="pb-table-success">Success Measures</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td contenteditable="true" id="date"></td>
-                                            <td contenteditable="true" id="owner"></td>
-                                            <td contenteditable="true" id="lead"></td>
-                                            <td contenteditable="true" id="collaborators"></td>
-                                            <td contenteditable="true" id="status"></td>
-                                            <td contenteditable="true" id="success"></td>
+                                            <td class="pb-table-date"><input name="dateT16" type="date" id="datepicker" class="pb-table-input"></td>
+                                            <td class="pb-table-owner">
+                                                <select name="ownerT16" class="pb-table-select">
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-lead">
+                                                <select name="leadT16" class="pb-table-select" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-collab">
+                                                <select name="collabT16" class="pb-table-select-collab" multiple>
+                                                    <option selected value>Select</option>
+                                                    @foreach ($users as $user)
+                                                        <option value="{{ $user->name }}">{{ $user->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($depts as $dept)
+                                                        <option value="{{ $user->name }}">{{ $dept->name }}</option>
+                                                    @endforeach
+                                                    @foreach ($teams as $team)
+                                                        <option value="{{ $user->name }}">{{ $team->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-status">
+                                                <select name="statusT16" class="pb-table-select-status">
+                                                    <option selected value>Select</option>
+                                                    <option value="In-Progress">In-Progress</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </td>
+                                            <td class="pb-table-success"><textarea name="successT16" rows="3" class="pb-text pb-table-text"></textarea></td>
                                         </tr>
                                         </tbody>
                                     </table>

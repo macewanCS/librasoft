@@ -19,6 +19,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'vvarga@epl.ca',
             'password'      => bcrypt('vicky'),
             'department'    => 'IT Services',
+            'team'          => '',
             'permission'    => 'BPLead'
         ]);
         $vicky->assignRole('admin');
@@ -28,6 +29,7 @@ class Users_Table_Seeder extends Seeder
             'email'=> 'admin@epl.ca',
             'password'=> bcrypt('password'),
             'department' => 'Admin',
+            'team'       => 'School Aged Services Team',
             'permission' => 'Admin'
         ]);
         $admin->assignRole('admin');
@@ -37,6 +39,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'jmcphee@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Foundational Programming Team',
             'permission'    => 'DepLead'
         ]);
         $jmcphee->assignRole('admin');
@@ -46,6 +49,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'lmackenzie@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Discovery Team',
             'permission'    => 'TeamLead'
         ]);
         $lmackenzie->assignRole('admin');
@@ -55,6 +59,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'ejones@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
         $ejones->assignRole('admin');
@@ -64,6 +69,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'jcrilly@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Events Team',
             'permission'    => 'BasicUser'
         ]);
         $jcrilly->assignRole('admin');
@@ -73,6 +79,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'dceo@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Events Team',
             'permission'    => 'BPLead'
         ]);
         $dceo->assignRole('admin');
@@ -82,6 +89,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'skarr@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Community-Led Team',
             'permission'    => 'BasicUser'
         ]);
         $skarr->assignRole('admin');
@@ -91,6 +99,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'dpsl@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
         $dpsl->assignRole('admin');
@@ -100,6 +109,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'pschoenberg@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Community-Led Team',
             'permission'    => 'BasicUser'
         ]);
         $pschoenberg->assignRole('admin');
@@ -109,6 +119,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'jwoods@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => '',
             'permission'    => 'BasicUser'
         ]);
         $jwoods->assignRole('admin');
@@ -118,6 +129,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'sforemski@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'School Aged Services Team',
             'permission'    => 'BasicUser'
         ]);
         $sforemski->assignRole('admin');
@@ -127,6 +139,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'bcrittenden@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'School Aged Services Team',
             'permission'    => 'BasicUser'
         ]);
         $bcrittenden->assignRole('admin');
@@ -136,6 +149,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'estuebing@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
         $estuebing->assignRole('admin');
@@ -145,6 +159,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'dmichael@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
         $dmichael->assignRole('admin');
@@ -154,6 +169,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'dluc@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
         $dluc->assignRole('admin');
@@ -163,6 +179,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'djohn@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
         $djohn->assignRole('admin');
@@ -172,6 +189,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'nandrew@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
         $nandrew->assignRole('admin');
@@ -181,6 +199,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'dchris@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Events Team',
             'permission'    => 'BasicUser'
         ]);
         $dchris->assignRole('admin');
@@ -190,6 +209,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'acarruthers@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Events Team',
             'permission'    => 'BasicUser'
         ]);
         $acarruthers->assignRole('admin');
@@ -199,6 +219,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'dkhalil@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
         $dkhalil->assignRole('admin');
@@ -208,6 +229,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'drobin@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
         $drobin->assignRole('admin');
@@ -217,6 +239,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'crachael@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Foundational Programming Team',
             'permission'    => 'BasicUser'
         ]);
         $crachael->assignRole('admin');
@@ -226,6 +249,7 @@ class Users_Table_Seeder extends Seeder
             'email'         => 'djamie@epl.ca',
             'password'      => bcrypt('password'),
             'department'    => 'IT Services',
+            'team'          => 'Foundational Programming Team',
             'permission'    => 'BasicUser'
         ]);
         $djamie->assignRole('admin');
