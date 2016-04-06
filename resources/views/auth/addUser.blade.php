@@ -2,10 +2,10 @@
 
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-primary">
+    <div class="col-md-6" style="padding: 10px;">
+
+
+            <div class="panel panel-primary">
                     <div class="panel-heading" style="background: #009FD7">Register</div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="/addUser">
@@ -113,7 +113,30 @@
                         </form>
                     </div>
                 </div>
+
+
+
+    </div>
+    <div class="col-md-6" style="padding: 10px;">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background: #009FD7">Edit</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="/edituser" style="padding: 15px;">
+                        <div class="form-group">
+                            <label for="userselect">Select a user to edit:</label>
+                            <select name="id" class="form-control" id="userselect" size=10 required>
+                                @foreach(App\User::orderBy("name", "asc")->get()->all() as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-primary" style="float: right;">Edit</button>
+                    </form>
+                </div>
             </div>
-        </div>
+
     </div>
 @endsection

@@ -95,8 +95,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('plan/done', 'PlanController@showDone');
     Route::get('mywork', 'MyWorkController@work');
     Route::get('profile/{user}', 'ProfileController@profile');
-    Route::get('register', 'RegisterController@register');
+    Route::get('usermanagement', 'RegisterController@register');
     Route::post('register', 'Auth\AuthController@create');
+    Route::post('edituser', 'RegisterController@edit');
+    Route::post('update', 'RegisterController@update');
     Route::get('tasks/{task}', 'TasksController@show');
     Route::get("plan/{plan}", "PlanController@show");
 
