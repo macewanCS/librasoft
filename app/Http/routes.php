@@ -59,6 +59,7 @@ Route::get('print/{plan}', 'ExportController@minimal');
 Route::post('search', 'SearchController@search');
 Route::get("export/tsv/{plan}", 'ExportController@tabs');
 Route::get("tasks/{task}/markcomplete", "TasksController@MarkComplete");
+Route::get('plan/new', 'PlanController@showPlan');
 Route::get("plan/{plan}", "PlanController@show");
 Route::get("createplan", "NewPlanController@showNewPlan");
 Route::post("createplan/addplan", "NewPlanController@newPlan");
