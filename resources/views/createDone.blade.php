@@ -9,14 +9,14 @@
                     <div class="panel-heading">Plan Builder</div>
 
                     <div class="panel-body">
-                        <div style="padding-left: 25px; padding-top: 15px">
-                            <label for="step2Label" class="col-sm-8" style="font-size: 14pt">
+                        <div class="pb-step">
+                            <label for="step2Label" class="pb-label">
                                 Congratulations! Your new business plan is finished!
                             </label>
                         </div>
-                        <div>
-                            <button class="col-sm-1" type="button" style="position: relative; left: 30px; top: 10px">Next</button>
-                        </div>
+                        <form method="get" action="/plan">
+                            <button class="pb-btn" type="submit">Next</button>
+                        </form>
                     </div>
                 </div>
             </div>
