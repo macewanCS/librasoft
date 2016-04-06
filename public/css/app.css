@@ -1,11 +1,6 @@
 .navbar-item {
   font-size: 14px; }
 
-#search-go {
-  padding-bottom: 3px;
-  height: 34px;
-}
-
 .navbar-spacing {
   padding-left: 20px; }
 
@@ -395,5 +390,30 @@ a .filter {
 
 .pb-table-text {
   width: 325px; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes backwards {
+  from {
+    -webkit-transform: rotate(360deg); }
+  to {
+    -webkit-transform: rotate(0deg); } }
+
+.prof {
+  -webkit-animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  width: 150px;
+  height: 200px; }
+
+.video-spin {
+  -webkit-animation-name: backwards;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear; }
 
 /*# sourceMappingURL=app.css.map */
