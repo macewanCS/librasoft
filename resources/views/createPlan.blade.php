@@ -20,7 +20,7 @@
         <div class="row">
             <div>
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Plan Builder</div>
+                    <div class="panel-heading" style="background: #009FD7;">Plan Builder</div>
 
                     <div class="panel-body">
                         Complete the following steps to get your new Business Plan up and running quickly!
@@ -135,7 +135,7 @@
                                                     </select>
                                                 </td>
                                                 <td class="pb-table-lead">
-                                                    <select name="leadA1" class="pb-table-select" multiple>
+                                                    <select name="leadA1[]" class="pb-table-select" multiple>
                                                         <option selected value>Select</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{$user->name}}">{{ $user->name }}</option>
@@ -143,7 +143,7 @@
                                                     </select>
                                                 </td>
                                                 <td class="pb-table-collab">
-                                                    <select name="collabA1" class="pb-table-select-collab" multiple>
+                                                    <select name="collabA1[]" class="pb-table-select-collab" multiple>
                                                         <option selected value>Select</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{$user->name}}">{{ $user->name }}</option>
@@ -195,7 +195,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA2" class="pb-table-select" multiple>
+                                                <select name="leadA2[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -203,7 +203,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA2" id="collabA2" class="pb-table-select-collab" multiple>
+                                                <select name="collabA2[]" id="collabA2" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -264,7 +264,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA3" class="pb-table-select" multiple>
+                                                <select name="leadA3[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -272,7 +272,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA3" class="pb-table-select-collab" multiple>
+                                                <select name="collabA3[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -324,7 +324,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA4" class="pb-table-select" multiple>
+                                                <select name="leadA4[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -332,7 +332,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA4" class="pb-table-select-collab" multiple>
+                                                <select name="collabA4[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -393,7 +393,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA5" class="pb-table-select" multiple>
+                                                <select name="leadA5[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -401,7 +401,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA5" class="pb-table-select-collab" multiple>
+                                                <select name="collabA5[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -453,7 +453,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA6" class="pb-table-select" multiple>
+                                                <select name="leadA6[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -461,7 +461,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA6" class="pb-table-select-collab" multiple>
+                                                <select name="collabA6[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -497,7 +497,7 @@
                                 <label for="step4Label" class="pb-label">Step 4:</label>
                                 <div id="step4d" class="pb-display pb-inner-step">
                                     <label for="G2O2A1Label" class="pb-label">Action 1 name:</label>
-                                    <textarea name="action7" rows="1" class="pb-text"></textarea>
+                                    <textarea name="action7" rows="1" id="G2O2A1Label" class="pb-text"></textarea>
                                     <button id="toTasks7" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                     <table name="actiontable7" class="table table-striped table-bordered table-hover">
                                         <thead>
@@ -522,7 +522,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA7" class="pb-table-select" multiple>
+                                                <select name="leadA7[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -530,7 +530,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA7" class="pb-table-select-collab" multiple>
+                                                <select name="collabA7[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -582,7 +582,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA8" class="pb-table-select" multiple>
+                                                <select name="leadA8[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -590,7 +590,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabA8" class="pb-table-select-collab" multiple>
+                                                <select name="collabA8[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -651,7 +651,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT1" class="pb-table-select" multiple>
+                                                <select name="leadT1[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -659,7 +659,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT1" class="pb-table-select-collab" multiple>
+                                                <select name="collabT1[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -710,7 +710,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT2" class="pb-table-select" multiple>
+                                                <select name="leadT2[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -718,7 +718,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT2" class="pb-table-select-collab" multiple>
+                                                <select name="collabT2[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -778,7 +778,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT3" class="pb-table-select" multiple>
+                                                <select name="leadT3[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -786,7 +786,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT3" class="pb-table-select-collab" multiple>
+                                                <select name="collabT3[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -837,7 +837,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT4" class="pb-table-select" multiple>
+                                                <select name="leadT4[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -845,7 +845,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT4" class="pb-table-select-collab" multiple>
+                                                <select name="collabT4[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -905,7 +905,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT5" class="pb-table-select" multiple>
+                                                <select name="leadT5[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -913,7 +913,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT5" class="pb-table-select-collab" multiple>
+                                                <select name="collabT5[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -940,8 +940,8 @@
                                 </div>
                                 <div id="step5b" class="pb-display pb-inner-step">
                                     <label for="G1O2A1T2Label" class="pb-label">Task 2 name:</label>
-                                    <textarea name="task5" rows="1" class="pb-text"></textarea>
-                                    <table name="tasktable5" class="table table-striped table-bordered table-hover">
+                                    <textarea name="task6" rows="1" class="pb-text"></textarea>
+                                    <table name="tasktable6" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
                                             <th class="pb-table-date">Due Date</th>
@@ -964,7 +964,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT6" class="pb-table-select" multiple>
+                                                <select name="leadT6[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -972,7 +972,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT6" class="pb-table-select-collab" multiple>
+                                                <select name="collabT6[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1032,7 +1032,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT7" class="pb-table-select" multiple>
+                                                <select name="leadT7[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1040,7 +1040,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT7" class="pb-table-select-collab" multiple>
+                                                <select name="collabT7[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1091,7 +1091,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT8" class="pb-table-select" multiple>
+                                                <select name="leadT8[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1099,7 +1099,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT8" class="pb-table-select-collab" multiple>
+                                                <select name="collabT8[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1159,7 +1159,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT9" class="pb-table-select" multiple>
+                                                <select name="leadT9[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1167,7 +1167,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT9" class="pb-table-select-collab" multiple>
+                                                <select name="collabT9[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1218,7 +1218,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT10" class="pb-table-select" multiple>
+                                                <select name="leadT10[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1226,7 +1226,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT10" class="pb-table-select-collab" multiple>
+                                                <select name="collabT10[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1286,7 +1286,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT11" class="pb-table-select" multiple>
+                                                <select name="leadT11[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1294,7 +1294,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT11" class="pb-table-select-collab" multiple>
+                                                <select name="collabT11[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1345,7 +1345,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT12" class="pb-table-select" multiple>
+                                                <select name="leadT12[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1353,7 +1353,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT12" class="pb-table-select-collab" multiple>
+                                                <select name="collabT12[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1413,7 +1413,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT13" class="pb-table-select" multiple>
+                                                <select name="leadT13[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1421,7 +1421,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT13" class="pb-table-select-collab" multiple>
+                                                <select name="collabT13[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1472,7 +1472,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT14" class="pb-table-select" multiple>
+                                                <select name="leadT14[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1480,7 +1480,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT14" class="pb-table-select-collab" multiple>
+                                                <select name="collabT14[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1540,7 +1540,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT15" class="pb-table-select" multiple>
+                                                <select name="leadT15[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1548,7 +1548,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT15" class="pb-table-select-collab" multiple>
+                                                <select name="collabT15[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1599,7 +1599,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT16" class="pb-table-select" multiple>
+                                                <select name="leadT16[]" class="pb-table-select" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1607,7 +1607,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-collab">
-                                                <select name="collabT16" class="pb-table-select-collab" multiple>
+                                                <select name="collabT16[]" class="pb-table-select-collab" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
