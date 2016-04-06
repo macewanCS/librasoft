@@ -166,7 +166,8 @@
                     </div>
                     <div class="mw-div-two">
                         <h3>{{$id->name}}</h3>
-                        Email: {{$id->email}} <br> Department: {{$id->department}} <br> Permission: {{$id->permission}}
+                        Email: {{$id->email}} <br> Department: {{$id->department}} <br> Permission: {{$id->permission}} <br/>
+                        <a role="button" class="btn btn-primary" href="/changepassword">Change my password</a>
                     </div>
                 </section>
                 @endif

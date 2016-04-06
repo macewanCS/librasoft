@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 //use Illuminate\Foundation\Auth\User;
 use App\User;
+use DB;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -57,5 +59,24 @@ class RegisterController extends Controller
             $user->delete();
         }
         return view('auth/addUser');
+    }
+
+    public function changePassword(Request $request)
+    {
+        $oldpassword = $request->oldpass;
+        $newpassword = $request->newpass;
+        $confirmedpassword = $request->confirmpass;
+        $userid = $request->id;
+        $user = User::find($userid);
+
+        if (!Auth::attempt(['id' => $userid, 'password' => $oldpassword]) || $newpassword != $confirmedpassword) {
+            return back();
+        }
+        $user->password = bcrypt($newpassword);
+        $user->save();
+        return view('welcome')->
+            with('act',DB::table('actions')->orderby('updated_at', 'desc')->get())->
+            with('tasks', DB::table('tasks')->orderby('updated_at', 'desc')->get())->
+            with('notes', DB::table('notes')->orderby('created_at', 'desc')->get());
     }
 }
