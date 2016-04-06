@@ -1,6 +1,11 @@
 .navbar-item {
   font-size: 14px; }
 
+#search-go {
+  padding-bottom: 3px;
+  height: 34px;
+}
+
 .navbar-spacing {
   padding-left: 20px; }
 

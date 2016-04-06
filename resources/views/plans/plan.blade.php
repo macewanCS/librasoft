@@ -451,17 +451,16 @@
         var defaults = {
             disabled: true,
             mode: 'popup',
-            //toggle: 'manual',
             showbuttons: true,
-            //onblur: 'ignore',
-            inputclass: 'input-large',
-            //savenochange: true,
-            /*success: function () {
-                return false;
-            }*/
+            onblur: 'true',
+            inputclass: 'input-xxlarge',
         };
 
         $.extend($.fn.editable.defaults, defaults);
+
+        $('#edit').click(function () {
+            $('#table-edit .editable').editable('toggleDisabled');
+        });
 
         $(function(value) {
             if ($.trim(value) == '')
@@ -650,9 +649,6 @@
             }
         });
 
-        $('#edit').click(function () {
-            $('#table-edit .editable').editable('toggleDisabled');
-        });
     });
 </script>
 @endrole
