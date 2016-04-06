@@ -13,6 +13,7 @@ use App\Action;
 use App\Task;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class PlanController extends Controller
 {
@@ -40,6 +41,29 @@ class PlanController extends Controller
         $objective->body = $request->body;
         $goal->addObjectives($objective);
         return back();
+    }
+
+    public function getObjectives(){
+        if (Request::ajax())
+        {
+            $inputGoal = Input::get('goal');
+            $planYear = Input::get('plan');
+            //$inputGoal = $_GET['goal'];
+            //$planYear = $_GET['plan'];
+
+            $objectiveBodys = array(null);
+
+            $plans = Plan::all();
+            $plan = $plans->where('startdate', $planYear)->first();
+
+            $goal = $plan->goals->where('body', $inputGoal)->first();
+            $objectives = $goal->objectives;
+
+            foreach($objectives as $objective){
+                array_push($objectiveBodys, $objective->body);
+            }
+            return json_encode($objectiveBodys);
+        }
     }
 
     public function addNewAction(Request $request){
