@@ -304,7 +304,7 @@
         </div>
     </div>
 
-            <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
+    <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
 
     <script type="application/javascript">
         $(document).ready(function()
