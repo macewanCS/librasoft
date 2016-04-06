@@ -255,7 +255,7 @@ class PlanController extends Controller
         $task1->collaborators = $request->collabT1;
         $task1->status = $request->statusT1;
         $task1->success = $request->successT1;
-        $action1->actions()->save($task1);
+        $action1->tasks()->save($task1);
 
         //Add Task 2
         $task2 = new Task();
@@ -271,7 +271,7 @@ class PlanController extends Controller
         $task2->collaborators = $request->collabT2;
         $task2->status = $request->statusT2;
         $task2->success = $request->successT2;
-        $action1->actions()->save($task2);
+        $action1->tasks()->save($task2);
 
         //Add Task 3
         $task3 = new Task();
@@ -287,7 +287,7 @@ class PlanController extends Controller
         $task3->collaborators = $request->collabT3;
         $task3->status = $request->statusT3;
         $task3->success = $request->successT3;
-        $action2->actions()->save($task3);
+        $action2->tasks()->save($task3);
 
         //Add Task 4
         $task4 = new Task();
@@ -303,7 +303,7 @@ class PlanController extends Controller
         $task4->collaborators = $request->collabT4;
         $task4->status = $request->statusT4;
         $task4->success = $request->successT4;
-        $action2->actions()->save($task4);
+        $action2->tasks()->save($task4);
 
         //Add Task 5
         $task5 = new Task();
@@ -319,7 +319,7 @@ class PlanController extends Controller
         $task5->collaborators = $request->collabT5;
         $task5->status = $request->statusT5;
         $task5->success = $request->successT5;
-        $action3->actions()->save($task5);
+        $action3->tasks()->save($task5);
 
         //Add Task 6
         $task6 = new Task();
@@ -335,7 +335,7 @@ class PlanController extends Controller
         $task6->collaborators = $request->collabT6;
         $task6->status = $request->statusT6;
         $task6->success = $request->successT6;
-        $action3->actions()->save($task6);
+        $action3->tasks()->save($task6);
 
         //Add Task 7
         $task7 = new Task();
@@ -351,7 +351,7 @@ class PlanController extends Controller
         $task7->collaborators = $request->collabT7;
         $task7->status = $request->statusT7;
         $task7->success = $request->successT7;
-        $action4->actions()->save($task7);
+        $action4->tasks()->save($task7);
 
         //Add Task 8
         $task8 = new Task();
@@ -367,7 +367,7 @@ class PlanController extends Controller
         $task8->collaborators = $request->collabT8;
         $task8->status = $request->statusT8;
         $task8->success = $request->successT8;
-        $action4->actions()->save($task8);
+        $action4->tasks()->save($task8);
 
         //Add Task 9
         $task9 = new Task();
@@ -383,7 +383,7 @@ class PlanController extends Controller
         $task9->collaborators = $request->collabT9;
         $task9->status = $request->statusT9;
         $task9->success = $request->successT9;
-        $action5->actions()->save($task9);
+        $action5->tasks()->save($task9);
 
         //Add Task 10
         $task10 = new Task();
@@ -399,7 +399,7 @@ class PlanController extends Controller
         $task10->collaborators = $request->collabT10;
         $task10->status = $request->statusT10;
         $task10->success = $request->successT10;
-        $action5->actions()->save($task10);
+        $action5->tasks()->save($task10);
 
         //Add Task 11
         $task11 = new Task();
@@ -415,7 +415,7 @@ class PlanController extends Controller
         $task11->collaborators = $request->collabT11;
         $task11->status = $request->statusT11;
         $task11->success = $request->successT11;
-        $action6->actions()->save($task11);
+        $action6->tasks()->save($task11);
 
         //Add Task 4
         $task12 = new Task();
@@ -431,7 +431,7 @@ class PlanController extends Controller
         $task12->collaborators = $request->collabT12;
         $task12->status = $request->statusT12;
         $task12->success = $request->successT12;
-        $action6->actions()->save($task12);
+        $action6->tasks()->save($task12);
 
         //Add Task 13
         $task13 = new Task();
@@ -447,7 +447,7 @@ class PlanController extends Controller
         $task13->collaborators = $request->collabT13;
         $task13->status = $request->statusT13;
         $task13->success = $request->successT13;
-        $action7->actions()->save($task13);
+        $action7->tasks()->save($task13);
 
         //Add Task 14
         $task14 = new Task();
@@ -463,7 +463,7 @@ class PlanController extends Controller
         $task14->collaborators = $request->collabT14;
         $task14->status = $request->statusT14;
         $task14->success = $request->successT14;
-        $action7->actions()->save($task14);
+        $action7->tasks()->save($task14);
 
         //Add Task 15
         $task15 = new Task();
@@ -479,7 +479,7 @@ class PlanController extends Controller
         $task15->collaborators = $request->collabT15;
         $task15->status = $request->statusT15;
         $task15->success = $request->successT15;
-        $action8->actions()->save($task15);
+        $action8->tasks()->save($task15);
 
         //Add Task 16
         $task16 = new Task();
@@ -495,7 +495,7 @@ class PlanController extends Controller
         $task16->collaborators = $request->collabT16;
         $task16->status = $request->statusT16;
         $task16->success = $request->successT16;
-        $action8->actions()->save($task16);
+        $action8->tasks()->save($task16);
 
         return view('createDone');
     }
