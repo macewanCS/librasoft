@@ -318,6 +318,7 @@
                     <div class="form-group">
                         <label>Choose Goal:</label>
                         <select class="form-control" name="goal" onchange="fillObjectives()" id="goalBody">
+                            <option></option>
                             @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
                                 <option>{{$goal->body}}</option>
                             @endforeach
