@@ -99,6 +99,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('register', 'Auth\AuthController@create');
     Route::post('edituser', 'RegisterController@edit');
     Route::post('update', 'RegisterController@update');
+    Route::get('changepassword', function() { return view('auth.changepassword'); });
+    Route::post('changepassword', 'RegisterController@changepassword');
     Route::get('tasks/{task}', 'TasksController@show');
     Route::get("plan/{plan}", "PlanController@show");
 
