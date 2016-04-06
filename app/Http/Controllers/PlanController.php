@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+
 use App\Http\Controllers\DB;
 use App\Plan;
 use App\Goal;
@@ -44,8 +45,7 @@ class PlanController extends Controller
     }
 
     public function getObjectives(){
-        if (Request::ajax())
-        {
+
             $inputGoal = Input::get('goal');
             $planYear = Input::get('plan');
             //$inputGoal = $_GET['goal'];
@@ -63,7 +63,7 @@ class PlanController extends Controller
                 array_push($objectiveBodys, $objective->body);
             }
             return json_encode($objectiveBodys);
-        }
+
     }
 
     public function addNewAction(Request $request){
