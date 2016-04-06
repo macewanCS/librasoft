@@ -15,7 +15,7 @@
         <div class="col-md-6">
             <h1 style="text-align: center;">404 Not Found</h1>
             <div class="embed-responsive embed-responsive-4by3 video-spin">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/fRh_vgS2dFE?autoplay=1;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/fRh_vgS2dFE?start=52;autoplay=1;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
             </div>
             <h1 style="text-align: center;">This is Professional</h1>
         </div>
