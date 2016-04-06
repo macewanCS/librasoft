@@ -497,7 +497,7 @@
                                 <label for="step4Label" class="pb-label">Step 4:</label>
                                 <div id="step4d" class="pb-display pb-inner-step">
                                     <label for="G2O2A1Label" class="pb-label">Action 1 name:</label>
-                                    <textarea name="action7" rows="1" class="pb-text"></textarea>
+                                    <textarea name="action7" rows="1" id="G2O2A1Label" class="pb-text"></textarea>
                                     <button id="toTasks7" class="btn btn-primary pb-arrow-btn" type="button"> > </button>
                                     <table name="actiontable7" class="table table-striped table-bordered table-hover">
                                         <thead>
