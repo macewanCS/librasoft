@@ -14,9 +14,6 @@ class Plan extends Model
 
     protected $fillable = ['startdate','enddate'];
 
-    public function archive() {
-        return $this->belongsTo(Plan::class);
-    }
 
     public function goals()
     {
