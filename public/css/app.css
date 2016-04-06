@@ -391,6 +391,7 @@ a .filter {
 .pb-table-text {
   width: 325px; }
 
+<<<<<<< HEAD
 <<<<<<< a71c45165f1424302772b31fc1f4a7211a9e32e1
 @-webkit-keyframes rotate {
   from {
@@ -420,5 +421,9 @@ a .filter {
 .pb-panel {
   background: #009FD7; }
 >>>>>>> Proper create plan used, finished
+=======
+.pb-panel {
+  background: #009FD7; }
+>>>>>>> 762fbd1df03470a4ac554eb84c77a684dc0257c3
 
 /*# sourceMappingURL=app.css.map */
