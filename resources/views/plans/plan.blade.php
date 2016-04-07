@@ -352,13 +352,14 @@
                 <form method="post" action="/plan/{{$plan->id}}/goal/objective/action/task">
                     <div class="form-group hide">
                         <label>Plan year:</label>
-                        <select class="form-control" name="plan">
+                        <select class="form-control" name="plan" id="planYear2">
                             <option>{{$plan->startdate}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Choose Goal:</label>
-                        <select class="form-control" name="goal">
+                        <select class="form-control" name="goal" onchange="fillObjectiveTasks()" id="goalBody2">
+                            <option></option>
                             @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
                                 <option>{{$goal->body}}</option>
                             @endforeach
@@ -366,24 +367,14 @@
                     </div>
                     <div class="form-group">
                         <label>Choose Objective:</label>
-                        <select class="form-control" name="objective">
-                            @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
-                                @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
-                                    <option>{{$objective->body}}</option>
-                                @endforeach
-                            @endforeach
+                        <select class="form-control" name="objective" id=objectiveTask onchange="fillActions()">
+
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Choose Action:</label>
-                        <select class="form-control" name="action">
-                            @foreach($plan->goals()->orderBy('body', 'asc')->get() as $goal)
-                                @foreach($goal->objectives()->orderBy('body', 'asc')->get() as $objective)
-                                    @foreach($objective->actions()->orderBy('body', 'asc')->get() as $action)
-                                        <option>{{$action->body}}</option>
-                                    @endforeach
-                                @endforeach
-                            @endforeach
+                        <select class="form-control" name="action" id="action">
+
                         </select>
                     </div>
                     <div class="form-group">

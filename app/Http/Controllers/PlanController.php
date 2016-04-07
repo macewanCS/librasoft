@@ -45,26 +45,44 @@ class PlanController extends Controller
     }
 
     public function getObjectives(){
+        $inputGoal = Input::get('goal');
+        $planYear = Input::get('plan');
 
-            $inputGoal = Input::get('goal');
-            $planYear = Input::get('plan');
-            //$inputGoal = $_GET['goal'];
-            //$planYear = $_GET['plan'];
+        $objectiveBodys = array(null);
 
-            $objectiveBodys = array(null);
+        $plans = Plan::all();
+        $plan = $plans->where('startdate', $planYear)->first();
 
-            $plans = Plan::all();
-            $plan = $plans->where('startdate', $planYear)->first();
+        $goal = $plan->goals->where('body', $inputGoal)->first();
+        $objectives = $goal->objectives;
 
-            $goal = $plan->goals->where('body', $inputGoal)->first();
-            $objectives = $goal->objectives;
-
-            foreach($objectives as $objective){
-                array_push($objectiveBodys, $objective->body);
-            }
-            return json_encode($objectiveBodys);
+        foreach($objectives as $objective){
+            array_push($objectiveBodys, $objective->body);
+        }
+        return json_encode($objectiveBodys);
 
     }
+
+    public function getActions(){
+        $planYear = Input::get('plan');
+        $inputGoal = Input::get('goal');
+        $inputObjective = Input::get('objective');
+
+        $ActionBodys = array(null);
+
+        $plans = Plan::all();
+        $plan = $plans->where('startdate', $planYear)->first();
+
+        $goal = $plan->goals->where('body', $inputGoal)->first();
+        $objective = $goal->objectives->where('body', $inputObjective)->first();
+        $actions = $objective->actions;
+
+        foreach($actions as $action){
+            array_push($ActionBodys, $action->body);
+        }
+        return json_encode($ActionBodys);
+    }
+
 
     public function addNewAction(Request $request){
         $plans = Plan::all();
@@ -83,7 +101,6 @@ class PlanController extends Controller
         $goal = $plan->goals->where('body', $request->goal)->first();
         $objective = $goal->objectives->where('body', $request->objective)->first();
         $action = $objective->actions->where('body', $request->action)->first();
-        echo "$action";
         $task = new Task();
         $task->body = $request->body;
         $action->addTask($task);

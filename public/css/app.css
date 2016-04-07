@@ -391,19 +391,24 @@ a .filter {
 .pb-table-text {
   width: 325px; }
 
-<<<<<<< HEAD
-<<<<<<< a71c45165f1424302772b31fc1f4a7211a9e32e1
+.pb-panel {
+  background: #009FD7; }
+
 @-webkit-keyframes rotate {
   from {
-    -webkit-transform: rotate(0deg); }
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg); }
   to {
-    -webkit-transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg); } }
 
 @-webkit-keyframes backwards {
   from {
-    -webkit-transform: rotate(360deg); }
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg); }
   to {
-    -webkit-transform: rotate(0deg); } }
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(360deg); } }
 
 .prof {
   -webkit-animation-name: rotate;
@@ -417,13 +422,5 @@ a .filter {
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear; }
-=======
-.pb-panel {
-  background: #009FD7; }
->>>>>>> Proper create plan used, finished
-=======
-.pb-panel {
-  background: #009FD7; }
->>>>>>> 762fbd1df03470a4ac554eb84c77a684dc0257c3
 
 /*# sourceMappingURL=app.css.map */
