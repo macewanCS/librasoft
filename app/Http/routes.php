@@ -13,14 +13,7 @@
 
 use App\Plan;
 
-Route::get('/', function () {
-    //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
-
-    return view('welcome')->
-        with('act',DB::table('actions')->orderby('updated_at', 'desc')->get())->
-        with('tasks', DB::table('tasks')->orderby('updated_at', 'desc')->get())->
-        with('notes', DB::table('notes')->orderby('created_at', 'desc')->get());
-});
+Route::get('/',"WelcomeController@welcome");
 
 
 
@@ -83,13 +76,7 @@ Route::auth();
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', function () {
-        //$act = DB::table('actions')->orderby('updated_at', 'desc')->get();
-        return view('welcome')->
-        with('act',DB::table('actions')->orderby('updated_at', 'desc')->get())->
-        with('tasks', DB::table('tasks')->orderby('updated_at', 'desc')->get())->
-        with('notes', DB::table('notes')->orderby('created_at', 'desc')->get());
-    });
+    Route::get('/',"WelcomeController@welcome");
 
     Route::get('plan', 'PlanController@plan');
     Route::get('manage', 'ManageController@manage');

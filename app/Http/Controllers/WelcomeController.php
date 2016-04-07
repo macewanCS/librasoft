@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use DB;
 use Illuminate\Http\Request;
 use App\Plan;
 
-class HomeController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,8 +26,10 @@ class HomeController extends Controller
      */
     public function welcome()
     {
-        $plan = Plan::first();
-        return view('welcome');
+        return view('welcome')->
+        with('act',DB::table('actions')->orderby('updated_at', 'desc')->get())->
+        with('tasks', DB::table('tasks')->orderby('updated_at', 'desc')->get())->
+        with('notes', DB::table('notes')->orderby('created_at', 'desc')->get());
     }
 
 }
