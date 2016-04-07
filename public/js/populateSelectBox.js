@@ -15,7 +15,6 @@ function fillObjectives(){
         dataType: 'JSON',               //data format
         success: function(objectives)         //on recieve of reply
         {
-
             for(var i = 0; i < objectives.length; i++) {
                 var el = document.createElement("option");
                 el.innerHTML = objectives[i];
@@ -57,11 +56,10 @@ function fillActions(){
     removeOptions(document.getElementById("action"));
     $.ajax({
         type: "POST",
-        url: '/get/actions',          //the script to call to get data
-        data: {"plan": startdate, "goal":goal, "objective":objective },          //you can insert url argumnets here to pass to api.php
-        //for example "id=5&parent=6"
-        dataType: 'JSON',               //data format
-        success: function(actions)         //on recieve of reply
+        url: '/get/actions',
+        data: {"plan": startdate, "goal":goal, "objective":objective },
+        dataType: 'JSON',
+        success: function(actions)
         {
             for(var i = 0; i < actions.length; i++) {
                 var el = document.createElement("option");
