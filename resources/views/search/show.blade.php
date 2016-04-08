@@ -34,12 +34,6 @@
                                 <a href="/{{ $result_class }}s/show/{{ $result->id }}">{{ ucfirst($result_class) }}: {{ $result->name }}</a>
                             </td>
                         </tr>
-                    @else
-                        <tr>
-                            <td>
-                                <a href="/{{ $result_class }}s/show/{{ $result->id }}">{{ ucfirst($result_class) }}: "{{ $result->content }}" on task {{ $result->task->body }}</a>
-                            </td>
-                        </tr>
                     @endif
                 @endforeach
                 </tbody>
