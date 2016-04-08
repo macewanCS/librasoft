@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Action;
+use App\Task;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
@@ -140,5 +141,14 @@ class ActionsController extends Controller
         {
             return \Response::json(array('status' => 0));
         }
+    }
+
+    public function remove(Action $action)
+    {
+        foreach($action->tasks as $task) {
+            Task::destroy($task->id);
+        }
+        Action::destroy($action->id);
+        return redirect('/plan');
     }
 }
