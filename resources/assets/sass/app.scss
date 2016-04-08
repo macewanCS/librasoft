@@ -1,5 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+#search-go {
+  padding-bottom: 3px;
+  height: 34px;
+}
+
 .navbar-item{
   font-size: 14px;
 }
@@ -561,5 +566,27 @@ a {
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
+
+#edit {
+  link-color: #337ab7;
+}
+
+#task-description a {
+    color: #337ab7;
+}
+
+#task-description a:hover {
+  text-decoration: underline;
+  cursor: hand;
+}
+
+#action-description a {
+  color: #337ab7;
+}
+
+#action-description a:hover {
+  text-decoration: underline;
+  cursor: hand;
+>>>>>>> updates
 }
 
