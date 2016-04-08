@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Action;
 use App\Objective;
+use App\Task;
 use Illuminate\Http\Request;
 
 use App\Goal;
@@ -22,5 +24,23 @@ class GoalsController extends Controller
 
     public function newGoal() {
         return null;
+    }
+
+    public function remove(Goal $goal)
+    {
+        if($goal->body == "Non-Business Plan")
+            return back();
+        
+        foreach($goal->objectives as $objective) {
+            foreach ($objective->actions as $action) {
+                foreach($action->tasks as $task) {
+                    Task::destroy($task->id);
+                }
+                Action::destroy($action->id);
+            }
+            Objective::destroy($objective->id);
+        }
+        Goal::destroy($goal->id);
+        return redirect('/plan');
     }
 }

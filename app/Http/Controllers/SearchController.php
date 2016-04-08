@@ -25,16 +25,14 @@ class SearchController extends Controller
         $objectives = Objective::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
         $actions = Action::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
 
-        foreach (Action::where('item', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get() as $matching_action_item) {
-            $actions[] = $matching_action_item;
-        }
-
         $tasks = Task::where('body', 'like', '%' . $term . '%')->orderBy('body', 'asc')->get();
         $teams = Team::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get();
         $departments = Department::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get();
-        $users = User::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get();
+        $users = User::where('name', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get()->all();
 
         foreach (User::where('email', 'like', '%' . $term . '%')->orderBy('name', 'asc')->get() as $matching_user_email) {
+            if (in_array($matching_user_email, $users))
+                continue;
             $users[] = $matching_user_email;
         }
 

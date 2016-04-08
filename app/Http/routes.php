@@ -134,6 +134,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::post("createplan/{plan}/addobjectives", "NewPlanController@addObjective");
     Route::post("createplan/{plan}/addactions", "NewPlanController@addAction");
     Route::post("createplan/{plan}/addtasks", "NewPlanController@addTask");
+    
+    Route::get("goals/{goal}/delete", "GoalsController@remove");
+    Route::get("objectives/{objective}/delete", "ObjsController@remove");
+    Route::get("actions/{action}/delete", "ActionsController@remove");
+    Route::get("tasks/{task}/delete", "TasksController@remove");
 
 
 });

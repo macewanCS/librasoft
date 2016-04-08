@@ -158,4 +158,10 @@ class TasksController extends Controller
             return \Response::json(array('status' => 0));
         }
     }
+
+    public function remove(Task $task)
+    {
+        Task::destroy($task->id);
+        return redirect('/plan');
+    }
 }

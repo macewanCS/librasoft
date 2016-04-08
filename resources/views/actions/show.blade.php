@@ -6,7 +6,12 @@
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7;"><h4 class="panel-title">Action: {{ $action->body }}</h4></div>
             <div class="panel-body small-panel-body">
+                <div class="col-md-6">
                 <h4><a href="/objectives/show/{{ $action->objective()->get()->first()->id }}">Belongs to Objective: {{ $action->objective()->get()->first()->body }}</a></h4>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-primary" role="button" href="/actions/{{ $action->id }}/delete" style="float: right;">Delete</a>
+                </div>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
