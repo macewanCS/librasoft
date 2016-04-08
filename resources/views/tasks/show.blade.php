@@ -9,7 +9,12 @@
                 <h4 class="panel-title">{{$task->body}}</h4>
             </div>
             <div class="panel-body small-panel-body">
+                <div class="col-md-6">
                 <h4><a href="/actions/show/{{ $task->action()->get()->first()->id }}">Belongs to Action: {{ $task->action()->get()->first()->body }}</a></h4>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-primary" role="button" href="/tasks/{{ $task->id }}/delete" style="float: right;">Delete</a>
+                </div>
                 @if($task->status != "Completed")
                     @role('admin|deplead|teamlead|bplead')
                         <a role="button" class="btn btn-primary" href="/tasks/{{ $task->id }}/markcomplete">Mark Completed</a>
