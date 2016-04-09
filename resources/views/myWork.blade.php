@@ -9,8 +9,6 @@
 
     </head>
 
-    <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
-
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7">Current Work</div>
@@ -194,7 +192,7 @@
                     }
                 }
                 ?>
-                <table class="table table-striped table-bordered table-hover tablesorter mywork-table">
+                <table id="table-edit" class="table table-striped table-bordered table-hover tablesorter mywork-table">
                     <thead>
                     <tr>
                         <th>Description</th>
@@ -342,7 +340,7 @@
                 inputclass: 'input-xxlarge',
             };
 
-            //$.extend($.fn.editable.defaults, defaults);
+            $.extend($.fn.editable.defaults, defaults);
 
             $('#edit').click(function () {
                 $('#table-edit .editable').editable('toggleDisabled');
