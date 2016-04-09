@@ -122,6 +122,24 @@ class ActionsController extends Controller
             return \Response::json(array('status' => 0));
         }
     }
+    
+    public function postCollab(Request $request) {
+        //get id
+        $pk = $request->pk;
+        
+        $col = 'collaborators';
+        
+        $collabs = $request->value;
+        $value = implode("__,__", $collabs);
+        
+        //Get action data row where collabs are stored
+        if ($finditem = Action::where('id', $pk)->update([$col => $value])) {
+            return \Response::json(array('status' => 1));
+        }
+        else {
+            return \Response::json(array('status' => 0));
+        }
+    }
 
     public function postStatus(Request $request) {
         //get id

@@ -210,7 +210,7 @@
                             <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
                             <td class="mw-table-due">{{ $action->date }}</td>
                             <td class="mw-table-owner">{{ $action->owner }}</td>
-                            <td class="mw-table-lead"><a data-pk="{{ $action->id }}" href="#">
+                            <td class="mw-table-lead">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -228,7 +228,7 @@
                                 ?>
                                 </a>
                             </td>
-                            <td class="mw-table-collab"><a data-pk="{{ $action->id }}" href="#">
+                            <td class="mw-table-collab">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
                                 <?php
                                 $collaborators = explode("__,__", $action->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -266,7 +266,7 @@
                             </td>
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
-                            <td class="mw-table-lead"><a data-pk="{{ $task->id }}" href="#">
+                            <td class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -284,7 +284,7 @@
                                 ?>
                                 </a>
                             </td>
-                            <td class="mw-table-collab"><a data-pk="{{ $task->id }}" href="#">
+                            <td class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -327,7 +327,9 @@
                 $(".mywork-table").tablesorter();
             }
         );
-
+    </script>
+    @role('admin')
+    <script>
         $(function() {
             var defaults = {
                 disabled: true,
@@ -358,7 +360,7 @@
                         'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                     tokenSeparators: [",", " "]
                 },
-                url: '{{URL::to("/")}}/plan/action/lead',
+                url: '{{URL::to("/")}}/mywork/action/lead',
                 title: 'Input Leads',
                 send: 'always',
                 ajaxOptions: {
@@ -377,7 +379,7 @@
                         'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                     tokenSeparators: [",", " "]
                 },
-                url: '{{URL::to("/")}}/plan/task/lead',
+                url: '{{URL::to("/")}}/mywork/task/lead',
                 title: 'Input Leads',
                 send: 'always',
                 ajaxOptions: {
@@ -395,8 +397,8 @@
                         'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                     tokenSeparators: [","," "]
                 },
-                url: '{{URL::to("/")}}/plan/action/lead',
-                title: 'Input Leads',
+                url: '{{URL::to("/")}}/mywork/action/collab',
+                title: 'Input Collaborators',
                 send: 'always',
                 ajaxOptions: {
                     datatype: 'json'
@@ -414,14 +416,15 @@
                         'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
                     tokenSeparators: [","," "]
                 },
-                url: '{{URL::to("/")}}/plan/task/lead',
-                title: 'Input Leads',
+                url: '{{URL::to("/")}}/mywork/task/collab',
+                title: 'Input Collaborators',
                 send: 'always',
                 ajaxOptions: {
                     datatype: 'json'
                 }
             });
-        }
+        });
     </script>
+    @endrole
 
 @endsection

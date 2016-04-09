@@ -142,7 +142,7 @@ Route::group(['middleware' => 'web'], function () {
 
 
 });
-
+//Plan editing
 Route::get('plan/edit', 'PlanController@edit');
 Route::post('plan/action/success', 'ActionsController@postSuccess');
 Route::post('plan/action/description', 'ActionsController@postDescription');
@@ -157,6 +157,14 @@ Route::post('plan/task/date', 'TasksController@postTaskDate');
 Route::post('plan/task/department', 'TasksController@postDepartment');
 Route::post('plan/task/lead', 'TasksController@postLead');
 Route::post('plan/task/status', 'TasksController@postStatus');
+
+//MyWork editing
+Route::get('mywork/edit', 'MyWorkController@edit');
+Route::post('mywork/action/lead', 'ActionsController@postLead');
+Route::post('mywork/action/collab', 'ActionsController@postCollab');
+
+Route::post('mywork/task/lead', 'TasksController@postLead');
+Route::post('mywork/task/collab', 'TasksController@postCollab');
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
 // role
