@@ -9,6 +9,8 @@
 
     </head>
 
+    <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
+
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading" style="background: #009FD7">Current Work</div>
@@ -210,7 +212,7 @@
                             <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
                             <td class="mw-table-due">{{ $action->date }}</td>
                             <td class="mw-table-owner">{{ $action->owner }}</td>
-                            <td class="mw-table-lead">@role('admin')<!-- <a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-lead" class="mw-table-lead">@role('admin') <a data-pk="{{ $action->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -226,9 +228,9 @@
                                     }
                                 }
                                 ?>
-                                </a> -->
+                                </a>
                             </td>
-                            <td class="mw-table-collab">@role('admin')<!-- <a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-collab" class="mw-table-collab">@role('admin') <a data-pk="{{ $action->id }}" href="#">@endrole
                                 <?php
                                 $collaborators = explode("__,__", $action->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -244,7 +246,7 @@
                                     }
                                 }
                                 ?>
-                                </a> -->
+                                </a>
                             </td>
                             <td class="mw-table-status">
                                 <?php
@@ -266,7 +268,7 @@
                             </td>
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
-                            <td class="mw-table-lead">@role('admin')<!-- <a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -282,9 +284,9 @@
                                     }
                                 }
                                 ?>
-                                </a> -->
+                                </a>
                             </td>
-                            <td class="mw-table-collab">@role('admin')<!-- <a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -300,7 +302,7 @@
                                     }
                                 }
                                 ?>
-                                </a> -->
+                                </a>
                             </td>
                             <td class="mw-table-status">
                                 <?php
@@ -330,7 +332,6 @@
     </script>
     @role('admin')
     <script>
-        /*
         $(function() {
             var defaults = {
                 disabled: true,
@@ -340,7 +341,7 @@
                 inputclass: 'input-xxlarge',
             };
 
-            $.extend($.fn.editable.defaults, defaults);
+            //$.extend($.fn.editable.defaults, defaults);
 
             $('#edit').click(function () {
                 $('#table-edit .editable').editable('toggleDisabled');
@@ -425,7 +426,6 @@
                 }
             });
         });
-        */
     </script>
     @endrole
 
