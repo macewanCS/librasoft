@@ -267,7 +267,6 @@
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
                             <td id="task-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
-
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
