@@ -159,12 +159,12 @@ Route::post('plan/task/lead', 'TasksController@postLead');
 Route::post('plan/task/status', 'TasksController@postStatus');
 
 //MyWork editing
-Route::get('mywork/edit', 'MyWorkController@edit');
-Route::post('mywork/action/lead', 'ActionsController@postLead');
-Route::post('mywork/action/collab', 'ActionsController@postCollab');
+//Route::get('mywork/edit', 'MyWorkController@edit');
+//Route::post('mywork/action/lead', 'ActionsController@postLead');
+//Route::post('mywork/action/collab', 'ActionsController@postCollab');
 
-Route::post('mywork/task/lead', 'TasksController@postLead');
-Route::post('mywork/task/collab', 'TasksController@postCollab');
+//Route::post('mywork/task/lead', 'TasksController@postLead');
+//Route::post('mywork/task/collab', 'TasksController@postCollab');
 
 //BLADE ROLE AND PERMISSION DIRECTIVES
 // role
