@@ -315,6 +315,10 @@ a .filter {
   height: 200px;
   padding: 10px; }
 
+.mw-btn {
+  float: right;
+  clear: left; }
+
 /*# Create Plan styling */
 .pb-label {
   font-size: 14pt;
