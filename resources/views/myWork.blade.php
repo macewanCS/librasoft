@@ -6,10 +6,7 @@
         <title>jQuery UI Dialog - Default functionality</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
     </head>
-
-    <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
 
     <div class="bs-example">
         <div class="panel panel-primary">
@@ -165,9 +162,9 @@
 
     <div class="bs-example">
         <div class="panel panel-primary">
-            <div class="panel-heading" style="background: #009FD7">
-                Department/Team Work
-                <a id="edit" role="button" class="btn btn-primary mw-btn" href="#">Assign actions/tasks</a>
+            <div class="panel-heading clearfix" style="background: #009FD7">
+                <h4 class="panel-title pull-left mw-header-fix">Department/Team Work</h4>
+                <a id="edit" role="button" class="btn btn-primary mw-btn pull-right" href="#">Assign actions/tasks</a>
             </div>
             <div class="panel-body small-panel-body">
                 <?php
@@ -194,7 +191,7 @@
                     }
                 }
                 ?>
-                <table class="table table-striped table-bordered table-hover tablesorter mywork-table">
+                <table id="table-edit" class="table table-striped table-bordered table-hover tablesorter mywork-table">
                     <thead>
                     <tr>
                         <th>Description</th>
@@ -212,7 +209,7 @@
                             <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
                             <td class="mw-table-due">{{ $action->date }}</td>
                             <td class="mw-table-owner">{{ $action->owner }}</td>
-                            <td id="action-lead" class="mw-table-lead">@role('admin') <a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -230,7 +227,8 @@
                                 ?>
                                 </a>
                             </td>
-                            <td id="action-collab" class="mw-table-collab">@role('admin') <a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
+
                                 <?php
                                 $collaborators = explode("__,__", $action->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -268,7 +266,7 @@
                             </td>
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
-                            <td class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -286,7 +284,7 @@
                                 ?>
                                 </a>
                             </td>
-                            <td class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -322,15 +320,13 @@
     </div>
 
     <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
-
-    <script type="application/javascript">
+    <script>
         $(document).ready(function()
-            {
-                $(".mywork-table").tablesorter();
-            }
+                {
+                    $(".mywork-table").tablesorter();
+                }
         );
     </script>
-    @role('admin')
     <script>
         $(function() {
             var defaults = {
@@ -341,7 +337,7 @@
                 inputclass: 'input-xxlarge',
             };
 
-            //$.extend($.fn.editable.defaults, defaults);
+            $.extend($.fn.editable.defaults, defaults);
 
             $('#edit').click(function () {
                 $('#table-edit .editable').editable('toggleDisabled');
@@ -359,7 +355,10 @@
                     tags: ['Vicky Varga', 'Admin', 'J McPhee', 'E Jones', 'Jody Crilly', 'Deputy CEO', 'Sharon Karr',
                         'Digital Public Spaces Librarian', 'Peter Schoenberg', 'J Woods', 'S Foremski', 'B Crittenden',
                         'E Stuebing', 'Michael Doe', 'Luc Doe', 'John Doe', 'Andrew Nisbet', 'Chris Doe', 'Alex Carruthers',
-                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
+                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe', 'School Aged Services Team',
+                        'Community-Led Team', 'Foundational Programming Team', 'Membership Services Team', 'Discovery Team',
+                        'Events Team', 'IT Services', 'Human Resources', 'Financial Services', 'Finance', 'Fund Development',
+                        'Collection Management and Access'],
                     tokenSeparators: [",", " "]
                 },
                 url: '{{URL::to("/")}}/mywork/action/lead',
@@ -378,7 +377,10 @@
                     tags: ['Vicky Varga', 'Admin', 'J McPhee', 'E Jones', 'Jody Crilly', 'Deputy CEO', 'Sharon Karr',
                         'Digital Public Spaces Librarian', 'Peter Schoenberg', 'J Woods', 'S Foremski', 'B Crittenden',
                         'E Stuebing', 'Michael Doe', 'Luc Doe', 'John Doe', 'Andrew Nisbet', 'Chris Doe', 'Alex Carruthers',
-                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
+                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe', 'School Aged Services Team',
+                        'Community-Led Team', 'Foundational Programming Team', 'Membership Services Team', 'Discovery Team',
+                        'Events Team', 'IT Services', 'Human Resources', 'Financial Services', 'Finance', 'Fund Development',
+                        'Collection Management and Access'],
                     tokenSeparators: [",", " "]
                 },
                 url: '{{URL::to("/")}}/mywork/task/lead',
@@ -396,7 +398,10 @@
                     tags: ['Vicky Varga', 'Admin', 'J McPhee', 'E Jones', 'Jody Crilly', 'Deputy CEO', 'Sharon Karr',
                         'Digital Public Spaces Librarian', 'Peter Schoenberg', 'J Woods', 'S Foremski', 'B Crittenden',
                         'E Stuebing', 'Michael Doe', 'Luc Doe', 'John Doe', 'Andrew Nisbet', 'Chris Doe', 'Alex Carruthers',
-                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
+                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe', 'School Aged Services Team',
+                        'Community-Led Team', 'Foundational Programming Team', 'Membership Services Team', 'Discovery Team',
+                        'Events Team', 'IT Services', 'Human Resources', 'Financial Services', 'Finance', 'Fund Development',
+                        'Collection Management and Access'],
                     tokenSeparators: [","," "]
                 },
                 url: '{{URL::to("/")}}/mywork/action/collab',
@@ -415,7 +420,10 @@
                     tags: ['Vicky Varga', 'Admin', 'J McPhee', 'E Jones', 'Jody Crilly', 'Deputy CEO', 'Sharon Karr',
                         'Digital Public Spaces Librarian', 'Peter Schoenberg', 'J Woods', 'S Foremski', 'B Crittenden',
                         'E Stuebing', 'Michael Doe', 'Luc Doe', 'John Doe', 'Andrew Nisbet', 'Chris Doe', 'Alex Carruthers',
-                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe'],
+                        'Khalil Doe', 'Robin Doe', 'Rachael Collins', 'Jamie Doe', 'School Aged Services Team',
+                        'Community-Led Team', 'Foundational Programming Team', 'Membership Services Team', 'Discovery Team',
+                        'Events Team', 'IT Services', 'Human Resources', 'Financial Services', 'Finance', 'Fund Development',
+                        'Collection Management and Access'],
                     tokenSeparators: [","," "]
                 },
                 url: '{{URL::to("/")}}/mywork/task/collab',
@@ -427,6 +435,4 @@
             });
         });
     </script>
-    @endrole
-
 @endsection

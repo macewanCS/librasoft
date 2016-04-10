@@ -60,7 +60,6 @@
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="pb-display" id="backToPlan">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
-                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
 
                             </div>
@@ -135,7 +134,7 @@
                                                     </select>
                                                 </td>
                                                 <td class="pb-table-lead">
-                                                    <select name="leadA1[]" class="pb-table-select" multiple>
+                                                    <select name="leadA1[]" class="pb-table-select-lead" multiple>
                                                         <option selected value>Select</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{$user->name}}">{{ $user->name }}</option>
@@ -195,7 +194,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA2[]" class="pb-table-select" multiple>
+                                                <select name="leadA2[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -264,7 +263,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA3[]" class="pb-table-select" multiple>
+                                                <select name="leadA3[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -324,7 +323,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA4[]" class="pb-table-select" multiple>
+                                                <select name="leadA4[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -393,7 +392,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA5[]" class="pb-table-select" multiple>
+                                                <select name="leadA5[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -453,7 +452,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA6[]" class="pb-table-select" multiple>
+                                                <select name="leadA6[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -522,7 +521,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA7[]" class="pb-table-select" multiple>
+                                                <select name="leadA7[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -582,7 +581,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadA8[]" class="pb-table-select" multiple>
+                                                <select name="leadA8[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -651,7 +650,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT1[]" class="pb-table-select" multiple>
+                                                <select name="leadT1[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -710,7 +709,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT2[]" class="pb-table-select" multiple>
+                                                <select name="leadT2[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -746,6 +745,7 @@
 
                                 <div class="pb-display" id="backToActions1">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -778,7 +778,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT3[]" class="pb-table-select" multiple>
+                                                <select name="leadT3[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -837,7 +837,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT4[]" class="pb-table-select" multiple>
+                                                <select name="leadT4[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -873,6 +873,7 @@
 
                                 <div class="pb-display" id="backToActions2">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -905,7 +906,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT5[]" class="pb-table-select" multiple>
+                                                <select name="leadT5[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -964,7 +965,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT6[]" class="pb-table-select" multiple>
+                                                <select name="leadT6[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1000,6 +1001,7 @@
 
                                 <div class="pb-display" id="backToActions3">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -1032,7 +1034,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT7[]" class="pb-table-select" multiple>
+                                                <select name="leadT7[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1091,7 +1093,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT8[]" class="pb-table-select" multiple>
+                                                <select name="leadT8[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1127,6 +1129,7 @@
 
                                 <div class="pb-display" id="backToActions4">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -1159,7 +1162,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT9[]" class="pb-table-select" multiple>
+                                                <select name="leadT9[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1218,7 +1221,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT10[]" class="pb-table-select" multiple>
+                                                <select name="leadT10[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1254,6 +1257,7 @@
 
                                 <div class="pb-display" id="backToActions5">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -1286,7 +1290,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT11[]" class="pb-table-select" multiple>
+                                                <select name="leadT11[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1345,7 +1349,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT12[]" class="pb-table-select" multiple>
+                                                <select name="leadT12[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1381,6 +1385,7 @@
 
                                 <div class="pb-display" id="backToActions6">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -1413,7 +1418,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT13[]" class="pb-table-select" multiple>
+                                                <select name="leadT13[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1472,7 +1477,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT14[]" class="pb-table-select" multiple>
+                                                <select name="leadT14[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1508,6 +1513,7 @@
 
                                 <div class="pb-display" id="backToActions7">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
 
@@ -1540,7 +1546,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT15[]" class="pb-table-select" multiple>
+                                                <select name="leadT15[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1599,7 +1605,7 @@
                                                 </select>
                                             </td>
                                             <td class="pb-table-lead">
-                                                <select name="leadT16[]" class="pb-table-select" multiple>
+                                                <select name="leadT16[]" class="pb-table-select-lead" multiple>
                                                     <option selected value>Select</option>
                                                     @foreach ($users as $user)
                                                         <option value="{{ $user->name }}">{{ $user->name }}</option>
@@ -1635,6 +1641,7 @@
 
                                 <div class="pb-display" id="backToActions8">
                                     <button class="btn btn-primary pb-btn" type="button">Back</button>
+                                    <button class="btn btn-primary pb-submit-btn" type="submit">Submit</button>
                                 </div>
                             </div>
                         </form>

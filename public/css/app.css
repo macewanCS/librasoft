@@ -1,3 +1,7 @@
+#search-go {
+  padding-bottom: 3px;
+  height: 34px; }
+
 .navbar-item {
   font-size: 14px; }
 
@@ -317,7 +321,10 @@ a .filter {
 
 .mw-btn {
   float: right;
-  clear: left; }
+  clear: right; }
+
+.mw-header-fix {
+  padding-top: 7.5px; }
 
 /*# Create Plan styling */
 .pb-label {
@@ -357,43 +364,46 @@ a .filter {
   clear: none; }
 
 .pb-table-date {
-  min-width: 110px;
-  max-width: 110px; }
+  min-width: 125px;
+  max-width: 125px; }
 
 .pb-table-owner {
-  min-width: 65px;
-  max-width: 65px; }
+  min-width: 70px;
+  max-width: 70px; }
 
 .pb-table-lead {
-  min-width: 65px;
-  max-width: 65px; }
+  min-width: 155px;
+  max-width: 155px; }
 
 .pb-table-collab {
-  min-width: 150px;
-  max-width: 150px; }
+  min-width: 155px;
+  max-width: 155px; }
 
 .pb-table-status {
-  min-width: 90px;
-  max-width: 90px; }
+  min-width: 85px;
+  max-width: 85px; }
 
 .pb-table-success {
-  min-width: 230px;
-  max-width: 230px; }
+  min-width: 185px;
+  max-width: 185px; }
 
 .pb-table-input {
-  width: 155px; }
+  width: 160px; }
 
 .pb-table-select {
   width: 80px; }
 
+.pb-table-select-lead {
+  width: 200px; }
+
 .pb-table-select-collab {
-  width: 210px; }
+  width: 200px; }
 
 .pb-table-select-status {
-  width: 120px; }
+  width: 105px; }
 
 .pb-table-text {
-  width: 325px; }
+  width: 240px; }
 
 .pb-panel {
   background: #009FD7; }
@@ -426,5 +436,22 @@ a .filter {
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear; }
+
+#edit {
+  link-color: #337ab7; }
+
+#task-description a {
+  color: #337ab7; }
+
+#task-description a:hover {
+  text-decoration: underline;
+  cursor: hand; }
+
+#action-description a {
+  color: #337ab7; }
+
+#action-description a:hover {
+  text-decoration: underline;
+  cursor: hand; }
 
 /*# sourceMappingURL=app.css.map */
