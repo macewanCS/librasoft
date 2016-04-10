@@ -288,7 +288,6 @@
                                 </a>
                             </td>
                             <td id="task-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
-
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
