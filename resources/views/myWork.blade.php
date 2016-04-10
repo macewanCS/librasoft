@@ -212,7 +212,7 @@
                             <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
                             <td class="mw-table-due">{{ $action->date }}</td>
                             <td class="mw-table-owner">{{ $action->owner }}</td>
-                            <td id="action-lead" class="mw-table-lead">@role('admin') <a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -230,7 +230,8 @@
                                 ?>
                                 </a>
                             </td>
-                            <td id="action-collab" class="mw-table-collab">@role('admin') <a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
+
                                 <?php
                                 $collaborators = explode("__,__", $action->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -268,7 +269,7 @@
                             </td>
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
-                            <td class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -286,7 +287,8 @@
                                 ?>
                                 </a>
                             </td>
-                            <td class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
