@@ -427,7 +427,11 @@ a {
 
 .mw-btn {
   float: right;
-  clear: left;
+  clear: right;
+}
+
+.mw-header-fix {
+  padding-top: 7.5px;
 }
 
 

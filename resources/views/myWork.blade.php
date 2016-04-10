@@ -162,9 +162,9 @@
 
     <div class="bs-example">
         <div class="panel panel-primary">
-            <div class="panel-heading" style="background: #009FD7">
-                Department/Team Work
-                <a id="edit" role="button" class="btn btn-primary mw-btn" href="#">Assign actions/tasks</a>
+            <div class="panel-heading clearfix" style="background: #009FD7">
+                <h4 class="panel-title pull-left mw-header-fix">Department/Team Work</h4>
+                <a id="edit" role="button" class="btn btn-primary mw-btn pull-right" href="#">Assign actions/tasks</a>
             </div>
             <div class="panel-body small-panel-body">
                 <?php
