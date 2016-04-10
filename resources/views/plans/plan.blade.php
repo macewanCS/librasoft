@@ -447,7 +447,7 @@
             inputclass: 'input-xxlarge',
         };
 
-        //$.extend($.fn.editable.defaults, defaults);
+        $.extend($.fn.editable.defaults, defaults);
 
         $('#edit').click(function () {
             $('#table-edit .editable').editable('toggleDisabled');

@@ -6,7 +6,6 @@
         <title>jQuery UI Dialog - Default functionality</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
     </head>
 
     <div class="bs-example">
@@ -321,15 +320,13 @@
     </div>
 
     <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
-
-    <script type="application/javascript">
+    <script>
         $(document).ready(function()
-            {
-                $(".mywork-table").tablesorter();
-            }
+                {
+                    $(".mywork-table").tablesorter();
+                }
         );
     </script>
-    @role('admin')
     <script>
         $(function() {
             var defaults = {
@@ -438,6 +435,4 @@
             });
         });
     </script>
-    @endrole
-
 @endsection
