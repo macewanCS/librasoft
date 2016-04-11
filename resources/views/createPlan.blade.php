@@ -1654,7 +1654,7 @@
     </body>
     @endrole
 
-    @role('admin|teamlead|deptlead|basicuser')
+    @role('admin|teamlead|deplead|basicuser')
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-body small-panel-body">

@@ -94,7 +94,6 @@
         </div>
     </div>
 </div>
-
         <!-- Accordion starts-->
         <div class="plan-content-panel">
             <div class="panel-group" id="accordion">
@@ -150,9 +149,9 @@
                                                                             {{ $action->body }}
                                                                         </a>
                                                                     </td>
-                                                                    <th class="table-due" id="action-date">@role('admin')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click" data-original-title="">@endrole{{ $action->date }}</a></th>
-                                                                    <td class="table-owner" id="action-department">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole{{ $action->owner }}</a></td>
-                                                                    <td class="table-collaborators" id="action-lead">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
+                                                                    <th class="table-due" id="action-date">@role('bplead')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click" data-original-title="">@endrole{{ $action->date }}</a></th>
+                                                                    <td class="table-owner" id="action-department">@role('bplead')<a data-pk="{{ $action->id }}" href="#">@endrole{{ $action->owner }}</a></td>
+                                                                    <td class="table-collaborators" id="action-lead">@role('bplead')<a data-pk="{{ $action->id }}" href="#">@endrole
                                                                         <?php
                                                                             $leads = explode("__,__", $action->lead);
                                                                             foreach ($leads as $lead) {
@@ -170,7 +169,7 @@
                                                                         ?>
                                                                         </a>
                                                                     </td>
-                                                                    <td class="table-success" id="success-measures"> @role('admin')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
+                                                                    <td class="table-success" id="success-measures"> @role('bplead')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
                                                                     <td
                                                                             @if ($action->status == "Completed")
                                                                             class="table-status success" id="action-status"
@@ -179,9 +178,9 @@
                                                                             @endif
                                                                     >
                                                                         @if ($action->status == "Completed")
-                                                                            @role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole Completed</a>
+                                                                            @role('bplead')<a data-pk="{{ $action->id }}" href="#">@endrole Completed</a>
                                                                         @else
-                                                                            @role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole In progress</a>
+                                                                            @role('bplead')<a data-pk="{{ $action->id }}" href="#">@endrole In progress</a>
                                                                         @endif
                                                                     </td>
                                                                 </tr>
@@ -192,9 +191,9 @@
                                                                                 {{ $task->body }}
                                                                             </a>
                                                                         </td>
-                                                                        <td class="table-due" id="task-date">@role('admin')<a href="#" data-pk="{{ $task->id }}" >@endrole{{ $task->date }}</a></td>
-                                                                        <td class="table-owner" id="task-department">@role('admin')<a href="#" data-pk="{{ $task->id }}">@endrole{{ $task->owner }}</a></td>
-                                                                        <td class="table-lead" id="task-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                                                                        <td class="table-due" id="task-date">@role('bplead')<a href="#" data-pk="{{ $task->id }}" >@endrole{{ $task->date }}</a></td>
+                                                                        <td class="table-owner" id="task-department">@role('bplead')<a href="#" data-pk="{{ $task->id }}">@endrole{{ $task->owner }}</a></td>
+                                                                        <td class="table-lead" id="task-lead">@role('bplead')<a data-pk="{{ $task->id }}" href="#">@endrole
                                                                             <?php
                                                                                 $leads = explode("__,__", $task->lead);
                                                                                 foreach ($leads as $lead) {
@@ -212,7 +211,7 @@
                                                                             ?>
                                                                             </a>
                                                                         </td>
-                                                                        <td class="table-success" id="task-success"> @role('admin')<a data-pk="{{ $task->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $task->success }}</a></td>
+                                                                        <td class="table-success" id="task-success"> @role('bplead')<a data-pk="{{ $task->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $task->success }}</a></td>
                                                                         <td
                                                                                 @if ($task->status == "Completed")
                                                                                 class="table-status success" id="task-status"
@@ -221,9 +220,9 @@
                                                                                 @endif
                                                                         >
                                                                             @if ($task->status == "Completed")
-                                                                                @role('admin')<a data-pk="{{ $task->status }}" href="#">@endrole Completed</a>
+                                                                                @role('bplead')<a data-pk="{{ $task->status }}" href="#">@endrole Completed</a>
                                                                             @else
-                                                                                @role('admin')<a data-pk="{{ $task->status }}" href="#">@endrole In progress</a>
+                                                                                @role('bplead')<a data-pk="{{ $task->status }}" href="#">@endrole In progress</a>
                                                                             @endif
                                                                         </td>
                                                                     </tr>
@@ -435,7 +434,7 @@
 </script>
 
 <!-- Editing Functions -->
-@role('admin')
+@role('bplead')
 <script>
     $(function() {
 

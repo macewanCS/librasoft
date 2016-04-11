@@ -19,7 +19,7 @@
                             <a role="button" class="btn btn-primary" style="float:right;" href="/tasks/{{ $task->id }}/markcomplete">Mark Completed</a>
                             @endrole
                         @endif
-                        @role('bplead|teamlead|deptlead')
+                        @role('bplead|teamlead|deplead')
                         <a class="btn btn-primary" role="button" href="/tasks/{{ $task->id }}/delete" style="float: right;">Delete</a>
                         @endrole
                     </div>
