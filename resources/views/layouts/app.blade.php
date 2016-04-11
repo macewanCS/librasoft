@@ -120,7 +120,7 @@
                             </form>
                         </li>
 
-                        @permission('view.mywork')<li><a href="{{ url('/usermanagement') }}">Admin</a></li>@endpermission
+                        @role('admin')<li><a href="{{ url('/usermanagement') }}">Admin</a></li>@endrole
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>

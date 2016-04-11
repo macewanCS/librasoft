@@ -159,7 +159,7 @@
 
         </div>
     </div>
-    @role('admin|bplead|teamlead|deptlead')
+    @role('bplead|teamlead|deptlead')
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading clearfix" style="background: #009FD7">

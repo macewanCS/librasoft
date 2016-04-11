@@ -12,9 +12,11 @@
                             {{ Carbon::createFromFormat("Y-m-d", $goal->plan()->get()->first()->startdate)->format("Y") }} -
                             {{ Carbon::createFromFormat("Y-m-d", $goal->plan()->get()->first()->enddate)->format("Y") }}</a></h4>
                 </div>
+                    @role('bplead')
                 <div class="col-md-6">
                     <a class="btn btn-primary" role="button" href="/goals/{{ $goal->id }}/delete" style="float: right;">Delete</a>
                 </div>
+                    @endrole
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                     <tr>

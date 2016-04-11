@@ -79,7 +79,7 @@
 
             <!--<a id="openAll" role="button"` class="btn btn-primary" data-toggle="collapse">Open All Categories</a>
             <a id="closeAll" role="button" class="btn btn-primary" data-toggle="collapse">Close All Categories</a>-->
-            @role('admin')
+            @role('bplead')
             <a id="edit" role="button" class="btn btn-primary" href="#">Edit Business Plan</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newGoal()">Add Goal</a>
             <a role="button" class="btn btn-primary" href="#" onclick="newObjective()">Add Objective</a>
@@ -95,7 +95,6 @@
     </div>
 </div>
 
-    <p style="padding-left: 190px;">Click on any table column header to sort by that column.</p>
         <!-- Accordion starts-->
         <div class="plan-content-panel">
             <div class="panel-group" id="accordion">
