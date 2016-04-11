@@ -159,7 +159,7 @@
 
         </div>
     </div>
-
+    @role('admin|bplead|teamlead|deptlead')
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading clearfix" style="background: #009FD7">
@@ -318,6 +318,7 @@
             </div>
         </div>
     </div>
+    @endrole
 
     <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
     <script>
