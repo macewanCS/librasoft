@@ -159,7 +159,7 @@
 
         </div>
     </div>
-
+    @role('bplead|teamlead|deplead')
     <div class="bs-example">
         <div class="panel panel-primary">
             <div class="panel-heading clearfix" style="background: #009FD7">
@@ -209,7 +209,7 @@
                             <td><a href="/actions/show/{{ $action->id }}">Action: {{ $action->body }}</a></td>
                             <td class="mw-table-due">{{ $action->date }}</td>
                             <td class="mw-table-owner">{{ $action->owner }}</td>
-                            <td id="action-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-lead" class="mw-table-lead"><a data-pk="{{ $action->id }}" href="#">
                                 <?php
                                 $leads = explode("__,__", $action->lead);
                                 foreach ($leads as $lead) {
@@ -227,7 +227,7 @@
                                 ?>
                                 </a>
                             </td>
-                            <td id="action-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $action->id }}" href="#">@endrole
+                            <td id="action-collab" class="mw-table-collab"><a data-pk="{{ $action->id }}" href="#">
 
                                 <?php
                                 $collaborators = explode("__,__", $action->collaborators);
@@ -266,7 +266,7 @@
                             </td>
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
-                            <td id="task-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-lead" class="mw-table-lead"><a data-pk="{{ $task->id }}" href="#">
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -284,7 +284,7 @@
                                 ?>
                                 </a>
                             </td>
-                            <td id="task-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-collab" class="mw-table-collab"><a data-pk="{{ $task->id }}" href="#">
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
@@ -318,6 +318,7 @@
             </div>
         </div>
     </div>
+    @endrole
 
     <script type="application/javascript" src="/js/jquery.tablesorter.min.js"></script>
     <script>

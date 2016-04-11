@@ -61,6 +61,7 @@ Route::get('print/{plan}', 'ExportController@minimal');
 Route::post('search', 'SearchController@search');
 Route::get("export/tsv/{plan}", 'ExportController@tabs');
 Route::get("tasks/{task}/markcomplete", "TasksController@MarkComplete");
+Route::get("actions/{action}/markcomplete", "ActionsController@MarkComplete");
 Route::get('plan/new', 'PlanController@showPlan');
 Route::get("plan/{plan}", "PlanController@show");
 Route::get("createplan", "NewPlanController@showNewPlan");
@@ -139,6 +140,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get("objectives/{objective}/delete", "ObjsController@remove");
     Route::get("actions/{action}/delete", "ActionsController@remove");
     Route::get("tasks/{task}/delete", "TasksController@remove");
+    Route::get("tasks/{task}/markcomplete", "TasksController@MarkComplete");
+    Route::get("actions/{action}/markcomplete", "ActionsController@MarkComplete");
 
 
 });

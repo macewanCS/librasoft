@@ -169,4 +169,18 @@ class ActionsController extends Controller
         Action::destroy($action->id);
         return redirect('/plan');
     }
+
+    public function MarkComplete(Action $action)
+    {
+        $action->status = "Completed";
+        $action->save();
+
+        foreach($action->tasks as $task) {
+            if ($task->status != "Completed") {
+                $task->status = "Completed";
+                $task->save();
+            }
+        }
+        return back();
+    }
 }

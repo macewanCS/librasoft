@@ -22,7 +22,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => '',
             'permission'    => 'BPLead'
         ]);
-        $vicky->assignRole('admin');
+        $vicky->assignRole('bplead');
 
         $admin = $user->create([
             'name'=> 'Admin',
@@ -42,7 +42,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Events Team',
             'permission'    => 'DepLead'
         ]);
-        $jmcphee->assignRole('admin');
+        $jmcphee->assignRole('deplead');
 
         $lmackenzie = $user->create([
             'name'          => 'L MacKenzie',
@@ -52,7 +52,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Discovery Team',
             'permission'    => 'TeamLead'
         ]);
-        $lmackenzie->assignRole('admin');
+        $lmackenzie->assignRole('teamlead');
 
         $ejones = $user->create([
             'name'          => 'E Jones',
@@ -62,7 +62,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
-        $ejones->assignRole('admin');
+        $ejones->assignRole('basicuser');
 
         $jcrilly = $user->create([
             'name'          => 'Jody Crilly',
@@ -72,7 +72,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Events Team',
             'permission'    => 'BasicUser'
         ]);
-        $jcrilly->assignRole('admin');
+        $jcrilly->assignRole('basicuser');
 
         $dceo = $user->create([
             'name'          => 'Deputy CEO',
@@ -82,7 +82,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Events Team',
             'permission'    => 'BPLead'
         ]);
-        $dceo->assignRole('admin');
+        $dceo->assignRole('bplead');
 
         $skarr = $user->create([
             'name'          => 'Sharon Karr',
@@ -92,7 +92,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Community-Led Team',
             'permission'    => 'BasicUser'
         ]);
-        $skarr->assignRole('admin');
+        $skarr->assignRole('basicuser');
 
         $dpsl = $user->create([
             'name'          => 'Digital Public Spaces Librarian',
@@ -102,7 +102,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
-        $dpsl->assignRole('admin');
+        $dpsl->assignRole('basicuser');
 
         $pschoenberg = $user->create([
             'name'          => 'Peter Schoenberg',
@@ -112,7 +112,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Community-Led Team',
             'permission'    => 'BasicUser'
         ]);
-        $pschoenberg->assignRole('admin');
+        $pschoenberg->assignRole('basicuser');
 
         $jwoods = $user->create([
             'name'          => 'J Woods',
@@ -122,7 +122,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => '',
             'permission'    => 'BasicUser'
         ]);
-        $jwoods->assignRole('admin');
+        $jwoods->assignRole('basicuser');
 
         $sforemski = $user->create([
             'name'          => 'S Foremski',
@@ -132,7 +132,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'School Aged Services Team',
             'permission'    => 'BasicUser'
         ]);
-        $sforemski->assignRole('admin');
+        $sforemski->assignRole('basicuser');
 
         $bcrittenden = $user->create([
             'name'          => 'B Crittenden',
@@ -142,7 +142,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'School Aged Services Team',
             'permission'    => 'BasicUser'
         ]);
-        $bcrittenden->assignRole('admin');
+        $bcrittenden->assignRole('basicuser');
 
         $estuebing = $user->create([
             'name'          => 'E Stuebing',
@@ -152,7 +152,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
-        $estuebing->assignRole('admin');
+        $estuebing->assignRole('basicuser');
 
         $dmichael = $user->create([
             'name'          => 'Michael Doe',
@@ -162,7 +162,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
-        $dmichael->assignRole('admin');
+        $dmichael->assignRole('basicuser');
 
         $dluc = $user->create([
             'name'          => 'Luc Doe',
@@ -172,7 +172,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
-        $dluc->assignRole('admin');
+        $dluc->assignRole('basicuser');
 
         $djohn = $user->create([
             'name'          => 'John Doe',
@@ -182,7 +182,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
-        $djohn->assignRole('admin');
+        $djohn->assignRole('basicuser');
 
         $nandrew = $user->create([
             'name'          => 'Andrew Nisbet',
@@ -192,7 +192,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Membership Services Team',
             'permission'    => 'BasicUser'
         ]);
-        $nandrew->assignRole('admin');
+        $nandrew->assignRole('basicuser');
 
         $dchris = $user->create([
             'name'          => 'Chris Doe',
@@ -202,7 +202,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Events Team',
             'permission'    => 'BasicUser'
         ]);
-        $dchris->assignRole('admin');
+        $dchris->assignRole('basicuser');
 
         $acarruthers = $user->create([
             'name'          => 'Alex Carruthers',
@@ -212,7 +212,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Events Team',
             'permission'    => 'BasicUser'
         ]);
-        $acarruthers->assignRole('admin');
+        $acarruthers->assignRole('basicuser');
 
         $dkhalil = $user->create([
             'name'          => 'Khalil Doe',
@@ -222,7 +222,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
-        $dkhalil->assignRole('admin');
+        $dkhalil->assignRole('basicuser');
 
         $drobin = $user->create([
             'name'          => 'Robin Doe',
@@ -232,7 +232,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Discovery Team',
             'permission'    => 'BasicUser'
         ]);
-        $drobin->assignRole('admin');
+        $drobin->assignRole('basicuser');
 
         $crachael = $user->create([
             'name'          => 'Rachael Collins',
@@ -242,7 +242,7 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Foundational Programming Team',
             'permission'    => 'BasicUser'
         ]);
-        $crachael->assignRole('admin');
+        $crachael->assignRole('basicuser');
 
         $djamie = $user->create([
             'name'          => 'Jamie Doe',
@@ -252,6 +252,6 @@ class Users_Table_Seeder extends Seeder
             'team'          => 'Foundational Programming Team',
             'permission'    => 'BasicUser'
         ]);
-        $djamie->assignRole('admin');
+        $djamie->assignRole('basicuser');
     }
 }

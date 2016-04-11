@@ -10,7 +10,14 @@
                 <h4><a href="/objectives/show/{{ $action->objective()->get()->first()->id }}">Belongs to Objective: {{ $action->objective()->get()->first()->body }}</a></h4>
                 </div>
                 <div class="col-md-6">
-                    <a class="btn btn-primary" role="button" href="/actions/{{ $action->id }}/delete" style="float: right;">Delete</a>
+                    @if($action->status != "Completed")
+                        @role('admin|deplead|teamlead|bplead')
+                        <a role="button" class="btn btn-primary" style="float:right;" href="/actions/{{ $action->id }}/markcomplete">Mark Completed</a>
+                        @endrole
+                    @endif
+                    @role('bplead')
+                        <a class="btn btn-primary" role="button" href="/actions/{{ $action->id }}/delete" style="float: right;">Delete</a>
+                    @endrole
                 </div>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>

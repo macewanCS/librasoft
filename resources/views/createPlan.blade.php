@@ -15,6 +15,7 @@
             });
         </script>
     </head>
+    @role('bplead')
     <body>
     <div class="container">
         <div class="row">
@@ -1651,7 +1652,17 @@
         </div>
     </div>
     </body>
+    @endrole
 
+    @role('admin|teamlead|deplead|basicuser')
+    <div class="bs-example">
+        <div class="panel panel-primary">
+            <div class="panel-body small-panel-body">
+                <h4>Sorry! You don't have permission to access this page!</h4>
+            </div>
+        </div>
+    </div>
+    @endrole
 
 
 

@@ -9,9 +9,11 @@
                 <div class="col-md-6">
                 <h4><a href="/goals/show/{{ $objective->goal()->get()->first()->id }}">Belongs to Goal: {{ $objective->goal()->get()->first()->body }}</a></h4>
                 </div>
+                @role('bplead')
                 <div class="col-md-6">
                     <a class="btn btn-primary" role="button" href="/objectives/{{ $objective->id }}/delete" style="float: right;">Delete</a>
                 </div>
+                @endrole
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                     <tr>
