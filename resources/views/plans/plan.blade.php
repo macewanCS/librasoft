@@ -95,6 +95,7 @@
     </div>
 </div>
 
+    <p style="padding-left: 190px;">Click on any table column header to sort by that column.</p>
         <!-- Accordion starts-->
         <div class="plan-content-panel">
             <div class="panel-group" id="accordion">
@@ -447,7 +448,7 @@
             inputclass: 'input-xxlarge',
         };
 
-        //$.extend($.fn.editable.defaults, defaults);
+        $.extend($.fn.editable.defaults, defaults);
 
         $('#edit').click(function () {
             $('#table-edit .editable').editable('toggleDisabled');
