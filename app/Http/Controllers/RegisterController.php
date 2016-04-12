@@ -28,14 +28,25 @@ class RegisterController extends Controller
     public function addNewUser(Request $request){
         $user = new User();
 
-        $user->create([
+        $newUser = $user->create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'department' => $request['department'],
-            'permission' => $request['permission'],
             'password' => bcrypt($request['password']),
+            'department' => $request['department'],
+            'team' => '',
+            'permission' => $request['permission']
         ]);
-        //$user->assignrole($data['department']);
+
+        $perm = '';
+
+        if($request['permission'] == "Admin")
+            $perm = 'admin';
+        elseif($request['permission'] == "Business Plan Lead")
+            $perm = 'bplead';
+        elseif($request['permission'] == "Basic User")
+            $perm = 'basicuser';
+
+        $newUser->assignrole($perm);
         return back();
     }
 
