@@ -62,10 +62,11 @@
                                 <label class="col-md-4 control-label">Permission</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name="permission" value="{{ old('permission') }}">
-                                        <option> Admin </option>
-                                        <option> Business Plan Lead </option>
-                                        <option> Basic user </option>
-                                        <option> Read Only </option>
+                                        <option>Admin </option>
+                                        <option>Business Plan Lead </option>
+                                        <option>Department Lead</option>
+                                        <option>Team Lead</option>
+                                        <option>Basic user </option>
                                     </select>
                                     @if ($errors->has('permission'))
                                         <span class="help-block">
