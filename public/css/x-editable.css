@@ -1,0 +1,14 @@
+.editable-click.editable-disabled,
+a.editable-click.editable-disabled,
+a.editable-click.editable-disabled:hover {
+    //color: #000;
+    color: #337ab7;
+    cursor: default;
+    border-bottom: none;
+}
+
+.editable-click.editable-disabled:link {
+    color: #337ab7;
+    cursor: hand;
+    text-decoration: underline;
+}

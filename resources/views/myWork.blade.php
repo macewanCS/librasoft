@@ -267,6 +267,7 @@
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
                             <td id="task-lead" class="mw-table-lead"><a data-pk="{{ $task->id }}" href="#">
+
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -405,6 +406,7 @@
                         'Collection Management and Access'],
                     tokenSeparators: [","," "]
                 },
+                placement: 'left',
                 url: '{{URL::to("/")}}/mywork/action/collab',
                 title: 'Input Collaborators',
                 send: 'always',

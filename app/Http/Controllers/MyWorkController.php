@@ -12,4 +12,8 @@ class MyWorkController extends Controller
         return view('myWork');
     }
 
+    public function edit() {
+        return null;
+    }
+
 }
