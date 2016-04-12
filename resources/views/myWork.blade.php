@@ -266,8 +266,8 @@
                             </td>
                             <td class="mw-table-due">{{ $task->date }}</td>
                             <td class="mw-table-owner">{{ $task->owner }}</td>
+                            <td id="task-lead" class="mw-table-lead"><a data-pk="{{ $task->id }}" href="#">
 
-                            <td id="task-lead" class="mw-table-lead">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
                                 <?php
                                 $leads = explode("__,__", $task->lead);
                                 foreach ($leads as $lead) {
@@ -285,8 +285,7 @@
                                 ?>
                                 </a>
                             </td>
-
-                            <td id="task-collab" class="mw-table-collab">@role('admin')<a data-pk="{{ $task->id }}" href="#">@endrole
+                            <td id="task-collab" class="mw-table-collab"><a data-pk="{{ $task->id }}" href="#">
                                 <?php
                                 $collaborators = explode("__,__", $task->collaborators);
                                 foreach ($collaborators as $collaborator) {
