@@ -110,7 +110,10 @@ class ActionsController extends Controller
         $col = 'lead';
 
         $leads = $request->value;
-        $value = implode("__,__", $leads);
+        if(!empty($leads))
+            $value = implode("__,__", $leads);
+        else
+            $value = $leads;
 
         //Get action data row where success is stored
         if ($finditem = Action::where('id', $pk)->update([$col => $value]))
@@ -130,7 +133,10 @@ class ActionsController extends Controller
         $col = 'collaborators';
         
         $collabs = $request->value;
-        $value = implode("__,__", $collabs);
+        if(!empty($collabs))
+            $value = implode("__,__", $collabs);
+        else
+            $value = $collabs;
         
         //Get action data row where collabs are stored
         if ($finditem = Action::where('id', $pk)->update([$col => $value])) {
