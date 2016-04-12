@@ -504,7 +504,7 @@
         });
 
         $('#action-date a').editable({
-            showbuttons: false,
+            showbuttons: true,
             type: 'date',
             viewformat: 'yyyy-mm-dd',
             url: '{{URL::to("/")}}/plan/action/date',
@@ -517,7 +517,7 @@
         });
 
         $('#task-date a').editable({
-            showbuttons: false,
+            showbuttons: true,
             type: 'date',
             viewformat: 'yyyy-mm-dd',
             url: '{{URL::to("/")}}/plan/task/date',
