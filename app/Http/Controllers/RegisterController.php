@@ -45,6 +45,10 @@ class RegisterController extends Controller
             $perm = 'bplead';
         elseif($request['permission'] == "Basic User")
             $perm = 'basicuser';
+        elseif($request['permission'] == "Department Lead")
+            $perm = 'deplead';
+        elseif($request['permission'] == "Team Lead")
+            $perm = 'teamlead';
 
         $newUser->assignrole($perm);
         return back();
