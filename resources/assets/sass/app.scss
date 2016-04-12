@@ -576,25 +576,30 @@ a {
   -webkit-animation-timing-function: linear;
 }
 
-#edit {
-  link-color: #337ab7;
-}
+  #edit {
+    link-color: #337ab7;
+  }
 
-#task-description a {
+  #task-description a {
     color: #337ab7;
-}
+  }
 
-#task-description a:hover {
-  text-decoration: underline;
-  cursor: hand;
-}
+  #task-description a:hover {
+    text-decoration: underline;
+    cursor: hand;
+  }
 
-#action-description a {
-  color: #337ab7;
-}
+  #action-description a {
+    color: #337ab7;
+  }
 
 #action-description a:hover {
   text-decoration: underline;
   cursor: hand;
-}
 
+  #action-description a:hover {
+    text-decoration: underline;
+    cursor: hand;
+  }
+
+}

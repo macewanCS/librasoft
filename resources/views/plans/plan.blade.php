@@ -169,7 +169,9 @@
                                                                         ?>
                                                                         </a>
                                                                     </td>
+
                                                                     <td class="table-success" id="success-measures"> @role('bplead')<a data-pk="{{ $action->id }}" href="#" class="editable editable-click editable-disabled">@endrole{{ $action->success }}</a></td>
+
                                                                     <td
                                                                             @if ($action->status == "Completed")
                                                                             class="table-status success" id="action-status"
@@ -443,7 +445,7 @@
             mode: 'popup',
             showbuttons: true,
             onblur: 'true',
-            inputclass: 'input-xxlarge',
+            //inputclass: '/public/css/app.css'
         };
 
         $.extend($.fn.editable.defaults, defaults);

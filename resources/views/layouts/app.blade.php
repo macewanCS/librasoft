@@ -45,8 +45,8 @@
     <script type="text/javascript" src="{{URL::asset('js/popUpWindow.js')}}"></script>
 
     <!-- Add x-editable -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
     <!-- Select 2 -->
@@ -54,6 +54,9 @@
     <link href="http://select2.github.io/select2/select2-3.5.2/select2.css" rel="stylesheet"/>
     <link href="http://fk.github.io/select2-bootstrap-css/css/bootstrap.min.css"/>
     <script src="http://select2.github.io/select2/select2-3.4.2/select2.js"></script>
+
+    <!--x-editable custom editing-->
+    <link rel="stylesheet" href="/public/css/x-editable.css"/>
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />

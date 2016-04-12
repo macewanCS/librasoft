@@ -454,4 +454,11 @@ a .filter {
   text-decoration: underline;
   cursor: hand; }
 
+a.editable-click.editable-disabled,
+.editable-click.editable-disabled
+{
+  color: #337ab7;
+  cursor: hand;
+}
+
 /*# sourceMappingURL=app.css.map */
