@@ -1,3 +1,15 @@
+#The EPL BP Manager
+
+The EPL BP manager is a tool for use inside the Edmonton Public Library. The goal for the tool is that it will allow
+EPL employees to be able to keep track of and update their work in an easier method than emailing many
+non-standardized spreadsheets between employees. Business plans can be created, modified, and viewed by various users
+at different permission levels. Users can have work assigned to them, as well as assigning work to other users as
+appropriate.
+
+Every user is able to view the entire business plan information, including progress and success measures. Authorized
+users can add notes to their work, and update their progress. Users may search on the page, and filter by certain
+elements as required. Administrators will be able to create, modify, and delete users.
+
 #Summary of Requirements
 
 ##Solution goals
@@ -95,3 +107,14 @@
 6. Has a measure of success.
 7. Can be commented upon, and have notes added.
 8. Can have a budget associated.
+
+
+#Changes
+1. Have all buttons at bottom of page
+2. Add editing to plan elements
+3. Fix fonts
+4. Non-business plan goals are created annually
+5. Change owner column in table to department
+6. Put actions and tasks in single table
+7. Add form to edit actions and tasks (ex, inline editing)
+8. Plan creation
